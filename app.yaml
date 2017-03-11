@@ -29,3 +29,5 @@ health_check:
   healthy_threshold: 2
 env_variables:
   MY_VAR: 'my value'
+beta_settings:
+  cloud_sql_instances: uren-160119:us-east1:uren
