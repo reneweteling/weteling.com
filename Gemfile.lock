@@ -90,6 +90,8 @@ GEM
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     graphql (1.4.4)
+    graphql-rails-schemaker (0.1.0)
+      graphql (>= 0.19.0)
     has_scope (0.7.0)
       actionpack (>= 4.1, < 5.1)
       activesupport (>= 4.1, < 5.1)
@@ -233,6 +235,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   graphql
+  graphql-rails-schemaker
   jquery-rails
   listen (~> 3.0.5)
   mysql2

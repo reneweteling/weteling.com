@@ -4,5 +4,7 @@ Rails.application.routes.draw do
 
   get "_ah/health", to: "application#health_check"
 
+  resources :graph
+
   root to: redirect('/admin')
 end
