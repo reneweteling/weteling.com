@@ -1,12 +1,14 @@
 QueryType = GraphQL::ObjectType.define do
-  name "Query"
-  description "The query root for this schema"
 
-  field :user do
-    type UserType
-    argument :id, !types.ID
+  name "Query"
+  description "The query root of this schema"
+
+  field :viewer do
+    type ViewerType
     resolve -> (obj, args, ctx) {
-      User.find(args[:id])
+      ctx[:viewer]
     }
   end
+
+  field :node, ::GraphQL::Relay::Node.field
 end
