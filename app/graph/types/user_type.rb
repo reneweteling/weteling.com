@@ -10,6 +10,7 @@ UserType = GraphQL::ObjectType.define do
   connection :projects, ProjectType.connection_type, "Association to many `projects` on User"
   connection :rates, RateType.connection_type, "Association to many `rates` on User"
 
+  # field :id, GraphTypes::INTEGER, "Property `ids` for User"
   field :address, GraphTypes::STRING, "Property `address` for User"
   field :bic, GraphTypes::STRING, "Property `bic` for User"
   field :city, GraphTypes::STRING, "Property `city` for User"

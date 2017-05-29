@@ -1,4 +1,4 @@
- ViewerType = GraphQL::ObjectType.define do
+ViewerType = GraphQL::ObjectType.define do
   name "Viewer"
   description "Type for Viewer object"
 

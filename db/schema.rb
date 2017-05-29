@@ -12,21 +12,21 @@
 
 ActiveRecord::Schema.define(version: 20170228073118) do
 
-  create_table "active_admin_comments", force: :cascade do |t|
+  create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "namespace"
-    t.text     "body"
-    t.string   "resource_id",   null: false
-    t.string   "resource_type", null: false
+    t.text     "body",          limit: 65535
+    t.string   "resource_id",                 null: false
+    t.string   "resource_type",               null: false
     t.string   "author_type"
     t.integer  "author_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
-    t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
-    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
+    t.index ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
+    t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
   end
 
-  create_table "clients", force: :cascade do |t|
+  create_table "clients", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
     t.string   "name",       null: false
     t.string   "first_name"
@@ -44,41 +44,41 @@ ActiveRecord::Schema.define(version: 20170228073118) do
     t.string   "tax_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_clients_on_user_id"
+    t.index ["user_id"], name: "index_clients_on_user_id", using: :btree
   end
 
-  create_table "hours", force: :cascade do |t|
-    t.integer  "project_id",                                          null: false
-    t.integer  "rate_id",                                             null: false
-    t.date     "date",                                                null: false
-    t.decimal  "hours",       precision: 4, scale: 2, default: "0.0", null: false
-    t.text     "description",                                         null: false
-    t.datetime "created_at",                                          null: false
-    t.datetime "updated_at",                                          null: false
-    t.index ["project_id"], name: "index_hours_on_project_id"
-    t.index ["rate_id"], name: "index_hours_on_rate_id"
+  create_table "hours", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "project_id",                                                        null: false
+    t.integer  "rate_id",                                                           null: false
+    t.date     "date",                                                              null: false
+    t.decimal  "hours",                     precision: 4, scale: 2, default: "0.0", null: false
+    t.text     "description", limit: 65535,                                         null: false
+    t.datetime "created_at",                                                        null: false
+    t.datetime "updated_at",                                                        null: false
+    t.index ["project_id"], name: "index_hours_on_project_id", using: :btree
+    t.index ["rate_id"], name: "index_hours_on_rate_id", using: :btree
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.integer  "client_id",   null: false
-    t.string   "name",        null: false
-    t.text     "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.index ["client_id"], name: "index_projects_on_client_id"
+  create_table "projects", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "client_id",                 null: false
+    t.string   "name",                      null: false
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.index ["client_id"], name: "index_projects_on_client_id", using: :btree
   end
 
-  create_table "rates", force: :cascade do |t|
-    t.integer  "user_id",                             null: false
-    t.string   "name",                                null: false
-    t.text     "description"
-    t.decimal  "rate",        precision: 5, scale: 2
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["user_id"], name: "index_rates_on_user_id"
+  create_table "rates", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                                           null: false
+    t.string   "name",                                              null: false
+    t.text     "description", limit: 65535
+    t.decimal  "rate",                      precision: 5, scale: 2
+    t.datetime "created_at",                                        null: false
+    t.datetime "updated_at",                                        null: false
+    t.index ["user_id"], name: "index_rates_on_user_id", using: :btree
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                null: false
     t.string   "first_name"
     t.string   "last_name"
@@ -104,8 +104,13 @@ ActiveRecord::Schema.define(version: 20170228073118) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "clients", "users"
+  add_foreign_key "hours", "projects"
+  add_foreign_key "hours", "rates"
+  add_foreign_key "projects", "clients"
+  add_foreign_key "rates", "users"
 end
