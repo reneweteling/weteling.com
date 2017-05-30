@@ -1,5 +1,5 @@
 class Client < ApplicationRecord
-  has_many :projects, dependent: :destroy
+  has_many :projects, dependent: :restrict_with_error
   has_many :hours, through: :projects
   belongs_to :user
 
