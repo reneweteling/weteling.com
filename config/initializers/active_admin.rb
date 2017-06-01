@@ -1,4 +1,94 @@
+
+Formtastic::FormBuilder.collection_label_methods = [:active_admin_name, :display_name, :to_s, :name, :title]
+
+module ActiveAdmin
+  module ViewHelpers
+    include ApplicationHelper
+  end
+  module Views
+    class TableFor
+      def signature_column(attribute)
+        column(attribute){ |model| 
+          if model[attribute].present?
+            content = model[attribute]
+            url = model.send(attribute)
+            "<img src=\"#{url}\" class=\"upload-preview\" />".html_safe
+          else
+            '<span class="empty">Empty</span>'.html_safe
+          end
+        }
+      end
+      def preview_column(attribute)
+        column(attribute){ |model| 
+          if model[attribute].present?
+            content = model[attribute]
+            if model.send(attribute).kind_of? BaseImageUploader
+              model.send(attribute)
+              url = model.send(attribute).url
+              url = model.send(attribute).thumb.url if model.send(attribute).respond_to? :thumb
+              content = "<img src=\"#{url}\" class=\"upload-preview\" />"
+            end
+            "<a href=\"#{model.send(attribute).url}\" target=\"_new\">#{content}</a>".html_safe
+          else
+            '<span class="empty">Empty</span>'.html_safe
+          end
+        } 
+      end
+    end
+    class AttributesTable
+      def signature_row(attribute)
+        row(attribute){ |model| 
+          if model[attribute].present?
+            content = model[attribute]
+            url = model.send(attribute)
+            "<img src=\"#{url}\" class=\"upload-preview\" />".html_safe
+          else
+            '<span class="empty">Empty</span>'.html_safe
+          end
+        }
+      end
+      def preview_row(attribute)
+        row(attribute){ |model| 
+          if model[attribute].present?
+            content = model[attribute]
+            if model.send(attribute).kind_of? BaseImageUploader
+              model.send(attribute)
+              url = model.send(attribute).url
+              url = model.send(attribute).thumb.url if model.send(attribute).respond_to? :thumb
+              content = "<img src=\"#{url}\" class=\"upload-preview\" />"
+            end
+            "<a href=\"#{model.send(attribute).url}\" target=\"_new\">#{content}</a>".html_safe
+          else
+            '<span class="empty">Empty</span>'.html_safe
+          end
+        }
+      end
+    end
+  end
+end
+
+class ActiveAdmin::BaseController
+  private
+
+  def interpolation_options
+    options = {}
+    options[:resource_errors] =
+      if resource && resource.errors.any?
+        "#{resource.errors.full_messages.to_sentence}."
+      else
+        ""
+      end
+    options
+  end
+end
+
 ActiveAdmin.setup do |config|
+  config.before_action do
+    params.permit!
+  end
+
+  config.display_name_methods = [:active_admin_name, :display_name, :to_s, :name, :title]
+
   # == Site Title
   #
   # Set the title that is displayed on the main layout
