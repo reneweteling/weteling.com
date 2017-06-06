@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  has_many :hours
+  has_many :hours, dependent: :restrict_with_error
   belongs_to :client
   has_one :user, through: :client
 
