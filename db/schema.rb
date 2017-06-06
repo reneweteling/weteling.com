@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 20170601095530) do
     t.string "tax_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "default_rate_id"
+    t.index ["default_rate_id"], name: "index_clients_on_default_rate_id"
     t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
