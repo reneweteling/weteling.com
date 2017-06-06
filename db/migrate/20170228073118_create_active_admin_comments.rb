@@ -13,6 +13,8 @@ class CreateActiveAdminComments < ActiveRecord::Migration::Current
     add_index :active_admin_comments, [:namespace]
 
     add_index :active_admin_comments, [:resource_type, :resource_id]
+
+    add_column :hours, :sno_hours, :decimal, precision: 4, scale: 2, null: false, default: 0
   end
 
   def self.down
