@@ -1,8 +1,7 @@
-# app/admin/calendar.rb
 ActiveAdmin.register_page "Dashboard" do
+  menu priority: 1
+  
   content do
-    
-
     current = Time.now
     first = Hour.minimum(:date)
     while current >= first do

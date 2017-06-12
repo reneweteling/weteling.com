@@ -1,4 +1,6 @@
 ActiveAdmin.register Hour do
+  menu priority: 2
+  
   include ActiveAdminHelper
   permit!
 

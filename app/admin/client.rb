@@ -1,4 +1,5 @@
 ActiveAdmin.register Client do
+  menu priority: 3
   include ActiveAdminHelper
   permit!
     

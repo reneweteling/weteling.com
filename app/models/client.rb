@@ -4,7 +4,7 @@ class Client < ApplicationRecord
   belongs_to :user
   belongs_to :default_rate, class_name: "Rate"
 
-  validates_presence_of :user, :name
+  validates_presence_of :user, :name, :default_rate
 
   def to_s
     name 

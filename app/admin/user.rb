@@ -1,4 +1,5 @@
 ActiveAdmin.register User do
+  menu priority: 6
   include ActiveAdminHelper
   permit!
 

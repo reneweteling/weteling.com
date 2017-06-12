@@ -1,4 +1,5 @@
 ActiveAdmin.register Rate do
+  menu priority: 5
   include ActiveAdminHelper
   permit!
 
