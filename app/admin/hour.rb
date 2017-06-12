@@ -5,9 +5,9 @@ ActiveAdmin.register Hour do
   controller do
     def build_new_resource
       record = super
-      
       record.date ||= Date.today
-      
+      record.project ||= Hour.last.project
+      record.rate ||= Hour.last.rate
       record
     end
   end
@@ -15,6 +15,7 @@ ActiveAdmin.register Hour do
   filter :client
   filter :project
   filter :description
+  filter :date
 
   index do 
     selectable_column
@@ -22,8 +23,8 @@ ActiveAdmin.register Hour do
     column :project
     column :rate
     column :date
-    column :hours
-    column :sno_hours
+    column :total_hours
+    column :total_sno_hours
     column :description
     actions
   end
@@ -33,19 +34,19 @@ ActiveAdmin.register Hour do
       row :project
       row :rate
       row :date
-      row :hours
-      row :sno_hours
+      row :total_hours
+      row :total_sno_hours
       row :description
     end
   end
 
   form do |f|
     inputs 'Details' do 
-      input :project
+      input :project, input_html: { 'data-rate': Project.all.map{|p| [p.id, p.client.default_rate.id]}.to_h.to_json }
       input :rate
       input :date
-      input :hours
-      input :sno_hours
+      input :total_hours
+      input :total_sno_hours
       input :description
     end
     actions

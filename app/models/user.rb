@@ -9,4 +9,8 @@ class User < ApplicationRecord
   has_many :hours, through: :projects  
 
   validates_presence_of :email, :name
+
+  def to_s
+    name
+  end
 end

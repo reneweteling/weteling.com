@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170601095530) do
+ActiveRecord::Schema.define(version: 20170612152421) do
 
   create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "namespace"
@@ -53,11 +53,11 @@ ActiveRecord::Schema.define(version: 20170601095530) do
     t.integer "project_id", null: false
     t.integer "rate_id", null: false
     t.date "date", null: false
-    t.decimal "hours", precision: 4, scale: 2, default: "0.0", null: false
+    t.decimal "total_hours", precision: 4, scale: 2, default: "0.0", null: false
     t.text "description", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.decimal "sno_hours", precision: 4, scale: 2, default: "0.0", null: false
+    t.decimal "total_sno_hours", precision: 4, scale: 2, default: "0.0", null: false
     t.index ["project_id"], name: "index_hours_on_project_id"
     t.index ["rate_id"], name: "index_hours_on_rate_id"
   end

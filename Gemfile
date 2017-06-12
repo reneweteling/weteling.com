@@ -16,7 +16,7 @@ gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 
-
+gem 'pdfkit'
 gem 'graphql'
 gem 'activeadmin'
 gem 'activeadmin_addons'
