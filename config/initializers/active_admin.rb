@@ -67,6 +67,25 @@ module ActiveAdmin
   end
 end
 
+ActiveAdmin::ResourceController::DataAccess.module_eval do
+  def update_resource(object, attributes)
+    if object.respond_to?(:assign_attributes)
+      object.assign_attributes(*attributes)
+    else
+      object.attributes = attributes[0]
+    end
+
+    begin
+      run_update_callbacks object do
+        save_resource(object)
+      end
+    rescue ActiveRecord::RecordNotDestroyed => e
+      flash[:error] = "Cannot destroy nested object."
+      object.errors.add(:base, e.to_s)
+    end
+  end
+end
+
 class ActiveAdmin::BaseController
   private
 
