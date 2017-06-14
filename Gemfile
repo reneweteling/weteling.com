@@ -24,6 +24,9 @@ gem 'devise'
 gem 'slim-rails'
 gem 'country_select'
 
+gem 'font-awesome-sass', '~> 4.7.0'
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri

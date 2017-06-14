@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/twbs/bootstrap-rubygem
+  revision: 7cdeca9a0e8db3bb7548d9fa5bdaad9b644fca32
+  specs:
+    bootstrap (4.0.0.alpha6)
+      autoprefixer-rails (>= 6.0.3)
+      popper_js (>= 1.9.9, < 2.0)
+      sass (>= 3.4.19)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -61,6 +70,8 @@ GEM
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (8.0.0)
+    autoprefixer-rails (7.1.1.2)
+      execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
     bourbon (4.3.4)
@@ -110,6 +121,8 @@ GEM
     erubi (1.6.0)
     execjs (2.7.0)
     ffi (1.9.18)
+    font-awesome-sass (4.7.0)
+      sass (>= 3.2)
     formtastic (3.1.5)
       actionpack (>= 3.2.13)
     formtastic_i18n (0.6.0)
@@ -172,6 +185,7 @@ GEM
     pdfkit (0.8.2)
     polyamorous (1.3.1)
       activerecord (>= 3.0)
+    popper_js (1.9.9)
     pry (0.10.4)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -283,6 +297,7 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   activeadmin_addons
+  bootstrap!
   byebug
   capistrano (~> 3.6)
   capistrano-passenger
@@ -291,6 +306,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   country_select
   devise
+  font-awesome-sass (~> 4.7.0)
   graphql
   graphql-rails-schemaker
   jquery-rails

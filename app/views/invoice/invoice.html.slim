@@ -1,0 +1,36 @@
+.container-fluid
+  .row
+    .col-3
+      = image_tag 'logo.png', class: 'img-fluid'
+    .col-3.offset-6
+      |client
+
+  .row
+    .col-12
+      p Uren verantwoording #{date}
+
+  .row
+    .col-12
+      table.table.table-striped.table-bordered.table-sm
+        thead
+          tr
+            th Omschrijving
+            th Datum
+            th S&O
+            th Uren
+        tbody
+          - hours.each do |h|
+            tr
+              td = simple_format h.description
+              td.nowrap = h.date
+              td = h.total_sno_hours
+              td = h.total_hours
+
+        tfoot
+           tr
+            th 
+            th 
+            th = hours.sum(:total_sno_hours)
+            th = hours.sum(:total_hours)
+
+            
