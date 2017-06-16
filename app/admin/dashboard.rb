@@ -8,14 +8,11 @@ ActiveAdmin.register_page "Dashboard" do
 
     html = render_to_string template: '/invoice/invoice', locals: {project: project, hours: hours, date: date}, layout: 'pdf'
 
-    return render html: html
+    return render html: html if params[:type] == 'html'
 
-
-    # vars = HourCalendar.calculate(params)
-    # html = render_to_string partial: 'table', locals: vars, layout: 'pdf'
-    # kit = PDFKit.new(html, :page_size => 'A4', :orientation => 'Landscape')
+    kit = PDFKit.new(html, :page_size => 'A4', :orientation => 'Portrait')
     # kit.stylesheets << Rails.root.join('vendor/assets/custom/bootstrap/css/bootstrap.min.css')
-    # send_data kit.to_pdf, filename: "#{vars[:filters].type}-#{l(Time.zone.now).parameterize}.pdf", type: 'application/pdf'
+    send_data kit.to_pdf, filename: "#{project.to_s}-#{date.to_s.parameterize}.pdf", type: 'application/pdf'
   end
 
   content do
@@ -48,8 +45,8 @@ ActiveAdmin.register_page "Dashboard" do
               td hours.sum(:total_hours)
               td hours.map(&:rate).uniq.to_sentence
               td number_to_currency(hours.map{|h| h.total_hours * h.rate.rate }.inject(:+))
-              td link_to(icon('file-pdf-o'), admin_dashboard_invoice_path(project_id: p.id, date: current.at_beginning_of_month.to_date)) + " - " +
-                link_to( icon('eye'), admin_dashboard_invoice_path(project_id: p.id, date: current.at_beginning_of_month.to_date))
+              td link_to(icon('file-pdf-o'), admin_dashboard_invoice_path(project_id: p.id, date: current.at_beginning_of_month.to_date, type: :pdf)) + " - " +
+                link_to( icon('eye'), admin_dashboard_invoice_path(project_id: p.id, date: current.at_beginning_of_month.to_date, type: :html))
               i += 1
             end
           end

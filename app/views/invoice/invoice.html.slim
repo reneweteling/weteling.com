@@ -1,36 +1,86 @@
-.container-fluid
-  .row
-    .col-3
-      = image_tag 'logo.png', class: 'img-fluid'
-    .col-3.offset-6
-      |client
+sass:
 
-  .row
-    .col-12
-      p Uren verantwoording #{date}
+  .contact-details
+    margin-top: 10px
+    font-size: 10px
 
+  .client-details
+    font-size: 12px
+
+  .logo
+    width: 150px
+  
+  .table-container
+    margin-top: 50px
+    table
+      th, td
+        font-size: 14px
+        p
+          margin: 0px
+        
+      thead
+        tr, th
+          border-bottom: 1px solid black
+      
+.container
   .row
+    .col-2
+       = image_tag 'logo.png', class: 'img-fluid logo'
+    .col-5
+      .row.contact-details
+        .col-6
+          p 
+            | rene@weteling.com 
+            br 
+            | www.weteling.com
+          p 
+            | KvK: 24403159
+            br
+            | Btw: NL1997.22.286.B02
+        .col-6  
+          p
+            | Herengracht 504
+            br
+            | 1017CB Amsterdam
+          p 
+            | Bank: NL38 KNAB 0723 0772 82
+            br
+            | BIC: KNABNL2H
+        
+          
+    .col-3.offset-2.client-details
+      p 
+        b = project.client.name
+        p 
+          | t.a.v. #{project.client.first_name} #{project.client.last_name}
+          - if project.client.department.present?
+            br Afd. #{project.client.department}
+        p 
+          = project.client.address
+          br #{project.client.postalcode} #{project.client.city}
+        
+  .row.table-container
     .col-12
-      table.table.table-striped.table-bordered.table-sm
+      table.table.table-striped.table-bordered.table-sm.table-responsive
         thead
           tr
-            th Omschrijving
-            th Datum
-            th S&O
-            th Uren
+            th Uren verantwoording #{hours.first.date} - #{hours.last.date}
+            th.text-right Datum
+            th.text-right S&O
+            th.text-right Uren
         tbody
           - hours.each do |h|
             tr
               td = simple_format h.description
-              td.nowrap = h.date
-              td = h.total_sno_hours
-              td = h.total_hours
+              td.nowrap.text-right = l h.date, format: :short
+              td.text-right = h.total_sno_hours
+              td.text-right = h.total_hours
 
         tfoot
            tr
             th 
             th 
-            th = hours.sum(:total_sno_hours)
-            th = hours.sum(:total_hours)
+            th.text-right = hours.sum(:total_sno_hours)
+            th.text-right = hours.sum(:total_hours)
 
             
