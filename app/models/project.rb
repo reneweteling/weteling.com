@@ -5,7 +5,7 @@ class Project < ApplicationRecord
 
   validates_presence_of :client, :name
 
-  scope :orderd, -> { order(:name) }
+  scope :orderd, -> { order(:id, :asc) }
 
   def to_s
     "#{client} - #{name}"

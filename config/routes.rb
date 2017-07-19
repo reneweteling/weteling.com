@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   resources :graph
 
   root to: redirect('/admin')
+
+  # root to: 'site#home'
+
 end

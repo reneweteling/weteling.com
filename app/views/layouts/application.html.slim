@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title Weteling.com
+    meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = csrf_meta_tags
+    
+  body
+    nav.navbar.navbar-toggleable-md.navbar-light.bg-faded
+      button.navbar-toggler.navbar-toggler-right aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarNavAltMarkup" data-toggle="collapse" type="button" 
+        span.navbar-toggler-icon
+
+      a.navbar-brand href=root_path
+        img.d-inline-block.align-top src="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width=30 height=30 
+
+      #navbarNavAltMarkup.collapse.navbar-collapse
+        .navbar-nav
+          a.nav-item.nav-link.active href="#" 
+            | Home
+            span.sr-only (current)
+          a.nav-item.nav-link href="#"  Features
+          a.nav-item.nav-link href="#"  Pricing
+          a.nav-item.nav-link.disabled href="#"  Disabled
+
+    = yield

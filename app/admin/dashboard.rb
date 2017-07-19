@@ -17,12 +17,13 @@ ActiveAdmin.register_page "Dashboard" do
 
   content do
     current = Time.now
-    first = Hour.minimum(:date)
+    first = Hour.minimum(:date).at_beginning_of_month
+    
     while current >= first do
 
       h2 current.strftime('%B %Y')
 
-      table class: 'index_table index' do 
+      table class: 'index_table index dashboard' do 
         thead do
           tr do
             th 'Client'
@@ -35,9 +36,8 @@ ActiveAdmin.register_page "Dashboard" do
         end
         tbody do
           i = 0
-          
           project_ids = Hour.where(date: current.at_beginning_of_month..current.at_end_of_month).select(:project_id).distinct().pluck(:project_id)
-          Project.includes(:client, :hours => [:rate]).where(id, project_ids).orderd.find_each do |p|
+          Project.includes(:client, :hours => [:rate]).where(id: project_ids).order('clients.name').order(:name).each do |p|
             tr class: (i%2 == 1 ? 'even' : 'odd') do 
               hours = p.hours.where(date: current.at_beginning_of_month..current.at_end_of_month)
               td p.client 
