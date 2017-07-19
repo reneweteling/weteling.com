@@ -7,7 +7,8 @@ lock "3.8.1"
 set :application, "weteling_com"
 set :repo_url, "git@github.com:reneweteling/weteling.com.git"
 set :tmp_dir, '/home/rene/tmp'
-set :default_env, { path: "/home/reneweteling/.rbenv/shims:/home/reneweteling/.rbenv/shims:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:$PATH" }
+set :default_env, { path: "/usr/local/rbenv/shims:/home/rene/.rbenv/bin:/usr/local/rbenv/shims:/usr/local/rbenv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin" }
+
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
