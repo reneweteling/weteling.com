@@ -3,7 +3,7 @@ ActiveAdmin.register Project do
   include ActiveAdminHelper
   permit!
 
-  filter :client
+  # filter :client
   filter :name
 
   index do 

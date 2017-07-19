@@ -37,7 +37,7 @@ ActiveAdmin.register_page "Dashboard" do
         tbody do
           i = 0
           project_ids = Hour.where(date: current.at_beginning_of_month..current.at_end_of_month).select(:project_id).distinct().pluck(:project_id)
-          Project.includes(:client, :hours => [:rate]).where(id: project_ids).order('clients.name').order(:name).each do |p|
+          Project.includes(:client, :hours => [:rate]).where(id: project_ids).accessible_by(current_ability).order('clients.name').order(:name).each do |p|
             tr class: (i%2 == 1 ? 'even' : 'odd') do 
               hours = p.hours.where(date: current.at_beginning_of_month..current.at_end_of_month)
               td p.client 

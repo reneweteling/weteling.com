@@ -51,6 +51,10 @@ ActiveAdmin.register User do
       input :coc_no
       input :tax_no
     end
+    inputs 'Permissions' do
+      input :role, input_html: { disabled: cannot?(:manage, user) }
+      input :projects, input_html: { disabled: cannot?(:manage, user) }
+    end
     inputs 'Credentials' do
       input :email
       input :password
