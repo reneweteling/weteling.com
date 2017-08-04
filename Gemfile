@@ -26,7 +26,7 @@ gem 'country_select'
 gem 'cancancan', '~> 2.0'
 
 gem 'font-awesome-sass', '~> 4.7.0'
-gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+gem 'bootstrap', '~> 4.0.0.alpha6'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

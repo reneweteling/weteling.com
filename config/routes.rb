@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   root to: redirect('/admin')
 
+  get :home, to: 'site#home'
+
   # root to: 'site#home'
 
 end
