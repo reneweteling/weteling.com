@@ -6,7 +6,7 @@
  */
 
 // Core variables and mixins
-@import "bootstrap/variables";
+// @import "bootstrap/variables";
 @import "bootstrap/mixins";
 @import "bootstrap/custom";
 
@@ -26,29 +26,29 @@
 
 // Components
 @import "bootstrap/transitions";
-@import "bootstrap/dropdown";
-@import "bootstrap/button-group";
-@import "bootstrap/input-group";
-@import "bootstrap/custom-forms";
+// @import "bootstrap/dropdown";
+// @import "bootstrap/button-group";
+// @import "bootstrap/input-group";
+// @import "bootstrap/custom-forms";
 @import "bootstrap/nav";
 @import "bootstrap/navbar";
-@import "bootstrap/card";
-@import "bootstrap/breadcrumb";
-@import "bootstrap/pagination";
-@import "bootstrap/badge";
-@import "bootstrap/jumbotron";
-@import "bootstrap/alert";
-@import "bootstrap/progress";
-@import "bootstrap/media";
-@import "bootstrap/list-group";
-@import "bootstrap/responsive-embed";
-@import "bootstrap/close";
+// @import "bootstrap/card";
+// @import "bootstrap/breadcrumb";
+// @import "bootstrap/pagination";
+// @import "bootstrap/badge";
+// @import "bootstrap/jumbotron";
+// @import "bootstrap/alert";
+// @import "bootstrap/progress";
+// @import "bootstrap/media";
+// @import "bootstrap/list-group";
+// @import "bootstrap/responsive-embed";
+// @import "bootstrap/close";
 
-// Components w/ JavaScript
-@import "bootstrap/modal";
-@import "bootstrap/tooltip";
-@import "bootstrap/popover";
-@import "bootstrap/carousel";
+// // Components w/ JavaScript
+// @import "bootstrap/modal";
+// @import "bootstrap/tooltip";
+// @import "bootstrap/popover";
+// @import "bootstrap/carousel";
 
 // Utility classes
 @import "bootstrap/utilities";

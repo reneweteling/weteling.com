@@ -1,26 +1,66 @@
 @import 'bootstrap/bootstrap'
+@import "font-awesome-sprockets"
+@import "font-awesome"
+@import url('https://fonts.googleapis.com/css?family=Montserrat')
 
-
+$font-color: white
+$link-color: lightgrey
+$link-active-color: white
 
 html, body
   height: 100%
   padding: 0px
   margin: 0px
-  background-color: blacka
+  background-color: black
+  color: white
 
+  a
+    color: $link-color
+    &:active, &:focus, &:hover
+      color: $link-active-color
+  
   nav.navbar
+    .navbar-toggler
+      background: $link-color
     .row
       width: 100%
     .navbar-brand
       img 
         height: 50px
 
+    input
+      transition: .5s ease-in-out
+      opacity: 0.5
+      background-color: $link-color
+      border: none
+
+      &:focus, &:hover
+        opacity: 1
+
   .section
+    position: relative
+
     width: 100%
     min-height: 100%
     background-size: cover
     background-position: center center fixed
+    background-repeat: no-repeat
+    padding-top: 150px
 
     &#home
-      padding-top: 100px
       background-image: asset_url('bg_home.jpg')
+
+    &#contact
+      background-image: asset_url('bg_contact.jpg')
+
+  .water 
+    opacity: 0.5
+    pointer-events: none
+    z-index: 2
+    position: absolute
+    height: 100% 
+    width: 100% 
+    background-size: cover
+    background-position: center center fixed
+    background-repeat: no-repeat
+    background-image: asset_url('water.png')
