@@ -16,17 +16,17 @@ html
         .row   
           .col-sm-4
             a.navbar-brand href="/"
-              = image_tag 'logo_grey.png'
+              = image_tag 'logo_grey_complete.png'
           .col-sm-8
             #navbarSupportedContent.collapse.navbar-collapse
               .row
-                .col-sm-6
-            
-                  form.form-inline.my-2.my-lg-0
-                    input.form-control.mr-sm-2 placeholder="Search" type="text"
+                .col-sm-4
+                  form.form-inline
+                    input.col-sm-12.form-control type="text" placeholder=="&#xF002;"
+                    
 
-                .col-sm-6.text-right
-                  ul.navbar-nav.mr-auto
+                .col-sm-6.offset-sm-2
+                  ul.navbar-nav
                     li.nav-item.active
                       a.nav-link href="#home" Home
                     li.nav-item
@@ -34,9 +34,12 @@ html
                     li.nav-item
                       a.nav-link href="#about-me" About me
                     li.nav-item
+                      a.nav-link href="#contact" Contact
+                    li.nav-item
                       a.nav-link href="#projects" Projects
                     li.nav-item
-                      a.nav-link href="#contact" Contact
+                      a.nav-link href=admin_root_path Sign in
+                      
 
 
     = yield

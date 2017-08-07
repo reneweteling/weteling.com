@@ -1,15 +1,15 @@
 
   
 #home.section data-stellar-background-ratio="0.5"
-  .water data-stellar-ratio="1.6"
+  .stripes.stripe-two data-stellar-ratio="1.9"
   .container
     .heading
-      h1 Hello,
-      h2 I'm René Weteling, <br />web enthusias <br />entrepreneur &amp; joker.
+      h1.big Hello,
+      h1 I'm René Weteling, <br />web enthusias <br />entrepreneur &amp; joker.
 
 
 #about-me.section data-stellar-background-ratio="0.5"
-  .water data-stellar-ratio="1.6"
+  .stripes.stripe-two data-stellar-ratio="0.9"
   .container
     .heading
       h1 01
@@ -19,7 +19,7 @@
     p Duis interdum euismod bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc ultrices lorem at bibendum rutrum. Quisque euismod ante ac lacus tempor, vitae tincidunt leo elementum. Mauris a pretium ligula. Fusce ut erat tristique, tempor enim eget, molestie est. Aenean vehicula vehicula leo. Aenean sodales eget ante et aliquet. Mauris nibh lorem, fermentum non ante at, pretium rutrum nibh. Proin facilisis massa sed vestibulum hendrerit. Aliquam ullamcorper libero ut consequat malesuada. Pellentesque maximus, neque et blandit pellentesque, libero nisi lacinia metus, id ultrices orci nibh vel augue. Sed auctor ex nec ipsum scelerisque, at eleifend velit pellentesque. Phasellus ac libero enim. Donec eu venenatis lorem, suscipit interdum sem.
 
 #projects.section data-stellar-background-ratio="0.5"
-  .water data-stellar-ratio="1.6"
+  .stripes.stripe-one data-stellar-ratio="1.6"
   .container
     .heading
       h1 03
@@ -32,66 +32,69 @@
         = image_tag 'http://via.placeholder.com/200x200'
         
 #blog.section data-stellar-background-ratio="0.5"
-  .water data-stellar-ratio="1.6"
+  .stripes.stripe-two data-stellar-ratio="1.6"
   .container  
     .heading
       h1 04
       h2 blog
 
 #contact.section data-stellar-background-ratio="0.5"
-  .water data-stellar-ratio="1.6"
   .container
     .row
       .col-sm-5
         .heading
-          h1 Ask me anything,<br>anytime
+          h1 Ask me anything,<br>anytime.
 
-    .row
-      .col-sm-5
-        = simple_form_for(:contact, url: '') do |f|
+    = simple_form_for(:contact, url: '') do |f|
+      .row
+        .col-sm-6
           .row
-            .col-sm-6 = f.input :name, label: false
-            .col-sm-6 = f.input :email, label: false
+            .col-sm-6 = f.input :name, label: false, placeholder: 'Name'
+            .col-sm-6 = f.input :email, label: false, placeholder: 'Email'
           .row
-            .col-sm-12 = f.input :subject, label: false
+            .col-sm-12 = f.input :subject, label: false, placeholder: 'Subject'
+      .row
+        .col-sm-6
           .row
-            .col-sm-12 = f.input :message, as: :text, label: false
+            .col-sm-12 = f.input :message, as: :text, label: false, placeholder: 'Message'
+        .col-sm-6
           .row
-            .col-sm-12.text-center = f.submit 'Send!', class: 'btn btn-primary'
-      
-      .col-sm-7
-        .row
-          .col-sm-6
-            | Herengracht 504 (unit 2.2)
-            br
-            | 1017 CB Amsterdam
-          .col-sm-6
-            | +316 - 55 128 199 
-            br
-            a href="mailto:rene@weteling.com" rene@weteling.com
-        br
-        .row
-          .col-sm-6
-            | IBAN: NL38 KNAB 0723 0772 82
-            br
-            | KvK Rotterdam: 24403159
-            br
-            | BTW no: NL1997.22.286.B02
+            .col-sm-6
+              | Herengracht 504 (unit 2.2)
+              br
+              | 1017 CB Amsterdam
+            .col-sm-6
+              | +316 - 55 128 199 
+              br
+              a href="mailto:rene@weteling.com" rene@weteling.com
+          br
+          .row
+            .col-sm-6
+              | IBAN: NL38 KNAB 0723 0772 82
+              br
+              | KvK Rotterdam: 24403159
+              br
+              | BTW no: NL1997.22.286.B02
 
-          .col-sm-6
-            a target="_new" href="https://github.com/reneweteling"
-              i.fa.fa-github aria-hidden="true"
-            a href="skype:reneweteling?chat"
-              i.fa.fa-skype aria-hidden="true"
-            a target="_new" href="https://www.facebook.com/reneweteling"
-              i.fa.fa-facebook-square aria-hidden="true"
-            a target="_new" href="https://twitter.com/reneweteling"
-              i.fa.fa-twitter-square aria-hidden="true"
-            a target="_new" href="https://www.linkedin.com/in/reneweteling/"
-              i.fa.fa-linkedin-square aria-hidden="true"
-            br
-            | reneweteling
+            .col-sm-6
+              a target="_new" href="https://github.com/reneweteling"
+                i.fa-2x.fa.fa-github aria-hidden="true"
+              a href="skype:reneweteling?chat"
+                i.fa-2x.fa.fa-skype aria-hidden="true"
+              a target="_new" href="https://www.facebook.com/reneweteling"
+                i.fa-2x.fa.fa-facebook-square aria-hidden="true"
+              a target="_new" href="https://twitter.com/reneweteling"
+                i.fa-2x.fa.fa-twitter-square aria-hidden="true"
+              a target="_new" href="https://www.linkedin.com/in/reneweteling/"
+                i.fa-2x.fa.fa-linkedin-square aria-hidden="true"
+              br
+              | reneweteling
 
+
+        
+      .row
+        .col-sm-6.text-center = f.submit 'Send!', class: 'btn btn-primary'
+    
 
 
 
@@ -100,6 +103,9 @@ coffee:
     $.stellar
       horizontalScrolling: false,
       verticalOffset: 0
+
+    $(window).resize ->
+      $.stellar('refresh')
     
     
 
