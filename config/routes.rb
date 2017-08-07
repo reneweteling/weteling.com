@@ -6,10 +6,10 @@ Rails.application.routes.draw do
 
   resources :graph
 
-  root to: redirect('/admin')
+  # root to: redirect('/admin')
 
   get :home, to: 'site#home'
 
-  # root to: 'site#home'
+  root to: 'site#home'
 
 end
