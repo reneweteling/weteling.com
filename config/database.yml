@@ -1,14 +1,9 @@
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  port: 3306
-  pool: 5
-  timeout: 5000
-  secure_auth: false
-  username: <%= ENV['DB_USER'] || '' %>
-  password: <%= ENV['DB_PASS'] || '' %>
-  database: <%= ENV['DB_NAME'] || 'uren' %>
-  host: <%= ENV['DB_HOST'] || 'localhost' %>
+  adapter: postgresql
+  host: <%= ENV['PGHOST'] %>
+  username: <%= ENV['PGUSER'] %>
+  password: <%= ENV['PGPASSWORD'] %>
+  database: <%= ENV['PGDATABASE'] %>
   
 development:
   <<: *default

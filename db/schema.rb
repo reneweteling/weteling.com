@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20170807143410) do
 
-  create_table "active_admin_comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
     t.string "resource_id", null: false
@@ -26,23 +29,23 @@ ActiveRecord::Schema.define(version: 20170807143410) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
-  create_table "blogs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "blogs", force: :cascade do |t|
     t.string "title"
-    t.timestamp "date"
+    t.datetime "date"
     t.text "content"
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "blogs_tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "blogs_tags", force: :cascade do |t|
     t.bigint "blog_id"
     t.bigint "tag_id"
     t.index ["blog_id"], name: "index_blogs_tags_on_blog_id"
     t.index ["tag_id"], name: "index_blogs_tags_on_tag_id"
   end
 
-  create_table "clients", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "clients", id: :serial, force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "name", null: false
     t.string "first_name"
@@ -65,7 +68,7 @@ ActiveRecord::Schema.define(version: 20170807143410) do
     t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
-  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "contacts", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "subject"
@@ -74,7 +77,7 @@ ActiveRecord::Schema.define(version: 20170807143410) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "hours", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "hours", id: :serial, force: :cascade do |t|
     t.integer "project_id", null: false
     t.integer "rate_id", null: false
     t.date "date", null: false
@@ -87,7 +90,7 @@ ActiveRecord::Schema.define(version: 20170807143410) do
     t.index ["rate_id"], name: "index_hours_on_rate_id"
   end
 
-  create_table "projects", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "projects", id: :serial, force: :cascade do |t|
     t.integer "client_id", null: false
     t.string "name", null: false
     t.text "description"
@@ -96,14 +99,14 @@ ActiveRecord::Schema.define(version: 20170807143410) do
     t.index ["client_id"], name: "index_projects_on_client_id"
   end
 
-  create_table "projects_users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "projects_users", force: :cascade do |t|
     t.bigint "project_id", null: false
     t.bigint "user_id", null: false
     t.index ["project_id"], name: "index_projects_users_on_project_id"
     t.index ["user_id"], name: "index_projects_users_on_user_id"
   end
 
-  create_table "rates", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "rates", id: :serial, force: :cascade do |t|
     t.integer "user_id", null: false
     t.string "name", null: false
     t.text "description"
@@ -113,13 +116,13 @@ ActiveRecord::Schema.define(version: 20170807143410) do
     t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
-  create_table "tags", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "tags", force: :cascade do |t|
     t.string "title"
     t.bigint "tag_id"
     t.index ["tag_id"], name: "index_tags_on_tag_id"
   end
 
-  create_table "users", id: :integer, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "name", null: false
     t.string "first_name"
     t.string "last_name"
@@ -150,9 +153,12 @@ ActiveRecord::Schema.define(version: 20170807143410) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "blogs_tags", "blogs"
+  add_foreign_key "blogs_tags", "tags"
   add_foreign_key "clients", "users"
   add_foreign_key "hours", "projects"
   add_foreign_key "hours", "rates"
   add_foreign_key "projects", "clients"
   add_foreign_key "rates", "users"
+  add_foreign_key "tags", "tags"
 end
