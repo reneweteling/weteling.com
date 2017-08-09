@@ -1,10 +1,10 @@
 source 'https://rubygems.org'
-ruby "2.4.1"
+ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1'
 # storage
-gem "pg"
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -18,7 +18,7 @@ gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # cache store
-gem "redis-rails"
+gem 'redis-rails'
 
 gem 'pdfkit'
 gem 'graphql'
@@ -33,10 +33,10 @@ gem 'simple_form'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 
-source "https://rails-assets.org" do
+source 'https://rails-assets.org' do
   gem 'rails-assets-stellar'
   gem 'rails-assets-jquery-migrate'
-  gem "rails-assets-tether"
+  gem 'rails-assets-tether'
 end
 
 group :development, :test do
