@@ -2,9 +2,6 @@ UserType = GraphQL::ObjectType.define do
   name "User"
   description "Type for User object"
 
-  interfaces [::GraphQL::Relay::Node.interface]
-
-  global_id_field :id
   connection :clients, ClientType.connection_type, "Association to many `clients` on User"
   connection :hours, HourType.connection_type, "Association to many `hours` on User"
   connection :projects, ProjectType.connection_type, "Association to many `projects` on User"
