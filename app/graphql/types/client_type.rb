@@ -2,9 +2,7 @@ ClientType = GraphQL::ObjectType.define do
   name "Client"
   description "Type for Client object"
 
-  interfaces [::GraphQL::Relay::Node.interface]
-
-  global_id_field :id
+  field :projects, types[ProjectType]
   field :address, GraphTypes::STRING, "Property `address` for Client"
   field :bic, GraphTypes::STRING, "Property `bic` for Client"
   field :city, GraphTypes::STRING, "Property `city` for Client"

@@ -22,6 +22,7 @@ gem 'redis-rails'
 
 gem 'pdfkit'
 gem 'graphql'
+gem 'graphql-batch'
 gem 'activeadmin'
 gem 'activeadmin_addons'
 gem 'devise'
@@ -52,7 +53,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'graphql-rails-schemaker'
 
   # capistrano
   gem 'capistrano', '~> 3.6'
@@ -60,3 +60,4 @@ group :development do
   gem 'capistrano-rbenv', '~> 2.0'
   gem 'capistrano-passenger'
 end
+gem 'graphiql-rails', group: :development

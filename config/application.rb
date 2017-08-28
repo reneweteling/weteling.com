@@ -14,7 +14,7 @@ module WetelingCom
     config.i18n.default_locale = :nl
     # config.autoload_paths << Rails.root.join('app', 'graph')
     # config.autoload_paths << Rails.root.join('app', 'graph', 'types')
-    config.autoload_paths += Dir[Rails.root.join('app', 'graph', '{**}')]
+    config.autoload_paths += Dir[Rails.root.join('app', 'graphql', '{**}')]
     config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
 
     config.sass.preferred_syntax = :sass
