@@ -2,15 +2,17 @@ class CreateBlogs < ActiveRecord::Migration[5.1]
   def change
     
     create_table :blogs do |t|
-      t.string :title
+      t.string :name
+      t.string :slug
       t.timestamp :date
       t.text :content
       t.string :image
+      t.boolean :published, null: false, default: true
       t.timestamps
     end
 
     create_table :tags do |t|
-      t.string :title
+      t.string :name
       t.belongs_to :tag, foreign_key: true
     end
 

@@ -26,7 +26,6 @@ gem 'airbrake', '~> 6.2'
 
 # Nice templates
 gem 'slim-rails', '3.1.1' # froze at this versino, issue with ckeditor
-gem 'font-awesome-sass', '~> 4.7.0'
 gem 'ckeditor'
 gem 'mini_magick'
 
@@ -49,11 +48,11 @@ gem 'simple_form'
 
 # Assets
 gem 'font-awesome-sass', '~> 4.7.0'
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '~> 4.0.0.beta'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-stellar'
   gem 'rails-assets-jquery-migrate'
-  gem 'rails-assets-tether'
 end
 
 group :development, :test do

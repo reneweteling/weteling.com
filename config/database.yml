@@ -7,11 +7,11 @@ default: &default
   
 development:
   <<: *default
-  database: uren-dev
+  database: <%= ENV['PGDATABASE'] %>-dev
 
 test:
   <<: *default
-  database: uren-test
+  database: <%= ENV['PGDATABASE'] %>-test
 
 production:
   <<: *default
