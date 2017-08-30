@@ -19,25 +19,40 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 # cache store
 gem 'redis-rails'
+# Move our uploads to AWS
+gem 'carrierwave-aws'
+# error reporting
+gem 'airbrake', '~> 6.2'
 
-gem 'pdfkit'
+# Nice templates
+gem 'slim-rails', '3.1.1' # froze at this versino, issue with ckeditor
+gem 'ckeditor'
+gem 'mini_magick'
+
+# Graphql
 gem 'graphql'
 gem 'graphql-batch'
+
+# Activeadmin
 gem 'activeadmin'
 gem 'activeadmin_addons'
 gem 'devise'
-gem 'slim-rails'
 gem 'country_select'
 gem 'cancancan', '~> 2.0'
+
+# Pdfs
+gem 'pdfkit'
+
+# Forms
 gem 'simple_form'
 
+# Assets
 gem 'font-awesome-sass', '~> 4.7.0'
-gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'bootstrap', '~> 4.0.0.beta'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-stellar'
   gem 'rails-assets-jquery-migrate'
-  gem 'rails-assets-tether'
 end
 
 group :development, :test do
@@ -59,5 +74,6 @@ group :development do
   gem 'capistrano-rails', '~> 1.2'
   gem 'capistrano-rbenv', '~> 2.0'
   gem 'capistrano-passenger'
+
+  gem 'graphiql-rails'
 end
-gem 'graphiql-rails', group: :development

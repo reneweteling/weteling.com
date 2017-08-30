@@ -8,24 +8,26 @@ html
     = csrf_meta_tags
     
   body
-    nav.navbar.navbar-toggleable-md.fixed-top
-      button.navbar-toggler.navbar-toggler-right aria-controls="navbarSupportedContent" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarSupportedContent" data-toggle="collapse" type="button" 
-        span.navbar-toggler-icon
-      
+    nav.navbar.navbar-expand-md.fixed-top
       .container
         .row   
-          .col-sm-4
+          .col-md-4
             a.navbar-brand href="/"
               = image_tag 'logo_grey_complete.png'
-          .col-sm-8
+            button.navbar-toggler.float-right type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+              span.navbar-toggler-icon
+
+          .col-md-8
+
+            
             #navbarSupportedContent.collapse.navbar-collapse
               .row
-                .col-sm-4
+                .col-md-4
                   form.form-inline
-                    input.col-sm-12.form-control type="text" placeholder=="&#xF002;"
+                    input.col-md-12.form-control type="text" placeholder=="&#xF002;"
                     
 
-                .col-sm-6.offset-sm-2
+                .col-md-6.offset-md-2
                   ul.navbar-nav
                     li.nav-item.active
                       a.nav-link href="#home" Home

@@ -1,8 +1,8 @@
-#= require jquery
+#= require jquery3
 #= require jquery-migrate
 #= require jquery_ujs
 #= require turbolinks
-#= require tether
+#= require popper
 #= require bootstrap
 #= require stellar
 

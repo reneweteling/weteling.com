@@ -1,16 +1,16 @@
 
   
-#home.section data-stellar-background-ratio="0.5"
+#home.section.d-flex data-stellar-background-ratio="0.5"
   .stripes.stripe-two data-stellar-ratio="1.9"
-  .container
+  .container.align-self-center
     .heading
       h1.big Hello,
       h1 I'm René Weteling, <br />web enthusias <br />entrepreneur &amp; joker.
 
 
-#about-me.section data-stellar-background-ratio="0.5"
+#about-me.section.d-flex data-stellar-background-ratio="0.5"
   .stripes.stripe-two data-stellar-ratio="0.9"
-  .container
+  .container.align-self-center
     .heading
       h1 01
       h2 about weteling support
@@ -18,9 +18,9 @@
     p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quam tellus, euismod id risus a, pretium mattis nibh. Integer nec condimentum leo. Vestibulum ultricies massa in augue facilisis fermentum. Donec et ultricies risus. Maecenas commodo convallis neque eget ornare. Aenean ac malesuada enim, at rhoncus eros. Cras mattis fringilla diam nec fringilla. Sed ut posuere orci.
     p Duis interdum euismod bibendum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nunc ultrices lorem at bibendum rutrum. Quisque euismod ante ac lacus tempor, vitae tincidunt leo elementum. Mauris a pretium ligula. Fusce ut erat tristique, tempor enim eget, molestie est. Aenean vehicula vehicula leo. Aenean sodales eget ante et aliquet. Mauris nibh lorem, fermentum non ante at, pretium rutrum nibh. Proin facilisis massa sed vestibulum hendrerit. Aliquam ullamcorper libero ut consequat malesuada. Pellentesque maximus, neque et blandit pellentesque, libero nisi lacinia metus, id ultrices orci nibh vel augue. Sed auctor ex nec ipsum scelerisque, at eleifend velit pellentesque. Phasellus ac libero enim. Donec eu venenatis lorem, suscipit interdum sem.
 
-#projects.section data-stellar-background-ratio="0.5"
+#projects.section.d-flex data-stellar-background-ratio="0.5"
   .stripes.stripe-one data-stellar-ratio="1.6"
-  .container
+  .container.align-self-center
     .heading
       h1 03
       h2 latest projects
@@ -31,15 +31,15 @@
         h2 Example project #{t}
         = image_tag 'http://via.placeholder.com/200x200'
         
-#blog.section data-stellar-background-ratio="0.5"
+#blog.section.d-flex data-stellar-background-ratio="0.5"
   .stripes.stripe-two data-stellar-ratio="1.6"
-  .container  
+  .container.align-self-center
     .heading
       h1 04
       h2 blog
 
-#contact.section data-stellar-background-ratio="0.5"
-  .container
+#contact.section.d-flex data-stellar-background-ratio="0.5"
+  .container.align-self-center
     .row
       .col-sm-5
         .heading
@@ -124,7 +124,7 @@ coffee:
 
       # Enable or disable the two types of parallax
       parallaxBackgrounds: true,
-      parallaxElements: true,
+      parallaxElements: false,
 
       # Hide parallax elements that move outside the viewport
       hideDistantElements: true,
