@@ -15,15 +15,15 @@ ActiveRecord::Schema.define(version: 20170824121536) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "active_admin_comments", id: :bigint, default: nil, force: :cascade do |t|
-    t.string "namespace", limit: 255
+  create_table "active_admin_comments", force: :cascade do |t|
+    t.string "namespace"
     t.text "body"
-    t.string "resource_id", limit: 255, null: false
-    t.string "resource_type", limit: 255, null: false
-    t.string "author_type", limit: 255
+    t.string "resource_id", null: false
+    t.string "resource_type", null: false
+    t.string "author_type"
     t.bigint "author_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
@@ -59,24 +59,24 @@ ActiveRecord::Schema.define(version: 20170824121536) do
     t.index ["type"], name: "index_ckeditor_assets_on_type"
   end
 
-  create_table "clients", id: :integer, default: nil, force: :cascade do |t|
+  create_table "clients", id: :serial, force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "name", limit: 255, null: false
-    t.string "first_name", limit: 255
-    t.string "last_name", limit: 255
-    t.string "department", limit: 255
-    t.string "address", limit: 255
-    t.string "postalcode", limit: 255
-    t.string "city", limit: 255
-    t.string "country", limit: 255
-    t.string "email", limit: 255
-    t.string "iban", limit: 255
-    t.string "bic", limit: 255
-    t.string "iban_name", limit: 255
-    t.string "coc_no", limit: 255
-    t.string "tax_no", limit: 255
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "name", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "department"
+    t.string "address"
+    t.string "postalcode"
+    t.string "city"
+    t.string "country"
+    t.string "email"
+    t.string "iban"
+    t.string "bic"
+    t.string "iban_name"
+    t.string "coc_no"
+    t.string "tax_no"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.bigint "default_rate_id"
     t.index ["default_rate_id"], name: "index_clients_on_default_rate_id"
     t.index ["user_id"], name: "index_clients_on_user_id"
@@ -91,42 +91,42 @@ ActiveRecord::Schema.define(version: 20170824121536) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "hours", id: :integer, default: nil, force: :cascade do |t|
+  create_table "hours", id: :serial, force: :cascade do |t|
     t.integer "project_id", null: false
     t.integer "rate_id", null: false
     t.date "date", null: false
-    t.decimal "total_hours", precision: 4, scale: 2, null: false
+    t.decimal "total_hours", precision: 4, scale: 2, default: "0.0", null: false
     t.text "description", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.decimal "total_sno_hours", precision: 4, scale: 2, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.decimal "total_sno_hours", precision: 4, scale: 2, default: "0.0", null: false
     t.index ["project_id"], name: "index_hours_on_project_id"
     t.index ["rate_id"], name: "index_hours_on_rate_id"
   end
 
-  create_table "projects", id: :integer, default: nil, force: :cascade do |t|
+  create_table "projects", id: :serial, force: :cascade do |t|
     t.integer "client_id", null: false
-    t.string "name", limit: 255, null: false
+    t.string "name", null: false
     t.text "description"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_projects_on_client_id"
   end
 
-  create_table "projects_users", id: :bigint, default: nil, force: :cascade do |t|
+  create_table "projects_users", force: :cascade do |t|
     t.bigint "project_id", null: false
     t.bigint "user_id", null: false
     t.index ["project_id"], name: "index_projects_users_on_project_id"
     t.index ["user_id"], name: "index_projects_users_on_user_id"
   end
 
-  create_table "rates", id: :integer, default: nil, force: :cascade do |t|
+  create_table "rates", id: :serial, force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "name", limit: 255, null: false
+    t.string "name", null: false
     t.text "description"
     t.decimal "rate", precision: 5, scale: 2
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
@@ -136,33 +136,33 @@ ActiveRecord::Schema.define(version: 20170824121536) do
     t.index ["tag_id"], name: "index_tags_on_tag_id"
   end
 
-  create_table "users", id: :integer, default: nil, force: :cascade do |t|
-    t.string "name", limit: 255, null: false
-    t.string "first_name", limit: 255
-    t.string "last_name", limit: 255
-    t.string "department", limit: 255
-    t.string "address", limit: 255
-    t.string "postalcode", limit: 255
-    t.string "city", limit: 255
-    t.string "country", limit: 255
-    t.string "email", limit: 255, null: false
-    t.string "iban", limit: 255
-    t.string "bic", limit: 255
-    t.string "iban_name", limit: 255
-    t.string "coc_no", limit: 255
-    t.string "tax_no", limit: 255
-    t.string "encrypted_password", limit: 255, null: false
-    t.string "reset_password_token", limit: 255
-    t.datetime "reset_password_sent_at", precision: 6
-    t.datetime "remember_created_at", precision: 6
-    t.integer "sign_in_count", null: false
-    t.datetime "current_sign_in_at", precision: 6
-    t.datetime "last_sign_in_at", precision: 6
-    t.string "current_sign_in_ip", limit: 255
-    t.string "last_sign_in_ip", limit: 255
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.integer "role"
+  create_table "users", id: :serial, force: :cascade do |t|
+    t.string "name", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "department"
+    t.string "address"
+    t.string "postalcode"
+    t.string "city"
+    t.string "country"
+    t.string "email", default: "", null: false
+    t.string "iban"
+    t.string "bic"
+    t.string "iban_name"
+    t.string "coc_no"
+    t.string "tax_no"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "role", default: 0
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
