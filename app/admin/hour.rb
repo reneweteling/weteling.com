@@ -19,6 +19,9 @@ ActiveAdmin.register Hour do
   filter :description
   filter :date
 
+  scope :all, default: true
+  scope(:today) {|scope| scope.where(date: Date.today) }
+
   index do 
     selectable_column
     id_column
