@@ -2,7 +2,7 @@ PDFKit.configure do |config|
   config.default_options = {
     page_size: 'A4',
     orientation: 'Portrait',
-    print_media_type: true,
+    print_media_type: false,
     dpi: 300,
     load_error_handling: 'ignore',
     load_media_error_handling: 'ignore',
