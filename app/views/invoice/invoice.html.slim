@@ -21,6 +21,8 @@ sass:
       thead
         tr, th
           border-bottom: 1px solid black
+
+- has_sno = hours.sum(:total_sno_hours) != 0
       
 .container
   .row
@@ -66,21 +68,24 @@ sass:
           tr
             th Uren verantwoording #{hours.first.date} - #{hours.last.date}
             th.text-right Datum
-            th.text-right S&O
+            - if has_sno
+              th.text-right S&O
             th.text-right Uren
         tbody
           - hours.each do |h|
             tr
               td = simple_format h.description
               td.nowrap.text-right = l h.date, format: :short
-              td.text-right = h.total_sno_hours
+              - if has_sno
+                td.text-right = h.total_sno_hours
               td.text-right = h.total_hours
 
         tfoot
            tr
+            th Totaal
             th 
-            th 
-            th.text-right = hours.sum(:total_sno_hours)
+            - if has_sno
+              th.text-right = hours.sum(:total_sno_hours)
             th.text-right = hours.sum(:total_hours)
 
             
