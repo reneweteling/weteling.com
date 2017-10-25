@@ -13,14 +13,22 @@ sass:
   .table-container
     margin-top: 50px
     table
+      tr.header
+        th, td
+          background-color: white
+          border-bottom: 1px solid black
+      
       th, td
-        font-size: 14px
+        font-size: 12px
         p
           margin: 0px
+
+      tr.footer
+        border-top: 2px solid black
+        th, td
+          background-color: white
+      
         
-      thead
-        tr, th
-          border-bottom: 1px solid black
 
 - has_sno = hours.sum(:total_sno_hours) != 0
       
@@ -64,24 +72,23 @@ sass:
   .row.table-container
     .col-12
       table.table.table-striped.table-bordered.table-sm.table-responsive
-        thead
-          tr
+        tbody
+          tr.header
             th Uren verantwoording #{hours.first.date} - #{hours.last.date}
             th.text-right Datum
             - if has_sno
               th.text-right S&O
             th.text-right Uren
-        tbody
-          - hours.each do |h|
-            tr
+        
+          - hours.each.with_index do |h, i|
+            tr class=('border' if i == 0)
               td = simple_format h.description
               td.nowrap.text-right = l h.date, format: :short
               - if has_sno
                 td.text-right = h.total_sno_hours
               td.text-right = h.total_hours
-
-        tfoot
-           tr
+        
+          tr.footer
             th Totaal
             th 
             - if has_sno
