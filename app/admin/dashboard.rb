@@ -12,8 +12,7 @@ ActiveAdmin.register_page "Dashboard" do
     return render html: html if params[:type] == 'html'
 
     kit = PDFKit.new(html, :page_size => 'A4', :orientation => 'Portrait')
-    # kit.stylesheets << Rails.root.join('vendor/assets/custom/bootstrap/css/bootstrap.min.css')
-    send_data kit.to_pdf, filename: "#{project.to_s}-#{date.to_s.parameterize}.pdf", type: 'application/pdf'
+    send_data kit.to_pdf, filename: "#{project.to_s}-#{start_date.to_s.parameterize}-#{end_date.to_s.parameterize}.pdf", type: 'application/pdf'
   end
 
   controller do 
@@ -77,8 +76,8 @@ ActiveAdmin.register_page "Dashboard" do
 
               hours = p.hours.where(date: start_date..end_date)
 
-              # td p.client 
-              td "#{start_date.to_date} - #{end_date.to_date}"
+              td p.client 
+              # td "#{start_date.to_date} - #{end_date.to_date}"
               td p.name
               td hours.sum(:total_hours)
               td hours.map(&:rate).uniq.to_sentence

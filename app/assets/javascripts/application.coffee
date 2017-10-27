@@ -5,6 +5,7 @@
 #= require popper
 #= require bootstrap
 #= require stellar
+#= require waypoints
 
 jQuery.migrateMute = true
 
@@ -33,4 +34,22 @@ $ ->
             # Adding tabindex for elements not focusable
             $target.focus()
             # Set focus again
+
+  # Waypoints
+  new Waypoint
+    element: $('#home h1')[0],
+    handler: (direction) -> 
+      section = $('#home')
+      $('.section').not(section).removeClass 'active'
+      $(section).addClass 'active' 
+      console.log("Scrolled to section #{ $(section).attr('id') }")
+
+      
+  $('.section').each (i, section) ->
+    new Waypoint
+      element: section,
+      handler: (direction) -> 
+        $('.section').not(section).removeClass 'active'
+        $(section).addClass 'active' 
+        console.log("Scrolled to section #{ $(section).attr('id') }")
           

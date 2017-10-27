@@ -3,6 +3,7 @@
 @import "font-awesome"
 @import url('https://fonts.googleapis.com/css?family=Montserrat')
 
+
 $font-color: white
 $link-color: lightgrey
 $link-active-color: white
@@ -13,6 +14,7 @@ html, body
   margin: 0px
   background-color: black
   color: white
+  text-shadow: 1px 1px 6px black, -1px -1px 6px black
 
   ::-webkit-input-placeholder
     text-align: center  
@@ -64,6 +66,7 @@ html, body
       font-size: 60px
 
   .section
+    filter: #{'grayscale(100%)'}
     position: relative
     width: 100%
     min-height: 100%
@@ -71,13 +74,23 @@ html, body
     background-size: cover
     background-position: 50% 50%
     background-repeat: no-repeat
+    transition: filter .5s ease-in-out
+
+    &.active
+      filter: #{'grayscale(60%)'} 
     
     .heading
       margin-bottom: 4rem
-
     &#home
       background-image: asset_url('bg_home.jpg')
-        
+    &#about-me-prof
+      background-image: asset_url('bg_about_me_prof.jpg')
+    &#about-me
+      background-image: asset_url('bg_about_me.jpg')
+    &#projects
+      background-image: asset_url('bg_projects.jpg')
+    &#blog
+      background-image: asset_url('bg_blog.jpg')
     &#contact
       background-image: asset_url('bg_contact.jpg')
       
