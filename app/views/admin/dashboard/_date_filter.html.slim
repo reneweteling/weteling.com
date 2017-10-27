@@ -1,0 +1,9 @@
+form.filter_form method="get"
+  #q_date_input.date_range.input.optional.stringish.filter_form_field.filter_date_range
+    label.label Date
+    input#q_date_gteq.datepicker maxlength="10" name="filter[start]" placeholder="From" size="12" type="text" value=@filter.start
+    input#q_date_lteq.datepicker maxlength="10" name="filter[end]" placeholder="To" size="12" type="text" value=@filter.end
+  .buttons
+    input data-disable-with="Filter" name="commit" type="submit" value="Filter" /
+    a.clear_filters_btn href="/admin/dashboard"  Maak Filters Ongedaan
+    input#hidden_active_admin_order name="order" type="hidden" value="id_desc" /

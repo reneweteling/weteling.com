@@ -5,6 +5,10 @@ ActiveAdmin.register Hour do
   permit!
 
   controller do
+    def scoped_collection
+      super.includes :rate, project: [:client]
+    end
+
     def build_new_resource
       record = super
       record.date ||= Date.today
@@ -12,6 +16,10 @@ ActiveAdmin.register Hour do
       record.rate ||= Hour.last.rate
       record
     end
+  end
+
+  action_item :new_hour, only: :show do
+    link_to 'New hour', new_admin_hour_path
   end
 
   filter :client
@@ -30,7 +38,9 @@ ActiveAdmin.register Hour do
     column :date
     column :total_hours
     column :total_sno_hours
-    column :description
+    column :description do |row|
+      simple_format row.description
+    end
     actions
   end
 
@@ -41,7 +51,9 @@ ActiveAdmin.register Hour do
       row :date
       row :total_hours
       row :total_sno_hours
-      row :description
+      row :description do |row|
+        simple_format row.description
+      end
     end
   end
 

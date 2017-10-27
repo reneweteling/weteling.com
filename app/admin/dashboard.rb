@@ -2,11 +2,12 @@ ActiveAdmin.register_page "Dashboard" do
   menu priority: 1
   
   page_action :invoice, method: :get do
-    date = params[:date].to_date
+    start_date = params[:start_date].to_date
+    end_date = params[:end_date].to_date
     project = Project.find(params[:project_id])
-    hours = project.hours.where(date: date.at_beginning_of_month..date.at_end_of_month).orderd
+    hours = project.hours.where(date: start_date..end_date).orderd
 
-    html = render_to_string template: '/invoice/invoice', locals: {project: project, hours: hours, date: date}, layout: 'pdf'
+    html = render_to_string template: '/invoice/invoice', locals: {project: project, hours: hours, start_date: start_date, end_date: end_date}, layout: 'pdf'
 
     return render html: html if params[:type] == 'html'
 
@@ -15,10 +16,42 @@ ActiveAdmin.register_page "Dashboard" do
     send_data kit.to_pdf, filename: "#{project.to_s}-#{date.to_s.parameterize}.pdf", type: 'application/pdf'
   end
 
+  controller do 
+    before_action :set_filter
+
+    def set_filter
+      @filter = OpenStruct.new( start: (Date.today - 2.months).at_beginning_of_month, end: Date.today.at_end_of_month )
+
+      if params[:filter].present?
+        p = params.require(:filter).permit(:start, :end)
+        @filter.start = Date.parse(p[:start])
+        @filter.end = Date.parse(p[:end])
+      end
+
+    end
+
+  end
+
+  
+  sidebar :date_filter do 
+    render partial: 'date_filter'
+  end
+
   content do
-    current = Time.now
-    first = Hour.minimum(:date).at_beginning_of_month
+
+    @filter = OpenStruct.new( start: (Date.today - 2.months).at_beginning_of_month, end: Date.today.at_end_of_month )
     
+    if params[:filter].present?
+      p = params.require(:filter).permit(:start, :end)
+      @filter.start = Date.parse(p[:start])
+      @filter.end = Date.parse(p[:end])
+    end
+    
+    hours = Hour.where(date: @filter.start..@filter.end)
+
+    current = Time.now
+    first = hours.minimum(:date).at_beginning_of_month
+
     while current >= first do
 
       h2 current.strftime('%B %Y')
@@ -39,14 +72,19 @@ ActiveAdmin.register_page "Dashboard" do
           project_ids = Hour.where(date: current.at_beginning_of_month..current.at_end_of_month).select(:project_id).distinct().pluck(:project_id)
           Project.includes(:client, :hours => [:rate]).where(id: project_ids).accessible_by(current_ability).order('clients.name').order(:name).each do |p|
             tr class: (i%2 == 1 ? 'even' : 'odd') do 
-              hours = p.hours.where(date: current.at_beginning_of_month..current.at_end_of_month)
-              td p.client 
+              start_date = current.at_beginning_of_month >= @filter.start ? current.at_beginning_of_month : @filter.start
+              end_date = current.at_end_of_month <= @filter.end ? current.at_end_of_month : @filter.end
+
+              hours = p.hours.where(date: start_date..end_date)
+
+              # td p.client 
+              td "#{start_date.to_date} - #{end_date.to_date}"
               td p.name
               td hours.sum(:total_hours)
               td hours.map(&:rate).uniq.to_sentence
               td number_to_currency(hours.map{|h| h.total_hours * h.rate.rate }.inject(:+))
-              td link_to(icon('file-pdf-o'), admin_dashboard_invoice_path(project_id: p.id, date: current.at_beginning_of_month.to_date, type: :pdf)) + " - " +
-                link_to( icon('eye'), admin_dashboard_invoice_path(project_id: p.id, date: current.at_beginning_of_month.to_date, type: :html))
+              td link_to(icon('file-pdf-o'), admin_dashboard_invoice_path(project_id: p.id, end_date: end_date.to_date, start_date: start_date.to_date, type: :pdf)) + " - " +
+                 link_to( icon('eye'),       admin_dashboard_invoice_path(project_id: p.id, end_date: end_date.to_date, start_date: start_date.to_date, type: :html))
               i += 1
             end
           end
