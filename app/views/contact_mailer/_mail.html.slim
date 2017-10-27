@@ -1,0 +1,14 @@
+h3 Mail from: @contact_form.name
+
+p 
+  strong Subject &nbsp;
+  = @contact_form.subject
+
+p 
+  strong Email &nbsp;
+  = @contact_form.email
+
+p 
+  string Message
+
+p = simple_format @contact_form.message

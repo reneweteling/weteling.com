@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   end
 
   get "_ah/health", to: "application#health_check"
+
+  post :contact, to: 'site#contact'
   
   root to: 'site#home'
+
 end

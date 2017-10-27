@@ -1,0 +1,57 @@
+.container.align-self-center
+  .row
+    .col-sm-5
+      .heading
+        h1 Ask me anything,<br>anytime.
+
+  = simple_form_for(@contact_form, url: contact_path, remote: true) do |f|
+    .row
+      .col-sm-6
+        .row
+          .col-sm-6 = f.input :name, label: false, placeholder: 'Name'
+          .col-sm-6 = f.input :email, label: false, placeholder: 'Email'
+        .row
+          .col-sm-12 = f.input :subject, label: false, placeholder: 'Subject'
+    .row
+      .col-sm-6
+        .row
+          .col-sm-12 = f.input :message, as: :text, label: false, placeholder: 'Message'
+      .col-sm-6
+        .row
+          .col-sm-6
+            | Herengracht 504 (unit 2.2)
+            br
+            | 1017 CB Amsterdam
+          .col-sm-6
+            | +316 - 55 128 199 
+            br
+            a href="mailto:rene@weteling.com" rene@weteling.com
+        br
+        .row
+          .col-sm-6
+            | IBAN: NL38 KNAB 0723 0772 82
+            br
+            | KvK Rotterdam: 24403159
+            br
+            | BTW no: NL1997.22.286.B02
+
+          .col-sm-6
+            a target="_new" href="https://github.com/reneweteling"
+              i.fa-2x.fa.fa-github aria-hidden="true"
+            a href="skype:reneweteling?chat"
+              i.fa-2x.fa.fa-skype aria-hidden="true"
+            a target="_new" href="https://www.facebook.com/reneweteling"
+              i.fa-2x.fa.fa-facebook-square aria-hidden="true"
+            a target="_new" href="https://twitter.com/reneweteling"
+              i.fa-2x.fa.fa-twitter-square aria-hidden="true"
+            a target="_new" href="https://www.linkedin.com/in/reneweteling/"
+              i.fa-2x.fa.fa-linkedin-square aria-hidden="true"
+            br
+            | reneweteling
+      
+    .row
+      .col-sm-6.text-center 
+        = f.submit 'Send!', class: 'btn btn-primary'
+        - if @sent
+          br
+          |Thanks for messaging me, i'll get back to you shortly!

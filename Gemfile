@@ -50,6 +50,9 @@ gem 'simple_form'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem 'bootstrap', '~> 4.0.0.beta'
 
+# validations
+gem 'rails_validations', '~> 1.2'
+
 source 'https://rails-assets.org' do
   gem 'rails-assets-stellar'
   gem 'rails-assets-jquery-migrate'
