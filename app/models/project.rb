@@ -3,9 +3,12 @@ class Project < ApplicationRecord
   belongs_to :client
   has_one :user, through: :client
 
+  mount_uploader :image, BaseImageUploader
+  acts_as_list
+
   validates_presence_of :client, :name
 
-  scope :orderd, -> { order(:id, :asc) }
+  scope :orderd, -> { order(:position, :asc) }
 
   def to_s
     "#{client} - #{name}"

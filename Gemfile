@@ -26,6 +26,7 @@ gem 'carrierwave-aws'
 # error reporting
 gem 'airbrake', '~> 6.2'
 
+
 # Nice templates
 gem 'slim-rails', '3.1.1' # froze at this versino, issue with ckeditor
 gem 'ckeditor'
@@ -38,6 +39,8 @@ gem 'graphql-batch'
 # Activeadmin
 gem 'activeadmin'
 gem 'activeadmin_addons'
+gem 'activeadmin-sortable'
+gem 'acts_as_list'
 gem 'devise'
 gem 'country_select'
 gem 'cancancan', '~> 2.0'
