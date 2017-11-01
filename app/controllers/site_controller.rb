@@ -1,5 +1,6 @@
 class SiteController < ApplicationController
   def home
+    @projects = Project.limit(5).for_site
     @contact_form = ContactForm.new
   end
 

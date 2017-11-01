@@ -14,7 +14,7 @@ html, body
   margin: 0px
   background-color: black
   color: white
-  text-shadow: 1px 1px 6px black, -1px -1px 6px black
+  
 
   ::-webkit-input-placeholder
     text-align: center  
@@ -66,33 +66,48 @@ html, body
       font-size: 60px
 
   .section
-    filter: #{'grayscale(100%)'}
     position: relative
     width: 100%
     min-height: 100%
-    background-attachment: fixed
-    background-size: cover
-    background-position: 50% 50%
-    background-repeat: no-repeat
-    transition: filter .5s ease-in-out
+    text-shadow: 1px 1px 6px black, -1px -1px 6px black
 
-    &.active
-      filter: #{'grayscale(60%)'} 
-    
     .heading
       margin-bottom: 4rem
+
+    &.active
+      .background
+        filter: #{'grayscale(60%)'} 
+    
+    .background
+      transition: filter .5s ease-in-out
+      filter: #{'grayscale(100%) blur(5px)'}
+      position: absolute
+      height: 100%
+      width: 100%
+      z-index: -1
+      background-attachment: fixed
+      background-size: cover
+      background-position: 50% 50%
+      background-repeat: no-repeat
+
     &#home
-      background-image: asset_url('bg_home.jpg')
+      .background
+        background-image: linear-gradient( rgba(0, 0, 0, 0.45),  rgba(0, 0, 0, 0.45)), asset_url('bg_home.jpg')
     &#about-me-prof
-      background-image: asset_url('bg_about_me_prof.jpg')
+      .background
+        background-image: linear-gradient( rgba(0, 0, 0, 0.45),  rgba(0, 0, 0, 0.45)), asset_url('bg_about_me_prof.jpg')
     &#about-me
-      background-image: asset_url('bg_about_me.jpg')
+      .background
+        background-image: linear-gradient( rgba(0, 0, 0, 0.45),  rgba(0, 0, 0, 0.45)), asset_url('bg_about_me.jpg')
     &#projects
-      background-image: asset_url('bg_projects.jpg')
+      .background
+        background-image: linear-gradient( rgba(0, 0, 0, 0.45),  rgba(0, 0, 0, 0.45)), asset_url('bg_projects.jpg')
     &#blog
-      background-image: asset_url('bg_blog.jpg')
+      .background
+        background-image: linear-gradient( rgba(0, 0, 0, 0.45),  rgba(0, 0, 0, 0.45)), asset_url('bg_blog.jpg')
     &#contact
-      background-image: asset_url('bg_contact.jpg')
+      .background
+        background-image: linear-gradient( rgba(0, 0, 0, 0.45),  rgba(0, 0, 0, 0.45)), asset_url('bg_contact.jpg')
       
       textarea
         min-height: 200px
@@ -117,3 +132,10 @@ html, body
       background-image: asset_url('bg_stripes_2.png')
     &.stripe-three
       background-image: asset_url('bg_stripes_3.png')
+
+
+.project
+  margin-bottom: 20px
+  .start
+    
+  .end

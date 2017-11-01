@@ -8,7 +8,9 @@ class Project < ApplicationRecord
 
   validates_presence_of :client, :name
 
-  scope :orderd, -> { order(:position, :asc) }
+  scope :orderd, -> { order(position: :asc) }
+  scope :for_site, -> { orderd.where(show: true) }
+
 
   def to_s
     "#{client} - #{name}"

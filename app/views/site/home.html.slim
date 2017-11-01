@@ -1,6 +1,7 @@
 
   
-#home.section.d-flex data-stellar-background-ratio="0.5"
+#home.section.d-flex
+  .background data-stellar-background-ratio="1.5"
   .stripes.stripe-two data-stellar-ratio="1.9"
   .container.align-self-center
     .heading
@@ -12,7 +13,8 @@
       p This is obviously still a work in progress.....
 
 
-#about-me-prof.section.d-flex data-stellar-background-ratio="0.5"
+#about-me-prof.section.d-flex
+  .background data-stellar-background-ratio="1.5"
   .stripes.stripe-two data-stellar-ratio="0.9"
   .container.align-self-center
     .heading
@@ -31,7 +33,8 @@
     p What i’d really love to do is creating some React Native mobile apps. So far i've just created demo projects to learn the language. But a real assignment with a stakeholder would be great.
 
   
-#about-me.section.d-flex data-stellar-background-ratio="0.5"
+#about-me.section.d-flex
+  .background data-stellar-background-ratio="1.5"
   .stripes.stripe-two data-stellar-ratio="0.9"
   .container.align-self-center
     .heading
@@ -44,33 +47,48 @@
 
     p In my spare time i'd love to do some stuff with my family, i've got a beautiful viance Thecla a daughter Lotte (‘13) and a son Boris (‘17). Going on the boat in the summer, 
 
-  
-  
 
-  
-
-
-#projects.section.d-flex data-stellar-background-ratio="0.5"
+#projects.section.d-flex
+  .background data-stellar-background-ratio="1.5"
   .stripes.stripe-one data-stellar-ratio="1.6"
   .container.align-self-center
     .heading
       h1 03
       h2 Latest projects
-      h3 see all projects
+      / h3 see all projects
 
-    - 3.times do |t|
+    - @projects.each do |p|
       .project
-        h2 Example project #{t}
-        = image_tag 'https://via.placeholder.com/200x200'
+        .row
+          .col-4
+            - if p.image.present?
+              = image_tag p.image.url, class: 'img-fluid img-thumbnail'
+            - else
+              = image_tag 'https://via.placeholder.com/300x300', class: 'img-fluid img-thumbnail'
+
+          .col-8
+            h4 = p.title
+            p.subtitle = p.subtitle
+            span.start = l p.start_date
+            | - 
+            span.end 
+              - if p.end_date.present?
+                = l p.end_date
+              - else
+                |Present date
+            p.description == p.description
+
         
-#blog.section.d-flex data-stellar-background-ratio="0.5"
+#blog.section.d-flex
+  .background data-stellar-background-ratio="1.5"
   .stripes.stripe-two data-stellar-ratio="1.6"
   .container.align-self-center
     .heading
       h1 04
       h2 blog
 
-#contact.section.d-flex data-stellar-background-ratio="0.5"
+#contact.section.d-flex 
+  .background data-stellar-background-ratio="1.5"
   = render 'contact'
     
 
