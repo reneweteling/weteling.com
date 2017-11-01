@@ -71,20 +71,23 @@ html, body
     min-height: 100%
     text-shadow: 1px 1px 6px black, -1px -1px 6px black
 
+    > .container
+      z-index: 1
+
     .heading
       margin-bottom: 4rem
 
     &.active
       .background
-        filter: #{'grayscale(60%)'} 
+        filter: #{'grayscale(60%) blur(5px)'} 
     
     .background
       transition: filter .5s ease-in-out
-      filter: #{'grayscale(100%) blur(5px)'}
+      filter: #{'grayscale(100%)'}
       position: absolute
       height: 100%
       width: 100%
-      z-index: -1
+      z-index: 0
       background-attachment: fixed
       background-size: cover
       background-position: 50% 50%
@@ -114,6 +117,8 @@ html, body
 
       i.fa
         margin-right: 0.5rem
+
+
 
   .stripes
     opacity: 0.5
