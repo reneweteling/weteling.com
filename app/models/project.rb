@@ -4,7 +4,7 @@ class Project < ApplicationRecord
   has_one :user, through: :client
 
   mount_uploader :image, BaseImageUploader
-  acts_as_list
+  acts_as_list :position
 
   validates_presence_of :client, :name
 

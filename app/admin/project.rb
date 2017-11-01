@@ -13,6 +13,7 @@ ActiveAdmin.register Project do
     sortable_handle_column 
     selectable_column
     id_column
+    column :position
     column :client
     column :name
     column :description
