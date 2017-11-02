@@ -2,7 +2,7 @@
   
 #home.section.d-flex
   .background data-stellar-background-ratio="1.5"
-  .stripes.stripe-two data-stellar-ratio="1.9"
+  .stripes.stripe-two data-stellar-background-ratio="2.5"
   .container.align-self-center
     .heading
       h1.big Hello,
@@ -15,7 +15,7 @@
 
 #about-me-prof.section.d-flex
   .background data-stellar-background-ratio="1.5"
-  .stripes.stripe-two data-stellar-ratio="0.9"
+  .stripes.stripe-two data-stellar-background-ratio="3.9"
   .container.align-self-center
     .heading
       h1 01
@@ -35,7 +35,7 @@
   
 #about-me.section.d-flex
   .background data-stellar-background-ratio="1.5"
-  .stripes.stripe-two data-stellar-ratio="0.9"
+  .stripes.stripe-two data-stellar-background-ratio="0.9"
   .container.align-self-center
     .heading
       h1 02
@@ -50,7 +50,7 @@
 
 #projects.section.d-flex
   .background data-stellar-background-ratio="1.5"
-  .stripes.stripe-one data-stellar-ratio="1.6"
+  .stripes.stripe-one data-stellar-background-ratio="2.6"
   .container.align-self-center
     .heading
       h1 03
@@ -60,13 +60,13 @@
     - @projects.each do |p|
       .project
         .row
-          .col-4
+          .col-2
             - if p.image.present?
-              = image_tag p.image.url, class: 'img-fluid img-thumbnail'
+              = image_tag p.image.url, class: 'img-fluid'
             - else
-              = image_tag 'https://via.placeholder.com/300x300', class: 'img-fluid img-thumbnail'
+              = image_tag 'https://via.placeholder.com/300x300', class: 'img-fluid'
 
-          .col-8
+          .col-8.offset-md-2
             h4 = p.title
             p.subtitle = p.subtitle
             span.start = l p.start_date
@@ -81,7 +81,7 @@
         
 #blog.section.d-flex
   .background data-stellar-background-ratio="1.5"
-  .stripes.stripe-two data-stellar-ratio="1.6"
+  .stripes.stripe-two data-stellar-background-ratio="2.6"
   .container.align-self-center
     .heading
       h1 04
