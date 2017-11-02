@@ -83,6 +83,7 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (~> 1.11.1)
       sass (>= 3.4.19)
+    browser (2.4.0)
     builder (3.2.3)
     byebug (9.1.0)
     cancancan (2.0.0)
@@ -371,6 +372,7 @@ DEPENDENCIES
   airbrake (~> 6.2)
   autoprefixer-rails
   bootstrap (~> 4.0.0.beta)
+  browser
   byebug
   cancancan (~> 2.0)
   capistrano (~> 3.6)

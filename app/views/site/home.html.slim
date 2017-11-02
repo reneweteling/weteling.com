@@ -92,39 +92,41 @@
   = render 'contact'
     
 
-coffee:
-  $ ->
-    $.stellar
-      # Set scrolling to be in either one or both directions
-      horizontalScrolling: false,
-      verticalScrolling: true,
+- unless @browser.device.mobile?
 
-      # Set the global alignment offsets
-      horizontalOffset: 0,
-      verticalOffset: 0,
+  coffee:
+    $ ->
+      $.stellar
+        # Set scrolling to be in either one or both directions
+        horizontalScrolling: false,
+        verticalScrolling: true,
 
-      # Refreshes parallax content on window load and resize
-      responsive: true,
+        # Set the global alignment offsets
+        horizontalOffset: 0,
+        verticalOffset: 0,
 
-      # Select which property is used to calculate scroll.
-      # Choose 'scroll', 'position', 'margin' or 'transform',
-      # or write your own 'scrollProperty' plugin.
-      scrollProperty: 'scroll',
+        # Refreshes parallax content on window load and resize
+        responsive: true,
 
-      # Select which property is used to position elements.
-      # Choose between 'position' or 'transform',
-      # or write your own 'positionProperty' plugin.
-      positionProperty: 'transform',
+        # Select which property is used to calculate scroll.
+        # Choose 'scroll', 'position', 'margin' or 'transform',
+        # or write your own 'scrollProperty' plugin.
+        scrollProperty: 'scroll',
 
-      # Enable or disable the two types of parallax
-      parallaxBackgrounds: true,
-      parallaxElements: false,
+        # Select which property is used to position elements.
+        # Choose between 'position' or 'transform',
+        # or write your own 'positionProperty' plugin.
+        positionProperty: 'transform',
 
-      # Hide parallax elements that move outside the viewport
-      hideDistantElements: true,
+        # Enable or disable the two types of parallax
+        parallaxBackgrounds: true,
+        parallaxElements: false,
 
-      # Customise how elements are shown and hidden
-      hideElement: ($elem) -> $elem.hide()
-      showElement: ($elem) -> $elem.show()
-    
+        # Hide parallax elements that move outside the viewport
+        hideDistantElements: true,
+
+        # Customise how elements are shown and hidden
+        hideElement: ($elem) -> $elem.hide()
+        showElement: ($elem) -> $elem.show()
+      
 

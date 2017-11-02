@@ -26,6 +26,8 @@ gem 'carrierwave-aws'
 # error reporting
 gem 'airbrake', '~> 6.2'
 
+gem 'browser'
+
 
 # Nice templates
 gem 'slim-rails', '3.1.1' # froze at this versino, issue with ckeditor
