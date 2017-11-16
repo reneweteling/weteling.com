@@ -64,6 +64,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-stellar'
   gem 'rails-assets-jquery-migrate'
   gem 'rails-assets-waypoints'
+  gem 'rails-assets-editor.md'
 end
 
 group :development, :test do
