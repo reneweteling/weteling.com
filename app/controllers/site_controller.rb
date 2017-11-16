@@ -7,6 +7,10 @@ class SiteController < ApplicationController
   def cv
   end
 
+  def cv_print
+    render 'cv', layout: 'pdf'
+  end
+
   def contact
     @contact_form = ContactForm.new(params.require(:contact_form).permit(:name, :email, :subject, :message))
     if @contact_form.valid?

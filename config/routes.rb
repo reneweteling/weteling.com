@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   
 
   get :cv, to: 'site#cv'
+  get :cv_print, to: 'site#cv_print'
   root to: 'site#home'
 
 end
