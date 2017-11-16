@@ -35,6 +35,7 @@ ActiveAdmin.register Project do
       input :title
       input :subtitle
       input :description, as: :md
+      input :description_cv, as: :md
       input :start_date
       input :end_date
       input :show
