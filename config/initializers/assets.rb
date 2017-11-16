@@ -13,7 +13,7 @@ Rails.application.configure do
 
   config.assets.precompile += %w( pdf.css )
   config.assets.precompile += %w( ckeditor/* )
-  config.assets.precompile += %w( editor.md/lib/* )
+  
 
   config.public_file_server.headers = {
     'Access-Control-Allow-Origin' => '*'

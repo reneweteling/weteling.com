@@ -11,7 +11,7 @@ $ ->
     editormd @.id, {
       width: "100%"
       height: "500px"
-      path: '/assets/editor.md/lib/'
+      path: '/vendor-assets/editor.md/lib/'
     }
 
   # edit hour page automaticly set the default rate

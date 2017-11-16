@@ -29,7 +29,6 @@ gem 'airbrake', '~> 6.2'
 gem 'browser'
 gem 'redcarpet'
 
-
 # Nice templates
 gem 'slim-rails', '3.1.1' # froze at this versino, issue with ckeditor
 gem 'ckeditor'
