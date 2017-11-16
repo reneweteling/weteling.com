@@ -4,6 +4,9 @@ class SiteController < ApplicationController
     @contact_form = ContactForm.new
   end
 
+  def cv
+  end
+
   def contact
     @contact_form = ContactForm.new(params.require(:contact_form).permit(:name, :email, :subject, :message))
     if @contact_form.valid?

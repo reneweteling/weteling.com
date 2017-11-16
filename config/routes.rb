@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   post :contact, to: 'site#contact'
   
+
+  get :cv, to: 'site#cv'
   root to: 'site#home'
 
 end

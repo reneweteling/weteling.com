@@ -1,0 +1,5 @@
+- projects = capture do
+  = render partial: 'project', collection: Project.for_cv, locals: { as_cv: true }
+
+.container style="margin-top: 150px;"
+  == markdown Page.cv.first.content.gsub('[[projects]]', projects)

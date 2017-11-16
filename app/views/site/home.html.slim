@@ -57,28 +57,9 @@
       h2 Latest projects
       / h3 see all projects
 
-    - @projects.each do |p|
-      .project
-        .row
-          .col-2
-            - if p.image.present?
-              = image_tag p.image.url, class: 'img-fluid'
-            - else
-              = image_tag 'https://via.placeholder.com/300x300', class: 'img-fluid'
+    = render partial: 'project', collection: @project
 
-          .col-8.offset-md-2
-            h4 = p.title
-            p.subtitle = p.subtitle
-            span.start = l p.start_date
-            | - 
-            span.end 
-              - if p.end_date.present?
-                = l p.end_date
-              - else
-                |Present date
-            p.description == p.description
 
-        
 #blog.section.d-flex
   .background data-stellar-background-ratio="1.5"
   .stripes.stripe-two data-stellar-background-ratio="2.6"
@@ -96,6 +77,31 @@
 
   coffee:
     $ ->
+      # Select all links with hashes
+      $('a[href*="/#"]').not('[href="#"]').not('[href="#0"]').click (event) ->
+        # On-page links
+        if location.pathname.replace(/^\//, '') == @pathname.replace(/^\//, '') and location.hostname == @hostname
+          # Figure out element to scroll to
+          target = $(@hash)
+          target = if target.length then target else $('[name=' + @hash.slice(1) + ']')
+          # Does a scroll target exist?
+          if target.length
+            # Only prevent default if animation is actually gonna happen
+            event.preventDefault()
+            $('html, body').animate { scrollTop: target.offset().top }, 1000, ->
+              # Callback after animation
+              # Must change focus!
+              $target = $(target)
+              $target.focus()
+              if $target.is(':focus')
+                # Checking if the target was focused
+                return false
+              else
+                $target.attr 'tabindex', '-1'
+                # Adding tabindex for elements not focusable
+                $target.focus()
+                # Set focus again
+                
       $.stellar
         # Set scrolling to be in either one or both directions
         horizontalScrolling: false,

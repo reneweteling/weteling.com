@@ -27,6 +27,7 @@ gem 'carrierwave-aws'
 gem 'airbrake', '~> 6.2'
 
 gem 'browser'
+gem 'redcarpet'
 
 
 # Nice templates
@@ -55,7 +56,7 @@ gem 'simple_form'
 
 # Assets
 gem 'font-awesome-sass', '~> 4.7.0'
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
 
 # validations
 gem 'rails_validations', '~> 1.2'

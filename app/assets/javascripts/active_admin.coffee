@@ -2,9 +2,18 @@
 #= require activeadmin_addons/all
 #= require activeadmin-sortable
 #= require ckeditor/init
+#= require editor.md/editormd
+#= require editor.md/languages/en
 
 
 $ ->
+  $('.md .editor').each ->
+    editormd @.id, {
+      width: "100%"
+      height: "500px"
+      path: '/assets/editor.md/lib/'
+    }
+
   # edit hour page automaticly set the default rate
   $("#hour_project_id").change ->
     mapping = $(@).data('rate')

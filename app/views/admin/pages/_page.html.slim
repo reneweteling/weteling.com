@@ -1,0 +1,6 @@
+- projects = capture do
+  = render partial: '/site/project', collection: Project.for_cv, locals: { as_cv: true }
+
+.bootstrap
+  .container-fluid
+    == markdown resource.content.gsub('[[projects]]', projects)

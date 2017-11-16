@@ -16,27 +16,31 @@ ActiveAdmin.register Project do
     column :position
     column :client
     column :name
-    column :description
+    column :description do |row|
+      markdown(row.description).html_safe
+    end
+    column :description_cv do |row|
+      markdown(row.description).html_safe
+    end
     actions
   end
 
   form do |f|
-    inputs 'Details' do 
+    inputs 'Details' do
       input :client
       input :name
     end
 
-    inputs 'Site' do 
+    inputs 'Site' do
       input :title
       input :subtitle
-      input :description, as: :ckeditor
+      input :description, as: :md
       input :start_date
       input :end_date
       input :show
       input :image, as: :aafile
       input :position
     end
-    
     actions
   end
 
