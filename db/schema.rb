@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116121931) do
+ActiveRecord::Schema.define(version: 20171116160807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -126,6 +126,7 @@ ActiveRecord::Schema.define(version: 20171116121931) do
     t.integer "position", default: 0, null: false
     t.string "image"
     t.text "description_cv", default: "", null: false
+    t.boolean "cv_active", default: false, null: false
     t.index ["client_id"], name: "index_projects_on_client_id"
   end
 

@@ -8,6 +8,8 @@ ActiveAdmin.register Project do
 
   # filter :client
   filter :name
+  filter :show
+  filter :cv_active
 
   index do
     sortable_handle_column 
@@ -22,6 +24,8 @@ ActiveAdmin.register Project do
     column :description_cv do |row|
       markdown(row.description).html_safe
     end
+    column :show
+    column :cv_active
     actions
   end
 
@@ -39,6 +43,7 @@ ActiveAdmin.register Project do
       input :start_date
       input :end_date
       input :show
+      input :cv_active
       input :image, as: :aafile
       input :position
     end

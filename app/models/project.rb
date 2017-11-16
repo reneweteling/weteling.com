@@ -10,7 +10,7 @@ class Project < ApplicationRecord
 
   scope :orderd, -> { order(position: :asc) }
   scope :for_site, -> { orderd.where(show: true) }
-  scope :for_cv, -> { orderd.where(show: true).limit(5) }
+  scope :for_cv, -> { orderd.where(cv_active: true) }
 
 
   def to_s
