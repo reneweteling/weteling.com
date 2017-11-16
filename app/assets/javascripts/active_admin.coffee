@@ -10,7 +10,7 @@ $ ->
   $('.md .editor').each ->
     editormd @.id, {
       width: "100%"
-      height: "500px"
+      height: "1000px"
       path: '/vendor-assets/editor.md/lib/'
     }
 
