@@ -21,9 +21,9 @@ ActiveAdmin.register Project do
     column :description do |row|
       markdown(row.description).html_safe
     end
-    column :description_cv do |row|
-      markdown(row.description).html_safe
-    end
+    # column :description_cv do |row|
+    #   markdown(row.description).html_safe
+    # end
     column :show
     column :cv_active
     actions
@@ -39,7 +39,7 @@ ActiveAdmin.register Project do
       input :title
       input :subtitle
       input :description, as: :md
-      input :description_cv, as: :md
+      # input :description_cv, as: :md
       input :start_date
       input :end_date
       input :show
