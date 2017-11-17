@@ -4,9 +4,7 @@
     .col-2
       - if project.image.present?
         = image_tag project.image.url, class: 'img-fluid'
-      - else
-        = image_tag 'https://via.placeholder.com/300x300', class: 'img-fluid'
-
+      
     .col-9.offset-md-1
       h4 = project.title
       p.subtitle = project.subtitle
