@@ -8,11 +8,11 @@ class SiteController < ApplicationController
   end
 
   def cv_print
-    render 'cv', layout: 'pdf'
+    render layout: 'pdf'
   end
 
   def cv_pdf
-    html = render_to_string template: '/site/cv', layout: 'pdf'
+    html = render_to_string template: '/site/cv_print', layout: 'pdf'
     return render html: html if params[:type] == 'html'
 
     kit = PDFKit.new(html, :page_size => 'A4', :orientation => 'Portrait')
