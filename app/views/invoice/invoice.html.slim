@@ -2,24 +2,29 @@ sass:
 
   .contact-details
     margin-top: 10px
-    font-size: 10px
+    font-size: 13px
 
   .client-details
-    font-size: 12px
+    font-size: 14px
 
   .logo
-    width: 150px
+    width: 145px
+    margin-top: 2px
   
   .table-container
     margin-top: 50px
     table
+      width: 100%
+      tbody
+        width: 100%
       tr.header
+        
         th, td
           background-color: white
           border-bottom: 1px solid black
       
       th, td
-        font-size: 12px
+        font-size: 14px
         p
           margin: 0px
 
@@ -32,13 +37,13 @@ sass:
 
 - has_sno = hours.sum(:total_sno_hours) != 0
       
-.container
+.container-fluid
   .row
     .col-2
        = image_tag 'logo.png', class: 'img-fluid logo'
     .col-5
       .row.contact-details
-        .col-6
+        .col-5
           p 
             | rene@weteling.com 
             br 
@@ -47,7 +52,7 @@ sass:
             | KvK: 24403159
             br
             | Btw: NL1997.22.286.B02
-        .col-6  
+        .col-7  
           p
             | Herengracht 504
             br
