@@ -21,7 +21,7 @@ ActiveAdmin.register Blog do
       f.input :name
       f.input :slug
       f.input :date, as: :date_time_picker
-      f.input :content, as: :ckeditor
+      f.input :content, as: :md
       f.input :published, as: :select
       f.input :image, as: :aafile
       f.input :tag_tags, as: :tags

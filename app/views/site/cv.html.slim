@@ -1,0 +1,15 @@
+.container style="margin-top: 150px"
+  = link_to cv_pdf_path, download: true do 
+    i.fa.fa-file-pdf-o aria-hidden="true"
+    |  Download as pdf
+  
+  | &nbsp; &nbsp;
+
+  = link_to cv_print_path do 
+    i.fa.fa-file-o aria-hidden="true"
+    |  View plain
+
+  br
+  br
+
+= render 'cv'

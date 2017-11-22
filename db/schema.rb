@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171101110128) do
+ActiveRecord::Schema.define(version: 20171116160807) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -104,6 +104,14 @@ ActiveRecord::Schema.define(version: 20171101110128) do
     t.index ["rate_id"], name: "index_hours_on_rate_id"
   end
 
+  create_table "pages", force: :cascade do |t|
+    t.string "title"
+    t.integer "pagetype", default: 0, null: false
+    t.text "content", default: "", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "projects", id: :serial, force: :cascade do |t|
     t.integer "client_id", null: false
     t.string "name", null: false
@@ -117,6 +125,8 @@ ActiveRecord::Schema.define(version: 20171101110128) do
     t.boolean "show", default: false, null: false
     t.integer "position", default: 0, null: false
     t.string "image"
+    t.text "description_cv", default: "", null: false
+    t.boolean "cv_active", default: false, null: false
     t.index ["client_id"], name: "index_projects_on_client_id"
   end
 

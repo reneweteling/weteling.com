@@ -27,7 +27,7 @@ gem 'carrierwave-aws'
 gem 'airbrake', '~> 6.2'
 
 gem 'browser'
-
+gem 'redcarpet'
 
 # Nice templates
 gem 'slim-rails', '3.1.1' # froze at this versino, issue with ckeditor
@@ -55,7 +55,7 @@ gem 'simple_form'
 
 # Assets
 gem 'font-awesome-sass', '~> 4.7.0'
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap', '~> 4.0.0.beta2.1'
 
 # validations
 gem 'rails_validations', '~> 1.2'
@@ -64,6 +64,7 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-stellar'
   gem 'rails-assets-jquery-migrate'
   gem 'rails-assets-waypoints'
+  gem 'rails-assets-editor.md'
 end
 
 group :development, :test do
