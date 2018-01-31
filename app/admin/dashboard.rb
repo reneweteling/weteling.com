@@ -52,8 +52,8 @@ ActiveAdmin.register_page "Dashboard" do
     first = hours.minimum(:date).at_beginning_of_month
 
     while current >= first do
-
-      h2 current.strftime('%B %Y')
+      month_total = 0.0
+      
 
       table class: 'index_table index dashboard' do 
         thead do
@@ -73,15 +73,17 @@ ActiveAdmin.register_page "Dashboard" do
             tr class: (i%2 == 1 ? 'even' : 'odd') do 
               start_date = current.at_beginning_of_month >= @filter.start ? current.at_beginning_of_month : @filter.start
               end_date = current.at_end_of_month <= @filter.end ? current.at_end_of_month : @filter.end
-
               hours = p.hours.where(date: start_date..end_date)
+              project_total = hours.map{|h| h.total_hours * h.rate.rate }.inject(:+)
+              month_total += project_total
+              
 
               td p.client 
               # td "#{start_date.to_date} - #{end_date.to_date}"
               td p.name
               td hours.sum(:total_hours)
               td hours.map(&:rate).uniq.to_sentence
-              td number_to_currency(hours.map{|h| h.total_hours * h.rate.rate }.inject(:+))
+              td number_to_currency(project_total)
               td link_to(icon('file-pdf-o'), admin_dashboard_invoice_path(project_id: p.id, end_date: end_date.to_date, start_date: start_date.to_date, type: :pdf)) + " - " +
                  link_to( icon('eye'),       admin_dashboard_invoice_path(project_id: p.id, end_date: end_date.to_date, start_date: start_date.to_date, type: :html))
               i += 1
@@ -89,7 +91,18 @@ ActiveAdmin.register_page "Dashboard" do
           end
           
         end
+
+        h2 do 
+          span class: 'date' do
+            current.strftime('%B %Y')
+          end
+          span class: 'total' do
+            number_to_currency(month_total)
+          end
+        end
+
       end
+      
       current = current - 1.month
     end
 
