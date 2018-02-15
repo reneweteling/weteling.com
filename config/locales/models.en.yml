@@ -1,0 +1,16 @@
+en:
+  attributes:
+    name: Name
+
+  activerecord:
+    attributes:
+      project:
+        active: Active in hours
+        show: Active on site
+        cv_active: Active in cv
+
+    models:
+      project:
+        one: Project
+        other: Projects
+      

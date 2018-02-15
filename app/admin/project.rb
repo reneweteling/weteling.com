@@ -10,6 +10,7 @@ ActiveAdmin.register Project do
   filter :name
   filter :show
   filter :cv_active
+  filter :active
 
   index do
     sortable_handle_column 
@@ -26,6 +27,7 @@ ActiveAdmin.register Project do
     # end
     column :show
     column :cv_active
+    column :active
     actions
   end
 
@@ -44,6 +46,7 @@ ActiveAdmin.register Project do
       input :end_date
       input :show
       input :cv_active
+      input :active
       input :image, as: :aafile
       input :position
     end

@@ -59,7 +59,7 @@ ActiveAdmin.register Hour do
 
   form do |f|
     inputs 'Details' do 
-      input :project, input_html: { 'data-rate': Project.all.map{|p| [p.id, p.client.default_rate.id]}.to_h.to_json }
+      input :project, input_html: { 'data-rate': Project.active.all.map{|p| [p.id, p.client.default_rate.id]}.to_h.to_json }, collection: Project.active
       input :rate
       input :date
       input :total_hours
