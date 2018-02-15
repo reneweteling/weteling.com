@@ -134,6 +134,9 @@ GEM
       countries (~> 2.0)
       sort_alphabetical (~> 1.0)
     crass (1.0.3)
+    debase (0.2.1)
+      debase-ruby_core_source
+    debase-ruby_core_source (0.10.2)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -389,6 +392,7 @@ DEPENDENCIES
   ckeditor
   coffee-rails (~> 4.2)
   country_select
+  debase
   devise
   font-awesome-sass (~> 4.7.0)
   graphiql-rails

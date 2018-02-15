@@ -71,7 +71,8 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry'
-  gem 'ruby-debug-ide'
+  gem 'ruby-debug-ide', require: false
+  gem 'debase', require: false
 end
 
 group :development do
