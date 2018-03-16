@@ -15,6 +15,33 @@ ActiveAdmin.register_page "Dashboard" do
     send_data kit.to_pdf, filename: "#{project.to_s}-#{start_date.to_s.parameterize}-#{end_date.to_s.parameterize}.pdf", type: 'application/pdf'
   end
 
+  page_action :cal_events, method: :get do
+    (start_date, end_date) = params.permit(:start, :end).values
+    hours = Hour
+      .where(date: start_date...end_date)
+      .all
+      .group_by(&:date)
+      .map do |date, hours|
+        start_time = 9
+        hours.map do |hour|
+          my_start = start_time
+          start_time += hour.total_hours
+          {
+            id: hour.id,
+            title: hour.project.to_s,
+            allDay: false,
+            start: (hour.date.to_time + my_start.hours).iso8601,
+            end: (hour.date.to_time + start_time.hours).iso8601,
+            url: "/admin/hours/#{hour.id}/edit",
+            className: hour.project.client.name.parameterize,
+          }
+        end
+      end
+      .flatten
+
+    return render json: hours
+  end
+
   controller do 
     before_action :set_filter
 
@@ -37,6 +64,10 @@ ActiveAdmin.register_page "Dashboard" do
   end
 
   content do
+
+    panel 'Week view' do 
+      render partial: 'calendar'
+    end
 
     @filter = OpenStruct.new( start: (Date.today - 2.months).at_beginning_of_month, end: Date.today.at_end_of_month )
     
