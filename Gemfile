@@ -59,7 +59,7 @@ gem 'simple_form'
 
 # Assets
 gem 'font-awesome-sass', '~> 4.7.0'
-gem 'bootstrap', '~> 4.0.0.beta2.1'
+gem 'bootstrap'
 
 # validations
 gem 'rails_validations', '~> 1.2'

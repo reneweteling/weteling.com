@@ -7,12 +7,13 @@ PDFKit.configure do |config|
     load_error_handling: 'ignore',
     load_media_error_handling: 'ignore',
     debug_javascript: true,
-    enable_internal_links: true, 
+    enable_internal_links: true,
     enable_external_links: true,
-    enable_toc_back_links: true
+    enable_toc_back_links: true,
+    viewport_size: '1280x1024'
   }
   config.verbose = true
   # if Rails.env.development?
-  #   config.root_url = "http://localhost/" 
+  #   config.root_url = "http://localhost/"
   # end
 end

@@ -15,10 +15,9 @@ class SiteController < ApplicationController
     html = render_to_string template: '/site/cv_print', layout: 'pdf'
     return render html: html if params[:type] == 'html'
 
-    kit = PDFKit.new(html, :page_size => 'A4', :orientation => 'Portrait')
-    send_data kit.to_pdf, filename: "CV Rene Weteling - #{Date.today.to_s.parameterize}.pdf", type: 'application/pdf'
+    pdf = PDFKit.new(html, :page_size => 'A4', :orientation => 'Portrait').to_pdf
+    send_data pdf, filename: "CV Rene Weteling - #{Date.today.to_s.parameterize}.pdf", type: 'application/pdf'
   end
-  
 
   def contact
     @contact_form = ContactForm.new(params.require(:contact_form).permit(:name, :email, :subject, :message))
@@ -29,5 +28,4 @@ class SiteController < ApplicationController
       @sent = true
     end
   end
-  
 end

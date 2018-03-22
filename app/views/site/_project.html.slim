@@ -1,16 +1,16 @@
 - as_cv = false
-.project
-  .row
-    .col-2
+.project.container
+  .no-flex-row
+    .no-flex-col-2
       - if project.image.present?
         = image_tag project.image.url, class: 'img-fluid'
-      
-    .col-9.offset-md-1
+    .no-flex-col-1
+    .no-flex-col-9
       h4 = project.title
       p.subtitle = project.subtitle
       span.start = l project.start_date
-      | - 
-      span.end 
+      | -
+      span.end
         - if project.end_date.present?
           = l project.end_date
         - else

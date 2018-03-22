@@ -9,8 +9,8 @@ sass:
 
   .logo
     width: 145px
-    margin-top: 2px
-  
+    margin-top: 9px
+
   .table-container
     margin-top: 50px
     table
@@ -18,11 +18,9 @@ sass:
       tbody
         width: 100%
       tr.header
-        
         th, td
           background-color: white
           border-bottom: 1px solid black
-      
       th, td
         font-size: 14px
         p
@@ -32,27 +30,25 @@ sass:
         border-top: 2px solid black
         th, td
           background-color: white
-      
-        
 
 - has_sno = hours.sum(:total_sno_hours) != 0
-      
+
 .container-fluid
-  .row
-    .col-2
-       = image_tag 'logo.png', class: 'img-fluid logo'
-    .col-5
-      .row.contact-details
-        .col-5
-          p 
-            | rene@weteling.com 
-            br 
+  .no-flex-row
+    .no-flex-col-2
+      = image_tag 'logo.png', class: 'img-fluid logo'
+    .no-flex-col-5
+      .contact-details
+        .no-flex-col-5
+          p
+            | rene@weteling.com
+            br
             | www.weteling.com
-          p 
+          p
             | KvK: 24403159
             br
             | Btw: NL1997.22.286.B02
-        .col-7  
+        .no-flex-col-7
           p
             | Herengracht 504
             br
@@ -61,19 +57,19 @@ sass:
             | Bank: NL38 KNAB 0723 0772 82
             br
             | BIC: KNABNL2H
-        
-          
-    .col-3.offset-2.client-details
+
+    
+    .no-flex-col-3.client-details
       p 
         b = project.client.name
-        p 
-          | t.a.v. #{project.client.first_name} #{project.client.last_name}
-          - if project.client.department.present?
-            br Afd. #{project.client.department}
-        p 
-          = project.client.address
-          br #{project.client.postalcode} #{project.client.city}
-        
+      p 
+        | t.a.v. #{project.client.first_name} #{project.client.last_name}
+        - if project.client.department.present?
+          br Afd. #{project.client.department}
+        br 
+        = project.client.address
+        br #{project.client.postalcode} #{project.client.city}
+
   .row.table-container
     .col-12
       table.table.table-striped.table-bordered.table-sm.table-responsive
@@ -84,7 +80,7 @@ sass:
             - if has_sno
               th.text-right S&O
             th.text-right Uren
-        
+
           - hours.each.with_index do |h, i|
             tr class=('border' if i == 0)
               td = simple_format h.description
@@ -92,12 +88,10 @@ sass:
               - if has_sno
                 td.text-right = h.total_sno_hours
               td.text-right = h.total_hours
-        
+
           tr.footer
             th Totaal
             th 
             - if has_sno
               th.text-right = hours.sum(:total_sno_hours)
             th.text-right = hours.sum(:total_hours)
-
-            
