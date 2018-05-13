@@ -10,7 +10,7 @@ PDFKit.configure do |config|
     enable_internal_links: true,
     enable_external_links: true,
     enable_toc_back_links: true,
-    viewport_size: '1280x1024'
+    viewport_size: '1200x1024'
   }
   config.verbose = true
   # if Rails.env.development?
