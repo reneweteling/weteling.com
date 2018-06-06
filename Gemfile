@@ -24,7 +24,7 @@ gem 'redis-rails'
 # Move our uploads to AWS
 gem 'carrierwave-aws'
 # error reporting
-gem 'airbrake', '~> 6.2'
+gem 'airbrake', '~> 5.0'
 
 gem 'browser'
 gem 'redcarpet'

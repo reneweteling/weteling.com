@@ -13,7 +13,7 @@ Airbrake.configure do |c|
   # from the right sidebar.
   # https://github.com/airbrake/airbrake-ruby#project_id--project_key
   c.host = ENV['AIRBRAKE_HOST'] if ENV['AIRBRAKE_HOST'].present?
-  c.project_id = ENV['AIRBRAKE_PROJECT_ID']
+  c.project_id = 1
   c.project_key = ENV['AIRBRAKE_API_KEY']
 
   # Configures the root directory of your project. Expects a String or a
@@ -51,7 +51,8 @@ Airbrake.configure do |c|
   # Alternatively, you can integrate with Rails' filter_parameters.
   # Read more: https://goo.gl/gqQ1xS
   # c.blacklist_keys = Rails.application.config.filter_parameters
-end if ENV['AIRBRAKE_PROJECT_ID'].present? && Rails.env.production?
+  
+end if ENV['AIRBRAKE_HOST'].present?
 
 # A filter that collects request body information. Enable it if you are sure you
 # don't send sensitive information to Airbrake in your body (such as passwords).
