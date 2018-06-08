@@ -1,4 +1,7 @@
 class SiteController < ApplicationController
+
+  rescue_from ActionController::InvalidAuthenticityToken, with: :redirect_to_referer_or_path
+
   def home
     @projects = Project.limit(5).for_site
     @contact_form = ContactForm.new
@@ -28,4 +31,12 @@ class SiteController < ApplicationController
       @sent = true
     end
   end
+
+  private
+
+  def redirect_to_referer_or_path
+    flash[:notice] = "Please try again."
+    redirect_to request.referer
+  end
+
 end
