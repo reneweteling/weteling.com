@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "_ah/health", to: "application#health_check"
 
   post :contact, to: 'site#contact'
-  
+  post :subscribe, to: 'site#subscribe'
 
   get :cv, to: 'site#cv'
   get :cv_print, to: 'site#cv_print'

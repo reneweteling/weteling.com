@@ -5,9 +5,11 @@ class SiteController < ApplicationController
   def home
     @projects = Project.limit(5).for_site
     @contact_form = ContactForm.new
+    @sendgrid_form = SendgridForm.new
   end
 
   def cv
+    @sendgrid_form = SendgridForm.new
   end
 
   def cv_print
@@ -29,6 +31,15 @@ class SiteController < ApplicationController
       ContactMailer.confirm_mail(@contact_form).deliver_now
       @contact_form = ContactForm.new
       @sent = true
+    end
+  end
+
+  def subscribe
+    @sendgrid_form = SendgridForm.new(params.require(:sendgrid_form).permit(:first_name, :last_name, :email))
+    if @sendgrid_form.valid?
+      @sendgrid_form.subscribe
+      @sendgrid_form = SendgridForm.new
+      @sendgrid_sent = true
     end
   end
 
