@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   get "_ah/health", to: "application#health_check"
 
+  match "error/:code", to: "errors#show", constraints: { code: /\d+/ }, via: :all
+
   post :contact, to: 'site#contact'
   post :subscribe, to: 'site#subscribe'
 
