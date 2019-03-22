@@ -1,12 +1,12 @@
 source 'https://rubygems.org'
-ruby '2.6'
+ruby '~> 2.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.2'
+gem 'rails', '~> 5'
 # storage
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3'
 # Sass using the libC compiler, prefixer for css vendors.
 gem "sass-rails", require: false
 gem "sassc-rails"
@@ -24,7 +24,7 @@ gem 'redis-rails'
 # Move our uploads to AWS
 gem 'carrierwave-aws'
 # error reporting
-gem 'airbrake', '~> 5.0'
+gem 'airbrake', '~> 5'
 
 gem 'browser'
 gem 'redcarpet'
@@ -78,8 +78,7 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
   gem 'pry'
-  gem 'ruby-debug-ide', require: false
-  gem 'debase', require: false
+
 end
 
 group :development do
