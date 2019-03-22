@@ -25,7 +25,6 @@ gem 'redis-rails'
 gem 'carrierwave-aws'
 # error reporting
 gem 'airbrake', '~> 5.0'
-gem 'rake'
 
 gem 'browser'
 gem 'redcarpet'
