@@ -23,5 +23,13 @@
   "homepage": "https://github.com/reneweteling/weteling.com#readme",
   "devDependencies": {
     "semantic-release": "^15.13.3"
+  },
+  "release": {
+    "branch": "master",
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/github"
+    ]
   }
 }

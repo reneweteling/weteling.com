@@ -13,7 +13,7 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: test
           RAILS_ENV: test
-          GH_TOKEN: 1e703ee1a868d3226f9f81c50157b6486985955d
+          GH_TOKEN: 64cd2cbc92ab1158a8aaf09d64448c9fb80201f7
           NPM_TOKEN: 9039bc5b-a3b0-46c2-bc58-2ee58197bcd1
       - image: circleci/postgres:9.5-alpine
         environment:
