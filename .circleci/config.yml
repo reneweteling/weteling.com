@@ -13,6 +13,7 @@ jobs:
           PGHOST: 127.0.0.1
           PGUSER: test
           RAILS_ENV: test
+          GH_TOKEN: 27fcf504a6b74920f22b8209d7820de2eabca583
       - image: circleci/postgres:9.5-alpine
         environment:
           POSTGRES_USER: test
@@ -43,6 +44,12 @@ jobs:
           name: Run rspec in parallel
           command: |
             bundle exec rails test
+
+      - run:
+          name: Release
+          command: |
+            npm i
+            npx semantic-release
 
       - store_test_results:
           path: test_results
