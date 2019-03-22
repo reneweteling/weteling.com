@@ -1,0 +1,57 @@
+version: 2
+jobs:
+  build:
+    parallelism: 1
+    docker:
+      - image: circleci/ruby:2.6-stretch-node-browsers-legacy
+        environment:
+          BUNDLER_VERSION: 2.0.1
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          GEM_PATH: vendor/bundle
+          PGHOST: 127.0.0.1
+          PGUSER: test
+          RAILS_ENV: test
+          NPM_TOKEN: this-is-fake
+      - image: circleci/postgres:9.5-alpine
+        environment:
+          POSTGRES_USER: test
+          POSTGRES_DB: -test
+          POSTGRES_PASSWORD: ''
+    steps:
+      - checkout
+      - run:
+          name: Which bundler?
+          command: gem install bundler
+      - restore_cache:
+          keys:
+            - weteling-com-{{ checksum "Gemfile.lock" }}-{{ checksum "package-lock.json" }}
+            - weteling-com-
+      - run:
+          name: Install dependencies
+          command: bundle check || bundle install && npm i
+
+      - save_cache:
+          key: weteling-com-{{ checksum "Gemfile.lock" }}-{{ checksum "package-lock.json" }}
+          paths:
+            - vendor/bundle
+            - node_modules
+
+      - run:
+          name: Database setup
+          command: bundle exec rails db:schema:load --trace
+
+      - run:
+          name: Run testsuite
+          command: |
+            bundle exec rails test
+
+      - run:
+          name: Release
+          command: |
+            npm i
+            npx semantic-release
+
+      - store_test_results:
+          path: test_results
