@@ -5,9 +5,11 @@ jobs:
     docker:
       - image: circleci/ruby:2.6-stretch-node-browsers-legacy
         environment:
+          BUNDLER_VERSION: 2.0.1
           BUNDLE_JOBS: 3
           BUNDLE_RETRY: 3
           BUNDLE_PATH: vendor/bundle
+          GEM_PATH: vendor/bundle
           PGHOST: 127.0.0.1
           PGUSER: test
           RAILS_ENV: test
