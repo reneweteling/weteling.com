@@ -49,6 +49,7 @@ jobs:
           name: Run rspec in parallel
           command: |
             bin/rails test
+
       # - run:
       #     name: Run rspec in parallel
       #     command: |
