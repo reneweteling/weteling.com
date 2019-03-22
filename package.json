@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/reneweteling/weteling.com#readme",
   "devDependencies": {
+    "cz-conventional-changelog": "^2.1.0",
     "semantic-release": "^15.13.3"
   },
   "release": {
@@ -31,5 +32,10 @@
       "@semantic-release/release-notes-generator",
       "@semantic-release/github"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
