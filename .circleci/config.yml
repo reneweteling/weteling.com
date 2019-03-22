@@ -8,18 +8,10 @@ jobs:
           NPM_TOKEN: this-is-fake
     steps:
       - checkout
-      - restore_cache:
-          keys:
-            - weteling-com-fast-{{ checksum "package-lock.json" }}
-            - weteling-com-fast-
+
       - run:
           name: Install dependencies
           command: npm i
-
-      - save_cache:
-          key: weteling-com-fast-{{ checksum "package-lock.json" }}
-          paths:
-            - node_modules
 
       - run:
           name: Release
