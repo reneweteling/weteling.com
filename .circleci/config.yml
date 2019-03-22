@@ -1,0 +1,53 @@
+version: 2
+jobs:
+  build:
+    parallelism: 1
+    docker:
+      - image: circleci/ruby:2.6-stretch-node-browsers-legacy
+        environment:
+          BUNDLER_VERSION: 2.0.1
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          GEM_PATH: vendor/bundle
+          PGHOST: 127.0.0.1
+          PGUSER: test
+          RAILS_ENV: test
+      - image: circleci/postgres:9.5-alpine
+        environment:
+          POSTGRES_USER: test
+          POSTGRES_DB: -test
+          POSTGRES_PASSWORD: ''
+    steps:
+      - checkout
+      - run:
+          name: Which bundler?
+          command: gem install bundler
+      - restore_cache:
+          keys:
+            - rails-demo-bundle-v3-{{ checksum "Gemfile.lock" }}
+            - rails-demo-bundle-v3-
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+      - save_cache:
+          key: rails-demo-bundle-v3-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          name: Database setup
+          command: bundle exec rails db:schema:load --trace
+
+      - run:
+          name: Run rspec in parallel
+          command: |
+            bundle exec rails test
+
+      - store_test_results:
+          path: test_results
+# ----------------------------------------------
+# GH_TOKEN=27fcf504a6b74920f22b8209d7820de2eabca583
+# NPM_TOKEN=9039bc5b-a3b0-46c2-bc58-2ee58197bcd1
+# ----------------------------------------------
+
