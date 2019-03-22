@@ -25,13 +25,13 @@ jobs:
           command: gem install bundler
       - restore_cache:
           keys:
-            - rails-demo-bundle-v1-{{ checksum "Gemfile.lock" }}
-            - rails-demo-bundle-v1-
+            - rails-demo-bundle-v3-{{ checksum "Gemfile.lock" }}
+            - rails-demo-bundle-v3-
       - run:
           name: Bundle Install
           command: bundle check || bundle install
       - save_cache:
-          key: rails-demo-bundle-v1-{{ checksum "Gemfile.lock" }}
+          key: rails-demo-bundle-v3-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
 
