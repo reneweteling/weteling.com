@@ -10,11 +10,6 @@ jobs:
       - checkout
 
       - run:
-          name: Install dependencies
-          command: npm i
-
-      - run:
           name: Release
           command: |
-            npm i
             npx semantic-release
