@@ -26,22 +26,24 @@ jobs:
           command: gem install bundler
       - restore_cache:
           keys:
-            - rails-demo-bundle-v3-{{ checksum "Gemfile.lock" }}
-            - rails-demo-bundle-v3-
+            - weteling-com-{{ checksum "Gemfile.lock" }}
+            - weteling-com-
       - run:
-          name: Bundle Install
-          command: bundle check || bundle install
+          name: Install dependencies
+          command: bundle check || bundle install && npm i
+
       - save_cache:
-          key: rails-demo-bundle-v3-{{ checksum "Gemfile.lock" }}
+          key: weteling-com-{{ checksum "Gemfile.lock" }}
           paths:
             - vendor/bundle
+            - node_modules
 
       - run:
           name: Database setup
           command: bundle exec rails db:schema:load --trace
 
       - run:
-          name: Run rspec in parallel
+          name: Run testsuite
           command: |
             bundle exec rails test
 
