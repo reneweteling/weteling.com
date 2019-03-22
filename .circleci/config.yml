@@ -45,14 +45,18 @@ jobs:
           name: Database setup
           command: bin/rails db:schema:load --trace
 
-      - run:
+       - run:
           name: Run rspec in parallel
           command: |
-            bin/rails test --profile 10 \
-                              --format RspecJunitFormatter \
-                              --out test_results/rspec.xml \
-                              --format progress \
-                              $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
+            bin/rails test
+      # - run:
+      #     name: Run rspec in parallel
+      #     command: |
+      #       bin/rails test --profile 10 \
+      #                         --format RspecJunitFormatter \
+      #                         --out test_results/rspec.xml \
+      #                         --format progress \
+      #                         $(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)
 
       - store_test_results:
           path: test_results
