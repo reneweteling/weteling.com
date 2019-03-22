@@ -383,7 +383,7 @@ DEPENDENCIES
   activeadmin-sortable
   activeadmin_addons
   acts_as_list
-  airbrake (~> 5.0)
+  airbrake (~> 5)
   autoprefixer-rails
   bootstrap
   browser
@@ -406,8 +406,8 @@ DEPENDENCIES
   pdfkit
   pg
   pry
-  puma (~> 3.0)
-  rails (~> 5.2)
+  puma (~> 3)
+  rails (~> 5)
   rails-assets-editor.md!
   rails-assets-jquery-migrate!
   rails-assets-stellar!
