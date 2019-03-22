@@ -14,6 +14,7 @@ jobs:
           PGUSER: test
           RAILS_ENV: test
           GH_TOKEN: 70a879e8aff9efc7df62059c3d760a013af8c012
+          NPM_TOKEN: qwerwq
       - image: circleci/postgres:9.5-alpine
         environment:
           POSTGRES_USER: test
