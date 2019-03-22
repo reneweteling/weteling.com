@@ -26,14 +26,14 @@ jobs:
           command: gem install bundler
       - restore_cache:
           keys:
-            - weteling-com-{{ checksum "Gemfile.lock" }}
+            - weteling-com-{{ checksum "Gemfile.lock" }}-{{ checksum "package-lock.json" }}
             - weteling-com-
       - run:
           name: Install dependencies
           command: bundle check || bundle install && npm i
 
       - save_cache:
-          key: weteling-com-{{ checksum "Gemfile.lock" }}
+          key: weteling-com-{{ checksum "Gemfile.lock" }}-{{ checksum "package-lock.json" }}
           paths:
             - vendor/bundle
             - node_modules
