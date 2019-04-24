@@ -23,12 +23,9 @@ COPY Gemfile Gemfile.lock ./
 RUN bundle check || bundle install --jobs=4 --retry=3
 EXPOSE 5000
 
-RUN printenv
-
 # Copy all files
 COPY . .
 
-# ARG RAILS_ENV=production
-# ARG RACK_ENV=production
-
 RUN bundle exec rails assets:precompile
+
+ENTRYPOINT [ "bundle exec puma -C config/puma.rb" ]
