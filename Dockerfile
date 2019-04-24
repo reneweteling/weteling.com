@@ -22,5 +22,7 @@ RUN bundle check --path=vendor/bundle || bundle install --jobs=4 --retry=3 --pat
 # Copy all files
 COPY . .
 
+RUN apk add tzdata
+
 # Start server
 # CMD ["bundle exec puma -C /var/www/html/config/puma.rb"]
