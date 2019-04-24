@@ -22,4 +22,4 @@ RUN bundle check --path=vendor/bundle || bundle install --jobs=4 --retry=3 --pat
 COPY . .
 
 # Start server
-CMD ["bundle exec puma -C config/puma.rb"]
+CMD ["bundle exec puma -C ./config/puma.rb"]
