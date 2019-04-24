@@ -1,9 +1,9 @@
 namespace :dokku do 
-  task rebuild_local: :environment do 
+  task rebuild_local: :environment do
 
     raise "WTF!!! dude only in development!!!" unless Rails.env.development?
 
-    backups = `aws s3 ls dokku.weteling.com | grep weteling`
+    backups = `aws s3 ls dokku.weteling.com | grep postgres-weteling`
     backup = backups.split("\n").last.split(/\s/).last
 
     raise "No backup" unless backup.present?

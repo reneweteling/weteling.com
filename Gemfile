@@ -30,8 +30,7 @@ gem 'browser'
 gem 'redcarpet'
 
 # Nice templates
-gem 'slim-rails', '3.1.1' # froze at this versino, issue with ckeditor
-gem 'ckeditor'
+gem 'slim-rails' #, '3.1.1' # froze at this versino, issue with ckeditor
 gem 'mini_magick'
 
 # Sendgrid

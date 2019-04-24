@@ -1,7 +1,6 @@
 #= require active_admin/base
 #= require activeadmin_addons/all
 #= require activeadmin-sortable
-#= require ckeditor/init
 #= require editor.md/editormd
 #= require editor.md/languages/en
 #= require moment
