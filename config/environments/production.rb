@@ -28,7 +28,7 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
-  config.asset_host = 'https://' + ENV['HOST'] || 'www.weteling.com'
+  config.asset_host = 'https://' + (ENV['HOST'] || 'www.weteling.com')
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -76,7 +76,7 @@ Rails.application.configure do
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
 
-  config.action_mailer.default_url_options = { host: ENV['HOST'] || 'www.weteling.com', port: 443 }
+  config.action_mailer.default_url_options = { host: (ENV['HOST'] || 'www.weteling.com'), port: 443 }
 
   # Use a different logger for distributed setups.
   # require 'syslog/logger'
