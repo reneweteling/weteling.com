@@ -26,7 +26,4 @@ EXPOSE 5000
 # Copy all files
 COPY . .
 
-RUN export RAILS_ENV=production
-RUN export RACK_ENV=production
-
 RUN bundle exec rails assets:precompile
