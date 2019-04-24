@@ -14,7 +14,7 @@ RUN apk add --update \
     libxml2-dev \
     libxslt-dev \
     postgresql-dev \
-    node \
+    nodejs \
     && rm -rf /var/cache/apk/*
 COPY Gemfile Gemfile.lock ./
 RUN bundle check --path=vendor/bundle || bundle install --jobs=4 --retry=3 --path vendor/bundle
