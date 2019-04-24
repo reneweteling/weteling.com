@@ -19,6 +19,7 @@ RUN apk add --update \
     && rm -rf /var/cache/apk/*
 COPY Gemfile Gemfile.lock ./
 RUN bundle check --path=vendor/bundle || bundle install --jobs=4 --retry=3 --path vendor/bundle
+EXPOSE 5000
 
 # Copy all files
 COPY . .
