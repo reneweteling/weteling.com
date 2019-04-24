@@ -25,3 +25,5 @@ EXPOSE 5000
 COPY . .
 
 RUN bundle exec rails assets:precompile
+
+RUN apk add bash vim
