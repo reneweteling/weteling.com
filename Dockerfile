@@ -16,14 +16,14 @@ RUN apk add --update \
     postgresql-dev \
     nodejs \
     tzdata \
+    bash \
+    vim \
     && rm -rf /var/cache/apk/*
 COPY Gemfile Gemfile.lock ./
-RUN bundle check --path=vendor/bundle || bundle install --jobs=4 --retry=3 --path vendor/bundle
+RUN bundle check || bundle install --jobs=4 --retry=3
 EXPOSE 5000
 
 # Copy all files
 COPY . .
 
 RUN bundle exec rails assets:precompile
-
-RUN apk add bash vim
