@@ -27,5 +27,3 @@ EXPOSE 5000
 COPY . .
 
 RUN bundle exec rails assets:precompile
-
-ENTRYPOINT [ "bundle exec puma -C config/puma.rb" ]
