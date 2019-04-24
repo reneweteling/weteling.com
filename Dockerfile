@@ -15,14 +15,10 @@ RUN apk add --update \
     libxslt-dev \
     postgresql-dev \
     nodejs \
+    tzdata \
     && rm -rf /var/cache/apk/*
 COPY Gemfile Gemfile.lock ./
 RUN bundle check --path=vendor/bundle || bundle install --jobs=4 --retry=3 --path vendor/bundle
 
 # Copy all files
 COPY . .
-
-RUN apk add tzdata
-
-# Start server
-# CMD ["bundle exec puma -C /var/www/html/config/puma.rb"]
