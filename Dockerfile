@@ -23,3 +23,5 @@ EXPOSE 5000
 
 # Copy all files
 COPY . .
+
+RUN bundle exec rails assets:precompile
