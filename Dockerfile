@@ -10,7 +10,7 @@ RUN bundle config --global frozen 1
 RUN bundle config build.nokogiri --use-system-libraries
 RUN apk add --update \
     wkhtmltopdf \
-    jemalloc \
+    jemalloc-dev \
     build-base \
     libxml2-dev \
     libxslt-dev \
