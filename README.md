@@ -6,3 +6,17 @@
 #sldkjffdsdfls
 
 # there is more
+
+dokku storage:mount weteling /home/dokku/weteling/static/assets:/var/www/html/public/assets
+
+## /home/dokku/weteling/nginx.conf.d/static.conf
+
+```conf
+
+location ~ ^/assets/ {
+    root /home/dokku/weteling-staging/static;
+    gzip_static on;
+    expires max;
+    add_header Cache-Control public;
+}
+```
