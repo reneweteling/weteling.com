@@ -26,9 +26,6 @@ gem 'carrierwave-aws'
 # error reporting
 gem 'airbrake', '~> 5'
 
-# Lower mem footprint
-gem 'jemalloc'
-
 gem 'browser'
 gem 'redcarpet'
 
