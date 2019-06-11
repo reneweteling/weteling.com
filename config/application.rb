@@ -21,8 +21,7 @@ module WetelingCom
 
     config.sass.preferred_syntax = :sass
 
-    config.load_defaults = "6.0"
-    config.autoloader = :classic
+    config.load_defaults = '6.0'
   end
 end
 
