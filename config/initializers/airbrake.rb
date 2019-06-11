@@ -52,7 +52,7 @@ Airbrake.configure do |c|
   # Read more: https://goo.gl/gqQ1xS
   # c.blacklist_keys = Rails.application.config.filter_parameters
   
-end
+end if defined? Airbrake
 
 # A filter that collects request body information. Enable it if you are sure you
 # don't send sensitive information to Airbrake in your body (such as passwords).

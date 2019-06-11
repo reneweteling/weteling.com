@@ -20,6 +20,9 @@ module WetelingCom
     config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
 
     config.sass.preferred_syntax = :sass
+
+    config.load_defaults = "6.0"
+    config.autoloader = :classic
   end
 end
 

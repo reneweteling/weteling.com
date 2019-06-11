@@ -37,7 +37,7 @@ Rails.application.configure do
   # Raise an error on page load if there are pending migrations.
   config.active_record.migration_error = :page_load
 
-  config.action_mailer.default_url_options = { host: ENV['HOST'] || 'weteling.dev', port: 80 }
+  config.action_mailer.default_url_options = { host: ENV['BINDING'], port: 80 }
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
@@ -47,7 +47,7 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  config.action_controller.asset_host = ENV['HOST'] || "weteling.dev"
+  config.action_controller.asset_host = ENV['BINDING']
 
   # Raises error for missing translations
   config.action_view.raise_on_missing_translations = true
