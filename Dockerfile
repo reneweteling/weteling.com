@@ -4,6 +4,7 @@ FROM ruby:2.6-alpine
 WORKDIR /var/www/html
 
 # throw errors if Gemfile has been modified since Gemfile.lock
+RUN gem install bundler:2.0.1
 RUN bundle config --global frozen 1
 
 # Bundle in seperate layer
