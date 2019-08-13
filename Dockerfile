@@ -10,15 +10,16 @@ RUN bundle config --global frozen 1
 # Bundle in seperate layer
 RUN bundle config build.nokogiri --use-system-libraries
 RUN apk add --update \
-    wkhtmltopdf \
+    bash \
     build-base \
+    imagemagick \
     libxml2-dev \
     libxslt-dev \
-    postgresql-dev \
     nodejs \
+    postgresql-dev \
     tzdata \
-    bash \
     vim \
+    wkhtmltopdf \
     && rm -rf /var/cache/apk/*
 COPY Gemfile Gemfile.lock ./
 RUN bundle check || bundle install --jobs=4 --retry=3
