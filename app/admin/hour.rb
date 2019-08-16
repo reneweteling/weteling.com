@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 ActiveAdmin.register Hour do
   menu priority: 2
-  
+
   include ActiveAdminHelper
   permit!
 
@@ -28,16 +30,16 @@ ActiveAdmin.register Hour do
   filter :date
 
   scope :all, default: true
-  scope(:today) {|scope| scope.where(date: Date.today) }
+  scope(:today) { |scope| scope.where(date: Date.today) }
 
-  index do 
+  index do
     selectable_column
     id_column
     column :project
     column :rate
     column :date
     column :total_hours
-    column :total_sno_hours
+    # column :total_sno_hours
     column :description do |row|
       simple_format row.description
     end
@@ -50,26 +52,29 @@ ActiveAdmin.register Hour do
       row :rate
       row :date
       row :total_hours
-      row :total_sno_hours
+      #   row :total_sno_hours
       row :description do |row|
         simple_format row.description
       end
     end
   end
 
-  form do |f|
-
+  form do |_f|
     projects = Project.active.all + [resource.project]
 
-    inputs 'Details' do 
-      input :project, input_html: { 'data-rate': projects.map{|p| [p.id, p.client.default_rate.id]}.to_h.to_json }, collection: projects
+    inputs 'Details' do
+      input :project, input_html: {
+        'data-rate': projects.map do |p|
+                       [p.id, p.client.default_rate.id]
+                     end.to_h.to_json
+      }, collection: projects
       input :rate
       input :date
+      input :repeat_date, as: :datepicker
       input :total_hours
-      input :total_sno_hours
+      #   input :total_sno_hours
       input :description
     end
     actions
   end
-
 end
