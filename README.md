@@ -20,5 +20,3 @@ location ~ ^/assets/ {
     add_header Cache-Control public;
 }
 ```
-
-dicks
