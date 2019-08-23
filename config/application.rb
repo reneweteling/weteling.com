@@ -1,12 +1,10 @@
-require_relative 'boot'
+require_relative "boot"
 
-require 'rails/all'
+require "rails/all"
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-
-pp ENV
 
 module WetelingCom
   class Application < Rails::Application
@@ -16,14 +14,13 @@ module WetelingCom
     config.i18n.default_locale = :en
     # config.autoload_paths << Rails.root.join('app', 'graph')
     # config.autoload_paths << Rails.root.join('app', 'graph', 'types')
-    config.autoload_paths += Dir[Rails.root.join('app', 'graphql', '{**}')]
-    config.autoload_paths += Dir[Rails.root.join('app', 'models', '{**}')]
+    config.autoload_paths += Dir[Rails.root.join("app", "graphql", "{**}")]
+    config.autoload_paths += Dir[Rails.root.join("app", "models", "{**}")]
 
     config.sass.preferred_syntax = :sass
 
-    config.load_defaults = '6.0'
+    config.load_defaults = "6.0"
   end
 end
-
 
 # http://mgiroux.me/2015/getting-started-with-rails-graphql-relay/
