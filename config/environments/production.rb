@@ -19,7 +19,7 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # redis cache
-  config.cache_store = :redis_cache_store, "#{ENV['REDIS_URL']}/0/cache"
+  config.cache_store = :redis_cache_store, { url: "#{ENV['REDIS_URL']}/0/cache" }
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
