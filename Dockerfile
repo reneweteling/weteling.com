@@ -12,6 +12,7 @@ RUN bundle config build.nokogiri --use-system-libraries
 RUN apk add --update \
     bash \
     build-base \
+    gcompat \
     imagemagick \
     libxml2-dev \
     libxslt-dev \
