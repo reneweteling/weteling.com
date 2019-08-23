@@ -294,6 +294,7 @@ GEM
       ffi (~> 1.0)
     rbtree3 (0.5.0)
     redcarpet (3.5.0)
+    redis (4.1.2)
     require_all (1.5.0)
     responders (3.0.0)
       actionpack (>= 5.0)
@@ -426,6 +427,7 @@ DEPENDENCIES
   rails-assets-waypoints!
   rails_validations
   redcarpet
+  redis
   rubocop-rails
   rufo
   sass-rails

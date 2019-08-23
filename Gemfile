@@ -19,6 +19,8 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks'
+# cache store
+gem 'redis'
 # Move our uploads to AWS
 gem 'carrierwave-aws'
 # error reporting
