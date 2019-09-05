@@ -8,9 +8,9 @@ gem 'pg'
 # Use Puma as the app server
 gem 'puma'
 # Sass using the libC compiler, prefixer for css vendors.
-gem "sass-rails", require: false
-gem "sassc-rails"
-gem "autoprefixer-rails"
+gem 'sass-rails', require: false
+gem 'sassc-rails'
+gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier'
 # Use CoffeeScript for .coffee assets and views
@@ -87,8 +87,10 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen'
   gem 'graphiql-rails'
-  # Formatting
-  gem 'rubocop-rails'
+  # gems for VS-code plugins
+  gem 'solargraph'
   gem 'prettier'
-  gem 'rufo'
+  gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'rubocop-performance'
 end

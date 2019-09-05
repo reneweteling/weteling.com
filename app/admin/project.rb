@@ -3,7 +3,7 @@ ActiveAdmin.register Project do
   include ActiveAdminHelper
   permit!
   config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
-  config.paginate   = false # optional; drag-and-drop across pages is not supported
+  config.paginate = false # optional; drag-and-drop across pages is not supported
   sortable
 
   # filter :client
@@ -13,14 +13,14 @@ ActiveAdmin.register Project do
   filter :active
 
   index do
-    sortable_handle_column 
+    sortable_handle_column
     selectable_column
     id_column
     column :position
     column :client
     column :name
     column :description do |row|
-      markdown(row.description).html_safe
+      markdown(row.description.truncate(200)).html_safe
     end
     # column :description_cv do |row|
     #   markdown(row.description).html_safe
@@ -52,5 +52,4 @@ ActiveAdmin.register Project do
     end
     actions
   end
-
 end
