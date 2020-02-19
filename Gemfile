@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
-ruby '~> 2.6'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '6.0'
+gem 'rails'
 # storage
 gem 'pg'
 # Use Puma as the app server
@@ -19,8 +18,6 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks'
-# cache store
-gem 'redis'
 # Move our uploads to AWS
 gem 'carrierwave-aws'
 # error reporting
@@ -35,10 +32,6 @@ gem 'mini_magick'
 
 # Sendgrid
 gem 'sendgrid-ruby'
-
-# Graphql
-gem 'graphql'
-gem 'graphql-batch'
 
 # Activeadmin
 gem 'activeadmin'
@@ -62,14 +55,13 @@ gem 'simple_form'
 # Assets
 gem 'font-awesome-sass'
 gem 'bootstrap'
+gem 'bulma-rails'
+gem 'bulma-extensions-rails'
 
 # validations
 gem 'rails_validations'
 
 source 'https://rails-assets.org' do
-  gem 'rails-assets-stellar'
-  gem 'rails-assets-jquery-migrate'
-  gem 'rails-assets-waypoints'
   gem 'rails-assets-editor.md'
 end
 

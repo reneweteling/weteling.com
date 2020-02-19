@@ -1,138 +1,242 @@
-
-  
-#home.section.d-flex
-  .background data-stellar-background-ratio="1.5"
-  .stripes.stripe-two data-stellar-background-ratio="2.5"
-  .container.align-self-center
-    .heading
-      h1.big Hello,
-      h1 I'm René Weteling, <br />web enthusiast <br />entrepreneur &amp; joker.
-
-      br
-      br
-      p This is obviously still a work in progress.....
-
-
-#about-me-prof.section.d-flex
-  .background data-stellar-background-ratio="1.5"
-  .stripes.stripe-two data-stellar-background-ratio="3.9"
-  .container.align-self-center
-    .heading
-      h1 01
-      h2 About me professionally
-    
-    p 
-      | So i’m a freelance web enthusiast. Why such a vague job definition? Well that's because my activities are quite diverse. Sometimes i’m a interim-CTO building a great product and an even nicer team and sometimes i'm correcting some small bug somewhere.
-      br
-      | My knowledge is quite broad, i've studied computer sciences, worked at multiple companies and tasted a lot of corporate cultures. 
-      br
-      | Ive founded my company, or went to the Chamber of Commerce about 10 years ago. I was doing some freelance work next to my regular employment and needed to invoice clients. Not to long ago in 2015 ive decided to make the switch to full time freelancing. To be honest the best decision in my life. The whole chain of building something for someone is so exciting and challenging that boredom is something of the past. 
-
-    p Things where i'm really good at are: creating business applications, Single Page Applications, Ruby on Rails apps, React apps, couplings between systems you name it!
-
-    p What i’d really love to do is creating some React Native mobile apps. So far i've just created demo projects to learn the language. But a real assignment with a stakeholder would be great.
-
-  
-#about-me.section.d-flex
-  .background data-stellar-background-ratio="1.5"
-  .stripes.stripe-two data-stellar-background-ratio="0.9"
-  .container.align-self-center
-    .heading
-      h1 02
-      h2 About me personally 
-    
-    p So i'm Rene born in ‘86 the time where computers started to get accessible to the public. the time of the Apple Mackintosh the time of the Atari and the Commodore 64.  It was a great time to grow to love computers. Back in the day everything was so big you could actually understand what it did by looking at it. A great basis to work with.
-
-    p So, as you might have noticed i like computers, and they like me (except for windows computers…. we have some strong differences in opinions). I love boats, cars, beers, cafe’s, festivals, techno and off course Amsterdam. 
-
-    p In my spare time i'd love to do some stuff with my family, i've got a beautiful viance Thecla a daughter Lotte (‘13) and a son Boris (‘17). Going on the boat in the summer, 
-
-
-#projects.section.d-flex
-  .background data-stellar-background-ratio="1.5"
-  .stripes.stripe-one data-stellar-background-ratio="2.6"
-  .container.align-self-center
-    .heading
-      h1 03
-      h2 Latest projects
-      / h3 see all projects
-
-    = render partial: 'project', collection: @projects
-
-
-#blog.section.d-flex
-  .background data-stellar-background-ratio="1.5"
-  .stripes.stripe-two data-stellar-background-ratio="2.6"
-  .container.align-self-center
-    .heading
-      h1 04
-      h2 blog
-
-#contact.section.d-flex 
-  .background data-stellar-background-ratio="1.5"
-  = render 'contact'
-    
-
-- unless @browser.device.mobile?
-
-  coffee:
-    $ ->
-      # Select all links with hashes
-      $('a[href*="/#"]').not('[href="#"]').not('[href="#0"]').click (event) ->
-        # On-page links
-        if location.pathname.replace(/^\//, '') == @pathname.replace(/^\//, '') and location.hostname == @hostname
-          # Figure out element to scroll to
-          target = $(@hash)
-          target = if target.length then target else $('[name=' + @hash.slice(1) + ']')
-          # Does a scroll target exist?
-          if target.length
-            # Only prevent default if animation is actually gonna happen
-            event.preventDefault()
-            $('html, body').animate { scrollTop: target.offset().top }, 1000, ->
-              # Callback after animation
-              # Must change focus!
-              $target = $(target)
-              $target.focus()
-              if $target.is(':focus')
-                # Checking if the target was focused
-                return false
-              else
-                $target.attr 'tabindex', '-1'
-                # Adding tabindex for elements not focusable
-                $target.focus()
-                # Set focus again
-                
-      $.stellar
-        # Set scrolling to be in either one or both directions
-        horizontalScrolling: false,
-        verticalScrolling: true,
-
-        # Set the global alignment offsets
-        horizontalOffset: 0,
-        verticalOffset: 0,
-
-        # Refreshes parallax content on window load and resize
-        responsive: true,
-
-        # Select which property is used to calculate scroll.
-        # Choose 'scroll', 'position', 'margin' or 'transform',
-        # or write your own 'scrollProperty' plugin.
-        scrollProperty: 'scroll',
-
-        # Select which property is used to position elements.
-        # Choose between 'position' or 'transform',
-        # or write your own 'positionProperty' plugin.
-        positionProperty: 'transform',
-
-        # Enable or disable the two types of parallax
-        parallaxBackgrounds: true,
-        parallaxElements: false,
-
-        # Hide parallax elements that move outside the viewport
-        hideDistantElements: true,
-
-        # Customise how elements are shown and hidden
-        hideElement: ($elem) -> $elem.hide()
-        showElement: ($elem) -> $elem.show()
-      
-
+nav.navbar.is-fixed-top.is-transparent
+  .container
+    .navbar-brand
+      a.navbar-item href="#home" 
+        = image_tag('logo.svg')
+      .navbar-burger.burger data-target="navbarExampleTransparentExample" 
+        span
+        span
+        span
+    #navbarExampleTransparentExample.navbar-menu
+      .navbar-end
+        a.navbar-item href="#home" 
+          | Home
+        a.navbar-item href="#skills" 
+          | Skills
+        a.navbar-item href="#projects" 
+          | Projects
+        a.navbar-item href="#about-me" 
+          | About me
+        a.navbar-item href="#contact" 
+          | Contact
+header
+  section#home.hero.is-fullheight
+    .hero-body
+      .container
+        h2.subtitle
+          | Hi
+        h1.title.is-1
+          | I'm René
+        h2.subtitle.is-2
+          | Allround developer
+        a.button.is-primary.is-rounded.is-medium href="#contact" 
+          span
+            | Say hello
+            span aria-label="emoji" role="img"  👋
+    .header-bg style=("position: absolute; overflow: hidden;") 
+      div style=("width: 100%; padding-bottom: 66.6667%;") 
+      picture
+        = image_tag('apple.jpg', sizes: "(max-width: 800px) 100vw), 800px", style: "position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; opacity: 1; transition: none 0s ease 0s;")
+        / img alt=("header image") sizes=("(max-width: 800px) 100vw), 800px" src=("<%= Routes.static_path(@conn), \"/images/apple.jpg\") %>" style=("position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; opacity: 1; transition: none 0s ease 0s;") /
+    a.scroll-down-icon href="#skills" 
+      svg.svg-inline--fa.fa-angle-double-down.fa-w-10.fa-2x aria-hidden="true" data-icon="angle-double-down" data-prefix="fas" data-view="#skills" focusable="false" role="img" viewbox=("0 0 320 512") xmlns="http://www.w3.org/2000/svg" 
+        path d=("M143 256.3L7 120.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0L313 86.3c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.4 9.5-24.6 9.5-34 .1zm34 192l136-136c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L160 352.1l-96.4-96.4c-9.4-9.4-24.6-9.4-33.9 0L7 278.3c-9.4 9.4-9.4 24.6 0 33.9l136 136c9.4 9.5 24.6 9.5 34 .1z") fill="currentColor" 
+section#skills.section
+  .container
+    .content.is-medium
+      h2 Skills
+      p
+        | Throughout the years, i've been in contact with
+        strong multple
+        | facets of the IT-landscape. My
+        strong passion
+        | is in
+        | webdevelopment, this is because of the short iteration to optimize the product and the ability to make
+        | data-driven
+        | descisions. I love it when people use the product that i've helped to develop, so web and mobile are ideal!
+    .columns
+      /! Back-end
+      .column.is-half-tablet.is-one-third-desktop
+        .card
+          .card-content
+            .content.has-text-centered
+              span aria-label="emoji" role="img" style=("font-size: 2.5rem;")  👨‍💻
+              h3.is-2 Back-End Development
+              p
+                | Like in life most of the interesting stuff happens behind the scenes, this is especially true in
+                | development. Api's, integrations, back-ends, services, jobs, searching, storage you name it. This is
+                | where i'm at home.
+              .section
+                h4.is-4 Languages:
+                .tags.is-centered
+                  - ["Elixir", "Ruby", "NodeJs", "SQL", "GraphQL", "PHP", "Perl", "Scala", "Java"].each do |tag| 
+                    span.tag = tag
+              .section
+                h4.is-4 Development Tools:
+                .tags.is-centered
+                  - ["VsCode", "GitHub", "Bitbucket", "Gitlab", "Git", "Jira", "SourceTree", "NaviCat"].each do |tag|
+                    span.tag = tag
+              .section
+                h4.is-4 Frameworks:
+                .tags.is-centered
+                  - ["Phoenix", "Rails", "Express", "Laravel"].each do |tag|
+                    span.tag = tag
+      /! Front-end
+      .column.is-half-tablet.is-one-third-desktop
+        .card
+          .card-content
+            .content.has-text-centered
+              span aria-label="emoji" role="img" style=("font-size: 2.5rem;")  💻
+              h3.is-2 Front-End Development
+              p
+                | Back-ends need to interact with something consumer facing, so front-end development is also a large
+                | part of an app. Creating pixelperfect interfaces is not really my cup of tea, what i like to do is
+                | create functional interfaces using some sort of framework for ease, speed and consistancy.
+              .section
+                h4.is-4 Languages:
+                .tags.is-centered
+                  - ["Html", "Css", "Sass", "Javascript", "Typescript", "Slim", "Haml"].each do |tag|
+                    span.tag= tag
+                  
+              .section
+                h4.is-4 Development Tools:
+                .tags.is-centered
+                  - ["Webpack", "Gulp", "Grunt", "Figma", "Zeplin"].each do |tag|
+                    span.tag= tag
+                  
+              .section
+                h4.is-4 Frameworks:
+                .tags.is-centered
+                  - ["React", "VueJs", "Bootstrap", "Bulma"].each do |tag|
+                    span.tag= tag
+                  
+      /! Front-end
+      .column.is-half-tablet.is-one-third-desktop
+        .card
+          .card-content
+            .content.has-text-centered
+              span aria-label="emoji" role="img" style=("font-size: 2.5rem;")  ☁️
+              h3.is-2 DevOps
+              p
+                | Back-ends with front-ends need to run somewhere, and store some data, access some database rows,
+                | maybe have an optimized search layer, with a CiCd to automate it all. This is something i really enjoy
+                | setting up.
+              .section
+                h4.is-4 Development Tools:
+                .tags.is-centered
+                  - ["Github Actions", "CircleCi", "CodePipelines", "Fargate", "S3", "EC2", "DockerHub", "Dokku", "Heroku", "Flynn", "Hetzner", "DigitalOcean"].each do |tag|
+                    span.tag= tag
+                  
+              .section
+                h4.is-4 Frameworks:
+                .tags.is-centered
+                  - ["Ansible", "Capistrano"].each do |tag|
+                    span.tag= tag
+                  
+        
+section#projects.section
+  .container
+    .content.is-medium
+      h2 Projects
+      p
+        | Since im mostley active in the
+        strong back-end
+        | creating some sort of portfolio proved to be quite
+        | the task. So I
+        | hope with this caroussel of cards you will get a gist of what im
+        strong capable
+        | of.
+    #projects-carousel.carousel style=("overflow: hidden; margin: 0 -0.75rem;") 
+      .carousel-container
+        - 5.times do 
+          .carousel-item.content.has-text-centered style=("margin: 0.75rem;") 
+            .card
+              .card-content
+                .media
+                  .media-left
+                    figure.image.is-96x96
+                      img alt=("Placeholder image") src="https://digib.com/wp-content/uploads/2018/12/logo-1.png"
+                  .media-content
+                    p.title.is-4 DigiB
+                    p.subtitle.is-6 Chemical e-trading system
+                .content
+                  .section
+                    h4.is-4 About the company:
+                    p
+                      | DigiB is a division of Brenntag, Brenntag is marktleader in the supply of raw chemicals. DigiB is
+                      | tasked with the digital transformation of Brenntag by bringing an e-commerce system, internal
+                      | trading and couplings between all offices.
+                  .section
+                    h4.is-4 My role:
+                    p
+                      | As a front-end deverloper ive worked with the front-end team to expand the e-commerce system build
+                      | in React, with NextJs and a NodeJs middleware. Also ive been working on the "target architecture" an
+                      | overcoupling system that is able to connecgt multiple ERP systems like Oracle, SAP, Salesforce etc.
+                      | This design was Reactive using a message bus.
+                  .section
+                    h4.is-4 Techniques used:
+                    .tags.is-centered
+                      - ["React", "NodeJs", "TypeScript", "Kafka", "C4 architecture", "System Architecture"].each do |tag|
+                        span.tag= tag
+                    
+section#about-me.section
+  .container
+    .content.is-medium
+      h2 About me
+      .container
+        .columns
+          .column
+            p
+              | I'm a coder born in Capelle aan den IJssel, just under the skirt of Rotterdam (NL). At a very young age
+              | I
+              | fell in love with computers.
+            p
+              | My dad was also pretty interested in computers, tought me batch scripts in MS-DOS when i was about 9
+              | years old, on a 286DX with the turbo always on. We where one of the first in
+              | the neighberhood with a dial-up connection, followed by the ISDN with trunk mode, followed by DSL, Cable
+              | and finally Fiber. The possibilities of connecting these machines to each other machines
+              | was so intrueeging that i started experimenting with VPN's, LAMP stacks, FTP servers at the age of
+              | 14.
+          .column
+            p
+              | Time to chose a direction for my future education, one of the simplest choices of my life, so i enrolled
+              | in Computer Sciences at the HRO in Rotterdam. The education was a breeze, and i did it part time while
+              | working at an digital agency. The code-monkey was born!
+            figure.image.is-128x128
+              = image_tag('rene.jpg', class: "is-rounded")
+            p
+              | On a personal note, im a proud father of 2, soon to be 3 kids. Engaged to my beatiful wife to be.
+              | Festival lover, hanging out with friends, boating in the cannals and offcourse vacation. Work hard Play
+              | hard!
+section#contact.section
+  .container
+    .content.is-medium
+      h2 Contact
+      p
+        | Want to send me a ❤️letter? You can use the details below, or just send me an email using the contact form.
+    .columns
+      .column.content
+        p
+        address
+          | Herengracht 504 (unit 2.2)
+          br/
+          | 1017 CB Amsterdam
+        br/
+        a href="tel:0031655128199"  +316 - 55 128 199
+        br/
+        a href="mailto:rene@weteling.com?subject=Lets get in touch&body=Hi Rene,%0D%0A%0D%0AI saw your'e website and..." rene@weteling.com
+        p
+          | IBAN: NL38 KNAB 0723 0772 82
+          br/
+          | KvK Rotterdam: 24403159
+          br/
+          | BTW no: NL0021.95773.B23
+      .column
+        h1 FORM
+        
+footer.footer.content.has-text-centered
+  p 
+    | Weteling Support 2006 - 
+    = Time.zone.now.year 
+  p Made with ❤️in ❌❌❌
+p.has-text-centered EOF 🤓

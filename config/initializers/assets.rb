@@ -12,6 +12,7 @@ Rails.application.configure do
   # Rails.application.config.assets.precompile += %w( search.js )
 
   config.assets.precompile += %w( pdf.css )
+  config.assets.precompile += %w( site.css site.js )
   config.assets.precompile += %w( ckeditor/* )
 
   config.public_file_server.headers = {

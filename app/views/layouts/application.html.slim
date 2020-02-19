@@ -1,52 +1,11 @@
 doctype html
-html
+html.main
   head
-    title Weteling.com
+    title Weteling Support · René Weteling
     meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
-    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
-    = javascript_include_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag 'site', media: 'all', 'data-turbolinks-track': 'reload'
     = csrf_meta_tags
     
-  body.site
-    nav.navbar.navbar-expand-md.fixed-top
-      .container
-        .row   
-          .col-md-4
-            a.navbar-brand href="/"
-              = image_tag 'logo_grey_complete.png'
-            button.navbar-toggler.float-right type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
-              span.navbar-toggler-icon
-
-          .col-md-8
-
-            
-            #navbarSupportedContent.collapse.navbar-collapse
-              .row
-                .col-md-4
-                  form.form-inline
-                    input.col-md-12.form-control type="text" placeholder=="&#xF002;"
-                    
-
-                .col-md-6.offset-md-2
-                  ul.navbar-nav
-                    li.nav-item.active
-                      a.nav-link href="/#home" Home
-                    
-                    li.nav-item
-                      a.nav-link href="/#about-me-prof" About work
-                    li.nav-item
-                      a.nav-link href="/#about-me" About me
-                    li.nav-item
-                      a.nav-link href="/#projects" Projects
-                    li.nav-item
-                      a.nav-link href="/#blog" Blog
-                    li.nav-item
-                      a.nav-link href="/#contact" Contact
-                    li.nav-item
-                      a.nav-link href=cv_path Cv
-                    li.nav-item
-                      a.nav-link href=admin_root_path Sign in
-                      
-
-
+  body
     = yield
+    = javascript_include_tag 'site', media: 'all', 'data-turbolinks-track': 'reload'

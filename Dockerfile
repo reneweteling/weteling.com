@@ -1,10 +1,10 @@
 # Dockerfile
-FROM ruby:2.6-alpine
+FROM ruby:2.7-alpine
 
 WORKDIR /var/www/html
 
 # throw errors if Gemfile has been modified since Gemfile.lock
-RUN gem install bundler:2.0.1
+RUN gem install bundler:2.1.4
 RUN bundle config --global frozen 1
 
 # Bundle in seperate layer

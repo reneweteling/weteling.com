@@ -14,7 +14,6 @@ module WetelingCom
     config.i18n.default_locale = :en
     # config.autoload_paths << Rails.root.join('app', 'graph')
     # config.autoload_paths << Rails.root.join('app', 'graph', 'types')
-    config.autoload_paths += Dir[Rails.root.join("app", "graphql", "{**}")]
     config.autoload_paths += Dir[Rails.root.join("app", "models", "{**}")]
 
     config.sass.preferred_syntax = :sass
@@ -22,5 +21,3 @@ module WetelingCom
     config.load_defaults = "6.0"
   end
 end
-
-# http://mgiroux.me/2015/getting-started-with-rails-graphql-relay/

@@ -1,0 +1,121 @@
+// $fa-font-path: "/fonts" !default;
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web&display=swap");
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+$family-primary: "Titillium Web", BlinkMacSystemFont, -apple-system, "Segoe UI",
+  "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+$section-padding: 1.5rem !default;
+// $section-padding-medium: 9rem 1.5rem !default;
+// $section-padding-large: 18rem 1.5rem !default;
+$card-media-margin: 0;
+
+@import "bulma";
+@import 'bulma-extensions';
+
+
+html.admin{
+  &.has-navbar-fixed-top{
+    padding-top: 4.25rem;
+  }
+}
+
+html.main {
+  scroll-behavior: smooth;
+
+  .slider {
+    outline: none;
+    .section {
+      padding: 1.5rem 0;
+    }
+  }
+
+  @keyframes floating {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(-20px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+
+  // body * {
+  //   transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
+  // }
+  .navbar-item img {
+    max-height: 5rem;
+  }
+  .navbar {
+    &.is-transparent {
+      background: none;
+      background-image: linear-gradient(
+        to top,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.7),
+        rgba(255, 255, 255, 0.8),
+        rgba(255, 255, 255, 0.9)
+      );
+    }
+    .navbar-burger {
+      width: 4.25rem;
+      height: 4.25rem;
+      span {
+        width: 30px;
+        left: calc(50% - 11px);
+        &:nth-child(1) {
+          top: calc(50% - 10px);
+        }
+        &:nth-child(2) {
+          top: calc(50% - 1px);
+        }
+        &:nth-child(3) {
+          top: calc(50% + 8px);
+        }
+      }
+      &.is-active span {
+        &:nth-child(1) {
+          transform: translateY(10px) rotate(45deg);
+        }
+        &:nth-child(3) {
+          transform: translateY(-8px) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  header {
+    .scroll-down-icon {
+      margin: auto;
+      position: relative;
+      bottom: 5rem;
+      svg {
+        animation: floating 2s infinite;
+        width: 0.6em;
+      }
+    }
+
+    .header-bg {
+      width: 50vw;
+      // width: 100vw;
+
+      height: 100vh;
+      background-size: cover;
+      background-position: 50%;
+      position: absolute;
+      right: 0;
+      z-index: -1;
+    }
+  }
+  @media (max-width: 80rem) {
+    header .header-bg {
+      width: 100vw;
+    }
+    .navbar-item img {
+      max-height: 4rem;
+    }
+  }
+}
