@@ -1,19 +1,14 @@
 // $fa-font-path: "/fonts" !default;
 @import url("https://fonts.googleapis.com/css?family=Titillium+Web&display=swap");
-@import "font-awesome-sprockets";
-@import "font-awesome";
 
 $family-primary: "Titillium Web", BlinkMacSystemFont, -apple-system, "Segoe UI",
   "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
   "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 $section-padding: 1.5rem !default;
-// $section-padding-medium: 9rem 1.5rem !default;
-// $section-padding-large: 18rem 1.5rem !default;
 $card-media-margin: 0;
 
-@import "bulma";
-@import 'bulma-extensions';
-
+@import "~bulma";
+@import "~bulma-carousel";
 
 html.admin{
   &.has-navbar-fixed-top{

@@ -18,6 +18,10 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks'
+
+# Handle javascript
+gem 'webpacker'
+
 # Move our uploads to AWS
 gem 'carrierwave-aws'
 # error reporting
@@ -55,8 +59,6 @@ gem 'simple_form'
 # Assets
 gem 'font-awesome-sass'
 gem 'bootstrap'
-gem 'bulma-rails'
-gem 'bulma-extensions-rails'
 
 # validations
 gem 'rails_validations'

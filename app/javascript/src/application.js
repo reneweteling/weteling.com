@@ -1,10 +1,8 @@
-//= require bulma-extensions
-
-
+import bulmaCarousel from "bulma-carousel";
 
 document.addEventListener("DOMContentLoaded", () => {
 
-  bulmaExtensions.bulmaCarousel.attach("#projects-carousel", {
+  bulmaCarousel.attach("#projects-carousel", {
     slidesToScroll: 1,
     slidesToShow: 3,
     autoplay: true,
@@ -15,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { changePoint: 1224, slidesToShow: 3, slidesToScroll: 1 },
     ]
   });
-  
+
   // Get all "navbar-burger" elements
   const $navbarBurgers = Array.prototype.slice.call(
     document.querySelectorAll(".navbar-burger"),0

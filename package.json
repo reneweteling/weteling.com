@@ -17,16 +17,7 @@
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/reneweteling/weteling.com/issues"
-  },
   "homepage": "https://github.com/reneweteling/weteling.com#readme",
-  "devDependencies": {
-    "@prettier/plugin-ruby": "^0.12.3",
-    "cz-conventional-changelog": "^2.1.0",
-    "prettier": "^1.18.2",
-    "semantic-release": "^15.13.24"
-  },
   "release": {
     "branch": "master",
     "plugins": [
@@ -39,5 +30,18 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "devDependencies": {
+    "@prettier/plugin-ruby": "^0.12.3",
+    "cz-conventional-changelog": "^2.1.0",
+    "prettier": "^1.18.2",
+    "semantic-release": "^15.13.24",
+    "webpack-dev-server": "^3.10.3"
+  },
+  "dependencies": {
+    "@rails/webpacker": "4.2.2",
+    "autosize": "^4.0.2",
+    "bulma-carousel": "^4.0.4",
+    "bulma": "^0.8.0"
   }
 }

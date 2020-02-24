@@ -146,8 +146,7 @@ section#projects.section
         | hope with this caroussel of cards you will get a gist of what im
         strong capable
         | of.
-    #projects-carousel.carousel style=("overflow: hidden; margin: 0 -0.75rem;") 
-      .carousel-container
+    #projects-carousel style=("overflow: hidden; margin: 0 -0.75rem;") 
         - 5.times do 
           .carousel-item.content.has-text-centered style=("margin: 0.75rem;") 
             .card
@@ -232,7 +231,7 @@ section#contact.section
           br/
           | BTW no: NL0021.95773.B23
       .column
-        h1 FORM
+        = render 'contact'
         
 footer.footer.content.has-text-centered
   p 
