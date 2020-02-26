@@ -17,6 +17,7 @@ RUN apk add --update \
     libxml2-dev \
     libxslt-dev \
     nodejs \
+    yarn \
     postgresql-dev \
     tzdata \
     vim \
@@ -24,7 +25,10 @@ RUN apk add --update \
     && rm -rf /var/cache/apk/*
 COPY Gemfile Gemfile.lock ./
 RUN bundle check || bundle install --jobs=4 --retry=3
-EXPOSE 5000
 
 # Copy all files
 COPY . .
+RUN yarn
+RUN bundle exec rails assets:precompile
+RUN rm -rf /var/www/html/nodejs
+EXPOSE 5000
