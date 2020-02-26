@@ -3,6 +3,10 @@ FROM ruby:2.7-alpine
 
 WORKDIR /var/www/html
 
+ENV RAILS_ENV=production
+ENV RACK_ENV=production
+ENV NODE_ENV=production
+
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN gem install bundler:2.1.4
 RUN bundle config --global frozen 1
