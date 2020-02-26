@@ -1,20 +1,10 @@
-#contact-form
+#contact-content
   = simple_form_for(@contact_form, url: contact_path, remote: true) do |f|
-    .row
-      .col-sm-6
-        .row
-          .col-sm-6 = f.input :name, label: false, placeholder: 'Name'
-          .col-sm-6 = f.input :email, label: false, placeholder: 'Email'
-        .row
-          .col-sm-12 = f.input :subject, label: false, placeholder: 'Subject'
-    .row
-      .col-sm-6
-        .row
-          .col-sm-12 = f.input :message, as: :text, label: false, placeholder: 'Message'
-      
-    .row
-      .col-sm-6.text-center 
-        = f.submit 'Send!', class: 'btn btn-primary'
-        - if @sent
-          br
-          |Thanks for messaging me, i'll get back to you shortly!
+    = f.input :name, label: false, placeholder: 'Name'
+    = f.input :email, label: false, placeholder: 'Email'
+    = f.input :subject, label: false, placeholder: 'Subject'
+    = f.input :message, as: :text, label: false, placeholder: 'Message'
+    = f.submit 'Send!', class: 'button is-primary'
+    - if @sent
+      br
+      | Thanks for messaging me, i'll get back to you shortly!

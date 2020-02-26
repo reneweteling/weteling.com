@@ -12,9 +12,9 @@ class Project < ApplicationRecord
 
   attr_writer :virtual_techniques_attr
 
-  scope :orderd, -> { order(position: :desc) }
-  scope :for_site, -> { site_active?.orderd }
-  scope :for_cv, -> { cv_active?.order(end_date: :desc).order(start_date: :asc) }
+  scope :orderd,    -> { order(position: :desc) }
+  scope :for_site,  -> { where(site_active: true).orderd }
+  scope :for_cv,    -> { where(cv_active: true).orderd }
 
   def techniques
     tags.join(',')

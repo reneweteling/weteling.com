@@ -1,12 +1,9 @@
 #subscribe-content
   - if @sendgrid_sent
-    .row
-      .col-sm-12
-        h3 Thanks for subscribing! Ill keep you posted
+    h3 Thanks for subscribing! Ill keep you posted
   - else
     = simple_form_for(@sendgrid_form, url: subscribe_path, remote: true) do |f|
-      .row
-        .col-sm-3 = f.input :first_name, label: false, placeholder: 'First name'
-        .col-sm-3 = f.input :last_name, label: false, placeholder: 'Last name'
-        .col-sm-4 = f.input :email, label: false, placeholder: 'Email'
-        .col-sm-2 = f.submit 'Subscribe!', class: 'btn btn-primary'
+      = f.input :first_name, label: false, placeholder: 'First name'
+      = f.input :last_name, label: false, placeholder: 'Last name'
+      = f.input :email, label: false, placeholder: 'Email'
+      = f.submit 'Subscribe!', class: 'button is-primary'

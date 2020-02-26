@@ -44,11 +44,11 @@ ActiveAdmin.register Project do
     inputs 'Site' do
       input :title
       input :subtitle
+      input :techniques, as: :tags, collection: Tag.all.pluck(:name)
       input :start_date
       input :end_date
       input :description_about_the_company
       input :description_my_role
-      input :techniques, as: :tags, collection: Tag.all.pluck(:name)
       input :image, as: :aafile
     end
     actions

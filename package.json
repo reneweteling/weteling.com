@@ -39,9 +39,10 @@
     "webpack-dev-server": "^3.10.3"
   },
   "dependencies": {
+    "@rails/ujs": "^6.0.2-1",
     "@rails/webpacker": "4.2.2",
     "autosize": "^4.0.2",
-    "bulma-carousel": "^4.0.4",
-    "bulma": "^0.8.0"
+    "bulma": "^0.8.0",
+    "bulma-carousel": "^4.0.4"
   }
 }

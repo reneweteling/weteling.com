@@ -86,25 +86,25 @@ end
 #   end
 # end
 
-# class ActiveAdmin::BaseController
+class ActiveAdmin::BaseController
   
-#   def current_ability
-#     @current_ability ||= AdminAbility.new(current_user)
-#   end
+  def current_ability
+    @current_ability ||= AdminAbility.new(current_user)
+  end
 
-#   private
+  private
 
-#   def interpolation_options
-#     options = {}
-#     options[:resource_errors] =
-#       if resource && resource.errors.any?
-#         "#{resource.errors.full_messages.to_sentence}."
-#       else
-#         ""
-#       end
-#     options
-#   end
-# end
+  def interpolation_options
+    options = {}
+    options[:resource_errors] =
+      if resource && resource.errors.any?
+        "#{resource.errors.full_messages.to_sentence}."
+      else
+        ""
+      end
+    options
+  end
+end
 
 ActiveAdmin.setup do |config|
   config.before_action do

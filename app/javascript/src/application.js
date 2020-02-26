@@ -1,6 +1,11 @@
 import bulmaCarousel from "bulma-carousel";
+import Rails from '@rails/ujs';
+import autosize from 'autosize';
+Rails.start();
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  autosize(document.querySelectorAll('textarea'));
 
   bulmaCarousel.attach("#projects-carousel", {
     slidesToScroll: 1,
