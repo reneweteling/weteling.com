@@ -47,10 +47,10 @@ section#skills.section
       h2 Skills
       p
         | Throughout the years, i've been in contact with
-        strong multple
-        | facets of the IT-landscape. My
-        strong passion
-        | is in
+        strong  multple
+        |  facets of the IT-landscape. My
+        strong  passion
+        |  is in
         | webdevelopment, this is because of the short iteration to optimize the product and the ability to make
         | data-driven
         | descisions. I love it when people use the product that i've helped to develop, so web and mobile are ideal!
@@ -140,43 +140,88 @@ section#projects.section
       h2 Projects
       p
         | Since im mostley active in the
-        strong back-end
-        | creating some sort of portfolio proved to be quite
+        strong  back-end
+        |  creating some sort of portfolio proved to be quite
         | the task. So I
         | hope with this caroussel of cards you will get a gist of what im
-        strong capable
-        | of.
+        strong  capable
+        |  of.
+      .columns
+        .column
+          p 
+            | My cv is available here:
+          = link_to cv_pdf_path, download: true do
+              i.fa.fa-file-pdf-o aria-hidden="true"
+              |  PDF
+          |  |
+          = link_to cv_print_path do
+            i.fa.fa-file-o aria-hidden="true"
+            |  PLAIN
+        .column
+          = render 'subscribe'
     #projects-carousel style=("overflow: hidden; margin: 0 -0.75rem;") 
-        - 5.times do 
-          .carousel-item.content.has-text-centered style=("margin: 0.75rem;") 
-            .card
-              .card-content
-                .media
-                  .media-left
-                    figure.image.is-96x96
-                      img alt=("Placeholder image") src="https://digib.com/wp-content/uploads/2018/12/logo-1.png"
-                  .media-content
-                    p.title.is-4 DigiB
-                    p.subtitle.is-6 Chemical e-trading system
-                .content
-                  .section
-                    h4.is-4 About the company:
-                    p
-                      | DigiB is a division of Brenntag, Brenntag is marktleader in the supply of raw chemicals. DigiB is
-                      | tasked with the digital transformation of Brenntag by bringing an e-commerce system, internal
-                      | trading and couplings between all offices.
-                  .section
-                    h4.is-4 My role:
-                    p
-                      | As a front-end deverloper ive worked with the front-end team to expand the e-commerce system build
-                      | in React, with NextJs and a NodeJs middleware. Also ive been working on the "target architecture" an
-                      | overcoupling system that is able to connecgt multiple ERP systems like Oracle, SAP, Salesforce etc.
-                      | This design was Reactive using a message bus.
-                  .section
-                    h4.is-4 Techniques used:
-                    .tags.is-centered
-                      - ["React", "NodeJs", "TypeScript", "Kafka", "C4 architecture", "System Architecture"].each do |tag|
-                        span.tag= tag
+      - @projects.each do |project|
+        .carousel-item.content.has-text-centered style=("margin: 0.75rem;") 
+          .card
+            .card-content
+              .media
+                .media-left
+                  figure.image.is-96x96
+                    - if project.image.present?
+                      = image_tag project.image.url
+                .media-content
+                  p.title.is-4 = project.title
+                  p.subtitle.is-6 = project.subtitle
+              .content
+                .section
+                  h4.is-4 About the company:
+                  p
+                    | DigiB is a division of Brenntag, Brenntag is marktleader in the supply of raw chemicals. DigiB is
+                    | tasked with the digital transformation of Brenntag by bringing an e-commerce system, internal
+                    | trading and couplings between all offices.
+                .section
+                  h4.is-4 My role:
+                  p
+                    | As a front-end deverloper ive worked with the front-end team to expand the e-commerce system build
+                    | in React, with NextJs and a NodeJs middleware. Also ive been working on the "target architecture" an
+                    | overcoupling system that is able to connecgt multiple ERP systems like Oracle, SAP, Salesforce etc.
+                    | This design was Reactive using a message bus.
+                .section
+                  h4.is-4 Techniques used:
+                  .tags.is-centered
+                    - ["React", "NodeJs", "TypeScript", "Kafka", "C4 architecture", "System Architecture"].each do |tag|
+                      span.tag= tag
+
+      - 5.times do 
+        .carousel-item.content.has-text-centered style=("margin: 0.75rem;") 
+          .card
+            .card-content
+              .media
+                .media-left
+                  figure.image.is-96x96
+                    img alt=("Placeholder image") src="https://digib.com/wp-content/uploads/2018/12/logo-1.png"
+                .media-content
+                  p.title.is-4 DigiB
+                  p.subtitle.is-6 Chemical e-trading system
+              .content
+                .section
+                  h4.is-4 About the company:
+                  p
+                    | DigiB is a division of Brenntag, Brenntag is marktleader in the supply of raw chemicals. DigiB is
+                    | tasked with the digital transformation of Brenntag by bringing an e-commerce system, internal
+                    | trading and couplings between all offices.
+                .section
+                  h4.is-4 My role:
+                  p
+                    | As a front-end deverloper ive worked with the front-end team to expand the e-commerce system build
+                    | in React, with NextJs and a NodeJs middleware. Also ive been working on the "target architecture" an
+                    | overcoupling system that is able to connecgt multiple ERP systems like Oracle, SAP, Salesforce etc.
+                    | This design was Reactive using a message bus.
+                .section
+                  h4.is-4 Techniques used:
+                  .tags.is-centered
+                    - ["React", "NodeJs", "TypeScript", "Kafka", "C4 architecture", "System Architecture"].each do |tag|
+                      span.tag= tag
                     
 section#about-me.section
   .container

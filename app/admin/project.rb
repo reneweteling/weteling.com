@@ -2,7 +2,7 @@ ActiveAdmin.register Project do
   menu priority: 4
   include ActiveAdminHelper
   permit!
-  config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
+  config.sort_order = 'position_desc' # assumes you are using 'position' for your acts_as_list column
   config.paginate = false # optional; drag-and-drop across pages is not supported
   sortable
 
@@ -19,15 +19,15 @@ ActiveAdmin.register Project do
     column :position
     column :client
     column :name
-    column :description do |row|
-      markdown(row.description.truncate(200)).html_safe
+    column :description_about_the_company do |row|
+      markdown(row.description_about_the_company&.truncate(100)).html_safe
     end
-    # column :description_cv do |row|
-    #   markdown(row.description).html_safe
-    # end
-    column :show
+    column :description_my_role do |row|
+      markdown(row.description_my_role&.truncate(100)).html_safe
+    end
+    column :site_active
     column :cv_active
-    column :active
+    column :hours_active
     actions
   end
 
@@ -35,20 +35,21 @@ ActiveAdmin.register Project do
     inputs 'Details' do
       input :client
       input :name
+      input :site_active
+      input :cv_active
+      input :hours_active
+      input :position
     end
 
     inputs 'Site' do
       input :title
       input :subtitle
-      input :description, as: :md
-      # input :description_cv, as: :md
       input :start_date
       input :end_date
-      input :show
-      input :cv_active
-      input :active
+      input :description_about_the_company
+      input :description_my_role
+      input :techniques, as: :tags, collection: Tag.all.pluck(:name)
       input :image, as: :aafile
-      input :position
     end
     actions
   end

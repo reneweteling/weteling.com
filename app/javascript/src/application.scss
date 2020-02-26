@@ -10,6 +10,21 @@ $card-media-margin: 0;
 @import "~bulma";
 @import "~bulma-carousel";
 
+.field.select {
+  display: block;
+  height: 6em !important;
+  position: static;
+  width: 100%;
+
+  label::after {
+    content: none !important;
+  }
+}
+
+.field.select::after {
+  content: none !important;
+}
+
 html.admin{
   &.has-navbar-fixed-top{
     padding-top: 4.25rem;
