@@ -19,11 +19,11 @@ RUN apk add --update \
     libxslt-dev \
     postgresql-dev \
     tzdata \
-    wkhtmltopdf
-
-RUN apk add --virtual .build-deps \
     nodejs \
+    wkhtmltopdf \
     yarn
+
+# RUN apk add --virtual .build-deps \
 
 COPY Gemfile Gemfile.lock ./
 RUN bundle check || bundle install --jobs=4 --retry=3
@@ -34,9 +34,9 @@ RUN yarn
 RUN bundle exec rails assets:precompile
     
 # Cleanup    
-RUN apk del .build-deps
+# RUN apk del .build-deps
 RUN rm -rf /var/cache/apk/*
-RUN rm -rf /var/www/html/nodejs
+RUN rm -rf /var/www/html/node_modules
 
 # Go!
 EXPOSE 5000
