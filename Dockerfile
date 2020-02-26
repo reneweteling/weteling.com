@@ -35,12 +35,15 @@ RUN bundle check || bundle install --jobs=4 --retry=3
 # Copy all files
 COPY . .
 RUN yarn
-RUN bundle exec rails assets:precompile
+
+# need to do this in the app.json or else it wont be in the shared folder on dokku
+
+# RUN bundle exec rails assets:precompile
     
-# Cleanup    
-# RUN apk del .build-deps
-RUN rm -rf /var/cache/apk/*
-RUN rm -rf /var/www/html/node_modules
+# # Cleanup    
+# # RUN apk del .build-deps
+# RUN rm -rf /var/cache/apk/*
+# RUN rm -rf /var/www/html/node_modules
 
 # Go!
 EXPOSE 5000
