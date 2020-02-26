@@ -9,6 +9,7 @@ RUN bundle config --global frozen 1
 
 # Bundle in seperate layer
 RUN bundle config build.nokogiri --use-system-libraries
+
 RUN apk add --update \
     bash \
     build-base \
@@ -16,13 +17,14 @@ RUN apk add --update \
     imagemagick \
     libxml2-dev \
     libxslt-dev \
-    nodejs \
-    yarn \
     postgresql-dev \
     tzdata \
-    vim \
-    wkhtmltopdf \
-    && rm -rf /var/cache/apk/*
+    wkhtmltopdf
+
+RUN apk add --virtual .build-deps \
+    nodejs \
+    yarn
+
 COPY Gemfile Gemfile.lock ./
 RUN bundle check || bundle install --jobs=4 --retry=3
 
@@ -30,5 +32,11 @@ RUN bundle check || bundle install --jobs=4 --retry=3
 COPY . .
 RUN yarn
 RUN bundle exec rails assets:precompile
+    
+# Cleanup    
+RUN apk del .build-deps
+RUN rm -rf /var/cache/apk/*
 RUN rm -rf /var/www/html/nodejs
+
+# Go!
 EXPOSE 5000
