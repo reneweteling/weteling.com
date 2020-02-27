@@ -47,10 +47,15 @@ ActiveAdmin.register Project do
       input :techniques, as: :tags, collection: Tag.all.pluck(:name)
       input :start_date
       input :end_date
-      input :description_about_the_company
-      input :description_my_role
+      input :description_about_the_company, as: :md
+      input :description_my_role, as: :md
       input :image, as: :aafile
     end
+
+    inputs 'Legacy' do
+      input :description, as: :md
+    end
+
     actions
   end
 end
