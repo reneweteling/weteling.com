@@ -10,6 +10,13 @@ $card-media-margin: 0;
 @import "~bulma";
 @import "~bulma-carousel";
 
+a.anchor {
+  display: block;
+  position: relative;
+  top: -100px;
+  visibility: hidden;
+}
+
 .field.select {
   display: block;
   height: 6em !important;

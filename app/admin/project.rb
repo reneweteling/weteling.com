@@ -2,7 +2,7 @@ ActiveAdmin.register Project do
   menu priority: 4
   include ActiveAdminHelper
   permit!
-  config.sort_order = 'position_desc' # assumes you are using 'position' for your acts_as_list column
+  config.sort_order = 'position_asc' # assumes you are using 'position' for your acts_as_list column
   config.paginate = false # optional; drag-and-drop across pages is not supported
   sortable
 
