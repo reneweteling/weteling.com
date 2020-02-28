@@ -28,6 +28,8 @@ ActiveAdmin.register Project do
     column :site_active
     column :cv_active
     column :hours_active
+    column :start_date
+    column :end_date
     actions
   end
 
