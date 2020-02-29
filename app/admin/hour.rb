@@ -60,7 +60,7 @@ ActiveAdmin.register Hour do
   end
 
   form do |_f|
-    projects = Project.hours_active.all + [resource.project]
+    projects = (Project.for_hours.all + [resource.project]).uniq
 
     inputs 'Details' do
       input :project, input_html: {

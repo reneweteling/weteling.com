@@ -13,6 +13,7 @@ class Project < ApplicationRecord
   attr_writer :virtual_techniques_attr
 
   scope :orderd,    -> { order(position: :asc) }
+  scope :for_hours, -> { where(hours_active: true) }
   scope :for_site,  -> { where(site_active: true).orderd }
   scope :for_cv,    -> { where(cv_active: true).orderd }
 
