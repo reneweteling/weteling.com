@@ -226,7 +226,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     parallel (1.19.1)
-    parser (2.7.0.2)
+    parser (2.7.0.3)
       ast (~> 2.4.0)
     pdfkit (0.8.4.1)
     pg (1.2.2)
@@ -294,7 +294,7 @@ GEM
     reverse_markdown (1.4.0)
       nokogiri
     rexml (3.2.4)
-    rubocop (0.80.0)
+    rubocop (0.80.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
       parser (>= 2.7.0.1)
