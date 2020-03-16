@@ -117,7 +117,7 @@ GEM
     browser (4.0.0)
     builder (3.2.4)
     byebug (11.1.1)
-    cancancan (3.0.2)
+    cancancan (3.1.0)
     carrierwave (2.0.2)
       activemodel (>= 5.0.0)
       activesupport (>= 5.0.0)
