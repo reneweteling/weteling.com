@@ -12,9 +12,9 @@ Airbrake.configure do |c|
   # project_key navigate to your project's General Settings and copy the values
   # from the right sidebar.
   # https://github.com/airbrake/airbrake-ruby#project_id--project_key
-  c.host = ENV['AIRBRAKE_HOST'] if ENV['AIRBRAKE_HOST'].present?
+  c.host = ENV["AIRBRAKE_HOST"] if ENV["AIRBRAKE_HOST"].present?
   c.project_id = 1
-  c.project_key = ENV['AIRBRAKE_API_KEY']
+  c.project_key = ENV["AIRBRAKE_API_KEY"]
 
   # Configures the root directory of your project. Expects a String or a
   # Pathname, which represents the path to your project. Providing this option
@@ -46,12 +46,12 @@ Airbrake.configure do |c|
   # Airbrake. By default, all "password" attributes will have their contents
   # replaced.
   # https://github.com/airbrake/airbrake-ruby#blacklist_keys
-  c.blacklist_keys = [/password/i, /authorization/i]
+  c.blocklist_keys = [/password/i, /authorization/i]
 
   # Alternatively, you can integrate with Rails' filter_parameters.
   # Read more: https://goo.gl/gqQ1xS
   # c.blacklist_keys = Rails.application.config.filter_parameters
-  
+
 end if defined? Airbrake
 
 # A filter that collects request body information. Enable it if you are sure you

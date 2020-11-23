@@ -1,90 +1,90 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails'
+gem "rails"
 # storage
-gem 'pg'
+gem "pg"
 # Use Puma as the app server
-gem 'puma'
+gem "puma"
 # Sass using the libC compiler, prefixer for css vendors.
-gem 'sass-rails', require: false
-gem 'sassc-rails'
-gem 'autoprefixer-rails'
+gem "sass-rails", require: false
+gem "sassc-rails"
+gem "autoprefixer-rails"
 # Use Uglifier as compressor for JavaScript assets
-gem 'uglifier'
+gem "uglifier"
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails'
+gem "coffee-rails"
 # Use jquery as the JavaScript library
-gem 'jquery-rails'
+gem "jquery-rails"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
-gem 'turbolinks'
+gem "turbolinks"
 
 # Handle javascript
-gem 'webpacker'
+gem "webpacker"
 
 # Move our uploads to AWS
-gem 'carrierwave-aws'
+gem "carrierwave-aws"
 # error reporting
-gem 'airbrake'
+gem "airbrake", "10.0.1"
 
-gem 'browser'
-gem 'redcarpet'
+gem "browser"
+gem "redcarpet"
 
 # Nice templates
-gem 'slim-rails'
-gem 'mini_magick'
+gem "slim-rails"
+gem "mini_magick"
 
 # Sendgrid
-gem 'sendgrid-ruby'
+gem "sendgrid-ruby"
 
 # Activeadmin
-gem 'activeadmin'
-gem 'activeadmin_addons'
-gem 'activeadmin-sortable'
-gem 'acts_as_list'
-gem 'devise'
-gem 'country_select'
-gem 'cancancan'
+gem "activeadmin"
+gem "activeadmin_addons"
+gem "activeadmin-sortable"
+gem "acts_as_list"
+gem "devise"
+gem "country_select"
+gem "cancancan"
 
 # Pdfs
-gem 'pdfkit'
+gem "pdfkit"
 
 # Calender
-gem 'fullcalendar-rails'
-gem 'momentjs-rails'
+gem "fullcalendar-rails"
+gem "momentjs-rails"
 
 # Forms
-gem 'simple_form'
+gem "simple_form"
 
 # Assets
-gem 'font-awesome-sass'
-gem 'bootstrap'
+gem "font-awesome-sass"
+gem "bootstrap"
 
 # validations
-gem 'rails_validations'
+gem "rails_validations"
 
-source 'https://rails-assets.org' do
-  gem 'rails-assets-editor.md'
+source "https://rails-assets.org" do
+  gem "rails-assets-editor.md"
 end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
-  gem 'pry'
+  gem "byebug", platform: :mri
+  gem "pry"
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
-  gem 'web-console'
-  gem 'listen'
+  gem "web-console"
+  gem "listen"
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'spring-watcher-listen'
-  gem 'graphiql-rails'
+  gem "spring"
+  gem "spring-watcher-listen"
+  gem "graphiql-rails"
   # gems for VS-code plugins
-  gem 'solargraph'
-  gem 'prettier'
-  gem 'rubocop'
-  gem 'rubocop-rails'
-  gem 'rubocop-performance'
+  gem "solargraph"
+  gem "prettier"
+  gem "rubocop"
+  gem "rubocop-rails"
+  gem "rubocop-performance"
 end
