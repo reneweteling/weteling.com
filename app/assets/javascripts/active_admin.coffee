@@ -3,21 +3,8 @@
 #= require activeadmin-sortable
 #= require editor.md/editormd
 #= require editor.md/languages/en
-#= require moment
-#= require fullcalendar
-
 
 $ ->
-  $('#calendar').fullCalendar(
-    events: '/admin/dashboard/cal_events'
-    defaultView: 'agendaWeek'
-    minTime: '09:00:00'
-    maxTime: '20:00:00'
-    height: 250
-    slotDuration: '01:00:00'
-    allDaySlot: false
-  );
-
   $('.md .editor').each ->
     editormd @.id, {
       width: "100%"

@@ -20,3 +20,9 @@ location ~ ^/assets/ {
     add_header Cache-Control public;
 }
 ```
+
+
+## DB config
+
+scp root@weteling.com:weteling.dump .
+pg_restore --no-privileges --no-owner --host localhost --dbname weteling-dev weteling.dump

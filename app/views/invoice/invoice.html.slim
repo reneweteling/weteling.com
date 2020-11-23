@@ -45,18 +45,19 @@ sass:
             br
             | www.weteling.com
           p
-            | KvK: 24403159
-            br
-            | Btw: NL1997.22.286.B02
+            | KvK: 80914802
+            / br
+            / | Btw: 
         .no-flex-col-7
+          
           p
             | Johannes Geradtsweg 47
             br
             | 1222PM Hilversum
           p 
-            | Bank: NL38 KNAB 0723 0772 82
+            | IBAN: NL95 BUNQ 2050 170 955
             br
-            | BIC: KNABNL2H
+            | BIC: BUNQNL2A
 
     
     .no-flex-col-3.client-details
@@ -66,7 +67,7 @@ sass:
         | t.a.v. #{project.client.first_name} #{project.client.last_name}
         - if project.client.department.present?
           br Afd. #{project.client.department}
-        br 
+      p 
         = project.client.address
         br #{project.client.postalcode} #{project.client.city}
 
