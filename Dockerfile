@@ -27,8 +27,6 @@ RUN apk add --update \
     wkhtmltopdf \
     yarn
 
-# RUN apk add --virtual .build-deps \
-
 COPY Gemfile Gemfile.lock ./
 RUN bundle check || bundle install --jobs=4 --retry=3
 
@@ -36,14 +34,9 @@ RUN bundle check || bundle install --jobs=4 --retry=3
 COPY . .
 RUN yarn
 
-# need to do this in the app.json or else it wont be in the shared folder on dokku
-
-# RUN bundle exec rails assets:precompile
+# need to place the files in the forlders in the app.json
+RUN bundle exec rails assets:precompile
+RUN mv ./public/assets ./public/tmp_assets && mv ./public/packs ./public/tmp_packs
     
-# # Cleanup    
-# # RUN apk del .build-deps
-# RUN rm -rf /var/cache/apk/*
-# RUN rm -rf /var/www/html/node_modules
-
 # Go!
 EXPOSE 5000

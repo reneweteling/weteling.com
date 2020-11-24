@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dokku": {
-      "predeploy": "bundle exec rails db:migrate assets:precompile"
+      "predeploy": "mv ./public/tmp_assets ./public/assets && mv ./public/tmp_packs ./public/packs"
     }
   }
 }
