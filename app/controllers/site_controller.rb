@@ -1,9 +1,8 @@
 class SiteController < ApplicationController
-
   rescue_from ActionController::InvalidAuthenticityToken, with: :redirect_to_referer_or_path
 
   def home
-    @projects = Project.for_site
+    @projects = Project.for_site.includes(:tags)
     @contact_form = ContactForm.new
     @sendgrid_form = SendgridForm.new
   end
@@ -13,15 +12,15 @@ class SiteController < ApplicationController
   end
 
   def cv_print
-    render layout: 'pdf'
+    render layout: "pdf"
   end
 
   def cv_pdf
-    html = render_to_string template: '/site/cv_print', layout: 'pdf'
-    return render html: html if params[:type] == 'html'
+    html = render_to_string template: "/site/cv_print", layout: "pdf"
+    return render html: html if params[:type] == "html"
 
-    pdf = PDFKit.new(html, :page_size => 'A4', :orientation => 'Portrait').to_pdf
-    send_data pdf, filename: "CV Rene Weteling - #{Date.today.to_s.parameterize}.pdf", type: 'application/pdf'
+    pdf = PDFKit.new(html, :page_size => "A4", :orientation => "Portrait").to_pdf
+    send_data pdf, filename: "CV Rene Weteling - #{Date.today.to_s.parameterize}.pdf", type: "application/pdf"
   end
 
   def contact
@@ -49,5 +48,4 @@ class SiteController < ApplicationController
     flash[:notice] = "Please try again."
     redirect_to request.referer
   end
-
 end
