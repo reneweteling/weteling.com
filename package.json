@@ -39,14 +39,19 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "@fullcalendar/core": "^5.4.0",
-    "@fullcalendar/daygrid": "^5.4.0",
+    "@fullcalendar/core": "^5",
+    "@fullcalendar/daygrid": "^5",
+    "@fullcalendar/moment": "^5.4.0",
+    "@fullcalendar/timegrid": "^5.4.0",
     "@rails/ujs": "^6.0.2-1",
     "@rails/webpacker": "5.2.1",
     "autosize": "^4.0.2",
     "bulma": "^0.8.0",
     "bulma-carousel": "^4.0.4",
     "fetch": "^1.1.0",
+    "moment": "^2.29.1",
+    "postcss-calc": "^7.0.5",
+    "postcss-custom-properties": "^10.0.0",
     "superagent": "^6.1.0"
   }
 }

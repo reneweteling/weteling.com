@@ -32,8 +32,8 @@ a.anchor {
   content: none !important;
 }
 
-html.admin{
-  &.has-navbar-fixed-top{
+html.admin {
+  &.has-navbar-fixed-top {
     padding-top: 4.25rem;
   }
 }
@@ -106,12 +106,14 @@ html.main {
 
   header {
     .scroll-down-icon {
-      margin: auto;
+      display: flex;
+      justify-content: center;
       position: relative;
       bottom: 5rem;
       svg {
         animation: floating 2s infinite;
-        width: 0.6em;
+        width: 1.6em;
+        margin-right: 0.9em;
       }
     }
 

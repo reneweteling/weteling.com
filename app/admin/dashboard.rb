@@ -6,6 +6,7 @@ ActiveAdmin.register_page "Dashboard" do
   page_action :invoice, method: :get do
     start_date = params[:start_date].to_date
     end_date = params[:end_date].to_date
+
     project = Project.find(params[:project_id])
     hours = project.hours.where(date: start_date..end_date).orderd
 
@@ -22,6 +23,7 @@ ActiveAdmin.register_page "Dashboard" do
     (start_date, end_date, _) = params.permit(:start, :end, "_").values
     hours = Hour
       .where(date: start_date...end_date)
+      .includes(project: :client)
       .all
       .group_by(&:date)
       .map do |_date, hours|
@@ -98,11 +100,11 @@ ActiveAdmin.register_page "Dashboard" do
         tbody do
           i = 0
           project_ids = Hour.where(date: current.at_beginning_of_month..current.at_end_of_month).select(:project_id).distinct.pluck(:project_id)
-          Project.includes(:client, hours: [:rate]).where(id: project_ids).accessible_by(current_ability).order("clients.name").order(:name).each do |p|
+          Project.includes(:client).where(id: project_ids).accessible_by(current_ability).order("clients.name").order(:name).each do |p|
             tr class: (i.odd? ? "even" : "odd") do
               start_date = current.at_beginning_of_month >= @filter.start ? current.at_beginning_of_month : @filter.start
               end_date = current.at_end_of_month <= @filter.end ? current.at_end_of_month : @filter.end
-              hours = p.hours.where(date: start_date..end_date)
+              hours = p.hours.includes(:rate).where(date: start_date..end_date)
               project_total = hours.map { |h| h.total_hours * h.rate.rate }.inject(:+)
               month_total += project_total
 
