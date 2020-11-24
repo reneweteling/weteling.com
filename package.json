@@ -50,6 +50,7 @@
     "bulma-carousel": "^4.0.4",
     "fetch": "^1.1.0",
     "moment": "^2.29.1",
+    "moment-locales-webpack-plugin": "^1.2.0",
     "postcss-calc": "^7.0.5",
     "postcss-custom-properties": "^10.0.0",
     "superagent": "^6.1.0"

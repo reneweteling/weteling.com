@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   var calendarEl = document.getElementById('calendar');
 
   var calendar = new Calendar(calendarEl, {
-    plugins: [ timeGridPlugin, momentPlugin ],
+    plugins: [ timeGridPlugin ],
     locale: nlLocale,
     timeZone: 'Europe/Amsterdam',
     initialView: 'timeGridWeek',
