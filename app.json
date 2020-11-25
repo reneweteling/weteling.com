@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dokku": {
-      "predeploy": "mv ./public/tmp_assets ./public/assets && mv ./public/tmp_packs ./public/packs"
+      "predeploy": "cp -r ./public/tmp_assets ./public/assets && cp -r ./public/tmp_packs ./public/packs"
     }
   }
 }
