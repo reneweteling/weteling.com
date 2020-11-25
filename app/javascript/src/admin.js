@@ -1,6 +1,6 @@
 import { Calendar } from '@fullcalendar/core';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import momentPlugin from '@fullcalendar/moment';
+// import momentPlugin from '@fullcalendar/moment';
 import nlLocale from '@fullcalendar/core/locales/nl';
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -17,8 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     expandRows: true,
     firstDay: 1,
     slotDuration: '01:00:00',
-    dayHeaderFormat: "ddd DD-MM",
-    slotLabelFormat: "HH:mm",
+    // dayHeaderFormat: "ddd DD-MM",
+    // slotLabelFormat: "HH:mm",
     events: function({endStr, startStr}, successCallback, _failureCallback) {
       fetch(`/admin/dashboard/cal_events?start=${startStr}&end=${endStr}`)
         .then(response => response.json())
