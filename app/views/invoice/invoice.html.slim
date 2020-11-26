@@ -5,7 +5,7 @@ sass:
     font-size: 13px
 
   .client-details
-    font-size: 14px
+    font-size: 13px
 
   .logo
     width: 145px
@@ -36,8 +36,10 @@ sass:
 .container-fluid
   .no-flex-row
     .no-flex-col-2
+      br
       = image_tag 'logo.png', class: 'img-fluid logo'
     .no-flex-col-5
+      strong Weteling Support B.V.
       .contact-details
         .no-flex-col-5
           p
@@ -45,9 +47,10 @@ sass:
             br
             | www.weteling.com
           p
+            | Btw: NL8618.49735.B01
+            br
             | KvK: 80914802
-            / br
-            / | Btw: 
+            
         .no-flex-col-7
           
           p
@@ -60,16 +63,15 @@ sass:
             | BIC: BUNQNL2A
 
     
-    .no-flex-col-3.client-details
-      p 
-        b = project.client.name
-      p 
-        | t.a.v. #{project.client.first_name} #{project.client.last_name}
-        - if project.client.department.present?
-          br Afd. #{project.client.department}
-      p 
-        = project.client.address
-        br #{project.client.postalcode} #{project.client.city}
+    .no-flex-col-4.client-details
+      strong = project.client.name
+      |  t.a.v. #{project.client.first_name} #{project.client.last_name}
+      - if project.client.department.present?
+        |  Afd. #{project.client.department}
+      .contact-details
+        p 
+          = project.client.address
+          br #{project.client.postalcode} #{project.client.city}
 
   .row.table-container
     .col-12

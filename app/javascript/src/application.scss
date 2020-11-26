@@ -103,6 +103,15 @@ html.main {
     }
   }
 
+  table.bv {
+    th,
+    td {
+      border: none;
+      border-width: 0px;
+      padding: 0px;
+    }
+  }
+
   header {
     .scroll-down-icon {
       display: flex;
