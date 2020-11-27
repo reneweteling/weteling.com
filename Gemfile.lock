@@ -90,7 +90,7 @@ GEM
       activesupport (>= 3.0.0, < 6.1)
       ruby2_keywords (>= 0.0.2, < 1.0)
     ast (2.4.1)
-    autoprefixer-rails (10.0.2.0)
+    autoprefixer-rails (10.0.3.0)
       execjs
     aws-eventstream (1.1.0)
     aws-partitions (1.397.0)
