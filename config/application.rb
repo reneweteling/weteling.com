@@ -17,6 +17,7 @@ module WetelingCom
     config.autoload_paths += Dir[Rails.root.join("app", "models", "{**}")]
 
     config.sass.preferred_syntax = :sass
+    config.active_storage.service = :amazon
 
     config.load_defaults = "6.0"
   end
