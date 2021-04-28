@@ -21,9 +21,9 @@ class Hour < ApplicationRecord
     return if end_date < date
 
     start_date = date
-    while end_date > start_date do
-        start_date += 1.day
-        Hour.find_or_create_by(project: project, rate: rate, date: start_date, description: description, total_hours: total_hours)
+    while end_date > start_date
+      start_date += 1.day
+      Hour.find_or_create_by(project: project, rate: rate, date: start_date, description: description, total_hours: total_hours, total_sno_hours: total_sno_hours)
     end
   end
 end

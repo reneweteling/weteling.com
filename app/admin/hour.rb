@@ -21,7 +21,7 @@ ActiveAdmin.register Hour do
   end
 
   action_item :new_hour, only: :show do
-    link_to 'New hour', new_admin_hour_path
+    link_to "New hour", new_admin_hour_path
   end
 
   filter :client
@@ -39,7 +39,7 @@ ActiveAdmin.register Hour do
     column :rate
     column :date
     column :total_hours
-    # column :total_sno_hours
+    column :total_sno_hours
     column :description do |row|
       simple_format row.description
     end
@@ -52,7 +52,7 @@ ActiveAdmin.register Hour do
       row :rate
       row :date
       row :total_hours
-      #   row :total_sno_hours
+      row :total_sno_hours
       row :description do |row|
         simple_format row.description
       end
@@ -62,17 +62,17 @@ ActiveAdmin.register Hour do
   form do |_f|
     projects = (Project.for_hours.all + [resource.project]).uniq
 
-    inputs 'Details' do
+    inputs "Details" do
       input :project, input_html: {
-        'data-rate': projects.map do |p|
-                       [p.id, p.client.default_rate.id]
-                     end.to_h.to_json
-      }, collection: projects
+                  'data-rate': projects.map do |p|
+                    [p.id, p.client.default_rate.id]
+                  end.to_h.to_json,
+                }, collection: projects
       input :rate
       input :date
       input :repeat_date, as: :datepicker
       input :total_hours
-      #   input :total_sno_hours
+      input :total_sno_hours
       input :description
     end
     actions

@@ -81,9 +81,9 @@ ActiveAdmin.register_page "Dashboard" do
     hours = Hour.where(date: @filter.start..@filter.end)
 
     current = Time.now
-    first = hours.minimum(:date).at_beginning_of_month
+    first = hours.minimum(:date)&.at_beginning_of_month
 
-    while current >= first
+    while first && current >= first
       month_total = 0.0
 
       table class: "index_table index dashboard" do
@@ -91,7 +91,7 @@ ActiveAdmin.register_page "Dashboard" do
           tr do
             th "Client"
             th "Project"
-            th "Total hours"
+            th "Total / S&O hours"
             th "Rate"
             th "Total"
             th ""
@@ -111,7 +111,7 @@ ActiveAdmin.register_page "Dashboard" do
               td p.client
               # td "#{start_date.to_date} - #{end_date.to_date}"
               td p.name
-              td hours.sum(:total_hours)
+              td "#{hours.sum(:total_hours)} / #{hours.sum(:total_sno_hours)}"
               td hours.map(&:rate).uniq.to_sentence
               td number_to_currency(project_total)
               td link_to(
