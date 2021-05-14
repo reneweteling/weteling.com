@@ -25,7 +25,7 @@ gem "webpacker"
 # Move our uploads to AWS
 gem "carrierwave-aws"
 # error reporting
-gem "airbrake", "10.0.1"
+gem "airbrake", "11.0.3"
 
 gem "browser"
 gem "redcarpet"
