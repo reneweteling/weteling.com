@@ -6,10 +6,10 @@ WORKDIR /var/www/html
 ENV RAILS_ENV=production
 ENV RACK_ENV=production
 ENV NODE_ENV=production
+ENV BUNDLE_PATH=/var/www/html/bundler
 
 # throw errors if Gemfile has been modified since Gemfile.lock
-# RUN ls -la /usr/local/bundle
-# RUN gem install bundler:2.2.27
+RUN gem install bundler:2.2.27
 RUN bundle config --global frozen 1
 
 # Bundle in seperate layer
