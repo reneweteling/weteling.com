@@ -48,6 +48,7 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.action_controller.asset_host = ENV['BINDING']
+  config.active_storage.service = :local
 
   # Raises error for missing translations
   config.action_view.raise_on_missing_translations = true
