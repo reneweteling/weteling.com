@@ -1,10 +1,7 @@
 source "https://rubygems.org"
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem "rails"
-# storage
+gem "rails", "~> 6.1"
 gem "pg"
-# Use Puma as the app server
 gem "puma"
 # Sass using the libC compiler, prefixer for css vendors.
 gem "sass-rails", require: false
@@ -12,8 +9,6 @@ gem "sassc-rails"
 gem "autoprefixer-rails"
 # Use Uglifier as compressor for JavaScript assets
 gem "uglifier"
-# Use CoffeeScript for .coffee assets and views
-gem "coffee-rails"
 # Use jquery as the JavaScript library
 gem "jquery-rails"
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
@@ -58,7 +53,7 @@ gem "simple_form"
 
 # Assets
 gem "font-awesome-sass"
-gem "bootstrap"
+gem "bootstrap", "~> 4.5"
 
 # validations
 gem "rails_validations"
