@@ -1,16 +1,14 @@
 # Dockerfile
-FROM ruby:3.0-alpine
+FROM ruby:3-alpine
 
 WORKDIR /var/www/html
 
 ENV RAILS_ENV=production
 ENV RACK_ENV=production
 ENV NODE_ENV=production
-ENV BUNDLE_PATH=/var/www/bundler
-ENV GEM_HOME=/var/www/gems
 
 # throw errors if Gemfile has been modified since Gemfile.lock
-# RUN gem install bundler:2.2.27
+RUN gem install bundler:2.2.27
 RUN bundle config --global frozen 1
 
 # Bundle in seperate layer
