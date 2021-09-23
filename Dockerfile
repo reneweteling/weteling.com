@@ -6,7 +6,8 @@ WORKDIR /var/www/html
 ENV RAILS_ENV=production
 ENV RACK_ENV=production
 ENV NODE_ENV=production
-ENV BUNDLE_PATH=/var/www/html/bundler
+ENV BUNDLE_PATH=/var/www/bundler
+ENV GEM_HOME=/var/www/gems
 
 # throw errors if Gemfile has been modified since Gemfile.lock
 # RUN gem install bundler:2.2.27
