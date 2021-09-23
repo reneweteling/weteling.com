@@ -8,7 +8,7 @@ ENV RACK_ENV=production
 ENV NODE_ENV=production
 
 # throw errors if Gemfile has been modified since Gemfile.lock
-RUN ll /usr/local/bundle
+RUN ls -la /usr/local/bundle
 RUN gem install bundler:2.2.27
 RUN bundle config --global frozen 1
 
