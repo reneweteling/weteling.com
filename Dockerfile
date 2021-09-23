@@ -30,9 +30,13 @@ RUN apk add --update \
 COPY Gemfile Gemfile.lock ./
 RUN bundle check || bundle install --jobs=4 --retry=3
 
+# Install node packages
+COPY package.json .
+COPY yarn.lock .
+RUN yarn
+
 # Copy all files
 COPY . .
-RUN yarn
 
 # need to place the files in the forlders in the app.json
 RUN bundle exec rails assets:precompile
