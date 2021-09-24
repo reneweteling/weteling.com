@@ -38,7 +38,7 @@ RUN yarn
 COPY . .
 
 # need to place the files in the forlders in the app.json
-RUN bundle exec rails assets:precompile
+RUN bin/rails assets:precompile
 RUN mv ./public/assets ./public/tmp_assets && mv ./public/packs ./public/tmp_packs
     
 # Go!
