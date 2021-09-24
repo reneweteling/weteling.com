@@ -24,6 +24,7 @@ RUN apk add --update \
     postgresql-dev \
     tzdata \
     nodejs \
+    ttf-liberation \
     wkhtmltopdf \
     yarn
 
