@@ -13,7 +13,4 @@ PDFKit.configure do |config|
     viewport_size: '1200x1024'
   }
   config.verbose = true
-  # if Rails.env.development?
-  #   config.root_url = "http://localhost/"
-  # end
 end

@@ -16,6 +16,9 @@ module WetelingCom
     # config.autoload_paths << Rails.root.join('app', 'graph', 'types')
     config.autoload_paths += Dir[Rails.root.join("app", "models", "{**}")]
 
+    config.asset_host = ENV['HOST'] || 'https://www.weteling.com'
+    config.action_controller.asset_host = ENV['HOST'] || 'https://www.weteling.com'
+
     config.sass.preferred_syntax = :sass
     config.generators.javascript_engine = :js
 

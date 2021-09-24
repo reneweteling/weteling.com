@@ -1,7 +1,5 @@
 Rails.application.configure do 
   # Mail config
-  # config.action_mailer.asset_host                           = "https://#{ENV['ASSET_HOST']}"
-  # config.action_mailer.default_url_options                  = {host: "www.#{ENV['DOMAIN']}", protocol:"https"}
   config.action_mailer.delivery_method                      = :smtp
   config.action_mailer.smtp_settings                        = {}
   config.action_mailer.smtp_settings[:address]              = ENV['SMTP_ADDRESS']   if ENV['SMTP_ADDRESS'].present?
