@@ -1,5 +1,5 @@
 # Dockerfile
-FROM ruby:2.7-alpine
+FROM ruby:3-alpine
 
 WORKDIR /var/www/html
 
