@@ -92,7 +92,7 @@ production:
   # Extract and emit a css file
   # Needs to be false, or else fullcalendar wont load correctly
   # rm -rf ./public/packs && NODE_ENV=production RAILS_ENV=production be rails webpacker:compile
-  extract_css: false
+  extract_css: true
 
   # Cache manifest.json for performance
   cache_manifest: true
