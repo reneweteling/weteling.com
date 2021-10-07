@@ -39,8 +39,8 @@ RUN yarn
 COPY . .
 
 # need to place the files in the forlders in the app.json
-RUN bin/rails assets:precompile
-RUN mv ./public/assets ./public/tmp_assets && mv ./public/packs ./public/tmp_packs
+# RUN bin/rails assets:precompile
+# RUN mv ./public/assets ./public/tmp_assets && mv ./public/packs ./public/tmp_packs
     
 # Go!
 EXPOSE 5000

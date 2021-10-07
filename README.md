@@ -8,14 +8,14 @@
 # there is more
 
 dokku storage:mount weteling /home/dokku/weteling/static/assets:/var/www/html/public/assets
+dokku storage:mount weteling /home/dokku/weteling/static/packs:/var/www/html/public/packs
 
 ## /home/dokku/weteling/nginx.conf.d/static.conf
 
 ```conf
 
-location ~ ^/(assets|packs)/ {
+location ~ ^/assets|packs/ {
     root /home/dokku/weteling/static;
-
     gzip_static on;
     expires max;
     add_header Cache-Control public;
