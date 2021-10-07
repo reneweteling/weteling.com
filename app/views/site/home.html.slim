@@ -2,7 +2,7 @@ nav.navbar.is-fixed-top.is-transparent
   .container
     .navbar-brand
       a.navbar-item href="#home" 
-        = image_tag('logo.svg', lazy: true)
+        = image_tag('logo.svg', loading: :lazy)
       .navbar-burger.burger data-target="navbarExampleTransparentExample" 
         span
         span
@@ -29,7 +29,7 @@ header
     .header-bg style=("position: absolute; overflow: hidden;") 
       div style=("width: 100%; padding-bottom: 66.6667%;") 
       picture
-        = image_tag('apple.jpg', lazy: true, sizes: "(max-width: 800px) 100vw), 800px", style: "position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; opacity: 1; transition: none 0s ease 0s;")
+        = image_tag('apple.jpg', loading: :lazy, sizes: "(max-width: 800px) 100vw), 800px", style: "position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; opacity: 1; transition: none 0s ease 0s;")
     a.scroll-down-icon href="#skills" 
       svg.svg-inline--fa.fa-angle-double-down.fa-w-10.fa-2x aria-hidden="true" data-icon="angle-double-down" data-prefix="fas" data-view="#skills" focusable="false" role="img" viewbox=("0 0 320 512") xmlns="http://www.w3.org/2000/svg" 
         path d=("M143 256.3L7 120.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0L313 86.3c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.4 9.5-24.6 9.5-34 .1zm34 192l136-136c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L160 352.1l-96.4-96.4c-9.4-9.4-24.6-9.4-33.9 0L7 278.3c-9.4 9.4-9.4 24.6 0 33.9l136 136c9.4 9.5 24.6 9.5 34 .1z") fill="currentColor" 
@@ -170,7 +170,7 @@ section.section
                 .media-left
                   figure.image.is-96x96
                     - if project.image.present?
-                      = image_tag project.image.url, lazy: true
+                      = image_tag project.image.url, loading: :lazy
                 .media-content
                   p.title.is-4 = project.title
                   p.subtitle.is-6 = project.subtitle
@@ -207,7 +207,7 @@ section.section
               in Computer Sciences at the HRO in Rotterdam. The education was a breeze, and i did it part time while
               working at an digital agency. The code-monkey was born!
             figure.image.is-128x128
-              = image_tag('rene.jpg', class: "is-rounded", lazy: true)
+              = image_tag('rene.jpg', class: "is-rounded", loading: :lazy)
             p On a personal note, im a proud father of 3 kids. Engaged to my beautiful wife to be.
               Festival lover, hanging out with friends, boating in the cannals and offcourse vacation. Work hard Play
               hard!
