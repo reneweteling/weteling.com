@@ -10,8 +10,9 @@ document.addEventListener("DOMContentLoaded", () => {
   bulmaCarousel.attach("#projects-carousel", {
     slidesToScroll: 1,
     slidesToShow: 3,
+    infinite: true,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 4000,
     breakpoints: [
       { changePoint: 768, slidesToShow: 1, slidesToScroll: 1 },
       { changePoint: 1024, slidesToShow: 2, slidesToScroll: 1 },
