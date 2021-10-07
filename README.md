@@ -13,8 +13,9 @@ dokku storage:mount weteling /home/dokku/weteling/static/assets:/var/www/html/pu
 
 ```conf
 
-location ~ ^/assets/ {
-    root /home/dokku/weteling-staging/static;
+location ~ ^/(assets|packs)/ {
+    root /home/dokku/weteling/static;
+
     gzip_static on;
     expires max;
     add_header Cache-Control public;
