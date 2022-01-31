@@ -16,6 +16,13 @@ a.anchor {
   visibility: hidden;
 }
 
+p.service-description {
+  min-height: 100px;
+}
+p.service-answer {
+  min-height: 150px;
+}
+
 .field.select {
   display: block;
   height: 6em !important;
