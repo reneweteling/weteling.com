@@ -1,10 +1,11 @@
 # Dockerfile
-FROM ruby:3-alpine
+FROM surnet/alpine-wkhtmltopdf:3.16.2-0.12.6-full as wkhtmltopdf
+FROM ruby:3-alpine as app
 
 WORKDIR /var/www/html
 
-ENV RAILS_ENV=production
-ENV RACK_ENV=production
+ARG RAILS_ENV=production
+ENV RAILS_ENV=$RAILS_ENV
 ENV NODE_ENV=production
 
 # throw errors if Gemfile has been modified since Gemfile.lock
@@ -14,7 +15,7 @@ RUN bundle config --global frozen 1
 # Bundle in seperate layer
 RUN bundle config build.nokogiri --use-system-libraries
 
-RUN apk add --update \
+RUN apk add --update --no-cache \
     bash \
     build-base \
     gcompat \
@@ -24,12 +25,15 @@ RUN apk add --update \
     postgresql-dev \
     tzdata \
     nodejs \
-    ttf-liberation \
-    wkhtmltopdf \
-    yarn
+    npm \
+    ttf-liberation 
+
+RUN npm install --global yarn
+
+COPY --from=wkhtmltopdf /bin/wkhtmltopdf /bin/libwkhtmltox.so /bin/
 
 COPY Gemfile Gemfile.lock ./
-RUN bundle check || bundle install --jobs=4 --retry=3
+RUN bundle install --jobs=4 --retry=3
 
 # Install node packages
 COPY package.json yarn.lock ./

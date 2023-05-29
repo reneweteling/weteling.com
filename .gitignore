@@ -20,6 +20,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+/pg_data
 /public/assets
 /public/uploads
 /node_modules

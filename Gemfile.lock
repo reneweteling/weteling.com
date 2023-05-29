@@ -88,10 +88,10 @@ GEM
       activerecord (>= 4.2)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
-    airbrake (10.0.1)
-      airbrake-ruby (~> 4.13)
-    airbrake-ruby (4.15.0)
-      rbtree3 (~> 0.5)
+    airbrake (13.0.3)
+      airbrake-ruby (~> 6.0)
+    airbrake-ruby (6.2.1)
+      rbtree3 (~> 0.6)
     arbre (1.4.0)
       activesupport (>= 3.0.0, < 6.2)
       ruby2_keywords (>= 0.0.2, < 1.0)
@@ -153,6 +153,7 @@ GEM
       responders
       warden (~> 1.2.3)
     diff-lcs (1.4.4)
+    digest (3.1.0)
     e2mmap (0.1.0)
     erubi (1.10.0)
     execjs (2.8.1)
@@ -185,6 +186,7 @@ GEM
       has_scope (~> 0.6)
       railties (>= 5.2, < 6.2)
       responders (>= 2, < 4)
+    io-wait (0.2.1)
     jaro_winkler (1.5.4)
     jmespath (1.4.0)
     jquery-rails (4.4.0)
@@ -221,20 +223,35 @@ GEM
     method_source (1.0.0)
     mini_magick (4.11.0)
     mini_mime (1.1.1)
-    mini_portile2 (2.6.1)
+    mini_portile2 (2.8.2)
     minitest (5.14.4)
     momentjs-rails (2.20.1)
       railties (>= 3.1)
+    net-imap (0.2.3)
+      digest
+      net-protocol
+      strscan
+    net-pop (0.1.1)
+      digest
+      net-protocol
+      timeout
+    net-protocol (0.1.2)
+      io-wait
+      timeout
+    net-smtp (0.3.1)
+      digest
+      net-protocol
+      timeout
     nio4r (2.5.8)
-    nokogiri (1.12.4)
-      mini_portile2 (~> 2.6.1)
+    nokogiri (1.15.2)
+      mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.21.0)
     parser (3.0.2.0)
       ast (~> 2.4.1)
     pdfkit (0.8.5)
-    pg (1.2.3)
+    pg (1.5.3)
     popper_js (1.16.0)
     prettier (1.6.1)
     pry (0.14.1)
@@ -243,7 +260,7 @@ GEM
     public_suffix (4.0.6)
     puma (5.5.0)
       nio4r (~> 2.0)
-    racc (1.5.2)
+    racc (1.6.2)
     rack (2.2.3)
     rack-proxy (0.7.0)
       rack
@@ -287,7 +304,7 @@ GEM
     rb-fsevent (0.11.0)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    rbtree3 (0.6.0)
+    rbtree3 (0.7.1)
     redcarpet (3.5.1)
     regexp_parser (2.1.1)
     require_all (3.0.0)
@@ -373,9 +390,11 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     ssrf_filter (1.0.7)
+    strscan (3.0.1)
     temple (0.8.2)
     thor (1.1.0)
     tilt (2.0.10)
+    timeout (0.2.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -414,7 +433,7 @@ DEPENDENCIES
   activeadmin-sortable
   activeadmin_addons
   acts_as_list
-  airbrake (= 10.0.1)
+  airbrake (~> 13.0)
   autoprefixer-rails
   bootstrap (~> 4.5)
   browser
@@ -430,6 +449,10 @@ DEPENDENCIES
   listen
   mini_magick
   momentjs-rails
+  net-imap
+  net-pop
+  net-smtp
+  nokogiri (~> 1.15, >= 1.15.2)
   pdfkit
   pg
   prettier
@@ -456,4 +479,4 @@ DEPENDENCIES
   webpacker
 
 BUNDLED WITH
-   2.2.27
+   2.3.26

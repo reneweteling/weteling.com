@@ -20,8 +20,12 @@ gem "webpacker"
 # Move our uploads to AWS
 gem "carrierwave-aws"
 # error reporting
-gem "airbrake", "10.0.1"
+gem 'airbrake', '~> 13.0'
+gem 'net-smtp', require: false
+gem 'net-imap', require: false
+gem 'net-pop', require: false
 
+gem 'nokogiri', '~> 1.15', '>= 1.15.2'
 gem "browser"
 gem "redcarpet"
 

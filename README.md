@@ -25,5 +25,9 @@ location ~ ^/assets|packs/ {
 
 ## DB config
 
-scp root@weteling.com:weteling.dump .
-pg_restore --no-privileges --no-owner --host localhost --dbname weteling-dev weteling.dump
+sudo apt install postgresql-client
+
+
+ssh weteling.com dokku postgres:export weteling | docker compose exec -i web pg_restore --no-privileges --no-owner --host localhost --dbname weteling-dev
+
+ssh weteling.com dokku postgres:export weteling | pg_restore -O -x -C -f dbdump.sql
