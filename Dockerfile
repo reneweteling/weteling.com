@@ -29,10 +29,7 @@ RUN apt-get install -y \
     yarn \
     wkhtmltopdf
 
-# throw errors if Gemfile has been modified since Gemfile.lock
 RUN gem install bundler:2.4.13
-RUN bundle config --global frozen 1
-
 
 COPY Gemfile Gemfile.lock ./
 RUN bundle install --jobs=4 --retry=3

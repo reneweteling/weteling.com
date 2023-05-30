@@ -28,6 +28,8 @@ gem 'net-pop', require: false
 gem 'nokogiri', '~> 1.15', '>= 1.15.2'
 gem "browser"
 gem "redcarpet"
+gem "doorkeeper"
+gem 'jsonapi-resources'
 
 # Nice templates
 gem "slim-rails"

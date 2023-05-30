@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  # use_doorkeeper
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -6,6 +7,13 @@ Rails.application.routes.draw do
   #   mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   #   post "/graphql", to: "graphql#execute"
   # end
+
+  namespace :api do
+    namespace :v1 do
+      jsonapi_resources :projects
+      jsonapi_resources :hours
+    end
+  end
 
   get "_ah/health", to: "application#health_check"
 
@@ -17,6 +25,5 @@ Rails.application.routes.draw do
   get :cv, to: 'site#cv'
   get :cv_print, to: 'site#cv_print'
   get :cv_pdf, to: 'site#cv_pdf'
-  root to: 'site#home'
-
+  root to: 'site#home'  
 end
