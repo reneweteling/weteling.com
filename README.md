@@ -10,13 +10,26 @@
 ssh weteling.com dokku postgres:export weteling | > volumes/db-data/live.pgdump
 
 # 2 - start the app
-docker-compose up
+docker compose up
+```
+
+## Debugging tools
+```bash
+# have docker compose up running
+docker compose exec web bash 
+docker compose exec db bash 
+
+docker ps
+docker stats
+docker attach <img id>
 ```
 
 # Dokku setup
 
+```bash
 dokku storage:mount weteling /home/dokku/weteling/static/assets:/var/www/html/public/assets
 dokku storage:mount weteling /home/dokku/weteling/static/packs:/var/www/html/public/packs
+```
 
 ## /home/dokku/weteling/nginx.conf.d/static.conf
 
