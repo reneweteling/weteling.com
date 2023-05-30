@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # use_doorkeeper
   devise_for :users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
@@ -9,6 +8,8 @@ Rails.application.routes.draw do
   # end
 
   namespace :api do
+    devise_for :users, controllers: { sessions: 'api/sessions' },
+                          path_names: { sign_in: :login }
     namespace :v1 do
       jsonapi_resources :projects
       jsonapi_resources :hours

@@ -154,8 +154,6 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.4.4)
     digest (3.1.0)
-    doorkeeper (5.6.6)
-      railties (>= 5)
     e2mmap (0.1.0)
     erubi (1.10.0)
     execjs (2.8.1)
@@ -201,6 +199,7 @@ GEM
       activerecord (>= 4.1)
       concurrent-ruby
       railties (>= 4.1)
+    jwt (2.7.0)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.1)
@@ -448,12 +447,12 @@ DEPENDENCIES
   carrierwave-aws
   country_select
   devise
-  doorkeeper
   font-awesome-sass
   fullcalendar-rails
   graphiql-rails
   jquery-rails
   jsonapi-resources
+  jwt
   listen
   mini_magick
   momentjs-rails
