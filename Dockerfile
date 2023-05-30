@@ -6,6 +6,7 @@ WORKDIR /app
 ARG RAILS_ENV=production
 ENV RAILS_ENV=$RAILS_ENV
 ENV NODE_ENV=production
+ENV NODE_OPTIONS=--openssl-legacy-provider
 
 # Bundle in seperate layer
 RUN bundle config build.nokogiri --use-system-libraries

@@ -22,9 +22,9 @@ ActiveRecord::Schema.define(version: 2018_02_15_075805) do
     t.string "resource_type", null: false
     t.string "author_type"
     t.bigint "author_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
@@ -127,6 +127,7 @@ ActiveRecord::Schema.define(version: 2018_02_15_075805) do
     t.string "image"
     t.text "description_cv", default: "", null: false
     t.boolean "cv_active", default: false, null: false
+    t.boolean "active", default: true, null: false
     t.boolean "hours_active", default: false, null: false
     t.boolean "site_active", default: false, null: false
     t.text "description_about_the_company"
