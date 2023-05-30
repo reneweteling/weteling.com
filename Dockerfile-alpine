@@ -1,7 +1,8 @@
 # Dockerfile
-FROM ruby:3.1
+FROM surnet/alpine-wkhtmltopdf:3.16.2-0.12.6-full as wkhtmltopdf
+FROM ruby:3.1-alpine as app
 
-WORKDIR /app
+WORKDIR /var/www/html
 
 ARG RAILS_ENV=production
 ENV RAILS_ENV=$RAILS_ENV
@@ -10,28 +11,27 @@ ENV NODE_ENV=production
 # Bundle in seperate layer
 RUN bundle config build.nokogiri --use-system-libraries
 
-RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | tee /usr/share/keyrings/yarnkey.gpg >/dev/null
-RUN echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
 
-RUN apt-get install -y \
+RUN apk add --update --no-cache \
     bash \
-    gcc \
-    g++ \
-    make \
+    build-base \
+    gcompat \
     imagemagick \
     libxml2-dev \
     libxslt-dev \
-    libpq-dev \
+    postgresql-dev \
     tzdata \
     nodejs \
-    yarn \
-    wkhtmltopdf
+    npm \
+    ttf-liberation 
 
 # throw errors if Gemfile has been modified since Gemfile.lock
 RUN gem install bundler:2.4.13
 RUN bundle config --global frozen 1
 
+RUN npm install --global yarn
+
+COPY --from=wkhtmltopdf /bin/wkhtmltopdf /bin/libwkhtmltox.so /bin/
 
 COPY Gemfile Gemfile.lock ./
 RUN bundle install --jobs=4 --retry=3

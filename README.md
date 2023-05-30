@@ -27,8 +27,8 @@ docker attach <img id>
 # Dokku setup
 
 ```bash
-dokku storage:mount weteling /home/dokku/weteling/static/assets:/var/www/html/public/assets
-dokku storage:mount weteling /home/dokku/weteling/static/packs:/var/www/html/public/packs
+dokku storage:mount weteling /home/dokku/weteling/static/assets:/app/public/assets
+dokku storage:mount weteling /home/dokku/weteling/static/packs:/app/public/packs
 ```
 
 ## /home/dokku/weteling/nginx.conf.d/static.conf
