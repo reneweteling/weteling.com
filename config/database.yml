@@ -7,11 +7,11 @@ default: &default
   
 development:
   <<: *default
-  database: <%= ENV['PGDATABASE'] %>-dev
+  database: <%= ENV['PGDATABASE'] %>_dev
 
 test:
   <<: *default
-  database: <%= ENV['PGDATABASE'] %>-test
+  database: <%= ENV['PGDATABASE'] %>_test
 
 production:
   <<: *default

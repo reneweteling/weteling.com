@@ -14,7 +14,7 @@ services:
     depends_on:
       - db
   db:
-    image: postgres:14.1-alpine
+    image: postgres:9.6-alpine
     restart: always
     environment:
       - POSTGRES_USER=postgres
@@ -22,5 +22,4 @@ services:
     ports:
       - 5432:5432
     volumes: 
-      - ./dbdump.sql:/docker-entrypoint-initdb.d/dbdump.sql
-
+      - ./volumes/db-data:/docker-entrypoint-initdb.d

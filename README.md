@@ -3,16 +3,24 @@
 
 # Weteling.com
 
-#sldkjffdsdfls
+## Getting started
 
-# there is more
+```bash
+# 1 - get the latest prod data
+ssh weteling.com dokku postgres:export weteling | > volumes/db-data/live.pgdump
+
+# 2 - start the app
+docker-compose up
+```
+
+# Dokku setup
 
 dokku storage:mount weteling /home/dokku/weteling/static/assets:/var/www/html/public/assets
 dokku storage:mount weteling /home/dokku/weteling/static/packs:/var/www/html/public/packs
 
 ## /home/dokku/weteling/nginx.conf.d/static.conf
 
-```conf
+```nginx
 
 location ~ ^/assets|packs/ {
     root /home/dokku/weteling/static;
@@ -22,12 +30,3 @@ location ~ ^/assets|packs/ {
 }
 ```
 
-
-## DB config
-
-sudo apt install postgresql-client
-
-
-ssh weteling.com dokku postgres:export weteling | docker compose exec -i web pg_restore --no-privileges --no-owner --host localhost --dbname weteling-dev
-
-ssh weteling.com dokku postgres:export weteling | pg_restore -O -x -C -f dbdump.sql

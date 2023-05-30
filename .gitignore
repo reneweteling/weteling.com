@@ -20,6 +20,7 @@
 # Ignore Byebug command history file.
 .byebug_history
 
+volumes/db-data/live.pgdump
 /pg_data
 /public/assets
 /public/uploads
