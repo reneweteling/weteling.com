@@ -1,0 +1,3 @@
+class Ability < AdminAbility
+end
+

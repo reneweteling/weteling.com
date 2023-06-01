@@ -22,6 +22,6 @@ module WetelingCom
     config.sass.preferred_syntax = :sass
     config.generators.javascript_engine = :js
 
-    config.load_defaults = "6.0"
+    config.load_defaults 7.0
   end
 end

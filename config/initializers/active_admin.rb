@@ -2,9 +2,9 @@
 Formtastic::FormBuilder.collection_label_methods = [:active_admin_name, :display_name, :to_s, :name, :title]
 
 module ActiveAdmin
-  module ViewHelpers
-    include ApplicationHelper
-  end
+  # module ViewHelpers
+  #   # include ApplicationHelper
+  # end
   module Views
     class TableFor
       def signature_column(attribute)
@@ -35,6 +35,24 @@ module ActiveAdmin
         } 
       end
     end
+    # class BaseController
+    #   def self.current_ability
+    #     @current_ability ||= AdminAbility.new(current_user)
+    #   end
+
+    #   private
+
+    #   def interpolation_options
+    #     options = {}
+    #     options[:resource_errors] =
+    #       if resource && resource.errors.any?
+    #         "#{resource.errors.full_messages.to_sentence}."
+    #       else
+    #         ""
+    #       end
+    #     options
+    #   end
+    # end
     class AttributesTable
       def signature_row(attribute)
         row(attribute){ |model| 
@@ -86,25 +104,7 @@ end
 #   end
 # end
 
-class ActiveAdmin::BaseController
-  
-  def current_ability
-    @current_ability ||= AdminAbility.new(current_user)
-  end
 
-  private
-
-  def interpolation_options
-    options = {}
-    options[:resource_errors] =
-      if resource && resource.errors.any?
-        "#{resource.errors.full_messages.to_sentence}."
-      else
-        ""
-      end
-    options
-  end
-end
 
 ActiveAdmin.setup do |config|
   config.before_action do
@@ -271,7 +271,7 @@ ActiveAdmin.setup do |config|
 
   # == Setting a Favicon
   #
-  config.favicon = 'favicons/favicon.ico'
+  config.favicon = 'favicon.ico'
 
   # == Meta Tags
   #

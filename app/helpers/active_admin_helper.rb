@@ -4,10 +4,16 @@ module ActiveAdminHelper
     base.send :extend, ClassMethods
   end
 
+ 
+
   module ClassMethods
 
     def class_constant_to_select(klass)
       klass.constants.map{|c| [c, klass.const_get(c)] }
+    end
+
+    def current_ability
+      @current_ability ||= AdminAbility.new(current_user)
     end
 
     def belongs_to_artist

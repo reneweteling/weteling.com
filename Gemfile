@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem "rails", "~> 6.1"
+gem "rails"
 gem "pg"
 gem "puma"
 # Sass using the libC compiler, prefixer for css vendors.
