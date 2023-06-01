@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
 
     def www_redirect
       if Rails.env.production? && request.host.split('.').count == 2 && !/^www/.match(request.host)
-        redirect_to "#{request.scheme}://www.#{request.host}#{request.fullpath}", status: 301
+        redirect_to "#{request.scheme}://www.#{request.host}#{request.fullpath}", status: 301, allow_other_host: true
       end
     end
 end
