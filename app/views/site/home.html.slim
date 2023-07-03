@@ -215,6 +215,16 @@ section.section
                 .media-content
                   p.title.is-4 = project.title
                   p.subtitle.is-6 = project.subtitle
+
+                  p.is-size-7 
+                    span.start = l project.start_date
+                    |  - 
+                    span.end
+                      - if project.end_date.present?
+                        = l project.end_date
+                      - else
+                        |Present date
+
               .content
                 .section
                   h4.is-4 About the company:

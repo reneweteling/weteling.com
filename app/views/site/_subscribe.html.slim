@@ -1,8 +1,8 @@
 #subscribe-content
-  - if @sendgrid_sent
-    h3 Thanks for subscribing! Ill keep you posted!
+  - if @subscriber_sent
+    h3 Thanks for subscribing! I'll keep you posted!
   - else
-    = simple_form_for(@sendgrid_form, url: subscribe_path, remote: true) do |f|
+    = simple_form_for(@subscriber, url: subscribe_path, remote: true) do |f|
       = f.input :first_name, label: false, placeholder: 'First name'
       = f.input :last_name, label: false, placeholder: 'Last name'
       = f.input :email, label: false, placeholder: 'Email'

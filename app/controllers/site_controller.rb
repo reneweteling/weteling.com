@@ -4,11 +4,11 @@ class SiteController < ApplicationController
   def home
     @projects = Project.for_site.includes(:tags)
     @contact_form = ContactForm.new
-    @sendgrid_form = SendgridForm.new
+    @subscriber = Subscriber.new
   end
 
   def cv
-    @sendgrid_form = SendgridForm.new
+    @subscriber = Subscriber.new
   end
 
   def cv_print
@@ -34,11 +34,11 @@ class SiteController < ApplicationController
   end
 
   def subscribe
-    @sendgrid_form = SendgridForm.new(params.require(:sendgrid_form).permit(:first_name, :last_name, :email))
-    if @sendgrid_form.valid?
-      @sendgrid_form.subscribe
-      @sendgrid_form = SendgridForm.new
-      @sendgrid_sent = true
+    @subscriber = Subscriber.new(params.require(:subscriber).permit(:first_name, :last_name, :email))
+    if @subscriber.save
+      # @subscriber.subscribe
+      @subscriber = Subscriber.new
+      @subscriber_sent = true
     end
   end
 
