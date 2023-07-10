@@ -26,7 +26,7 @@ ActiveAdmin.register Page do
   end
 
   form do |f|
-    f.semantic_errors *f.object.errors.keys
+    f.semantic_errors *f.object.errors
     
     f.inputs do
       f.input :title

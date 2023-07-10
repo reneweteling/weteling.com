@@ -7,8 +7,8 @@
 
 $(() => {
   var $el;
-  $('.md .editor').each(() => {
-    editormd(this.id, {
+  $('.md .editor').each((_, $el) => {
+    editormd($el.id, {
       width: "100%",
       height: "1000px",
       path: '/vendor-assets/editor.md/lib/'

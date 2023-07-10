@@ -7,7 +7,7 @@ class MdInput < Formtastic::Inputs::TextInput
 
     input_wrapping do
       label_html <<
-      "<div class='editor' id='#{input_html_options[:id]}'_editor>#{builder.text_area(method, input_html_options)}</div>".html_safe
+      "<div class='editor' id='#{input_html_options[:id]}_editor'>#{builder.text_area(method, input_html_options)}</div>".html_safe
     end
   end
  
