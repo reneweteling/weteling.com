@@ -16,8 +16,10 @@ docker compose up
 ## Debugging tools
 ```bash
 # have docker compose up running
-docker compose exec web bash 
-docker compose exec db bash 
+docker compose up -d
+docker compose exec web bash
+-->
+bin/rails s
 
 docker ps
 docker stats
