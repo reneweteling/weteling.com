@@ -6,7 +6,7 @@ WORKDIR /app
 ARG RAILS_ENV=production
 ENV RAILS_ENV=$RAILS_ENV
 ENV NODE_ENV=production
-ENV NODE_OPTIONS=--openssl-legacy-provider
+# ENV NODE_OPTIONS=--openssl-legacy-provider
 
 # Bundle in seperate layer
 RUN bundle config build.nokogiri --use-system-libraries
@@ -29,12 +29,19 @@ RUN apt-get install -y \
     yarn \
     wkhtmltopdf
 
+RUN groupadd --gid 1000 dev
+RUN useradd --uid 1000 --gid dev --shell /bin/bash --create-home dev
+RUN chown -R dev:dev /app
+
+USER dev
+
 RUN gem install bundler:2.4.13
 
+# Install ruby packages
 COPY Gemfile Gemfile.lock ./
 RUN bundle install --jobs=4 --retry=3
 
-# Install node packages
+# # Install node packages
 COPY package.json yarn.lock ./
 RUN yarn
 

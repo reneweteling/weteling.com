@@ -4,8 +4,9 @@ services:
   web:
     image: weteling.com
     build: .
-    # user: "${UID}:${GID}"
-    command: bundle exec rails s -b 0.0.0.0 -p 3000
+    stdin_open: true
+    tty: true
+    # command: bundle exec rails s -b 0.0.0.0 -p 3000
     ports:
       - 3000:3000
     env_file:
@@ -17,7 +18,6 @@ services:
       - db
   db:
     image: postgres:9.6-alpine
-    restart: always
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
