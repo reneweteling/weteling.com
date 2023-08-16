@@ -6,7 +6,7 @@ services:
     build: .
     stdin_open: true
     tty: true
-    # command: bundle exec rails s -b 0.0.0.0 -p 3000
+    command: bundle exec rails s -b 0.0.0.0 -p 3000
     ports:
       - 3000:3000
     env_file:

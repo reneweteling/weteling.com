@@ -3,7 +3,7 @@
   .no-flex-row
     .no-flex-col-1
       - if project.image.present?
-        = image_tag project.image.url, class: 'img-fluid'
+        = image_tag project.image.medium.url, class: 'img-fluid'
     .no-flex-col-10.pl-2
       h4 = project.title
       p.subtitle = project.subtitle

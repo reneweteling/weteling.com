@@ -211,7 +211,7 @@ section.section
                 .media-left
                   figure.image.is-96x96
                     - if project.image.present?
-                      = image_tag project.image.url, loading: :lazy
+                      = image_tag project.image.medium.url, loading: :lazy
                 .media-content
                   p.title.is-4 = project.title
                   p.subtitle.is-6 = project.subtitle
