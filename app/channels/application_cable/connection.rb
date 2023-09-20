@@ -5,6 +5,9 @@ module ApplicationCable
       # p params
     end
 
+    def session
+      @request.session
+    end
   
   end
 end

@@ -8,7 +8,7 @@ ENV RAILS_ENV=$RAILS_ENV
 ENV NODE_ENV=production
 ENV DEBIAN_FRONTEND=noninteractive
 
-ENV NODE_OPTIONS=--openssl-legacy-provider
+ENV NODE_OPTIONS=--openssl-legacy-providerbin
 # Bundle in seperate layer
 RUN bundle config build.nokogiri --use-system-libraries
 
