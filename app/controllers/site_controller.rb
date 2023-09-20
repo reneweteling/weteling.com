@@ -42,6 +42,9 @@ class SiteController < ApplicationController
     end
   end
 
+  def bbq
+  end
+
   private
 
   def redirect_to_referer_or_path
