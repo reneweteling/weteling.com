@@ -18,9 +18,9 @@ consumer.subscriptions.create({ channel: "BbqChannel", room: "Best Room" },
     this.uninstall()
   },
 
-  set(type, value) {
+  update(data) {
     // Calls `AppearanceChannel#set(data)` on the server.
-    this.perform("set", { type: type, value: value })
+    this.perform("update", data)
   },
 
   // Called when the subscription is rejected by the server.
@@ -104,19 +104,19 @@ consumer.subscriptions.create({ channel: "BbqChannel", room: "Best Room" },
     },
 
     updateTarget(){
-      this.set('targetTemp', document.getElementById("currentTarget").value)
+      this.update({'targetTemp': document.getElementById("currentTarget").value})
     },
     clickclose(){
-      this.set('targetPos', this.state.pos - 1000)
+      this.update({'targetPos': this.state.pos - 1000})
     },
     clickopen(){
-      this.set('targetPos', this.state.pos + 1000)
+      this.update({'targetPos': this.state.pos + 1000})
     },
     clickMin(){
-      this.set('min', this.state.pos)
+      this.update({'min': this.state.pos})
     },
     clickMax(){
-      this.set('max', this.state.pos)
+      this.update({'max': this.state.pos})
     },
   }
 )

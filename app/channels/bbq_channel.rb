@@ -14,8 +14,8 @@ class BbqChannel < ApplicationCable::Channel
     ActionCable.server.broadcast("bbq", data)
   end
 
-  def set(data)
-    @@state.merge!(Hash[data['type'], data['value']])
+  def update(data)
+    @@state.merge!(data.except("action"))
 
     ActionCable.server.broadcast("bbq", {state: @@state})
   end
