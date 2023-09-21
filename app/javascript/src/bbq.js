@@ -31,7 +31,6 @@ consumer.subscriptions.create({ channel: "BbqChannel", room: "Best Room" },
     received(data) {
       this.addConsole(data);
       if (typeof data == "object" && data['state']){
-        
         this.updateState(data['state']);
       }
     },
@@ -85,33 +84,33 @@ consumer.subscriptions.create({ channel: "BbqChannel", room: "Best Room" },
     install() {
       this.output = document.getElementById("console");
       this.updateState({
-        pos: 2000,
         temp: 0,
-        target: 120,
+        pos: 2000,
+        targetTemp: 120,
+        targetPos: 2000,
         min: 1000,
         max:4000
       });
 
-      document.getElementById("currentTarget").addEventListener("change", this.updateTarget.bind(this));
-      document.getElementById("left").addEventListener("click", this.clickLeft.bind(this));
-      document.getElementById("right").addEventListener("click", this.clickRight.bind(this));
+      document.getElementById("targetTemp").addEventListener("change", this.updateTarget.bind(this));
+      document.getElementById("close").addEventListener("click", this.clickclose.bind(this));
+      document.getElementById("open").addEventListener("click", this.clickopen.bind(this));
       document.getElementById("min").addEventListener("click", this.clickMin.bind(this));
       document.getElementById("max").addEventListener("click", this.clickMax.bind(this));
     },
   
     uninstall() {
-      document.getElementById("left").removeEventListener("click", this.clickLeft.bind(this));
-     
+      document.getElementById("close").removeEventListener("click", this.clickclose.bind(this));
     },
 
     updateTarget(){
-      this.set('target', document.getElementById("currentTarget").value)
+      this.set('targetTemp', document.getElementById("currentTarget").value)
     },
-    clickLeft(){
-      this.set('left', this.state.pos - 1000)
+    clickclose(){
+      this.set('targetPos', this.state.pos - 1000)
     },
-    clickRight(){
-      this.set('right', this.state.pos + 1000)
+    clickopen(){
+      this.set('targetPos', this.state.pos + 1000)
     },
     clickMin(){
       this.set('min', this.state.pos)
