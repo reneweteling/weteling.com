@@ -57,5 +57,4 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.web_console.permissions = '172.22.0.1'
-  config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/, /.*/, nil]
 end
