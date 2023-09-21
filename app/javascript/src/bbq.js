@@ -5,7 +5,7 @@ export default createConsumer()
 // Specify a different URL to connect to
 const consumer = createConsumer('/websocket')
 
-consumer.subscriptions.create({ channel: "BbqChannel", room: "Best Room" },
+consumer.subscriptions.create({ channel: "BbqChannel"},
   {
 
     // Called when the subscription is ready for use on the server.
@@ -107,10 +107,10 @@ consumer.subscriptions.create({ channel: "BbqChannel", room: "Best Room" },
       this.update({'targetTemp': document.getElementById("currentTarget").value})
     },
     clickclose(){
-      this.update({'targetPos': this.state.pos - 1000})
+      this.update({'targetPos': this.state.targetPos - 1000})
     },
     clickopen(){
-      this.update({'targetPos': this.state.pos + 1000})
+      this.update({'targetPos': this.state.targetPos + 1000})
     },
     clickMin(){
       this.update({'min': this.state.pos})
