@@ -16,6 +16,13 @@ services:
       - /app/node_modules
     depends_on:
       - db
+    environment:
+      - RAILS_ENV=development
+      - PGHOST=db
+      - PGUSER=postgres
+      - PGPASSWORD=postgres
+      - NODE_OPTIONS=--openssl-legacy-provider
+        
   db:
     image: postgres:9.6-alpine
     environment:
