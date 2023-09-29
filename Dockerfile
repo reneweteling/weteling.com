@@ -6,16 +6,18 @@ WORKDIR /app
 ARG RAILS_ENV=production
 ENV RAILS_ENV=$RAILS_ENV
 ENV NODE_ENV=production
-# ENV NODE_OPTIONS=--openssl-legacy-provider
+ENV DEBIAN_FRONTEND=noninteractive
 
+# ENV NODE_OPTIONS=--openssl-legacy-providerbin
 # Bundle in seperate layer
 RUN bundle config build.nokogiri --use-system-libraries
 
-RUN curl -sL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor | tee /usr/share/keyrings/yarnkey.gpg >/dev/null
-RUN echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN curl -fsSL https://deb.nodesource.com/setup_18.x | bash -
+ENV NODE_MAJOR=20
+RUN echo "deb [trusted=yes] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | tee /etc/apt/sources.list.d/nodesource.list
+RUN echo "deb [trusted=yes] https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
-RUN apt-get install -y \
+RUN apt-get update && \
+    apt-get install -y \
     bash \
     gcc \
     g++ \
@@ -44,6 +46,7 @@ RUN bundle install --jobs=4 --retry=3
 # # Install node packages
 COPY package.json yarn.lock ./
 RUN yarn
+RUN yarn global add webpack-dev-server
 
 # Copy all files
 COPY . .

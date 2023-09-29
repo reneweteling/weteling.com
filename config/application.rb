@@ -23,5 +23,8 @@ module WetelingCom
     config.generators.javascript_engine = :js
 
     config.load_defaults 7.0
+
+    config.action_cable.mount_path = '/websocket'
+    config.action_cable.allowed_request_origins = [/http:\/\/*/, /https:\/\/*/, /.*/, nil]
   end
 end

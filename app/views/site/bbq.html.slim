@@ -1,0 +1,48 @@
+.container style="padding: 1em;"
+  .columns.is-mobile
+    .column
+      #currentTemp.span.button.is-medium.is-fullwidth
+        | 132
+    .column
+      input#targetTemp.button.is-medium.is-fullwidth{type="number", value="80"}
+    .column
+      #currentPercent.span.button.is-medium.is-fullwidth
+        | 33%
+  .columns.is-mobile
+    .column
+      progress#currentProgress.progress.is-danger[value="33" max="100"]
+        | 33%
+  .columns.is-mobile
+    .column
+      article.panel.is-info
+        p.panel-heading
+          |  Console
+        pre#console.panel-block style="display: block; width: 340px; height: 200px; overflow: auto; font-size: x-small;"
+  .columns.is-mobile
+    .column
+      article.panel.is-info
+        p.panel-heading
+          |  Controlls
+        p.panel-block 
+          .columns.is-mobile style="padding: 1em;"
+            .column Position
+            #currentPos.column 40392
+            #currentMin.column ?
+            #currentMax.column ?
+          .columns.is-mobile style="padding: 1em;"
+            .column
+              button#close.button.is-small.is-fullwidth <-
+            .column
+              button#open.button.is-small.is-fullwidth ->
+            .column
+              button#min.button.is-small.is-fullwidth 
+                | Set 
+                br
+                | min
+            .column
+              button#max.button.is-small.is-fullwidth   
+                | Set 
+                br
+                | max
+
+= javascript_pack_tag 'bbq'
