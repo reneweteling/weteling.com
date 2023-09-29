@@ -1,3 +1,4 @@
+
 .container style="padding: 1em;"
   .columns.is-mobile
     .column
@@ -17,7 +18,7 @@
       article.panel.is-info
         p.panel-heading
           |  Console
-        pre#console.panel-block style="display: block; width: 340px; height: 200px; overflow: auto; font-size: x-small;"
+        pre#console.panel-block style="max-width: calc(100vw - 2em); height: 200px; overflow: auto; font-size: x-small;"
   .columns.is-mobile
     .column
       article.panel.is-info
@@ -31,9 +32,9 @@
             #currentMax.column ?
           .columns.is-mobile style="padding: 1em;"
             .column
-              button#close.button.is-small.is-fullwidth <-
+              button#close.button.is-small.is-fullwidth ⬅️
             .column
-              button#open.button.is-small.is-fullwidth ->
+              button#open.button.is-small.is-fullwidth ➡️
             .column
               button#min.button.is-small.is-fullwidth 
                 | Set 
