@@ -1,6 +1,6 @@
 # Dockerfile
 FROM surnet/alpine-wkhtmltopdf:3.16.2-0.12.6-full as wkhtmltopdf
-FROM ruby:3.1-alpine as app
+FROM ruby:3.2-alpine as app
 
 WORKDIR /var/www/html
 
@@ -26,7 +26,7 @@ RUN apk add --update --no-cache \
     ttf-liberation 
 
 # throw errors if Gemfile has been modified since Gemfile.lock
-RUN gem install bundler:2.4.13
+RUN gem install bundler:2.4.22
 RUN bundle config --global frozen 1
 
 RUN npm install --global yarn
@@ -46,6 +46,6 @@ COPY . .
 # need to place the files in the forlders in the app.json
 # RUN bin/rails assets:precompile
 # RUN mv ./public/assets ./public/tmp_assets && mv ./public/packs ./public/tmp_packs
-    
+
 # Go!
 EXPOSE 5000

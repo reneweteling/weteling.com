@@ -33,13 +33,13 @@ RUN apt-get update && \
     yarn \
     wkhtmltopdf
 
-RUN groupadd --gid 1000 dev
-RUN useradd --uid 1000 --gid dev --shell /bin/bash --create-home dev
-RUN chown -R dev:dev /app
+# RUN groupadd --gid 1000 dev
+# RUN useradd --uid 1000 --gid dev --shell /bin/bash --create-home dev
+# RUN chown -R dev:dev /app
 
-USER dev
+# USER dev
 
-RUN gem install bundler:2.4.13
+RUN gem install bundler:2.4.22
 
 # Install ruby packages
 COPY Gemfile Gemfile.lock ./
