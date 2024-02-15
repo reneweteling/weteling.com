@@ -20,7 +20,8 @@ gem "webpacker"
 # Move our uploads to AWS
 gem "carrierwave-aws"
 # error reporting
-gem 'airbrake', '~> 13.0'
+gem "sentry-ruby"
+gem "sentry-rails"
 gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false

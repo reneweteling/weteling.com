@@ -104,10 +104,6 @@ GEM
       activerecord (>= 4.2)
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
-    airbrake (13.0.4)
-      airbrake-ruby (~> 6.0)
-    airbrake-ruby (6.2.2)
-      rbtree3 (~> 0.6)
     arbre (1.7.0)
       activesupport (>= 3.0.0)
       ruby2_keywords (>= 0.0.2)
@@ -350,7 +346,6 @@ GEM
     rb-inotify (0.10.1)
       ffi (~> 1.0)
     rbs (2.8.4)
-    rbtree3 (0.7.1)
     rdoc (6.6.2)
       psych (>= 4.0.0)
     redcarpet (3.6.0)
@@ -403,6 +398,11 @@ GEM
     semantic_range (3.0.0)
     sendgrid-ruby (6.7.0)
       ruby_http_client (~> 3.4)
+    sentry-rails (5.16.1)
+      railties (>= 5.0)
+      sentry-ruby (~> 5.16.1)
+    sentry-ruby (5.16.1)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
     simple_form (5.3.0)
       actionpack (>= 5.2)
       activemodel (>= 5.2)
@@ -495,7 +495,6 @@ DEPENDENCIES
   activeadmin-sortable
   activeadmin_addons
   acts_as_list
-  airbrake (~> 13.0)
   autoprefixer-rails
   bootstrap (~> 4.5)
   browser
@@ -531,6 +530,8 @@ DEPENDENCIES
   sass-rails
   sassc-rails
   sendgrid-ruby
+  sentry-rails
+  sentry-ruby
   simple_form
   slim-rails
   solargraph
