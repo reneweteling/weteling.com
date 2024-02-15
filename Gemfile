@@ -25,7 +25,7 @@ gem 'net-smtp', require: false
 gem 'net-imap', require: false
 gem 'net-pop', require: false
 
-gem 'nokogiri', '~> 1.15', '>= 1.15.2'
+# gem 'nokogiri', '~> 1.15', '>= 1.15.2'
 gem "browser"
 gem "redcarpet"
 gem 'jwt'

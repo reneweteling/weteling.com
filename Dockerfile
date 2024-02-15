@@ -1,11 +1,13 @@
 # Dockerfile
-FROM ruby:3.1
+FROM ruby:3.2
 
 WORKDIR /app
 
 ARG RAILS_ENV=production
 ENV RAILS_ENV=$RAILS_ENV
 ENV NODE_ENV=production
+ENV RUBY_CONFIGURE_OPTS=--enable-yjit
+ENV RUBY_YJIT_ENABLE=true
 ENV DEBIAN_FRONTEND=noninteractive
 
 # ENV NODE_OPTIONS=--openssl-legacy-providerbin
@@ -54,6 +56,6 @@ COPY . .
 # need to place the files in the forlders in the app.json
 # RUN bin/rails assets:precompile
 # RUN mv ./public/assets ./public/tmp_assets && mv ./public/packs ./public/tmp_packs
-    
+
 # Go!
 EXPOSE 5000

@@ -8,7 +8,7 @@ ActiveAdmin.register Hour do
 
   controller do
     def scoped_collection
-      super.includes :rate, project: [:client]
+      super.includes :rate, :client, project: [:client]
     end
 
     def build_new_resource
