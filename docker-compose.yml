@@ -5,7 +5,7 @@ services:
     image: weteling.com
     build:
       context: .
-      dockerfile: Dockerfile-alpine
+      dockerfile: Dockerfile
     stdin_open: true
     tty: true
     command: bundle exec rails s -b 0.0.0.0 -p 3000

@@ -1,7 +1,7 @@
 {
   "scripts": {
     "dokku": {
-      "predeploy": "bin/rails db:migrate assets:precompile"
+      "predeploy": "NODE_OPTIONS=--openssl-legacy-provider bin/rails db:migrate assets:precompile"
     }
   }
 }
