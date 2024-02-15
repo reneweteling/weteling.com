@@ -516,7 +516,6 @@ DEPENDENCIES
   net-imap
   net-pop
   net-smtp
-  nokogiri (~> 1.15, >= 1.15.2)
   pdfkit
   pg
   prettier

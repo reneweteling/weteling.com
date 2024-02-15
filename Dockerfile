@@ -10,7 +10,7 @@ ENV RUBY_CONFIGURE_OPTS=--enable-yjit
 ENV RUBY_YJIT_ENABLE=true
 ENV DEBIAN_FRONTEND=noninteractive
 
-# ENV NODE_OPTIONS=--openssl-legacy-providerbin
+ENV NODE_OPTIONS=--openssl-legacy-provider
 # Bundle in seperate layer
 RUN bundle config build.nokogiri --use-system-libraries
 
