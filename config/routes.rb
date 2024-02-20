@@ -6,6 +6,10 @@ Rails.application.routes.draw do
   #   mount GraphiQL::Rails::Engine, at: "/graphiql", graphql_path: "/graphql"
   #   post "/graphql", to: "graphql#execute"
   # end
+  #
+  constraints subdomain: 'url462' do
+    get '*path', to: 'sendgrid#email_proxy'
+  end
 
   namespace :api do
     devise_for :users, controllers: { sessions: 'api/sessions' },
@@ -27,6 +31,6 @@ Rails.application.routes.draw do
   get :cv_print, to: 'site#cv_print'
   get :cv_pdf, to: 'site#cv_pdf'
   get :bbq, to: 'site#bbq'
-  root to: 'site#home'  
+  root to: 'site#home'
 
 end
