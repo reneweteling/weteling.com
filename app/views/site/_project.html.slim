@@ -7,11 +7,11 @@
     .no-flex-col-10.pl-2
       h4 = project.title
       p.subtitle = project.subtitle
-      span.start = l project.start_date
+      span.start => l project.start_date
       | -
       span.end
         - if project.end_date.present?
-          = l project.end_date
+          =< l project.end_date
         - else
-          |Present date
+          | Present date
       p.description == markdown (defined?(as_cv) && as_cv === true ? project.description_cv : project.description)
