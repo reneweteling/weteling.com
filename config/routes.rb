@@ -20,6 +20,12 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :exact do
+    get 'oauth/authorize', to: 'oauth#authorize'
+    get 'oauth/callback', to: 'oauth#callback'
+    get 'api/*path', to: 'api_proxy#get'
+  end
+
   get "_ah/health", to: "application#health_check"
 
   match "error/:code", to: "errors#show", constraints: { code: /\d+/ }, via: :all

@@ -6,12 +6,14 @@ class User < ApplicationRecord
   has_many :clients, dependent: :restrict_with_error
   has_many :rates, dependent: :restrict_with_error
   has_many :projects, through: :clients
-  has_many :hours, through: :projects  
+  has_many :hours, through: :projects
   has_and_belongs_to_many :projects
 
   validates_presence_of :email, :name
 
   enum role: [:admin, :client]
+
+  has_one :auth_token, dependent: :destroy
 
   def to_s
     name
