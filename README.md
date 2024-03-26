@@ -14,6 +14,7 @@ docker compose up
 ```
 
 ## Debugging tools
+
 ```bash
 # have docker compose up running
 docker compose up -d
@@ -44,4 +45,3 @@ location ~ ^/assets|packs/ {
     add_header Cache-Control public;
 }
 ```
-
