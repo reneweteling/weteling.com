@@ -17,6 +17,7 @@ docker compose up
 
 ```bash
 # have docker compose up running
+
 docker compose up -d
 docker compose exec web bash
 -->
