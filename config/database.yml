@@ -1,17 +1,13 @@
 default: &default
   adapter: postgresql
-  host: <%= ENV['PGHOST'] %>
-  username: <%= ENV['PGUSER'] %>
-  password: <%= ENV['PGPASSWORD'] %>
-  database: <%= ENV['PGDATABASE'] %>
-  
+
 development:
   <<: *default
-  database: <%= ENV['PGDATABASE'] %>_dev
+  database: weteling_dev
 
 test:
   <<: *default
-  database: <%= ENV['PGDATABASE'] %>_test
+  database: weteling_test
 
 production:
   <<: *default

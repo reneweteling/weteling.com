@@ -1,0 +1,125 @@
+en:
+  site:
+    home:
+      hero:
+        title: "Home"
+        hi: Hi
+        im_rene: "I'm René"
+        allround_developer: "Allround Developer"
+        say_hello: "Say Hello"
+
+      services:
+        title: "Services"
+        subtitle: Creating applications for the first time equals making mistakes for the first time, only with software this can be quite expensive. So why not run your architecture, network design proposal, data domain ideas through someone who has built and maintained allot of them?
+        caas:
+          h3: CTO as a Service (CaaS)
+          service-description: Running a project that intersects with IT requires IT knowledge, that might not be laying around, get a jump on the challenges and hire someone who knows common pitfalls and can get you on the right track.
+          h4: Where I could be of service
+          service-answer: Looking through the business requirements, to the IT landscape, optimizing, refining, laying out a strategy that will cut costs and increase productivity. This is an extremely diverse field, from setting up servers to team morale and everything in between.
+        duck:
+          h3: Rubber duck with a Senior
+          service-description: So you want to create something, how? What techniques, languages, frameworks, development team?
+          h4: Lets have a ☕
+          service-answer: Over a cup of coffee, let's just sit and talk. Go over all of the points, issues you have second thoughts over and just refine them. Let's take it one cup at a time.
+        broker:
+          h3: IT purchase broker
+          service-description: Thinking about hiring a company to create your application, but no technical knowledge within your organization? Scared of vendor lockins, does the SLA seem steep?
+          h4: Just like buying a house
+          service-answer: Someone who keeps your best interest in mind watches out for vendor lockins, outdated techniques, or just plain unmaintainable code. Basically all the important information nobody talks about.
+
+      skills:
+        title: "Skills"
+        subtitle: "Throughout the years, I’ve been in contact with <strong>multiple</strong> facets of the IT landscape. My <strong>passion</strong> is in web development, this is because of the short iteration to optimize the product and the ability to make data-driven decisions. I love it when people use the product that I’ve helped to develop, so web and mobile are ideal!"
+        be:
+          title: Back-End Development
+          description: Like in life most of the interesting stuff happens behind the scenes, this is especially true in development. Api's, integrations, back-ends, services, jobs, searching, storage you name it. This is where I’m at home.
+          tags:
+            - title: "Languages:"
+              items:
+                - "Elixir"
+                - "Ruby"
+                - "NodeJs"
+                - "TypeScript"
+                - "PHP"
+                - "Perl"
+                - "SQL"
+                - "GraphQL"
+            - title: "Development tools:"
+              items:
+                - "VsCode"
+                - "GitHub"
+                - "GitLab"
+                - "BitBucket"
+                - "Jira"
+                - "SourceTree"
+                - "DBeaver"
+            - title: "Frameworks:"
+              items:
+                - "Phoenix"
+                - "Rails"
+                - "Express"
+                - "Laravel"
+                - "VueJs"
+                - "Pinia"
+
+        fe:
+          title: Front-End Development
+          description: Back-ends need to interact with something consumer-facing, so front-end development is also a large part of an app. Creating pixel-perfect interfaces is not really my cup of tea, what I like to do is create functional interfaces using some sort of framework for ease, speed, and consistency.
+          tags:
+            - title: "Languages:"
+              items:
+                - "Html"
+                - "Css"
+                - "Sass"
+                - "Javascript"
+                - "Typescript"
+                - "Slim"
+                - "Haml"
+            - title: "Development Tools:"
+              items:
+                - "Vite"
+                - "Webpack"
+                - "Rollup"
+                - "Gulp"
+                - "Figma"
+                - "Zeplin"
+            - title: "Frameworks:"
+              items:
+                - "VueJS"
+                - "React"
+                - "Bootstrap"
+                - "Bulma"
+
+        devops:
+          title: DevOps
+          description: Back-ends with front-ends need to run somewhere and store some data, access some database rows, maybe have an optimized search layer, with a CiCd to automate it all. This is something I really enjoy setting up.
+          tags:
+            - title: "Development Tools:"
+              items:
+                - "Github Actions"
+                - "CircleCi"
+                - "CodePipelines"
+                - "AWS"
+                - "Azure"
+                - "Google Cloud"
+                - "DockerHub"
+                - "Dokku"
+                - "Heroku"
+                - "Flynn"
+                - "Hetzner"
+                - "DigitalOcean"
+                - "Cloud66"
+            - title: "Development Tools:"
+              items:
+                - "Terraform"
+                - "Ansible"
+                - "Capistrano"
+
+      recruiters:
+        title: "recruiters"
+      projects:
+        title: "Projects"
+      about_me:
+        title: "About me"
+      contact:
+        title: "Contact"
