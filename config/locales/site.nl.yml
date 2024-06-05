@@ -1,0 +1,142 @@
+nl:
+  site:
+    subscribe:
+      thanks: "Bedankt voor je inschrijving! Ik houd je op de hoogte!"
+      submit: "Houd me op de hoogte!"
+    contact:
+      thanks: "Bedankt voor je bericht! Ik kom zo snel mogelijk bij je terug!"
+      submit: "Versturen!"
+
+    home:
+      locale:
+        en: "🇬🇧"
+        nl: "🇳🇱"
+
+      hero:
+        title: "Home"
+        hi: "Hoi"
+        im_rene: "Ik ben René"
+        allround_developer: "Allround Ontwikkelaar"
+        say_hello: "Zeg Hallo"
+
+      services:
+        title: "Diensten"
+        subtitle: "Het voor de eerste keer maken van applicaties betekent fouten maken voor de eerste keer, alleen kan dit met software behoorlijk duur zijn. Dus waarom zou je je architectuur, netwerkontwerpvoorstel, data domein ideeën niet door iemand laten controleren die er veel van heeft gebouwd en onderhouden?"
+        caas:
+          h3: "CTO als een Dienst (CaaS)"
+          service-description: "Een project uitvoeren dat intersecteert met IT vereist IT-kennis, die misschien niet beschikbaar is, krijg een voorsprong op de uitdagingen en huur iemand in die de gebruikelijke valkuilen kent en je op het juiste pad kan zetten."
+          h4: "Waar ik van dienst kan zijn"
+          service-answer: "Kijken door de zakelijke vereisten, naar het IT-landschap, optimaliseren, verfijnen, het uitzetten van een strategie die kosten zal besparen en de productiviteit zal verhogen. Dit is een extreem divers veld, van het opzetten van servers tot team moraal en alles daartussenin."
+        duck:
+          h3: "Rubber eend met een Senior"
+          service-description: "Dus je wilt iets maken, hoe? Welke technieken, talen, frameworks, ontwikkelteam?"
+          h4: "Laten we een ☕ nemen"
+          service-answer: "Onder het genot van een kop koffie, laten we gewoon zitten en praten. Ga over alle punten heen, problemen waar je twijfels over hebt en verfijn ze. Laten we het kopje voor kopje nemen."
+        broker:
+          h3: "IT inkoopmakelaar"
+          service-description: "Denk je eraan een bedrijf in te huren om je applicatie te maken, maar geen technische kennis binnen je organisatie? Bang voor vendor lock-ins, lijkt de SLA steil?"
+          h4: "Net zoals een huis kopen"
+          service-answer: "Als je een huis koopt, huur je een makelaar in. Laat me je makelaar zijn, ik zorg ervoor dat je krijgt waar je voor betaalt, zonder verborgen kosten en geen vendor lock-ins."
+
+      skills:
+        title: "Vaardigheden"
+        subtitle: "Door de jaren heen ben ik in contact geweest met <strong>meerdere</strong> facetten van het IT-landschap. Mijn <strong>passie</strong> ligt bij webontwikkeling, omdat de korte iteratiecyclus het mogelijk maakt om het product te optimaliseren en data-gedreven beslissingen te nemen. Ik hou ervan wanneer mensen het product gebruiken dat ik heb helpen ontwikkelen, dus web en mobiel zijn ideaal!"
+        be:
+          title: "Back-End Ontwikkeling"
+          description: "Net zoals in het leven gebeurt het meest interessante achter de schermen, dit geldt vooral in de ontwikkeling. API's, integraties, back-ends, services, jobs, zoeken, opslag, noem maar op. Dit is waar ik me thuis voel."
+          tags:
+            - title: "Talen:"
+              items:
+                - "Elixir"
+                - "Ruby"
+                - "NodeJs"
+                - "TypeScript"
+                - "PHP"
+                - "Perl"
+                - "SQL"
+                - "GraphQL"
+            - title: "Development tools:"
+              items:
+                - "VsCode"
+                - "GitHub"
+                - "GitLab"
+                - "BitBucket"
+                - "Jira"
+                - "SourceTree"
+                - "DBeaver"
+            - title: "Frameworks:"
+              items:
+                - "Phoenix"
+                - "Rails"
+                - "Express"
+                - "Laravel"
+                - "VueJs"
+                - "Pinia"
+        fe:
+          title: "Front-End Ontwikkeling"
+          description: "Back-ends moeten met iets interactief zijn voor de consument, dus front-end ontwikkeling is ook een groot deel van een app. Het maken van pixel-perfecte interfaces is niet echt mijn ding, wat ik graag doe is het creëren van functionele interfaces met behulp van een soort framework voor gemak, snelheid en consistentie."
+          tags:
+            - title: "Talen:"
+              items:
+                - "Html"
+                - "Css"
+                - "Sass"
+                - "Javascript"
+                - "Typescript"
+                - "Slim"
+                - "Haml"
+            - title: "Development tools:"
+              items:
+                - "Vite"
+                - "Webpack"
+                - "Rollup"
+                - "Gulp"
+                - "Figma"
+                - "Zeplin"
+            - title: "Frameworks:"
+              items:
+                - "VueJS"
+                - "React"
+                - "Bootstrap"
+                - "Bulma"
+
+        devops:
+          title: DevOps
+          description: Back-ends met front-ends moeten ergens draaien en wat data opslaan, toegang hebben tot enkele database-rijen, misschien een geoptimaliseerde zoeklaag hebben, met een CiCd om alles te automatiseren. Dit is iets wat ik echt leuk vind om op te zetten.
+          tags:
+            - title: "Services:"
+              items:
+                - "Github Actions"
+                - "CircleCi"
+                - "CodePipelines"
+                - "AWS"
+                - "Azure"
+                - "Google Cloud"
+                - "DockerHub"
+                - "Dokku"
+                - "Heroku"
+                - "Flynn"
+                - "Hetzner"
+                - "DigitalOcean"
+                - "Cloud66"
+            - title: "Development tools:"
+              items:
+                - "Terraform"
+                - "Ansible"
+                - "Capistrano"
+
+      recruiters:
+        title: "Recruiters"
+        subtitle: "<strong>Dit is de informatie waar je op hebt gewacht!</strong><br /><br />Mijn cv is hier beschikbaar:"
+        keep_in_loop: "Wil je op de hoogte gehouden worden wanneer ik beschikbaar ben voor nieuwe projecten? </br> Laat dan hier je contactgegevens achter:"
+      projects:
+        title: "Projecten"
+        subtitle: "Omdat ik voornamelijk actief ben in de <strong>back-end</strong> bleek het maken van een portfolio behoorlijk moeilijk te zijn. Dus ik hoop dat je met deze carrousel van kaarten een idee krijgt van wat ik <strong>kan</strong>."
+      about_me:
+        title: "Over mij"
+        intro1: "Ik ben een programmeur geboren in Capelle aan den IJssel, net onder de rok van Rotterdam (NL). Op zeer jonge leeftijd werd ik verliefd op computers. <br/> <br />Mijn vader was ook behoorlijk geïnteresseerd in computers en leerde me batch scripts in MS-DOS toen ik ongeveer 9 jaar oud was, op een 286DX met de turbo altijd aan. We waren een van de eersten in de buurt met een inbelverbinding, gevolgd door de ISDN met trunk-modus, gevolgd door DSL, kabel en uiteindelijk glasvezel. De mogelijkheden om deze machines met elkaar te verbinden waren zo intrigerend dat ik op 14-jarige leeftijd begon te experimenteren met VPN's, LAMP-stacks, FTP-servers."
+        intro2: "Tijd om een richting voor mijn toekomstige opleiding te kiezen, een van de eenvoudigste keuzes van mijn leven, dus ik schreef me in voor Computerwetenschappen aan de HRO in Rotterdam. De opleiding was een eitje, en ik deed het parttime terwijl ik werkte bij een digitaal bureau. De code-aap was geboren!"
+        intro3: "Op persoonlijk vlak ben ik een trotse vader van 3 kinderen. Verloofd met mijn mooie toekomstige vrouw. Festival liefhebber, rondhangen met vrienden, varen in de grachten en natuurlijk vakantie. Hard werken, hard spelen!"
+      contact:
+        title: "Contact"
+        subtitle: "Wil je me een ❤️ brief sturen? Je kunt de onderstaande gegevens gebruiken, of gewoon een e-mail sturen via het contactformulier."

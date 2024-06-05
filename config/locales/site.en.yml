@@ -1,6 +1,17 @@
 en:
   site:
+    subscribe:
+      thanks: "Thanks for subscribing! I'll keep you posted!"
+      submit: "Keep me in the loop!"
+    contact:
+      thanks: "Thanks for reaching out! I'll get back to you as soon as possible!"
+      submit: "Send!"
+
     home:
+      locale:
+        en: "🇬🇧"
+        nl: "🇳🇱"
+
       hero:
         title: "Home"
         hi: Hi
@@ -61,7 +72,6 @@ en:
                 - "Laravel"
                 - "VueJs"
                 - "Pinia"
-
         fe:
           title: Front-End Development
           description: Back-ends need to interact with something consumer-facing, so front-end development is also a large part of an app. Creating pixel-perfect interfaces is not really my cup of tea, what I like to do is create functional interfaces using some sort of framework for ease, speed, and consistency.
@@ -75,7 +85,7 @@ en:
                 - "Typescript"
                 - "Slim"
                 - "Haml"
-            - title: "Development Tools:"
+            - title: "Development tools:"
               items:
                 - "Vite"
                 - "Webpack"
@@ -94,7 +104,7 @@ en:
           title: DevOps
           description: Back-ends with front-ends need to run somewhere and store some data, access some database rows, maybe have an optimized search layer, with a CiCd to automate it all. This is something I really enjoy setting up.
           tags:
-            - title: "Development Tools:"
+            - title: "Services:"
               items:
                 - "Github Actions"
                 - "CircleCi"
@@ -109,7 +119,7 @@ en:
                 - "Hetzner"
                 - "DigitalOcean"
                 - "Cloud66"
-            - title: "Development Tools:"
+            - title: "Development tools:"
               items:
                 - "Terraform"
                 - "Ansible"
@@ -123,7 +133,7 @@ en:
         title: "Projects"
         subtitle: "Since I’m mostly active in the <strong>back-end</strong> creating some sort of portfolio proved to be quite the task. So I hope with this carousel of cards you will get a gist of what I’m <strong>capable</strong> of."
       about_me:
-        title: "About me"
+        title: "Over mij"
         intro1: "I'm a coder born in Capelle aan den IJssel, just under the skirt of Rotterdam (NL). At a very young age, I fell in love with computers. <br/> <br />My dad was also pretty interested in computers, taught me batch scripts in MS-DOS when I was about 9 years old, on a 286DX with the turbo always on. We were one of the first in the neighborhood with a dial-up connection, followed by the ISDN with trunk mode, followed by DSL, Cable, and finally Fiber. The possibilities of connecting these machines to each other machines were so intriguing that I started experimenting with VPNs, LAMP stacks, FTP servers at the age of 14."
         intro2: "Time to chose a direction for my future education, one of the simplest choices of my life, so I enrolled in Computer Sciences at the HRO in Rotterdam. The education was a breeze, and i did it part-time while working at a digital agency. The code monkey was born!"
         intro3: "On a personal note, I’m a proud father of 3 kids. Engaged to my beautiful wife-to-be. Festival lover, hanging out with friends, boating in the canals, and of course vacation. Work hard Play hard!"

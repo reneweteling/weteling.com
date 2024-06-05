@@ -1,5 +1,8 @@
 class SiteController < ApplicationController
   rescue_from ActionController::InvalidAuthenticityToken, with: :redirect_to_referer_or_path
+  before_action :set_locale
+
+  LOCALES = ['en', 'nl']
 
   def home
     @projects = Project.for_site.includes(:tags)
@@ -46,6 +49,26 @@ class SiteController < ApplicationController
   end
 
   private
+
+  def set_locale
+    # locale set from param
+    if params[:locale].present?
+      session[:locale] = I18n.locale = params[:locale]
+      return
+    end
+
+    # locale set from session
+    return I18n.locale = session[:locale] if session[:locale].present?
+
+    # locale set from browser
+    locale = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+    if LOCALES.include?(locale)
+      session[:locale] = I18n.locale = locale
+      return
+    end
+
+    I18n.locale = I18n.default_locale
+  end
 
   def redirect_to_referer_or_path
     flash[:notice] = "Please try again."

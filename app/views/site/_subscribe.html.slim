@@ -1,9 +1,9 @@
 #subscribe-content
   - if @subscriber_sent
-    h3 Thanks for subscribing! I'll keep you posted!
+    h3 = t('.thanks')
   - else
     = simple_form_for(@subscriber, url: subscribe_path, remote: true) do |f|
-      = f.input :first_name, label: false, placeholder: 'First name'
-      = f.input :last_name, label: false, placeholder: 'Last name'
-      = f.input :email, label: false, placeholder: 'Email'
-      = f.submit 'Keep me in the loop!', class: 'button is-primary'
+      = f.input :first_name, label: false
+      = f.input :last_name, label: false
+      = f.input :email, label: false
+      = f.submit t('.submit'), class: 'button is-primary'

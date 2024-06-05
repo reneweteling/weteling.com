@@ -1,21 +1,21 @@
 nl:
   attributes: &attributes
-    name: Name
+    name: Naam
 
   models: &models
     subscriber:
-      one: Subscriber
-      other: Subscribers
-      first_name: "First name"
-      last_name: "Last name"
+      one: Mailinglijst
+      other: Mailinglijsten
+      first_name: "Voornaam"
+      last_name: "Achternaam"
       email: "Email"
     contact_form:
-      one: Contact form
-      other: Contact forms
-      name: "Name"
+      one: Contact formulier
+      other: Contact formulieren
+      name: "Naam"
       email: "Email"
-      subject: "Subject tt"
-      message: "Message"
+      subject: "Onderwerp"
+      message: "Bericht"
 
   #######################################################
   ## Activerecord
@@ -40,13 +40,13 @@ nl:
     placeholders:
       <<: *models
     required:
-      text: "required"
+      text: "verplicht"
       mark: "*"
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Please review the problems below:"
+      default_message: "Kijk naar de problemen hieronder:"
     # Examples
     # labels:
     #   defaults:

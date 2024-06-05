@@ -16,6 +16,10 @@ nav.navbar.is-fixed-top.is-transparent
         a.navbar-item href="#projects" = t('.projects.title')
         a.navbar-item href="#about-me" = t('.about_me.title')
         a.navbar-item href="#contact" = t('.contact.title')
+        - if I18n.locale.to_s == 'nl'
+          a.navbar-item href="?locale=en" = t('.locale.en')
+        - else
+          a.navbar-item href="?locale=nl" = t('.locale.nl')
 header
   section#home.hero.is-fullheight
     .hero-body
@@ -195,7 +199,7 @@ section.section
   a.anchor#about-me
   .container
     .content.is-medium
-      h2 About me
+      h2 = t('.about_me.title')
       .container
         .columns
           .column
