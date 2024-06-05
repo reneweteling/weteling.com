@@ -132,24 +132,19 @@ section.section
   a.anchor#recruiters
   .container
     .content.is-medium
-      h2 Recruiters
+      h2 = t('.recruiters.title')
       .columns
         .column
-          p 
-            strong This is the information you have been waiting for!
-          p My cv is available here:
-          p 
+          p == t('.recruiters.subtitle')
+          p
             = link_to cv_pdf_path, download: true do
                 i.fa.fa-file-pdf-o aria-hidden="true"
                 |  PDF
             |  |
             = link_to cv_print_path do
               i.fa.fa-file-o aria-hidden="true"
-              |  PLAIN
-          p 
-            | Would you like to be kept in the loop when I’m available for new projects?
-            br
-            | Then leave your contact here:
+              |  HTML
+          p == t('.recruiters.keep_in_loop')
         .column
           = render 'subscribe'
 
@@ -157,13 +152,9 @@ section.section
   a.anchor#projects
   .container
     .content.is-medium
-      h2 Projects
-      p
-        | Since I’m mostly active in the 
-        strong back-end 
-        | creating some sort of portfolio proved to be quite the task. So I hope with this carousel of cards you will get a gist of what I’m 
-        strong capable 
-        | of.
+      h2 = t('.projects.title')
+      p == t('.projects.subtitle')
+
     #projects-carousel style=("overflow: hidden; margin: 0 -0.75rem;") 
       - @projects.each do |project|
         .carousel-item.content.has-text-centered style=("margin: 0.75rem;") 
@@ -208,21 +199,18 @@ section.section
       .container
         .columns
           .column
-            p I'm a coder born in Capelle aan den IJssel, just under the skirt of Rotterdam (NL). At a very young age, I fell in love with computers.
-
-            p My dad was also pretty interested in computers, taught me batch scripts in MS-DOS when I was about 9 years old, on a 286DX with the turbo always on. We were one of the first in the neighborhood with a dial-up connection, followed by the ISDN with trunk mode, followed by DSL, Cable, and finally Fiber. The possibilities of connecting these machines to each other machines were so intriguing that I started experimenting with VPNs, LAMP stacks, FTP servers at the age of 14.
-
+            p == t('.about_me.intro1')
           .column
-            p Time to chose a direction for my future education, one of the simplest choices of my life, so I enrolled in Computer Sciences at the HRO in Rotterdam. The education was a breeze, and i did it part-time while working at a digital agency. The code monkey was born!
+            p == t('.about_me.intro2')
             figure.image.is-128x128
               = image_tag('rene.jpg', class: "is-rounded", loading: :lazy)
-            p On a personal note, I’m a proud father of 3 kids. Engaged to my beautiful wife-to-be. Festival lover, hanging out with friends, boating in the canals, and of course vacation. Work hard Play hard!
+            p == t('.about_me.intro3')
 section.section
   a.anchor#contact
   .container
     .content.is-medium
-      h2 Contact
-      p Want to send me a ❤️ letter? You can use the details below, or just send me an email using the contact form.
+      h2 = t('.contact.title')
+      p = t('.contact.subtitle')
     .columns
       .column
         .columns
@@ -261,7 +249,7 @@ section.section
         
 footer.footer.content.has-text-centered
   p 
-    | René Weteling 2006 -
+    | René Weteling, coding since 2006 -
     = Time.zone.now.year 
   p Made with ❤️ in ❌❌❌
 p.has-text-centered EOF 🤓
