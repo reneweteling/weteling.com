@@ -1,4 +1,4 @@
-namespace :dokku do 
+namespace :dokku do
   task rebuild_local: :environment do
 
     raise "WTF!!! dude only in development!!!" unless Rails.env.development?
@@ -24,11 +24,11 @@ namespace :dokku do
     db = Rails.configuration.database_configuration['development']['database']
 
     # restore and cleanup
-    run_command "pg_restore --verbose --clean --no-acl --no-owner -h localhost -U postgres -d #{db} ./_backup/backup/export"
+    run_command "pg_restore --verbose --clean --no-acl --no-owner -h localhost -p 5434 -U postgres -d #{db} ./_backup/backup/export"
     # run_command "rm -rf ./_backup"
 
     Rake::Task["db:migrate"].invoke
-  end 
+  end
 
   task :deploy do
     run_command "git push dokku $(git rev-parse --abbrev-ref HEAD):master -f"
@@ -40,3 +40,7 @@ namespace :dokku do
     puts `#{cmd}`
   end
 end
+
+
+# DISABLE_DATABASE_ENVIRONMENT_CHECK=1 bin/rails dokku:rebuild_local
+# password is postgres

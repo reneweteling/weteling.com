@@ -1,8 +1,11 @@
+ruby:
+  content = I18n.locale.to_s == 'nl' ? Page.cv.first.content_nl : Page.cv.first.content_en
+
 - projects = capture do
   = render partial: 'project', collection: Project.for_cv, locals: { as_cv: true }
 
 .container.cv
-  == markdown Page.cv.first.content.gsub('[[projects]]', projects)
+  == markdown content.gsub('[[projects]]', projects)
 
 
 sass:

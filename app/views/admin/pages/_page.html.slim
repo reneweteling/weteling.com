@@ -3,4 +3,6 @@
 
 .bootstrap
   .container-fluid
-    == markdown resource.content.gsub('[[projects]]', projects)
+    == markdown resource.content_nl.gsub('[[projects]]', projects)
+  .container-fluid
+    == markdown resource.content_en.gsub('[[projects]]', projects)
