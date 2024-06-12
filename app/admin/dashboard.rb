@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+require 'ostruct'
 
 ActiveAdmin.register_page "Dashboard" do
   menu priority: 1
