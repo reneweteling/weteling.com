@@ -16,34 +16,34 @@ nl:
         title: "Home"
         hi: "Hoi"
         im_rene: "Ik ben René"
-        allround_developer: "Allround Ontwikkelaar"
-        say_hello: "Zeg Hallo"
+        allround_developer: "Allround Developer"
+        say_hello: "Zeg hallo"
 
       services:
         title: "Diensten"
-        subtitle: "Het voor de eerste keer maken van applicaties betekent fouten maken voor de eerste keer, alleen kan dit met software behoorlijk duur zijn. Dus waarom zou je je architectuur, netwerkontwerpvoorstel, data domein ideeën niet door iemand laten controleren die er veel van heeft gebouwd en onderhouden?"
+        subtitle: "Voor het eerst een systeen laten bouwen, extern of met eigen mensen betekent in veel gevallen het wiel opnieuw uitvinden, dit kan behoorlijk duur zijn. Waarom zou je de architectuur, netwerkdesign, data domein en andere componenten niet door iemand laten checken die er veel heeft neer gezet?"
         caas:
-          h3: "CTO als een Dienst (CaaS)"
-          service-description: "Een project uitvoeren dat intersecteert met IT vereist IT-kennis, die misschien niet beschikbaar is, krijg een voorsprong op de uitdagingen en huur iemand in die de gebruikelijke valkuilen kent en je op het juiste pad kan zetten."
-          h4: "Waar ik van dienst kan zijn"
-          service-answer: "Kijken door de zakelijke vereisten, naar het IT-landschap, optimaliseren, verfijnen, het uitzetten van een strategie die kosten zal besparen en de productiviteit zal verhogen. Dit is een extreem divers veld, van het opzetten van servers tot team moraal en alles daartussenin."
+          h3: "CTO as a Service (CaaS)"
+          service-description: "Een project draaien met raakvlak op IT vereist nu eenmaal heel veel IT kennis. Hoe lost je makkelijk problemen op, welke diensen kun je inzetten? Wat laat je bouwen, wat koop je? Dit zijn allemaal trajacten waar een CTO je bij kan helpen."
+          h4: "Waar zou ik kunnen assisteren"
+          service-answer: "Het kunnen vertalen van business requirements naar oplossingen, in-house of aangekocht. Het aansturen van development teams, C-level begeleiden in het maken van technische keuzes."
         duck:
-          h3: "Rubber eend met een Senior"
-          service-description: "Dus je wilt iets maken, hoe? Welke technieken, talen, frameworks, ontwikkelteam?"
-          h4: "Laten we een ☕ nemen"
-          service-answer: "Onder het genot van een kop koffie, laten we gewoon zitten en praten. Ga over alle punten heen, problemen waar je twijfels over hebt en verfijn ze. Laten we het kopje voor kopje nemen."
+          h3: "Rubber duck met een Senior"
+          service-description: "Dus je wilt iets maken, hoe? Welke technieken, talen, frameworks, ontwikkelteam? Of gewoon iets inkopen? Dit zijn allemaal vragen die je kunt stellen aan een senior."
+          h4: "Babbelen met een bakkie ☕"
+          service-answer: "Onder het genot van een kop koffie, nemen we je project door. Ik help je met het maken van de juiste keuzes, zodat je project een succes wordt."
         broker:
-          h3: "IT inkoopmakelaar"
-          service-description: "Denk je eraan een bedrijf in te huren om je applicatie te maken, maar geen technische kennis binnen je organisatie? Bang voor vendor lock-ins, lijkt de SLA steil?"
+          h3: "IT aankoopmakelaar"
+          service-description: "Een design agency inhuren om een mooi platform te laten maken? Je hebt een idee waar je heen wilt maar geen notie van de technische implicaties, hier is hulp bij nodig!"
           h4: "Net zoals een huis kopen"
-          service-answer: "Als je een huis koopt, huur je een makelaar in. Laat me je makelaar zijn, ik zorg ervoor dat je krijgt waar je voor betaalt, zonder verborgen kosten en geen vendor lock-ins."
+          service-answer: "Wanneer je een huis koopt, kun je een aankoopmakelaar inschakelen die jou belangen behartigd, dit is in de IT net zo. Externe teams strak op missie houden, controle op gekozen oplossingen, en de juiste prijs betalen."
 
       skills:
         title: "Vaardigheden"
-        subtitle: "Door de jaren heen ben ik in contact geweest met <strong>meerdere</strong> facetten van het IT-landschap. Mijn <strong>passie</strong> ligt bij webontwikkeling, omdat de korte iteratiecyclus het mogelijk maakt om het product te optimaliseren en data-gedreven beslissingen te nemen. Ik hou ervan wanneer mensen het product gebruiken dat ik heb helpen ontwikkelen, dus web en mobiel zijn ideaal!"
+        subtitle: "Door de jaren heen ben ik in contact gekomen met <strong>meerdere</strong> facetten van het IT-landschap. Mijn <strong>passie</strong> ligt bij webontwikkeling, omdat de korte iteratiecyclus het mogelijk maakt om het product te optimaliseren en data-gedreven beslissingen te nemen. Ik hou ervan wanneer mensen het product gebruiken dat ik heb helpen ontwikkelen, dus web en mobiel zijn ideaal!"
         be:
           title: "Back-End Ontwikkeling"
-          description: "Net zoals in het leven gebeurt het meest interessante achter de schermen, dit geldt vooral in de ontwikkeling. API's, integraties, back-ends, services, jobs, zoeken, opslag, noem maar op. Dit is waar ik me thuis voel."
+          description: "Net zoals in het leven gebeuren de meeste interessante dingen achter de schermen. API's, integraties, back-ends, services, jobs, search, storage, noem maar op. Dit is waar ik me thuis voel."
           tags:
             - title: "Talen:"
               items:
@@ -74,7 +74,7 @@ nl:
                 - "Pinia"
         fe:
           title: "Front-End Ontwikkeling"
-          description: "Back-ends moeten met iets interactief zijn voor de consument, dus front-end ontwikkeling is ook een groot deel van een app. Het maken van pixel-perfecte interfaces is niet echt mijn ding, wat ik graag doe is het creëren van functionele interfaces met behulp van een soort framework voor gemak, snelheid en consistentie."
+          description: "Fontends bouwen is een vak apart. Het is niet alleen het visuele aspect, maar ook de interactie met de gebruiker, de snelheid van de applicatie, de toegankelijkheid en de SEO. Dit is waar ik me graag mee bezig houd."
           tags:
             - title: "Talen:"
               items:
@@ -102,7 +102,7 @@ nl:
 
         devops:
           title: DevOps
-          description: Back-ends met front-ends moeten ergens draaien en wat data opslaan, toegang hebben tot enkele database-rijen, misschien een geoptimaliseerde zoeklaag hebben, met een CiCd om alles te automatiseren. Dit is iets wat ik echt leuk vind om op te zetten.
+          description: "Het is niet alleen het bouwen van een applicatie, maar ook het in de lucht houden ervan. Dit is waar DevOps om de hoek komt kijken. Het automatiseren van processen, het schalen van applicaties, het monitoren van applicaties, het beveiligen van applicaties."
           tags:
             - title: "Services:"
               items:
@@ -126,17 +126,17 @@ nl:
                 - "Capistrano"
 
       recruiters:
-        title: "Recruiters"
+        title: "Recruitment"
         subtitle: "<strong>Dit is de informatie waar je op hebt gewacht!</strong><br /><br />Mijn cv is hier beschikbaar:"
         keep_in_loop: "Wil je op de hoogte gehouden worden wanneer ik beschikbaar ben voor nieuwe projecten? </br> Laat dan hier je contactgegevens achter:"
       projects:
         title: "Projecten"
-        subtitle: "Omdat ik voornamelijk actief ben in de <strong>back-end</strong> bleek het maken van een portfolio behoorlijk moeilijk te zijn. Dus ik hoop dat je met deze carrousel van kaarten een idee krijgt van wat ik <strong>kan</strong>."
+        subtitle: "Omdat ik voornamelijk actief ben in de <strong>back-end</strong> zijn er weinig visuele dingen die ik kan tonen. Dus ik hoop dat je met deze carrousel van kaarten een idee krijgt van wat ik <strong>kan</strong>."
       about_me:
         title: "Over mij"
-        intro1: "Ik ben een programmeur geboren in Capelle aan den IJssel, net onder de rok van Rotterdam (NL). Op zeer jonge leeftijd werd ik verliefd op computers. <br/> <br />Mijn vader was ook behoorlijk geïnteresseerd in computers en leerde me batch scripts in MS-DOS toen ik ongeveer 9 jaar oud was, op een 286DX met de turbo altijd aan. We waren een van de eersten in de buurt met een inbelverbinding, gevolgd door de ISDN met trunk-modus, gevolgd door DSL, kabel en uiteindelijk glasvezel. De mogelijkheden om deze machines met elkaar te verbinden waren zo intrigerend dat ik op 14-jarige leeftijd begon te experimenteren met VPN's, LAMP-stacks, FTP-servers."
-        intro2: "Tijd om een richting voor mijn toekomstige opleiding te kiezen, een van de eenvoudigste keuzes van mijn leven, dus ik schreef me in voor Computerwetenschappen aan de HRO in Rotterdam. De opleiding was een eitje, en ik deed het parttime terwijl ik werkte bij een digitaal bureau. De code-aap was geboren!"
-        intro3: "Op persoonlijk vlak ben ik een trotse vader van 3 kinderen. Verloofd met mijn mooie toekomstige vrouw. Festival liefhebber, rondhangen met vrienden, varen in de grachten en natuurlijk vakantie. Hard werken, hard spelen!"
+        intro1: "Ik ben een programmeur geboren in Capelle aan den IJssel, net onder de rok van Rotterdam (NL). Op zeer jonge leeftijd werd ik verliefd op computers. <br/> <br />Mijn vader was ook behoorlijk geïnteresseerd in computers en leerde me bash scripts in MS-DOS toen ik ongeveer 9 jaar oud was, op een 286DX met de turbo altijd aan. We waren een van de eersten in de buurt met een inbelverbinding, gevolgd door de ISDN met trunk-modus, gevolgd door DSL, kabel en uiteindelijk glasvezel. De mogelijkheden om deze machines met elkaar te verbinden waren zo intrigerend dat ik op 14-jarige leeftijd begon te experimenteren met VPN's, LAMP-stacks, FTP-servers."
+        intro2: "Tijd om een richting voor mijn toekomstige opleiding te kiezen, een van de eenvoudigste keuzes van mijn leven, dus ik schreef me in voor Computerwetenschappen aan de HRO in Rotterdam. De opleiding was een eitje, en ik deed het parttime terwijl ik werkte bij een digitaal agency."
+        intro3: "Op persoonlijk vlak ben ik een trotse vader van 3 kinderen. Verloofd met liefde van mijn leven. Festival liefhebber, borrelen met vrienden, varen in de grachten en natuurlijk met de sleurhut op pad."
       contact:
         title: "Contact"
-        subtitle: "Wil je me een ❤️ brief sturen? Je kunt de onderstaande gegevens gebruiken, of gewoon een e-mail sturen via het contactformulier."
+        subtitle: "Je kunt de onderstaande gegevens gebruiken, of een e-mail sturen via het contactformulier."
