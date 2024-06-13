@@ -29,16 +29,24 @@ sass:
     .projects
       .project
         margin-left: -1px;
-        padding: 1rem;
         width: 50%
         display: inline-block;
         vertical-align: top;
         page-break-inside: avoid
         border-top: 1px solid #e0e0e0;
+        padding-top: 1rem;
         &:nth-child(odd)
+          padding-right: 1rem;
           border-right: 1px solid #e0e0e0;
         &:nth-child(even)
+          padding-left: 1rem;
           border-left: 1px solid #e0e0e0;
+        p
+          margin-bottom: 0.5rem;
+        .description
+          margin-top: 0.5rem;
+          font-size: 0.75rem;
+
 
       &:first-of-type
         margin-top: 20px

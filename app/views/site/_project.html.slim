@@ -15,5 +15,5 @@
       - if project.image.present?
         = image_tag project.image.medium.url, class: 'img-fluid'
     .no-flex-row
-      .no-flex-col-12
-        p.description == markdown (defined?(as_cv) && as_cv === true ? project.description_cv : project.description)
+      .no-flex-col-12.description
+        == markdown (defined?(as_cv) && as_cv === true ? project.description_cv : project.description)
