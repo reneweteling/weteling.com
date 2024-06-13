@@ -23,7 +23,7 @@ class SiteController < ApplicationController
     return render html: html if params[:type] == "html"
 
     pdf = PDFKit.new(html, :page_size => "A4", :orientation => "Portrait").to_pdf
-    send_data pdf, filename: "CV Rene Weteling - #{Date.today.to_s.parameterize}.pdf", type: "application/pdf"
+    send_data pdf, filename: "CV Rene Weteling - #{I18n.locale} - #{Date.today.to_s.parameterize}.pdf", type: "application/pdf"
   end
 
   def contact
