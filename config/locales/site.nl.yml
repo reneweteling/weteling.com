@@ -1,5 +1,8 @@
 nl:
   site:
+    cv:
+      present-date: "Heden"
+
     subscribe:
       thanks: "Bedankt voor je inschrijving! Ik houd je op de hoogte!"
       submit: "Houd me op de hoogte!"

@@ -2,7 +2,8 @@ ruby:
   content = I18n.locale.to_s == 'nl' ? Page.cv.first.content_nl : Page.cv.first.content_en
 
 - projects = capture do
-  = render partial: 'project', collection: Project.for_cv, locals: { as_cv: true }
+  .projects
+    = render partial: 'project', collection: Project.for_cv, locals: { as_cv: true }
 
 .container.cv
   == markdown content.gsub('[[projects]]', projects)
@@ -19,14 +20,25 @@ sass:
         color: #464646
         text-decoration: underline
 
-    .personal-info + li
-      > strong
-        display: inline-block
-        width: 200px
+    .personal-info + ul
+      li
+        > strong
+          display: inline-block
+          width: 200px
 
-    .project
-      page-break-inside: avoid
-      margin-bottom: 10px
-      
+    .projects
+      .project
+        margin-left: -1px;
+        padding: 1rem;
+        width: 50%
+        display: inline-block;
+        vertical-align: top;
+        page-break-inside: avoid
+        border-top: 1px solid #e0e0e0;
+        &:nth-child(odd)
+          border-right: 1px solid #e0e0e0;
+        &:nth-child(even)
+          border-left: 1px solid #e0e0e0;
+
       &:first-of-type
         margin-top: 20px

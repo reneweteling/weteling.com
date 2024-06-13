@@ -1,5 +1,8 @@
 en:
   site:
+    cv:
+      present-date: "Present"
+
     subscribe:
       thanks: "Thanks for subscribing! I'll keep you posted!"
       submit: "Keep me in the loop!"

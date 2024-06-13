@@ -1,10 +1,7 @@
 - as_cv = false
-.project.container
+.project
   .no-flex-row
-    .no-flex-col-1
-      - if project.image.present?
-        = image_tag project.image.medium.url, class: 'img-fluid'
-    .no-flex-col-10.pl-2
+    .no-flex-col-10
       h4 = project.title
       p.subtitle = project.subtitle
       span.start => l project.start_date
@@ -13,5 +10,10 @@
         - if project.end_date.present?
           =< l project.end_date
         - else
-          | Present date
-      p.description == markdown (defined?(as_cv) && as_cv === true ? project.description_cv : project.description)
+          =< t('site.cv.present-date')
+    .no-flex-col-2
+      - if project.image.present?
+        = image_tag project.image.medium.url, class: 'img-fluid'
+    .no-flex-row
+      .no-flex-col-12
+        p.description == markdown (defined?(as_cv) && as_cv === true ? project.description_cv : project.description)
