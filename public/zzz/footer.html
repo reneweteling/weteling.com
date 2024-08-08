@@ -3,23 +3,25 @@
 <!DOCTYPE html>
 <html lang="nl">
   <head>
+    <meta name="color-scheme" content="light dark" />
     <style>
-      .only-desktop {
-        display: block !important;
-      }
-      .only-mobile {
-        display: none !important;
-      }
-
-      body {
+      body,
+      html {
         font-size: 13px;
         font-family: Titillium Web, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
           Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, Helvetica,
           Arial, sans-serif;
+        color: #363636;
+        background-color: inherit;
       }
 
       body a {
+        color: #666666;
         text-decoration: none;
+      }
+
+      body a:active {
+        color: rgb(161, 161, 161);
       }
 
       table#footer img {
@@ -46,23 +48,15 @@
       table#footer .bottom {
         padding: 20px 0 0 0;
       }
-
-      @media (prefers-color-scheme: light) {
-        body {
-          color: #363636 !important;
-        }
-        body a {
-          color: #666666 !important;
-        }
-
-        body a:active {
-          color: rgb(161, 161, 161) !important;
-        }
+      table#footer .address {
+        padding: 20px 0 0 1rem;
       }
 
       @media (prefers-color-scheme: dark) {
-        body {
+        body,
+        html {
           color: rgb(210, 210, 210) !important;
+          background-color: #242425 !important;
         }
         body a {
           color: #b1b1b1 !important;
@@ -74,20 +68,31 @@
       }
 
       @media screen and (max-width: 480px) {
-        .only-desktop {
-          display: none !important;
-        }
-        .only-mobile {
-          display: block !important;
-        }
         table#footer img {
-          width: 120px !important;
+          width: 100px !important;
         }
         table#footer td {
-          font-size: small !important;
+          font-size: 11px !important;
+          line-height: 12.5px !important;
         }
         table#footer .bottom {
           padding: 0 0 0 0 !important;
+        }
+        table#footer .address {
+          padding: 0 0 0 0.5rem !important;
+        }
+      }
+
+      @media screen and (max-width: 340px) {
+        table#footer img {
+          width: 90px !important;
+        }
+        table#footer td {
+          font-size: 10px !important;
+          line-height: 10px !important;
+        }
+        table#footer .address {
+          display: none;
         }
       }
     </style>
@@ -95,7 +100,7 @@
   <body>
     <table id="footer">
       <tr>
-        <td class="only-desktop">
+        <td class="">
           <a href="https://www.weteling.com" target="_blank">
             <img src="https://www.weteling.com/zzz/bg-300.png" alt="logo" />
           </a>
@@ -103,23 +108,12 @@
         <td style="vertical-align: top">
           <table>
             <tr>
-              <td class="only-mobile">
-                <a href="https://www.weteling.com" target="_blank">
-                  <img
-                    src="https://www.weteling.com/zzz/bg-300.png"
-                    alt="logo"
-                  />
-                </a>
-              </td>
               <td style="vertical-align: top">
                 <b>Met vriendelijke groet,</b><br />
                 <i>Kind regards,</i>
-                <div class="only-mobile padding-top">
-                  <b>René Weteling</b>
-                </div>
               </td>
             </tr>
-            <tr class="only-desktop">
+            <tr class="">
               <td class="padding-top"><b>René Weteling</b></td>
             </tr>
             <tr>
@@ -135,13 +129,6 @@
                 <a href="tel:0061655128199" target="_blank"
                   >+31 (0) 655 128 199</a
                 >
-              </td>
-              <td class="bottom">
-                <a href="https://goo.gl/maps/3JBzSbjgWDCmSjTE8" target="_blank">
-                  J. Geradtsweg 47<br />
-                  Hilversum <br />
-                  1222 PM
-                </a>
               </td>
             </tr>
           </table>
