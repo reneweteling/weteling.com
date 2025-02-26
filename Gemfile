@@ -45,7 +45,8 @@ gem "activeadmin_addons"
 gem "activeadmin-sortable"
 gem "acts_as_list"
 gem "devise"
-gem "country_select"
+gem 'country_select', '~> 8.0'
+
 gem "cancancan"
 
 # Pdfs
