@@ -17,6 +17,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       jsonapi_resources :projects
       jsonapi_resources :hours
+      resources :cmc, only: [:index]
     end
   end
 
