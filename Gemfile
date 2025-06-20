@@ -39,6 +39,8 @@ gem "mini_magick"
 # Sendgrid
 gem "sendgrid-ruby"
 
+gem 'rack-cors'
+
 # Activeadmin
 gem "activeadmin"
 gem "activeadmin_addons"
