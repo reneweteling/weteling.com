@@ -9,6 +9,7 @@ en:
     contact:
       thanks: "Thanks for reaching out! I'll get back to you as soon as possible!"
       submit: "Send!"
+      sending: "Sending..."
 
     home:
       locale:

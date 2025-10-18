@@ -9,6 +9,7 @@ nl:
     contact:
       thanks: "Bedankt voor je bericht! Ik kom zo snel mogelijk bij je terug!"
       submit: "Versturen!"
+      sending: "Versturen..."
 
     home:
       locale:

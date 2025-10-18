@@ -68,6 +68,9 @@ gem "bootstrap", "~> 4.5"
 # validations
 gem "rails_validations"
 
+# reCAPTCHA
+gem "recaptcha"
+
 source "https://rails-assets.org" do
   gem "rails-assets-editor.md"
 end

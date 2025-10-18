@@ -28,11 +28,31 @@ class SiteController < ApplicationController
 
   def contact
     @contact_form = ContactForm.new(params.require(:contact_form).permit(:name, :email, :subject, :message))
-    if @contact_form.valid?
+
+    Rails.logger.info "reCAPTCHA token present: #{params['g-recaptcha-response'].present?}"
+
+    # Skip reCAPTCHA in development if no token is present
+    recaptcha_valid = if Rails.env.development? && params['g-recaptcha-response'].blank?
+      Rails.logger.info "Skipping reCAPTCHA validation in development"
+      true
+    else
+      verify_recaptcha(model: @contact_form, action: 'contact', minimum_score: 0.5)
+    end
+
+    Rails.logger.info "reCAPTCHA valid: #{recaptcha_valid}"
+    Rails.logger.info "Form valid: #{@contact_form.valid?}"
+
+    if recaptcha_valid && @contact_form.valid?
+      Rails.logger.info "Sending emails..."
       ContactMailer.contact_mail(@contact_form).deliver_now
       ContactMailer.confirm_mail(@contact_form).deliver_now
       @contact_form = ContactForm.new
       @sent = true
+      Rails.logger.info "Emails sent successfully"
+    else
+      @sent = false
+      Rails.logger.warn "Contact form submission failed. Errors: #{@contact_form.errors.full_messages}"
+      @contact_form.errors.add(:base, "reCAPTCHA verification failed. Please try again.") unless @contact_form.errors.any?
     end
   end
 

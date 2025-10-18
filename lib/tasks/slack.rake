@@ -1,4 +1,4 @@
-namespace :slack do 
+namespace :slack do
 
   task :dropfiles do
 
@@ -16,14 +16,12 @@ namespace :slack do
     # auth = run_slack_cmd(cmd)
     # pp auth
 
-    # binding.pry
-  
 
     token = 'xoxp-2322332576-2378365022-246813365392-8ad00243838365f56b65df1487f4c9d9' # h&f
-    
+
     # get upser id
     user_id = 'U02B4AR0N'
-    
+
     # get files
     cmd = "curl -s -X POST --data '#{{token: token, count: 1000, user: user_id}.to_query}' https://slack.com/api/files.list"
     files = run_slack_cmd(cmd)['files']
@@ -34,7 +32,7 @@ namespace :slack do
     files.each do |f|
       if Time.at(f['created']) < Date.today - 2.months
         data = {
-          token: token, 
+          token: token,
           file: f['id']
         }
         cmd = "curl -s -X POST --data '#{data.to_query}' https://slack.com/api/files.delete"

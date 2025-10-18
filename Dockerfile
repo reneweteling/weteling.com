@@ -31,7 +31,30 @@ RUN apt-get update && \
     tzdata \
     nodejs \
     yarn \
-    wkhtmltopdf
+    wget \
+    fontconfig \
+    libfreetype6 \
+    libjpeg62-turbo \
+    libpng16-16 \
+    libx11-6 \
+    libxcb1 \
+    libxext6 \
+    libxrender1 \
+    xfonts-75dpi \
+    xfonts-base \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install wkhtmltopdf from GitHub releases
+RUN ARCH=$(dpkg --print-architecture) && \
+    if [ "$ARCH" = "amd64" ]; then \
+        wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.bookworm_amd64.deb && \
+        dpkg -i wkhtmltox_0.12.6.1-3.bookworm_amd64.deb || apt-get install -f -y && \
+        rm wkhtmltox_0.12.6.1-3.bookworm_amd64.deb; \
+    elif [ "$ARCH" = "arm64" ]; then \
+        wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.bookworm_arm64.deb && \
+        dpkg -i wkhtmltox_0.12.6.1-3.bookworm_arm64.deb || apt-get install -f -y && \
+        rm wkhtmltox_0.12.6.1-3.bookworm_arm64.deb; \
+    fi
 
 # RUN groupadd --gid 1000 dev
 # RUN useradd --uid 1000 --gid dev --shell /bin/bash --create-home dev
