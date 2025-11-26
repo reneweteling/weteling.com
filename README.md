@@ -16,7 +16,7 @@ docker compose up
 ## Debugging tools
 
 ```bash
-# have docker compose up running
+# have docker compose up running.
 
 docker compose up -d
 docker compose exec web bash
