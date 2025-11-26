@@ -6,7 +6,7 @@ on:
       - release/prod
 
 jobs:
-  create-pr-to-main:
+  sync-to-main-pr:
     runs-on: ubuntu-latest
     permissions:
       contents: write
