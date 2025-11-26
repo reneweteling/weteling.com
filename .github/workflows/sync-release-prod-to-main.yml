@@ -6,7 +6,7 @@ on:
       - release/prod
 
 jobs:
-  create-pr:
+  create-pr-to-main:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -22,6 +22,24 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Check if release/prod is ahead of main
+        id: check-commits
+        run: |
+          # Fetch both branches
+          git fetch origin main || echo "Warning: Could not fetch main branch"
+          git fetch origin release/prod || echo "Warning: Could not fetch release/prod branch"
+
+          # Check if release/prod has commits that main doesn't have
+          COMMITS_AHEAD=$(git rev-list --count origin/main..origin/release/prod 2>/dev/null || echo "0")
+
+          if [ "$COMMITS_AHEAD" -gt 0 ]; then
+            echo "release/prod is $COMMITS_AHEAD commit(s) ahead of main"
+            echo "has_commits=true" >> $GITHUB_OUTPUT
+          else
+            echo "release/prod is not ahead of main. No PR needed."
+            echo "has_commits=false" >> $GITHUB_OUTPUT
+          fi
 
       - name: Check if PR already exists
         id: check-pr
@@ -47,36 +65,45 @@ jobs:
             }
 
       - name: Create Pull Request
-        if: steps.check-pr.outputs.pr_exists == 'false'
+        if: steps.check-pr.outputs.pr_exists == 'false' && steps.check-commits.outputs.has_commits == 'true'
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
-            const { data: pr } = await github.rest.pulls.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              title: 'Sync release/prod to main',
-              head: 'release/prod',
-              base: 'main',
-              body: `This PR automatically syncs changes from \`release/prod\` to \`main\` to ensure hotfixes are applied to the main branch.
-              
-              **Triggered by:** Commit ${context.sha.substring(0, 7)} on \`release/prod\`
-              **Created by:** GitHub Actions
-              
-              Please review and merge when ready.`,
-              maintainer_can_modify: true
-            });
-
-            console.log(`Created PR #${pr.number}: ${pr.html_url}`);
-
-            // Optionally add labels
             try {
-              await github.rest.issues.addLabels({
+              const { data: pr } = await github.rest.pulls.create({
                 owner: context.repo.owner,
                 repo: context.repo.repo,
-                issue_number: pr.number,
-                labels: ['automated', 'sync']
+                title: 'Sync release/prod to main',
+                head: 'release/prod',
+                base: 'main',
+                body: `This PR automatically syncs changes from \`release/prod\` to \`main\` to ensure hotfixes are applied to the main branch.
+                
+                **Triggered by:** Commit ${context.sha.substring(0, 7)} on \`release/prod\`
+                **Created by:** GitHub Actions
+                
+                Please review and merge when ready.`,
+                maintainer_can_modify: true
               });
+              
+              console.log(`Created PR #${pr.number}: ${pr.html_url}`);
+              
+              // Optionally add labels
+              try {
+                await github.rest.issues.addLabels({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: pr.number,
+                  labels: ['automated', 'sync']
+                });
+              } catch (error) {
+                console.log('Could not add labels (they may not exist):', error.message);
+              }
             } catch (error) {
-              console.log('Could not add labels (they may not exist):', error.message);
+              if (error.message.includes('No commits between')) {
+                console.log('No commits between main and release/prod. This should not happen due to the check, but branches may have been synced between steps.');
+                console.log('Skipping PR creation.');
+              } else {
+                throw error;
+              }
             }
