@@ -32,35 +32,33 @@ RUN apt-get update && \
     nodejs \
     yarn \
     wget \
+    # Chromium dependencies for Grover/Puppeteer PDF generation
+    chromium \
+    fonts-liberation \
+    libappindicator3-1 \
+    libasound2 \
+    libatk-bridge2.0-0 \
+    libatk1.0-0 \
+    libcups2 \
+    libdbus-1-3 \
+    libdrm2 \
+    libgbm1 \
+    libgtk-3-0 \
+    libnspr4 \
+    libnss3 \
+    libx11-xcb1 \
+    libxcomposite1 \
+    libxdamage1 \
+    libxrandr2 \
+    xdg-utils \
     fontconfig \
     libfreetype6 \
-    libjpeg62-turbo \
-    libpng16-16 \
-    libx11-6 \
-    libxcb1 \
-    libxext6 \
-    libxrender1 \
-    xfonts-75dpi \
-    xfonts-base \
     && rm -rf /var/lib/apt/lists/*
 
-# Install wkhtmltopdf from GitHub releases
-RUN ARCH=$(dpkg --print-architecture) && \
-    if [ "$ARCH" = "amd64" ]; then \
-        wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.bookworm_amd64.deb && \
-        dpkg -i wkhtmltox_0.12.6.1-3.bookworm_amd64.deb || apt-get install -f -y && \
-        rm wkhtmltox_0.12.6.1-3.bookworm_amd64.deb; \
-    elif [ "$ARCH" = "arm64" ]; then \
-        wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.bookworm_arm64.deb && \
-        dpkg -i wkhtmltox_0.12.6.1-3.bookworm_arm64.deb || apt-get install -f -y && \
-        rm wkhtmltox_0.12.6.1-3.bookworm_arm64.deb; \
-    fi
-
-# RUN groupadd --gid 1000 dev
-# RUN useradd --uid 1000 --gid dev --shell /bin/bash --create-home dev
-# RUN chown -R dev:dev /app
-
-# USER dev
+# Tell Puppeteer to use system Chromium instead of downloading its own
+ENV PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=true
+ENV PUPPETEER_EXECUTABLE_PATH=/usr/bin/chromium
+ENV GROVER_NO_SANDBOX=true
 
 RUN gem install bundler:2.4.22
 
@@ -68,17 +66,12 @@ RUN gem install bundler:2.4.22
 COPY Gemfile Gemfile.lock ./
 RUN bundle install --jobs=4 --retry=3
 
-# # Install node packages
+# Install node packages
 COPY package.json yarn.lock ./
 RUN yarn
-RUN yarn global add webpack-dev-server
 
 # Copy all files
 COPY . .
-
-# need to place the files in the forlders in the app.json
-# RUN bin/rails assets:precompile
-# RUN mv ./public/assets ./public/tmp_assets && mv ./public/packs ./public/tmp_packs
 
 # Go!
 EXPOSE 5000
