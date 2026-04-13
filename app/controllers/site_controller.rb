@@ -81,7 +81,7 @@ class SiteController < ApplicationController
     return I18n.locale = session[:locale] if session[:locale].present?
 
     # locale set from browser
-    locale = request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+    locale = request.env['HTTP_ACCEPT_LANGUAGE']&.scan(/^[a-z]{2}/)&.first
     if LOCALES.include?(locale)
       session[:locale] = I18n.locale = locale
       return

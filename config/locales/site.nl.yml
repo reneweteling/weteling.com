@@ -25,10 +25,10 @@ nl:
 
       services:
         title: "Diensten"
-        subtitle: "Voor het eerst een systeen laten bouwen, extern of met eigen mensen betekent in veel gevallen het wiel opnieuw uitvinden, dit kan behoorlijk duur zijn. Waarom zou je de architectuur, netwerkdesign, data domein en andere componenten niet door iemand laten checken die er veel heeft neer gezet?"
+        subtitle: "Voor het eerst een systeem laten bouwen, extern of met eigen mensen, betekent in veel gevallen het wiel opnieuw uitvinden. Dit kan behoorlijk duur zijn. Waarom zou je de architectuur, het netwerkdesign, data domein en andere componenten niet door iemand laten checken die er veel heeft neergezet?"
         caas:
           h3: "CTO as a Service (CaaS)"
-          service-description: "Een project draaien met raakvlak op IT vereist nu eenmaal heel veel IT kennis. Hoe lost je makkelijk problemen op, welke diensen kun je inzetten? Wat laat je bouwen, wat koop je? Dit zijn allemaal trajacten waar een CTO je bij kan helpen."
+          service-description: "Een project draaien met raakvlak op IT vereist nu eenmaal heel veel IT-kennis. Hoe los je makkelijk problemen op, welke diensten kun je inzetten? Wat laat je bouwen, wat koop je? Dit zijn allemaal trajecten waar een CTO je bij kan helpen."
           h4: "Waar zou ik kunnen assisteren"
           service-answer: "Het kunnen vertalen van business requirements naar oplossingen, in-house of aangekocht. Het aansturen van development teams, C-level begeleiden in het maken van technische keuzes."
         duck:
@@ -40,7 +40,7 @@ nl:
           h3: "IT aankoopmakelaar"
           service-description: "Een design agency inhuren om een mooi platform te laten maken? Je hebt een idee waar je heen wilt maar geen notie van de technische implicaties, hier is hulp bij nodig!"
           h4: "Net zoals een huis kopen"
-          service-answer: "Wanneer je een huis koopt, kun je een aankoopmakelaar inschakelen die jou belangen behartigd, dit is in de IT net zo. Externe teams strak op missie houden, controle op gekozen oplossingen, en de juiste prijs betalen."
+          service-answer: "Wanneer je een huis koopt, kun je een aankoopmakelaar inschakelen die jouw belangen behartigt. Dit is in de IT net zo. Externe teams strak op missie houden, controle op gekozen oplossingen, en de juiste prijs betalen."
 
       skills:
         title: "Vaardigheden"
@@ -78,7 +78,7 @@ nl:
                 - "Pinia"
         fe:
           title: "Front-End Ontwikkeling"
-          description: "Fontends bouwen is een vak apart. Het is niet alleen het visuele aspect, maar ook de interactie met de gebruiker, de snelheid van de applicatie, de toegankelijkheid en de SEO. Dit is waar ik me graag mee bezig houd."
+          description: "Frontends bouwen is een vak apart. Het is niet alleen het visuele aspect, maar ook de interactie met de gebruiker, de snelheid van de applicatie, de toegankelijkheid en de SEO. Dit is waar ik me graag mee bezig houd."
           tags:
             - title: "Talen:"
               items:
@@ -136,11 +136,14 @@ nl:
       projects:
         title: "Projecten"
         subtitle: "Omdat ik voornamelijk actief ben in de <strong>back-end</strong> zijn er weinig visuele dingen die ik kan tonen. Dus ik hoop dat je met deze carrousel van kaarten een idee krijgt van wat ik <strong>kan</strong>."
+        about_company: "Over het bedrijf:"
+        my_role: "Mijn rol:"
+        techniques: "Gebruikte technieken:"
       about_me:
         title: "Over mij"
-        intro1: "Ik ben een programmeur geboren in Capelle aan den IJssel, net onder de rok van Rotterdam (NL). Op zeer jonge leeftijd werd ik verliefd op computers. <br/> <br />Mijn vader was ook behoorlijk geïnteresseerd in computers en leerde me bash scripts in MS-DOS toen ik ongeveer 9 jaar oud was, op een 286DX met de turbo altijd aan. We waren een van de eersten in de buurt met een inbelverbinding, gevolgd door de ISDN met trunk-modus, gevolgd door DSL, kabel en uiteindelijk glasvezel. De mogelijkheden om deze machines met elkaar te verbinden waren zo intrigerend dat ik op 14-jarige leeftijd begon te experimenteren met VPN's, LAMP-stacks, FTP-servers."
-        intro2: "Tijd om een richting voor mijn toekomstige opleiding te kiezen, een van de eenvoudigste keuzes van mijn leven, dus ik schreef me in voor Computerwetenschappen aan de HRO in Rotterdam. De opleiding was een eitje, en ik deed het parttime terwijl ik werkte bij een digitaal agency."
-        intro3: "Op persoonlijk vlak ben ik een trotse vader van 3 kinderen. Verloofd met liefde van mijn leven. Festival liefhebber, borrelen met vrienden, varen in de grachten en natuurlijk met de sleurhut op pad."
+        intro1: "Ik ben een programmeur geboren in Capelle aan den IJssel, net onder de rok van Rotterdam (NL). Op zeer jonge leeftijd werd ik verliefd op computers. <br/> <br />Mijn vader was ook behoorlijk geïnteresseerd in computers en leerde me batch scripts in MS-DOS toen ik ongeveer 9 jaar oud was, op een 286DX met de turbo altijd aan. We waren een van de eersten in de buurt met een inbelverbinding, gevolgd door ISDN met trunk-modus, gevolgd door DSL, kabel en uiteindelijk glasvezel. De mogelijkheden om deze machines met elkaar te verbinden waren zo intrigerend dat ik op 14-jarige leeftijd begon te experimenteren met VPN's, LAMP-stacks en FTP-servers."
+        intro2: "Tijd om een richting voor mijn toekomstige opleiding te kiezen, een van de eenvoudigste keuzes van mijn leven, dus ik schreef me in voor Informatica aan de HRO in Rotterdam. De opleiding was een eitje, en ik deed het parttime terwijl ik werkte bij een digitaal bureau."
+        intro3: "Op persoonlijk vlak ben ik een trotse vader van 3 kinderen. Verloofd met de liefde van mijn leven. Festivalliefhebber, borrelen met vrienden, varen in de grachten en natuurlijk met de sleurhut op pad."
       contact:
         title: "Contact"
         subtitle: "Je kunt de onderstaande gegevens gebruiken, of een e-mail sturen via het contactformulier."

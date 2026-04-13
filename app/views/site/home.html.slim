@@ -180,17 +180,17 @@ section.section
                       - if project.end_date.present?
                         = l project.end_date
                       - else
-                        |Present date
+                        = t('site.cv.present-date')
 
               .content
                 .section
-                  h4.is-4 About the company:
+                  h4.is-4 = t('.projects.about_company')
                   p == markdown project.description_about_the_company
                 .section
-                  h4.is-4 My role:
+                  h4.is-4 = t('.projects.my_role')
                   p == markdown project.description_my_role
                 .section
-                  h4.is-4 Techniques used:
+                  h4.is-4 = t('.projects.techniques')
                   .tags.is-centered
                     - project.tags.each do |tag|
                       span.tag= tag
@@ -240,7 +240,7 @@ section.section
             p
               a target="_blank" href="tel:0031655128199"  +316 - 55 128 199
               br/
-              a target="_blank" href="mailto:rene@weteling.com?subject=Lets get in touch&body=Hi Rene,%0D%0A%0D%0AI saw your'e website and..." rene@weteling.com
+              a target="_blank" href="mailto:rene@weteling.com?subject=Lets get in touch&body=Hi Rene,%0D%0A%0D%0AI saw your website and..." rene@weteling.com
             p
               a target="_blank" href="https://goo.gl/maps/3JBzSbjgWDCmSjTE8"
                 address
