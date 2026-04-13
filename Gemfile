@@ -51,8 +51,8 @@ gem 'country_select', '~> 8.0'
 
 gem "cancancan"
 
-# Pdfs
-gem "pdfkit"
+# Pdfs - using headless Chrome for modern CSS support
+gem "grover"
 
 # Calender
 gem "fullcalendar-rails"

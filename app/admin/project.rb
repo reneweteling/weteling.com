@@ -6,6 +6,17 @@ ActiveAdmin.register Project do
   config.paginate = false # optional; drag-and-drop across pages is not supported
   sortable
 
+  # Support both ID and slug lookups in admin
+  controller do
+    def find_resource
+      if params[:id] =~ /\A\d+\z/
+        scoped_collection.find(params[:id])
+      else
+        scoped_collection.find_by!(slug: params[:id])
+      end
+    end
+  end
+
   # filter :client
   filter :name
   filter :show

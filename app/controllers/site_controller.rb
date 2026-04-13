@@ -16,18 +16,13 @@ class SiteController < ApplicationController
   end
 
   def cv
-    @subscriber = Subscriber.new
-  end
-
-  def cv_print
-    render layout: "pdf"
   end
 
   def cv_pdf
-    html = render_to_string template: "/site/cv_print", layout: "pdf"
+    html = render_to_string template: "/site/cv_pdf_source", layout: "pdf"
     return render html: html if params[:type] == "html"
 
-    pdf = PDFKit.new(html, :page_size => "A4", :orientation => "Portrait").to_pdf
+    pdf = Grover.new(html, format: "A4", display_url: request.base_url).to_pdf
     send_data pdf, filename: "CV Rene Weteling - #{I18n.locale} - #{Date.today.to_s.parameterize}.pdf", type: "application/pdf"
   end
 

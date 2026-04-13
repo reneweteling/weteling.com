@@ -152,8 +152,8 @@ section.py-20.bg-white
         .flex.gap-4.mb-8
           = link_to cv_pdf_path, download: true, class: "inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors" do
             | PDF
-          = link_to cv_print_path, class: "inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors" do
-            | HTML
+          = link_to cv_path, class: "inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors" do
+            = t('.recruiters.view_cv')
         p.text-gray-600 == t('.recruiters.keep_in_loop')
       div data-aos="fade-up" data-aos-delay="100"
         = render 'subscribe'

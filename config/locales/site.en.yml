@@ -2,6 +2,10 @@ en:
   site:
     cv:
       present-date: "Present"
+      title: "CV - René Weteling"
+      description: "Freelance Tech Lead, Fractional CTO & Full-Stack Developer. Experienced in Elixir, Ruby, TypeScript, and cloud infrastructure."
+      download: "Download PDF"
+      back: "Back to home"
 
     subscribe:
       thanks: "Thanks for subscribing! I'll keep you posted!"
@@ -138,6 +142,7 @@ en:
       recruiters:
         title: "Recruiters"
         subtitle: "<strong>This is the information you have been waiting for!</strong><br /><br />My CV is available here:"
+        view_cv: "View"
         keep_in_loop: "Would you like to be kept in the loop when I'm available for new projects? Then leave your contact here:"
       projects:
         title: "Projects"

@@ -183,6 +183,8 @@ GEM
       activesupport (>= 6.1)
     graphiql-rails (1.10.3)
       railties
+    grover (1.2.10)
+      nokogiri (~> 1)
     haml (6.3.0)
       temple (>= 0.8.2)
       thor
@@ -280,7 +282,6 @@ GEM
     parser (3.3.7.1)
       ast (~> 2.4.1)
       racc
-    pdfkit (0.8.7.3)
     pg (1.5.9)
     popper_js (1.16.1)
     pp (0.6.2)
@@ -529,6 +530,7 @@ DEPENDENCIES
   font-awesome-sass
   fullcalendar-rails
   graphiql-rails
+  grover
   jquery-rails
   jsonapi-resources
   jwt
@@ -538,7 +540,6 @@ DEPENDENCIES
   net-imap
   net-pop
   net-smtp
-  pdfkit
   pg
   prettier
   pry

@@ -2,6 +2,10 @@ nl:
   site:
     cv:
       present-date: "Heden"
+      title: "CV - René Weteling"
+      description: "Freelance Tech Lead, Fractional CTO & Full-Stack Developer. Ervaring met Elixir, Ruby, TypeScript en cloud-infrastructuur."
+      download: "Download PDF"
+      back: "Terug naar home"
 
     subscribe:
       thanks: "Bedankt voor je inschrijving! Ik houd je op de hoogte!"
@@ -138,6 +142,7 @@ nl:
       recruiters:
         title: "Recruitment"
         subtitle: "<strong>Dit is de informatie waar je op hebt gewacht!</strong><br /><br />Mijn CV is hier beschikbaar:"
+        view_cv: "Bekijk"
         keep_in_loop: "Wil je op de hoogte gehouden worden wanneer ik beschikbaar ben voor nieuwe projecten? Laat dan hier je contactgegevens achter:"
       projects:
         title: "Projecten"

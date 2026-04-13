@@ -29,7 +29,6 @@ Rails.application.routes.draw do
   post :subscribe, to: 'site#subscribe'
 
   get :cv, to: 'site#cv'
-  get :cv_print, to: 'site#cv_print'
   get :cv_pdf, to: 'site#cv_pdf'
   get :bbq, to: 'site#bbq'
   get 'projects/:id', to: 'site#project', as: :project
