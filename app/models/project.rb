@@ -10,6 +10,12 @@ class Project < ApplicationRecord
 
   validates_presence_of :client, :name
 
+  before_validation :generate_slug
+
+  def to_param
+    slug
+  end
+
   attr_writer :virtual_techniques_attr
 
   scope :orderd,    -> { order(position: :asc) }
@@ -30,5 +36,11 @@ class Project < ApplicationRecord
 
   def to_s
     "#{client} - #{name}"
+  end
+
+  private
+
+  def generate_slug
+    self.slug ||= title&.parameterize
   end
 end

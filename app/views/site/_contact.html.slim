@@ -1,10 +1,9 @@
 #contact-content
   = simple_form_for(@contact_form, url: contact_path, remote: true, html: { id: 'contact-form' }) do |f|
-    = f.input :name, label: false
-    = f.input :email, label: false
-    = f.input :subject, label: false
-    = f.input :message, as: :text, label: false
-    = f.submit t('.submit'), class: 'button is-primary', data: { disable_with: t('.sending') }
+    = f.input :name, label: false, placeholder: t('site.contact.placeholders.name')
+    = f.input :email, label: false, placeholder: t('site.contact.placeholders.email')
+    = f.input :subject, label: false, placeholder: t('site.contact.placeholders.subject')
+    = f.input :message, as: :text, label: false, placeholder: t('site.contact.placeholders.message')
+    = f.submit t('site.contact.submit'), class: 'w-full bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors duration-200 font-semibold cursor-pointer', data: { disable_with: t('site.contact.sending') }
     - if @sent
-      br
-      = t('.thanks')
+      p.mt-4.text-green-600.font-medium = t('site.contact.thanks')

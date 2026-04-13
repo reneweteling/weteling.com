@@ -6,10 +6,19 @@ nl:
     subscribe:
       thanks: "Bedankt voor je inschrijving! Ik houd je op de hoogte!"
       submit: "Houd me op de hoogte!"
+      placeholders:
+        first_name: "Voornaam"
+        last_name: "Achternaam"
+        email: "E-mail"
     contact:
       thanks: "Bedankt voor je bericht! Ik kom zo snel mogelijk bij je terug!"
       submit: "Versturen!"
       sending: "Versturen..."
+      placeholders:
+        name: "Naam"
+        email: "E-mail"
+        subject: "Onderwerp"
+        message: "Bericht"
 
     home:
       locale:
@@ -25,22 +34,19 @@ nl:
 
       services:
         title: "Diensten"
-        subtitle: "Voor het eerst een systeem laten bouwen, extern of met eigen mensen, betekent in veel gevallen het wiel opnieuw uitvinden. Dit kan behoorlijk duur zijn. Waarom zou je de architectuur, het netwerkdesign, data domein en andere componenten niet door iemand laten checken die er veel heeft neergezet?"
+        subtitle: "Software bouwen is complex. Ik help je er doorheen."
         caas:
-          h3: "CTO as a Service (CaaS)"
-          service-description: "Een project draaien met raakvlak op IT vereist nu eenmaal heel veel IT-kennis. Hoe los je makkelijk problemen op, welke diensten kun je inzetten? Wat laat je bouwen, wat koop je? Dit zijn allemaal trajecten waar een CTO je bij kan helpen."
-          h4: "Waar zou ik kunnen assisteren"
-          service-answer: "Het kunnen vertalen van business requirements naar oplossingen, in-house of aangekocht. Het aansturen van development teams, C-level begeleiden in het maken van technische keuzes."
+          h3: "CTO as a Service"
+          service-description: "Technisch leiderschap nodig zonder een fulltime CTO? Ik overburg de kloof tussen bedrijfsdoelen en technologie, en begeleid je team bij architectuurkeuzes, vendor selectie en technische strategie."
         duck:
-          h3: "Rubber duck met een Senior"
-          service-description: "Dus je wilt iets maken, hoe? Welke technieken, talen, frameworks, ontwikkelteam? Of gewoon iets inkopen? Dit zijn allemaal vragen die je kunt stellen aan een senior."
-          h4: "Babbelen met een bakkie ☕"
-          service-answer: "Onder het genot van een kop koffie, nemen we je project door. Ik help je met het maken van de juiste keuzes, zodat je project een succes wordt."
+          h3: "Sparringpartner"
+          service-description: "Soms heb je gewoon een senior engineer nodig om mee te sparren. Onder het genot van een bakkie koffie bespreken we je architectuur, tech-keuzes en uitdagingen. Vrijblijvend."
         broker:
-          h3: "IT aankoopmakelaar"
-          service-description: "Een design agency inhuren om een mooi platform te laten maken? Je hebt een idee waar je heen wilt maar geen notie van de technische implicaties, hier is hulp bij nodig!"
-          h4: "Net zoals een huis kopen"
-          service-answer: "Wanneer je een huis koopt, kun je een aankoopmakelaar inschakelen die jouw belangen behartigt. Dit is in de IT net zo. Externe teams strak op missie houden, controle op gekozen oplossingen, en de juiste prijs betalen."
+          h3: "IT Aankoopmakelaar"
+          service-description: "Een bedrijf inhuren om je product te bouwen maar geen technische kennis in huis? Ik let op vendor lock-ins, verouderde technieken en te dure contracten — als een makelaar voor je IT-investeringen."
+        ai:
+          h3: "AI Integratie"
+          service-description: "Van AI-tools voor developers tot het integreren van LLM's in je product — ik help teams om AI effectief in te zetten. Of het nu gaat om developer productiviteit of klantgerichte AI-features, ik doe het hands-on."
 
       skills:
         title: "Vaardigheden"
@@ -101,8 +107,8 @@ nl:
               items:
                 - "VueJS"
                 - "React"
+                - "Tailwind"
                 - "Bootstrap"
-                - "Bulma"
 
         devops:
           title: DevOps
@@ -131,14 +137,17 @@ nl:
 
       recruiters:
         title: "Recruitment"
-        subtitle: "<strong>Dit is de informatie waar je op hebt gewacht!</strong><br /><br />Mijn cv is hier beschikbaar:"
-        keep_in_loop: "Wil je op de hoogte gehouden worden wanneer ik beschikbaar ben voor nieuwe projecten? </br> Laat dan hier je contactgegevens achter:"
+        subtitle: "<strong>Dit is de informatie waar je op hebt gewacht!</strong><br /><br />Mijn CV is hier beschikbaar:"
+        keep_in_loop: "Wil je op de hoogte gehouden worden wanneer ik beschikbaar ben voor nieuwe projecten? Laat dan hier je contactgegevens achter:"
       projects:
         title: "Projecten"
-        subtitle: "Omdat ik voornamelijk actief ben in de <strong>back-end</strong> zijn er weinig visuele dingen die ik kan tonen. Dus ik hoop dat je met deze carrousel van kaarten een idee krijgt van wat ik <strong>kan</strong>."
+        subtitle: "Een selectie van projecten waar ik aan heb gewerkt in mijn carrière."
         about_company: "Over het bedrijf:"
         my_role: "Mijn rol:"
         techniques: "Gebruikte technieken:"
+        view_project: "Bekijk details"
+        show_more: "Toon alle projecten"
+        show_less: "Toon minder"
       about_me:
         title: "Over mij"
         intro1: "Ik ben een programmeur geboren in Capelle aan den IJssel, net onder de rok van Rotterdam (NL). Op zeer jonge leeftijd werd ik verliefd op computers. <br/> <br />Mijn vader was ook behoorlijk geïnteresseerd in computers en leerde me batch scripts in MS-DOS toen ik ongeveer 9 jaar oud was, op een 286DX met de turbo altijd aan. We waren een van de eersten in de buurt met een inbelverbinding, gevolgd door ISDN met trunk-modus, gevolgd door DSL, kabel en uiteindelijk glasvezel. De mogelijkheden om deze machines met elkaar te verbinden waren zo intrigerend dat ik op 14-jarige leeftijd begon te experimenteren met VPN's, LAMP-stacks en FTP-servers."
@@ -147,3 +156,11 @@ nl:
       contact:
         title: "Contact"
         subtitle: "Je kunt de onderstaande gegevens gebruiken, of een e-mail sturen via het contactformulier."
+
+    project:
+      back: "Terug naar projecten"
+      about_company: "Over het bedrijf"
+      my_role: "Mijn rol"
+      techniques: "Technieken"
+      get_in_touch: "Interesse in samenwerking?"
+      cta: "Neem contact op"

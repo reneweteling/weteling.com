@@ -1,0 +1,57 @@
+/ Navigation
+nav.fixed.top-0.w-full.z-50.bg-white/90.backdrop-blur-md.shadow-sm
+  .max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .flex.items-center.justify-between.h-16.md:h-20
+      a.flex-shrink-0 href=root_path
+        = image_tag('logo.svg', class: "h-10 md:h-14", loading: :lazy)
+      a.text-sm.font-medium.text-gray-600.hover:text-blue-600.transition-colors href="#{root_path}#projects"
+        | ← #{t('site.project.back')}
+
+/ Project Hero
+section.pt-28.pb-16.bg-gradient-to-b.from-gray-50.to-white
+  .max-w-4xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .flex.items-start.gap-6.mb-8 data-aos="fade-up"
+      - if @project.image.present?
+        .flex-shrink-0
+          = image_tag @project.image.medium.url, class: "w-24 h-24 rounded-xl object-contain", loading: :lazy
+      div
+        h1.text-3xl.md:text-4xl.font-bold.text-gray-900.mb-2 = @project.title
+        p.text-xl.text-gray-500.mb-3 = @project.subtitle
+        .text-sm.text-gray-400
+          = l @project.start_date
+          |  —
+          - if @project.end_date.present?
+            = l @project.end_date
+          - else
+            = t('site.cv.present-date')
+
+/ Content
+section.pb-20
+  .max-w-4xl.mx-auto.px-4.sm:px-6.lg:px-8
+    / About the company
+    - if @project.description_about_the_company.present?
+      .mb-12 data-aos="fade-up"
+        h2.text-xl.font-bold.text-gray-900.mb-4 = t('site.project.about_company')
+        .prose.prose-lg.text-gray-600.max-w-none
+          == markdown @project.description_about_the_company
+
+    / My role
+    - if @project.description_my_role.present?
+      .mb-12 data-aos="fade-up"
+        h2.text-xl.font-bold.text-gray-900.mb-4 = t('site.project.my_role')
+        .prose.prose-lg.text-gray-600.max-w-none
+          == markdown @project.description_my_role
+
+    / Technologies
+    - if @project.tags.any?
+      .mb-12 data-aos="fade-up"
+        h2.text-xl.font-bold.text-gray-900.mb-4 = t('site.project.techniques')
+        .flex.flex-wrap.gap-2
+          - @project.tags.each do |tag|
+            span.inline-block.bg-blue-50.text-blue-700.text-sm.px-4.py-1.5.rounded-full = tag
+
+    / CTA
+    .bg-gray-50.rounded-2xl.p-8.text-center data-aos="fade-up"
+      p.text-lg.font-semibold.text-gray-900.mb-4 = t('site.project.get_in_touch')
+      a.inline-flex.items-center.gap-2.bg-blue-600.hover:bg-blue-700.text-white.px-8.py-3.rounded-full.font-semibold.transition-colors href="#{root_path}#contact"
+        = t('site.project.cta')

@@ -1,155 +1,93 @@
-@import url("https://fonts.googleapis.com/css?family=Titillium+Web&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap");
 
-$family-primary: "Titillium Web", BlinkMacSystemFont, -apple-system, "Segoe UI",
-  "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-  "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-$section-padding: 1.5rem !default;
-$card-media-margin: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import "~bulma";
-@import "~bulma-carousel";
+html {
+  scroll-behavior: smooth;
+}
 
-a.anchor {
+.anchor {
   display: block;
   position: relative;
   top: -100px;
   visibility: hidden;
 }
 
-p.service-description {
-  min-height: 100px;
-}
-p.service-answer {
-  min-height: 150px;
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
 }
 
-.field.select {
-  display: block;
-  height: 6em !important;
-  position: static;
-  width: 100%;
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
 
-  label::after {
-    content: none !important;
+// Timeline center line and dots
+.timeline-grid {
+  position: relative;
+
+  @media (min-width: 768px) {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px 48px;
+  }
+
+  // Center line
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #d1d5db;
+    transform: translateX(-50%);
+  }
+
+  @media (max-width: 767px) {
+    &::before {
+      display: none;
+    }
   }
 }
 
-.field.select::after {
-  content: none !important;
-}
+// Dots on the center line via ::after on each card container
+@media (min-width: 768px) {
+  .timeline-card-left,
+  .timeline-card-right {
+    position: relative;
 
-html.admin {
-  &.has-navbar-fixed-top {
-    padding-top: 4.25rem;
-  }
-}
-
-html.main {
-  scroll-behavior: smooth;
-
-  .slider {
-    outline: none;
-    .section {
-      padding: 1.5rem 0;
-    }
-  }
-
-  @keyframes floating {
-    0% {
-      transform: translatey(0px);
-    }
-    50% {
-      transform: translatey(-20px);
-    }
-    100% {
-      transform: translatey(0px);
-    }
-  }
-
-  // body * {
-  //   transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
-  // }
-  .navbar-item img {
-    max-height: 5rem;
-  }
-  .navbar {
-    &.is-transparent {
-      background: none;
-      background-image: linear-gradient(
-        to top,
-        rgba(255, 255, 255, 0),
-        rgba(255, 255, 255, 0.7),
-        rgba(255, 255, 255, 0.8),
-        rgba(255, 255, 255, 0.9)
-      );
-    }
-    .navbar-burger {
-      width: 4.25rem;
-      height: 4.25rem;
-      span {
-        width: 30px;
-        left: calc(50% - 11px);
-        &:nth-child(1) {
-          top: calc(50% - 10px);
-        }
-        &:nth-child(2) {
-          top: calc(50% - 1px);
-        }
-        &:nth-child(3) {
-          top: calc(50% + 8px);
-        }
-      }
-      &.is-active span {
-        &:nth-child(1) {
-          transform: translateY(10px) rotate(45deg);
-        }
-        &:nth-child(3) {
-          transform: translateY(-8px) rotate(-45deg);
-        }
-      }
-    }
-  }
-
-  table.bv {
-    th,
-    td {
-      border: none;
-      border-width: 0px;
-      padding: 0px;
-    }
-  }
-
-  header {
-    .scroll-down-icon {
-      display: flex;
-      justify-content: center;
-      position: relative;
-      bottom: 5rem;
-      svg {
-        animation: floating 2s infinite;
-        width: 1.6em;
-        margin-right: 0.9em;
-      }
-    }
-
-    .header-bg {
-      width: 50vw;
-      // width: 100vw;
-
-      height: 100vh;
-      background-size: cover;
-      background-position: 50%;
+    &::after {
+      content: "";
       position: absolute;
-      right: 0;
-      z-index: -1;
+      top: 28px;
+      width: 10px;
+      height: 10px;
+      background-color: #3b82f6;
+      border-radius: 50%;
+      z-index: 10;
     }
   }
-  @media (max-width: 80rem) {
-    header .header-bg {
-      width: 100vw;
-    }
-    .navbar-item img {
-      max-height: 4rem;
-    }
+
+  .timeline-card-left::after {
+    right: -29px;
+  }
+
+  .timeline-card-right::after {
+    left: -29px;
+  }
+}
+
+// Hide reCAPTCHA badge
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
+
+// Business details table (contact section)
+table.bv {
+  th, td {
+    border: none;
+    padding: 2px 8px 2px 0;
   }
 }

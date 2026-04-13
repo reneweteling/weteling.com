@@ -10,6 +10,11 @@ class SiteController < ApplicationController
     @subscriber = Subscriber.new
   end
 
+  def project
+    @project = Project.for_site.includes(:tags).find_by!(slug: params[:id])
+    @contact_form = ContactForm.new
+  end
+
   def cv
     @subscriber = Subscriber.new
   end

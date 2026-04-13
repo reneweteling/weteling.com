@@ -32,6 +32,7 @@ Rails.application.routes.draw do
   get :cv_print, to: 'site#cv_print'
   get :cv_pdf, to: 'site#cv_pdf'
   get :bbq, to: 'site#bbq'
+  get 'projects/:id', to: 'site#project', as: :project
   root to: 'site#home'
 
 end

@@ -1,260 +1,310 @@
-nav.navbar.is-fixed-top.is-transparent
-  .container
-    .navbar-brand
-      a.navbar-item href="#home" 
-        = image_tag('logo.svg', loading: :lazy)
-      .navbar-burger.burger data-target="navbarExampleTransparentExample" 
-        span
-        span
-        span
-    #navbarExampleTransparentExample.navbar-menu
-      .navbar-end
-        a.navbar-item href="#home" = t('.hero.title')
-        a.navbar-item href="#services" = t('.services.title')
-        a.navbar-item href="#skills" = t('.skills.title')
-        a.navbar-item href="#recruiters" = t('.recruiters.title')
-        a.navbar-item href="#projects" = t('.projects.title')
-        a.navbar-item href="#about-me" = t('.about_me.title')
-        a.navbar-item href="#contact" = t('.contact.title')
+/ Navigation
+nav.fixed.top-0.w-full.z-50.transition-all.duration-300.bg-transparent
+  .max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .flex.items-center.justify-between.h-16.md:h-20
+      a.flex-shrink-0 href="#home"
+        = image_tag('logo.svg', class: "h-10 md:h-14 nav-logo brightness-0 invert transition-all duration-300", loading: :lazy)
+
+      / Desktop nav
+      #nav-links.hidden.md:flex.items-center.gap-6
+        a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#home" = t('.hero.title')
+        a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#services" = t('.services.title')
+        a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#skills" = t('.skills.title')
+        a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#recruiters" = t('.recruiters.title')
+        a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#projects" = t('.projects.title')
+        a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#about-me" = t('.about_me.title')
+        a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#contact" = t('.contact.title')
         - if I18n.locale.to_s == 'nl'
-          a.navbar-item href="?locale=en" = t('.locale.en')
+          a.nav-link.text-sm.text-white href="?locale=en" = t('.locale.en')
         - else
-          a.navbar-item href="?locale=nl" = t('.locale.nl')
-header
-  section#home.hero.is-fullheight
-    .hero-body
-      .container
-        h2.subtitle = t('.hero.hi')
-        h1.title.is-1 = t('.hero.im_rene')
-        h2.subtitle.is-2 = t('.hero.allround_developer')
-        a.button.is-primary.is-rounded.is-medium href="#contact" 
-          span
-            = t('.hero.say_hello')
-            span aria-label="emoji" role="img"  👋
-    .header-bg style=("position: absolute; overflow: hidden;") 
-      div style=("width: 100%; padding-bottom: 66.6667%;") 
-      picture
-        = image_tag('apple.jpg', sizes: "(max-width: 800px) 100vw), 800px", style: "position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; opacity: 1; transition: none 0s ease 0s;")
-    a.scroll-down-icon href="#skills" 
-      svg.svg-inline--fa.fa-angle-double-down.fa-w-10.fa-2x aria-hidden="true" data-icon="angle-double-down" data-prefix="fas" data-view="#skills" focusable="false" role="img" viewbox=("0 0 320 512") xmlns="http://www.w3.org/2000/svg" 
-        path d=("M143 256.3L7 120.3c-9.4-9.4-9.4-24.6 0-33.9l22.6-22.6c9.4-9.4 24.6-9.4 33.9 0l96.4 96.4 96.4-96.4c9.4-9.4 24.6-9.4 33.9 0L313 86.3c9.4 9.4 9.4 24.6 0 33.9l-136 136c-9.4 9.5-24.6 9.5-34 .1zm34 192l136-136c9.4-9.4 9.4-24.6 0-33.9l-22.6-22.6c-9.4-9.4-24.6-9.4-33.9 0L160 352.1l-96.4-96.4c-9.4-9.4-24.6-9.4-33.9 0L7 278.3c-9.4 9.4-9.4 24.6 0 33.9l136 136c9.4 9.5 24.6 9.5 34 .1z") fill="currentColor" 
+          a.nav-link.text-sm.text-white href="?locale=nl" = t('.locale.nl')
 
-section.section
+      / Mobile burger
+      button#nav-burger.md:hidden.flex.flex-col.justify-center.items-center.w-10.h-10.gap-1.5
+        span.block.w-6.h-0.5.bg-gray-800.transition-all
+        span.block.w-6.h-0.5.bg-gray-800.transition-all
+        span.block.w-6.h-0.5.bg-gray-800.transition-all
+
+  / Mobile menu
+  #nav-menu.hidden.md:hidden.bg-white.shadow-lg.border-t
+    .flex.flex-col.py-4.px-6.gap-3
+      a.text-gray-700.hover:text-blue-600.py-2 href="#home" = t('.hero.title')
+      a.text-gray-700.hover:text-blue-600.py-2 href="#services" = t('.services.title')
+      a.text-gray-700.hover:text-blue-600.py-2 href="#skills" = t('.skills.title')
+      a.text-gray-700.hover:text-blue-600.py-2 href="#recruiters" = t('.recruiters.title')
+      a.text-gray-700.hover:text-blue-600.py-2 href="#projects" = t('.projects.title')
+      a.text-gray-700.hover:text-blue-600.py-2 href="#about-me" = t('.about_me.title')
+      a.text-gray-700.hover:text-blue-600.py-2 href="#contact" = t('.contact.title')
+      - if I18n.locale.to_s == 'nl'
+        a.py-2 href="?locale=en" = t('.locale.en')
+      - else
+        a.py-2 href="?locale=nl" = t('.locale.nl')
+
+/ Hero Section (dark)
+header#home.relative.min-h-screen.bg-gray-950.text-white.flex.items-center.overflow-hidden
+  / Background image
+  .absolute.inset-0.z-0
+    = image_tag('apple.jpg', class: "w-full h-full object-cover object-center opacity-60", loading: :eager)
+  .absolute.inset-0.bg-gradient-to-r.from-gray-950/70.via-gray-950/40.to-transparent.z-10
+
+  .relative.z-20.max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8.py-32
+    p.text-lg.text-blue-400.font-light.mb-2 data-aos="fade-up" = t('.hero.hi')
+    h1.text-5xl.md:text-7xl.font-bold.mb-4 data-aos="fade-up" data-aos-delay="100" = t('.hero.im_rene')
+    p.text-2xl.md:text-3xl.text-gray-300.font-light.mb-8 data-aos="fade-up" data-aos-delay="200" = t('.hero.allround_developer')
+    a.inline-flex.items-center.gap-2.bg-blue-600.hover:bg-blue-700.text-white.px-8.py-3.rounded-full.font-semibold.transition-colors.duration-200 href="#contact" data-aos="fade-up" data-aos-delay="300"
+      = t('.hero.say_hello')
+      span 👋
+
+  / Scroll indicator
+  .absolute.bottom-8.left-1/2.transform.-translate-x-1/2.z-20
+    a.animate-float.text-white/60.hover:text-white.transition-colors href="#services"
+      svg.w-8.h-8 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
+        path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"
+
+/ Gradient transition
+.h-24.bg-gradient-to-b.from-gray-950.to-white
+
+/ Services Section
+section.py-20.bg-white
   a.anchor#services
-  .container
-    .content.is-medium
-      h2 = t('.services.title')
-      p = t('.services.subtitle')
+  .max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .text-center.mb-16 data-aos="fade-up"
+      h2.text-3xl.md:text-4xl.font-bold.mb-4 = t('.services.title')
+      p.text-lg.text-gray-600.max-w-2xl.mx-auto = t('.services.subtitle')
 
-    .columns
-      .column.is-half-tablet.is-one-third-desktop
-        .card
-          .card-content
-            .content.has-text-centered
-              span aria-label="emoji" role="img" style=("font-size: 2.5rem;") 👨‍🏫
-              h3.is-2 = t('.services.caas.h3')
-              p.service-description = t('.services.caas.service-description')
-              .section
-                h4.is-4 = t('.services.caas.h4')
-                p.service-answer = t('.services.caas.service-answer')
-      .column.is-half-tablet.is-one-third-desktop
-        .card
-          .card-content
-            .content.has-text-centered
-              span aria-label="emoji" role="img" style=("font-size: 2.5rem;") 🦆
-              h3.is-2 = t('.services.duck.h3')
-              p.service-description = t('.services.duck.service-description')
-              .section
-                h4.is-4 = t('.services.duck.h4')
-                p.service-answer = t('.services.duck.service-answer')
-      .column.is-half-tablet.is-one-third-desktop
-        .card
-          .card-content
-            .content.has-text-centered
-              span aria-label="emoji" role="img" style=("font-size: 2.5rem;") 🕵️‍♂️
-              h3.is-2 = t('.services.broker.h3')
-              p.service-description = t('.services.broker.service-description')
-              .section
-                h4.is-4 = t('.services.broker.h4')
-                p.service-answer = t('.services.broker.service-answer')
+    .grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-4.gap-8
+      .bg-gray-50.rounded-2xl.p-8.hover:shadow-lg.transition-shadow.duration-300 data-aos="fade-up" data-aos-delay="0"
+        .text-4xl.mb-4 👨‍🏫
+        h3.text-xl.font-bold.mb-3 = t('.services.caas.h3')
+        p.text-gray-600.leading-relaxed = t('.services.caas.service-description')
 
-section.section
+      .bg-gray-50.rounded-2xl.p-8.hover:shadow-lg.transition-shadow.duration-300 data-aos="fade-up" data-aos-delay="100"
+        .text-4xl.mb-4 🦆
+        h3.text-xl.font-bold.mb-3 = t('.services.duck.h3')
+        p.text-gray-600.leading-relaxed = t('.services.duck.service-description')
+
+      .bg-gray-50.rounded-2xl.p-8.hover:shadow-lg.transition-shadow.duration-300 data-aos="fade-up" data-aos-delay="200"
+        .text-4xl.mb-4 🕵️‍♂️
+        h3.text-xl.font-bold.mb-3 = t('.services.broker.h3')
+        p.text-gray-600.leading-relaxed = t('.services.broker.service-description')
+
+      .bg-gray-50.rounded-2xl.p-8.hover:shadow-lg.transition-shadow.duration-300.ring-2.ring-blue-100 data-aos="fade-up" data-aos-delay="300"
+        .text-4xl.mb-4 🤖
+        h3.text-xl.font-bold.mb-3 = t('.services.ai.h3')
+        p.text-gray-600.leading-relaxed = t('.services.ai.service-description')
+
+/ Skills Section
+section.py-20.bg-gray-50
   a.anchor#skills
-  .container
-    .content.is-medium
-      h2 = t('.skills.title')
-      p == t('.skills.subtitle')
+  .max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .text-center.mb-16 data-aos="fade-up"
+      h2.text-3xl.md:text-4xl.font-bold.mb-4 = t('.skills.title')
+      p.text-lg.text-gray-600.max-w-3xl.mx-auto == t('.skills.subtitle')
 
-    .columns
-      /! Back-end
-      .column.is-half-tablet.is-one-third-desktop
-        .card
-          .card-content
-            .content.has-text-centered
-              span aria-label="emoji" role="img" style=("font-size: 2.5rem;") 👨‍💻
-              h3.is-2 = t('.skills.be.title')
-              p = t('.skills.be.description')
-              - t('.skills.be.tags').each do |section|
-                .section
-                  h4.is-4 = section[:title]
-                  .tags.is-centered
-                    - section[:items].each do |tag|
-                      span.tag = tag
+    .grid.grid-cols-1.md:grid-cols-3.gap-8
+      / Back-end
+      .bg-white.rounded-2xl.shadow-sm.p-8.hover:shadow-md.transition-shadow.duration-300 data-aos="fade-up"
+        .text-center.mb-6
+          .text-4xl.mb-3 👨‍💻
+          h3.text-xl.font-bold = t('.skills.be.title')
+        p.text-gray-600.mb-6 = t('.skills.be.description')
+        - t('.skills.be.tags').each do |section|
+          .mb-4
+            h4.text-sm.font-semibold.text-gray-500.uppercase.tracking-wide.mb-2 = section[:title]
+            .flex.flex-wrap.gap-2
+              - section[:items].each do |tag|
+                span.inline-block.bg-gray-100.text-gray-700.text-sm.px-3.py-1.rounded-full = tag
 
-      /! Front-end
-      .column.is-half-tablet.is-one-third-desktop
-        .card
-          .card-content
-            .content.has-text-centered
-              span aria-label="emoji" role="img" style=("font-size: 2.5rem;")  💻
-              h3.is-2 = t('.skills.fe.title')
-              p = t('.skills.fe.description')
-              - t('.skills.fe.tags').each do |section|
-                .section
-                  h4.is-4 = section[:title]
-                  .tags.is-centered
-                    - section[:items].each do |tag|
-                      span.tag = tag
-                  
-      /! Front-end
-      .column.is-half-tablet.is-one-third-desktop
-        .card
-          .card-content
-            .content.has-text-centered
-              span aria-label="emoji" role="img" style=("font-size: 2.5rem;")  ☁️
-              h3.is-2 = t('.skills.devops.title')
-              p = t('.skills.devops.description')
-              - t('.skills.devops.tags').each do |section|
-                .section
-                  h4.is-4 = section[:title]
-                  .tags.is-centered
-                    - section[:items].each do |tag|
-                      span.tag = tag
-                  
+      / Front-end
+      .bg-white.rounded-2xl.shadow-sm.p-8.hover:shadow-md.transition-shadow.duration-300 data-aos="fade-up" data-aos-delay="100"
+        .text-center.mb-6
+          .text-4xl.mb-3 💻
+          h3.text-xl.font-bold = t('.skills.fe.title')
+        p.text-gray-600.mb-6 = t('.skills.fe.description')
+        - t('.skills.fe.tags').each do |section|
+          .mb-4
+            h4.text-sm.font-semibold.text-gray-500.uppercase.tracking-wide.mb-2 = section[:title]
+            .flex.flex-wrap.gap-2
+              - section[:items].each do |tag|
+                span.inline-block.bg-gray-100.text-gray-700.text-sm.px-3.py-1.rounded-full = tag
 
-section.section
+      / DevOps
+      .bg-white.rounded-2xl.shadow-sm.p-8.hover:shadow-md.transition-shadow.duration-300 data-aos="fade-up" data-aos-delay="200"
+        .text-center.mb-6
+          .text-4xl.mb-3 ☁️
+          h3.text-xl.font-bold = t('.skills.devops.title')
+        p.text-gray-600.mb-6 = t('.skills.devops.description')
+        - t('.skills.devops.tags').each do |section|
+          .mb-4
+            h4.text-sm.font-semibold.text-gray-500.uppercase.tracking-wide.mb-2 = section[:title]
+            .flex.flex-wrap.gap-2
+              - section[:items].each do |tag|
+                span.inline-block.bg-gray-100.text-gray-700.text-sm.px-3.py-1.rounded-full = tag
+
+/ Recruiters Section
+section.py-20.bg-white
   a.anchor#recruiters
-  .container
-    .content.is-medium
-      h2 = t('.recruiters.title')
-      .columns
-        .column
-          p == t('.recruiters.subtitle')
-          p
-            = link_to cv_pdf_path, download: true do
-                i.fa.fa-file-pdf-o aria-hidden="true"
-                |  PDF
-            |  |
-            = link_to cv_print_path do
-              i.fa.fa-file-o aria-hidden="true"
-              |  HTML
-          p == t('.recruiters.keep_in_loop')
-        .column
-          = render 'subscribe'
+  .max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .grid.grid-cols-1.md:grid-cols-2.gap-12.items-start
+      div data-aos="fade-up"
+        h2.text-3xl.md:text-4xl.font-bold.mb-6 = t('.recruiters.title')
+        .text-lg.text-gray-600.mb-6 == t('.recruiters.subtitle')
+        .flex.gap-4.mb-8
+          = link_to cv_pdf_path, download: true, class: "inline-flex items-center gap-2 bg-gray-900 text-white px-6 py-3 rounded-lg hover:bg-gray-800 transition-colors" do
+            | PDF
+          = link_to cv_print_path, class: "inline-flex items-center gap-2 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:bg-gray-50 transition-colors" do
+            | HTML
+        p.text-gray-600 == t('.recruiters.keep_in_loop')
+      div data-aos="fade-up" data-aos-delay="100"
+        = render 'subscribe'
 
-section.section
+/ Projects Section (Timeline)
+section.py-20.bg-gray-50
   a.anchor#projects
-  .container
-    .content.is-medium
-      h2 = t('.projects.title')
-      p == t('.projects.subtitle')
+  .max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .text-center.mb-16 data-aos="fade-up"
+      h2.text-3xl.md:text-4xl.font-bold.mb-4 = t('.projects.title')
+      p.text-lg.text-gray-600 = t('.projects.subtitle')
 
-    #projects-carousel style=("overflow: hidden; margin: 0 -0.75rem;") 
-      - @projects.each do |project|
-        .carousel-item.content.has-text-centered style=("margin: 0.75rem;") 
-          .card
-            .card-content
-              .media
-                .media-left
-                  figure.image.is-96x96
-                    - if project.image.present?
-                      = image_tag project.image.medium.url, loading: :lazy
-                .media-content
-                  p.title.is-4 = project.title
-                  p.subtitle.is-6 = project.subtitle
+    / Timeline - two columns with CSS center line
+    #projects-timeline
+      ruby:
+        left_projects = @projects.each_with_index.select { |_, i| i.even? }.map(&:first)
+        right_projects = @projects.each_with_index.select { |_, i| i.odd? }.map(&:first)
+        max_rows = [left_projects.size, right_projects.size].max
+        shown_years = []
 
-                  p.is-size-7 
-                    span.start = l project.start_date
-                    |  - 
-                    span.end
-                      - if project.end_date.present?
-                        = l project.end_date
-                      - else
-                        = t('site.cv.present-date')
+      .timeline-grid.grid.grid-cols-1.md:grid.gap-y-4
+        - max_rows.times do |row|
+          - lp = left_projects[row]
+          - rp = right_projects[row]
+          - visible_index = row * 2
+          - row_year = lp&.start_date&.year
+          - show_year = row_year && !shown_years.include?(row_year)
+          - shown_years << row_year if show_year
+          / Year marker
+          - if show_year
+            .md:col-span-2.flex.justify-center.py-1.relative.z-10 class=(visible_index >= 5 ? "timeline-hidden hidden" : "")
+              span.inline-block.bg-gray-900.text-white.text-xs.font-bold.px-3.rounded-full class="py-0.5" = row_year
 
-              .content
-                .section
-                  h4.is-4 = t('.projects.about_company')
-                  p == markdown project.description_about_the_company
-                .section
-                  h4.is-4 = t('.projects.my_role')
-                  p == markdown project.description_my_role
-                .section
-                  h4.is-4 = t('.projects.techniques')
-                  .tags.is-centered
-                    - project.tags.each do |tag|
-                      span.tag= tag
-                    
-section.section
+          / Left card
+          .timeline-card-left data-aos="fade-up" class=(visible_index >= 5 ? "timeline-hidden hidden" : "")
+            - if lp
+              = link_to project_path(lp), class: "block group" do
+                .bg-white.rounded-xl.shadow-sm.p-5.hover:shadow-md.transition-all.duration-300.group-hover:scale-[1.02]
+                  .flex.items-start.gap-3
+                    - if lp.image.present?
+                      .flex-shrink-0
+                        = image_tag lp.image.medium.url, class: "w-16 h-16 rounded-lg object-contain", loading: :lazy
+                    div
+                      h3.text-base.font-bold.text-gray-900.group-hover:text-blue-600.transition-colors = lp.title
+                      p.text-sm.text-gray-500.mb-1 = lp.subtitle
+                      .text-xs.text-gray-400.mb-2
+                        = l lp.start_date
+                        |  —
+                        - if lp.end_date.present?
+                          = l lp.end_date
+                        - else
+                          = t('site.cv.present-date')
+                      .flex.flex-wrap.gap-2.mt-1
+                        - lp.tags.first(4).each do |tag|
+                          span.inline-block.bg-blue-50.text-blue-700.text-xs.px-2.rounded class="py-0.5" = tag
+                        - if lp.tags.size > 4
+                          span.inline-block.text-gray-400.text-xs = '+' + (lp.tags.size - 4).to_s
+
+          / Right card (offset down for staggered look)
+          .timeline-card-right.md:mt-12 data-aos="fade-up" data-aos-delay="100" class=((visible_index + 1) >= 5 ? "timeline-hidden hidden" : "")
+            - if rp
+              = link_to project_path(rp), class: "block group" do
+                .bg-white.rounded-xl.shadow-sm.p-5.hover:shadow-md.transition-all.duration-300.group-hover:scale-[1.02]
+                  .flex.items-start.gap-3
+                    - if rp.image.present?
+                      .flex-shrink-0
+                        = image_tag rp.image.medium.url, class: "w-16 h-16 rounded-lg object-contain", loading: :lazy
+                    div
+                      h3.text-base.font-bold.text-gray-900.group-hover:text-blue-600.transition-colors = rp.title
+                      p.text-sm.text-gray-500.mb-1 = rp.subtitle
+                      .text-xs.text-gray-400.mb-2
+                        = l rp.start_date
+                        |  —
+                        - if rp.end_date.present?
+                          = l rp.end_date
+                        - else
+                          = t('site.cv.present-date')
+                      .flex.flex-wrap.gap-2.mt-1
+                        - rp.tags.first(4).each do |tag|
+                          span.inline-block.bg-blue-50.text-blue-700.text-xs.px-2.rounded class="py-0.5" = tag
+                        - if rp.tags.size > 4
+                          span.inline-block.text-gray-400.text-xs = '+' + (rp.tags.size - 4).to_s
+
+    / Show more button
+    - if @projects.size > 5
+      .flex.justify-center.mt-8.relative.z-10
+        button#timeline-toggle.inline-flex.items-center.gap-2.border.border-gray-300.bg-gray-50.text-gray-700.px-6.py-3.rounded-lg.hover:bg-gray-100.transition-colors.font-medium
+          span = t('.projects.show_more')
+          span ↓
+
+/ About Me Section
+section.py-20.bg-white
   a.anchor#about-me
-  .container
-    .content.is-medium
-      h2 = t('.about_me.title')
-      .container
-        .columns
-          .column
-            p == t('.about_me.intro1')
-          .column
-            p == t('.about_me.intro2')
-            figure.image.is-128x128
-              = image_tag('rene.jpg', class: "is-rounded", loading: :lazy)
-            p == t('.about_me.intro3')
-section.section
-  a.anchor#contact
-  .container
-    .content.is-medium
-      h2 = t('.contact.title')
-      p = t('.contact.subtitle')
-    .columns
-      .column
-        .columns
-          .column.content
-            p 
-              strong Felobo B.V.
-            p
-              table.bv
-                tr
-                  th KvK:
-                  td 80910483
-                tr
-                  th BTW:
-                  td NL8618.48007.B01
-                tr
-                  th IBAN:
-                  td NL69 KNAB 0775 7095 06
-                tr
-                  th BIC: 
-                  td KNABNL2H
+  .max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8
+    h2.text-3xl.md:text-4xl.font-bold.mb-12.text-center data-aos="fade-up" = t('.about_me.title')
+    .grid.grid-cols-1.md:grid-cols-2.gap-12.items-start
+      .prose.prose-lg.text-gray-600 data-aos="fade-up"
+        == t('.about_me.intro1')
+      div data-aos="fade-up" data-aos-delay="100"
+        .prose.prose-lg.text-gray-600.mb-8
+          == t('.about_me.intro2')
+        .flex.justify-center.mb-8
+          = image_tag('rene.jpg', class: "w-32 h-32 rounded-full object-cover shadow-lg", loading: :lazy)
+        .prose.prose-lg.text-gray-600
+          == t('.about_me.intro3')
 
-          .column.content
-            p
-              a target="_blank" href="tel:0031655128199"  +316 - 55 128 199
-              br/
-              a target="_blank" href="mailto:rene@weteling.com?subject=Lets get in touch&body=Hi Rene,%0D%0A%0D%0AI saw your website and..." rene@weteling.com
-            p
-              a target="_blank" href="https://goo.gl/maps/3JBzSbjgWDCmSjTE8"
-                address
-                  | Johannes Geradtsweg 47
-                  br/
-                  | 1222 PM, Hilversum
-           
-               
-      .column
+/ Contact Section
+section.py-20.bg-gray-50
+  a.anchor#contact
+  .max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8
+    .text-center.mb-12 data-aos="fade-up"
+      h2.text-3xl.md:text-4xl.font-bold.mb-4 = t('.contact.title')
+      p.text-lg.text-gray-600 = t('.contact.subtitle')
+
+    .grid.grid-cols-1.md:grid-cols-2.gap-12
+      div data-aos="fade-up"
+        .mb-8
+          p.font-bold.text-lg.mb-4 Felobo B.V.
+          table.bv.text-gray-600
+            tr
+              th.font-medium.text-gray-700.pr-4 KvK:
+              td 80910483
+            tr
+              th.font-medium.text-gray-700.pr-4 BTW:
+              td NL8618.48007.B01
+            tr
+              th.font-medium.text-gray-700.pr-4 IBAN:
+              td NL69 KNAB 0775 7095 06
+            tr
+              th.font-medium.text-gray-700.pr-4 BIC:
+              td KNABNL2H
+
+        .space-y-3
+          p
+            a.text-blue-600.hover:text-blue-800.transition-colors target="_blank" href="tel:0031655128199"  +316 - 55 128 199
+          p
+            a.text-blue-600.hover:text-blue-800.transition-colors target="_blank" href="mailto:rene@weteling.com?subject=Lets get in touch&body=Hi Rene,%0D%0A%0D%0AI saw your website and..." rene@weteling.com
+          p
+            a.text-gray-600.hover:text-blue-600.transition-colors target="_blank" href="https://goo.gl/maps/3JBzSbjgWDCmSjTE8"
+              | Johannes Geradtsweg 47
+              br
+              | 1222 PM, Hilversum
+
+      div data-aos="fade-up" data-aos-delay="100"
         = render 'contact'
-        
-footer.footer.content.has-text-centered
-  p 
-    | René Weteling, coding since 2006 -
-    = Time.zone.now.year 
-  p Made with ❤️ in ❌❌❌
-p.has-text-centered EOF 🤓
+
+/ Footer
+footer.bg-gray-950.text-gray-400.py-12
+  .max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8.text-center
+    p.mb-2
+      | René Weteling, coding since 2006 -
+      =<  Time.zone.now.year
+    p.text-sm Made with ❤️ in ❌❌❌
+    p.text-xs.mt-2.text-gray-600 EOF 🤓
