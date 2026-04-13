@@ -38,23 +38,23 @@ nl:
 
       services:
         title: "Diensten"
-        subtitle: "Software bouwen is complex. Ik help je er doorheen."
+        subtitle: "Software bouwen is complex. Ik help je erdoorheen."
         caas:
           h3: "CTO as a Service"
-          service-description: "Technisch leiderschap nodig zonder een fulltime CTO? Ik overburg de kloof tussen bedrijfsdoelen en technologie, en begeleid je team bij architectuurkeuzes, vendor selectie en technische strategie."
+          service-description: "Technisch leiderschap nodig zonder een fulltime CTO aan te nemen? Ik overbrug de kloof tussen bedrijfsdoelen en technologie — van architectuurkeuzes en vendor selectie tot technische strategie."
         duck:
           h3: "Sparringpartner"
-          service-description: "Soms heb je gewoon een senior engineer nodig om mee te sparren. Onder het genot van een bakkie koffie bespreken we je architectuur, tech-keuzes en uitdagingen. Vrijblijvend."
+          service-description: "Soms heb je gewoon een senior engineer nodig om mee te sparren. Met een bakkie koffie bespreken we je architectuur, tech-keuzes en uitdagingen. Vrijblijvend."
         broker:
           h3: "IT Aankoopmakelaar"
-          service-description: "Een bedrijf inhuren om je product te bouwen maar geen technische kennis in huis? Ik let op vendor lock-ins, verouderde technieken en te dure contracten — als een makelaar voor je IT-investeringen."
+          service-description: "Een bedrijf inhuren om je product te bouwen, maar geen technische kennis in huis? Ik let op vendor lock-ins, verouderde technieken en te dure contracten — als een makelaar voor je IT-investeringen."
         ai:
           h3: "AI Integratie"
-          service-description: "Van AI-tools voor developers tot het integreren van LLM's in je product — ik help teams om AI effectief in te zetten. Of het nu gaat om developer productiviteit of klantgerichte AI-features, ik doe het hands-on."
+          service-description: "Van AI-tools voor developers tot het integreren van LLM's in je product — ik help teams om AI effectief in te zetten. Developer productiviteit of klantgerichte features, ik pak het hands-on aan."
 
       skills:
         title: "Vaardigheden"
-        subtitle: "Door de jaren heen ben ik in contact gekomen met <strong>meerdere</strong> facetten van het IT-landschap. Mijn <strong>passie</strong> ligt bij webontwikkeling, omdat de korte iteratiecyclus het mogelijk maakt om het product te optimaliseren en data-gedreven beslissingen te nemen. Ik hou ervan wanneer mensen het product gebruiken dat ik heb helpen ontwikkelen, dus web en mobiel zijn ideaal!"
+        subtitle: "In de loop der jaren heb ik met <strong>veel</strong> facetten van het IT-landschap gewerkt. Mijn <strong>passie</strong> ligt bij webontwikkeling — korte iteraties, data-gedreven keuzes, en het gevoel wanneer mensen daadwerkelijk het product gebruiken dat je hebt gebouwd. Web en mobiel zijn daarvoor ideaal!"
         be:
           title: "Back-End Ontwikkeling"
           description: "Net zoals in het leven gebeuren de meeste interessante dingen achter de schermen. API's, integraties, back-ends, services, jobs, search, storage, noem maar op. Dit is waar ik me thuis voel."
@@ -116,7 +116,7 @@ nl:
 
         devops:
           title: DevOps
-          description: "Het is niet alleen het bouwen van een applicatie, maar ook het in de lucht houden ervan. Dit is waar DevOps om de hoek komt kijken. Het automatiseren van processen, het schalen van applicaties, het monitoren van applicaties, het beveiligen van applicaties."
+          description: "Applicaties bouwen is één ding, ze draaiende houden is een vak apart. Automatiseren, schalen, monitoren, beveiligen — daar komt DevOps om de hoek kijken, en dat is precies wat ik graag opzet."
           tags:
             - title: "Services:"
               items:
@@ -155,12 +155,12 @@ nl:
         show_less: "Toon minder"
       about_me:
         title: "Over mij"
-        intro1: "Ik ben een programmeur geboren in Capelle aan den IJssel, net onder de rok van Rotterdam (NL). Op zeer jonge leeftijd werd ik verliefd op computers. <br/> <br />Mijn vader was ook behoorlijk geïnteresseerd in computers en leerde me batch scripts in MS-DOS toen ik ongeveer 9 jaar oud was, op een 286DX met de turbo altijd aan. We waren een van de eersten in de buurt met een inbelverbinding, gevolgd door ISDN met trunk-modus, gevolgd door DSL, kabel en uiteindelijk glasvezel. De mogelijkheden om deze machines met elkaar te verbinden waren zo intrigerend dat ik op 14-jarige leeftijd begon te experimenteren met VPN's, LAMP-stacks en FTP-servers."
-        intro2: "Tijd om een richting voor mijn toekomstige opleiding te kiezen, een van de eenvoudigste keuzes van mijn leven, dus ik schreef me in voor Informatica aan de HRO in Rotterdam. De opleiding was een eitje, en ik deed het parttime terwijl ik werkte bij een digitaal bureau."
-        intro3: "Op persoonlijk vlak ben ik een trotse vader van 3 kinderen. Verloofd met de liefde van mijn leven. Festivalliefhebber, borrelen met vrienden, varen in de grachten en natuurlijk met de sleurhut op pad."
+        intro1: "Ik ben een programmeur uit Capelle aan den IJssel, net onder de rok van Rotterdam. Al van jongs af aan was ik verliefd op computers. <br/> <br />Mijn vader leerde me batch scripts in MS-DOS toen ik een jaar of 9 was, op een 286DX met de turbo altijd aan. We waren een van de eersten in de buurt met een inbelverbinding — daarna ISDN, DSL, kabel en uiteindelijk glasvezel. De mogelijkheden om die machines met elkaar te verbinden waren zo gaaf dat ik op mijn 14e al experimenteerde met VPN's, LAMP-stacks en FTP-servers."
+        intro2: "Een richting kiezen voor mijn studie was een van de makkelijkste keuzes uit mijn leven. Informatica aan de HRO in Rotterdam, parttime naast mijn werk bij een digitaal bureau. De code monkey was geboren!"
+        intro3: "Privé ben ik een trotse vader van 3 kinderen. Verloofd met de liefde van mijn leven. Festivalliefhebber, borrelen met vrienden, varen door de grachten en natuurlijk op pad met de sleurhut."
       contact:
         title: "Contact"
-        subtitle: "Je kunt de onderstaande gegevens gebruiken, of een e-mail sturen via het contactformulier."
+        subtitle: "Wil je een ❤️ briefje sturen? Gebruik de gegevens hieronder, of stuur een berichtje via het contactformulier."
 
     project:
       back: "Terug naar projecten"
