@@ -79,6 +79,11 @@ html {
   }
 }
 
+// Force logo white filter (Tailwind's brightness-0 + invert can fail without CSS var defaults)
+.nav-logo-white {
+  filter: brightness(0) invert(1) !important;
+}
+
 // Hide reCAPTCHA badge
 .grecaptcha-badge {
   visibility: hidden !important;

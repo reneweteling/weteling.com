@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", () => {
           link.classList.add("text-gray-700", "hover:text-blue-600");
         });
         if (navLogo) {
-          navLogo.classList.remove("brightness-0", "invert");
+          navLogo.classList.remove("nav-logo-white");
         }
       } else {
         nav.classList.remove("bg-white/90", "backdrop-blur-md", "shadow-sm");
@@ -162,7 +162,7 @@ document.addEventListener("DOMContentLoaded", () => {
           link.classList.add("text-white", "hover:text-blue-300");
         });
         if (navLogo) {
-          navLogo.classList.add("brightness-0", "invert");
+          navLogo.classList.add("nav-logo-white");
         }
       }
     };
