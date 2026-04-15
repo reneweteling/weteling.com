@@ -1,101 +1,220 @@
-sass:
-
-  .contact-details
-    margin-top: 10px
-    font-size: 13px
-
-  .client-details
-    font-size: 13px
-
-  .logo
-    width: 145px
-    margin-top: 9px
-
-  .table-container
-    margin-top: 50px
-    table
-      width: 100%
-      tbody
-        width: 100%
-      tr.header
-        th, td
-          background-color: white
-          border-bottom: 1px solid black
-      th, td
-        font-size: 14px
-        p
-          margin: 0px
-
-      tr.footer
-        border-top: 2px solid black
-        th, td
-          background-color: white
-
 - has_sno = hours.sum(:total_sno_hours) != 0
 - has_sno = false
 
-.container-fluid
-  .no-flex-row
-    .no-flex-col-2
-      br
-      = image_tag 'logo.png', class: 'img-fluid logo'
-    .no-flex-col-5
+sass:
+  .invoice
+    margin: 0
+    padding: 10px
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif
+    font-size: 14px
+    color: #1a1a1a
+    line-height: 1.5
+
+    .header
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      margin-bottom: 40px
+      padding-bottom: 24px
+      border-bottom: 2px solid #e5e7eb
+
+      .logo-section
+        flex-shrink: 0
+        img
+          width: 120px
+
+      .company-info
+        text-align: right
+        font-size: 13px
+        color: #4b5563
+        line-height: 1.6
+
+        strong
+          font-size: 15px
+          color: #1a1a1a
+          display: block
+          margin-bottom: 4px
+
+    .meta
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      margin-bottom: 40px
+
+      .client-block
+        background: #f9fafb
+        border: 1px solid #e5e7eb
+        border-radius: 8px
+        padding: 20px 24px
+        min-width: 280px
+
+        .label
+          font-size: 11px
+          text-transform: uppercase
+          letter-spacing: 0.05em
+          color: #9ca3af
+          margin-bottom: 8px
+          font-weight: 600
+
+        .client-name
+          font-size: 16px
+          font-weight: 700
+          color: #1a1a1a
+          margin-bottom: 2px
+
+        .client-contact
+          font-size: 13px
+          color: #6b7280
+
+        .client-address
+          font-size: 13px
+          color: #6b7280
+          margin-top: 8px
+
+      .invoice-info
+        text-align: right
+
+        .period-label
+          font-size: 11px
+          text-transform: uppercase
+          letter-spacing: 0.05em
+          color: #9ca3af
+          margin-bottom: 4px
+          font-weight: 600
+
+        .period-dates
+          font-size: 15px
+          font-weight: 600
+          color: #1a1a1a
+
+    .hours-table
+      width: 100%
+      border-collapse: collapse
+      margin-bottom: 24px
+
+      thead
+        th
+          text-align: left
+          font-size: 11px
+          text-transform: uppercase
+          letter-spacing: 0.05em
+          color: #9ca3af
+          font-weight: 600
+          padding: 10px 12px
+          border-bottom: 2px solid #e5e7eb
+
+        th.text-right
+          text-align: right
+
+      tbody
+        td
+          padding: 12px 12px
+          border-bottom: 1px solid #f3f4f6
+          font-size: 14px
+          color: #374151
+          vertical-align: top
+
+          p
+            margin: 0
+
+        td.text-right
+          text-align: right
+          white-space: nowrap
+
+        tr:last-child td
+          border-bottom: none
+
+      tfoot
+        tr
+          td, th
+            padding: 14px 12px
+            border-top: 2px solid #e5e7eb
+            font-size: 15px
+            font-weight: 700
+            color: #1a1a1a
+
+          th
+            text-align: left
+
+          td.text-right, th.text-right
+            text-align: right
+
+    .footer
+      margin-top: 40px
+      padding-top: 20px
+      border-top: 1px solid #e5e7eb
+      display: flex
+      justify-content: space-between
+      font-size: 12px
+      color: #9ca3af
+
+      .footer-col
+        line-height: 1.8
+
+.invoice
+  .header
+    .logo-section
+      = image_tag 'logo.png'
+    .company-info
       strong Felobo B.V.
-      .contact-details
-        .no-flex-col-5
-          p
-            | rene@weteling.com
-            br
-            | www.weteling.com
-          p
-            | Btw: NL8618.48007.B01
-            br
-            | KvK: 80910483
-            
-        .no-flex-col-7
-          
-          p
-            | Johannes Geradtsweg 47
-            br
-            | 1222PM Hilversum
-          p 
-            | IBAN: NL69 KNAB 0775 7095 06
-            br
-            | BIC: KNABNL2H
+      | Johannes Geradtsweg 47
+      br
+      | 1222PM Hilversum
+      br
+      | rene@weteling.com
+      br
+      | www.weteling.com
 
-    
-    .no-flex-col-4.client-details
-      strong = project.client.name
-      |  t.a.v. #{project.client.first_name} #{project.client.last_name}
-      - if project.client.department.present?
-        |  Afd. #{project.client.department}
-      .contact-details
-        p 
-          = project.client.address
-          br #{project.client.postalcode} #{project.client.city}
+  .meta
+    .client-block
+      .label Factuur aan
+      .client-name = project.client.name
+      .client-contact
+        | t.a.v. #{project.client.first_name} #{project.client.last_name}
+        - if project.client.department.present?
+          br
+          | Afd. #{project.client.department}
+      .client-address
+        = project.client.address
+        br
+        | #{project.client.postalcode} #{project.client.city}
 
-  .row.table-container
-    .col-12
-      table.table.table-striped.table-bordered.table-sm.table-responsive
-        tbody
-          tr.header
-            th Uren verantwoording #{l start_date} - #{l end_date}
-            th.text-right Datum
-            - if has_sno
-              th.text-right S&O
-            th.text-right Uren
+    .invoice-info
+      .period-label Periode
+      .period-dates
+        = l start_date
+        |  — #{l end_date}
 
-          - hours.each.with_index do |h, i|
-            tr class=('border' if i == 0)
-              td = simple_format h.description
-              td.nowrap.text-right = l h.date, format: :short
-              - if has_sno
-                td.text-right = h.total_sno_hours
-              td.text-right = h.total_hours
+  table.hours-table
+    thead
+      tr
+        th Omschrijving
+        th.text-right Datum
+        - if has_sno
+          th.text-right S&O
+        th.text-right Uren
+    tbody
+      - hours.each do |h|
+        tr
+          td = simple_format h.description
+          td.text-right = l h.date, format: :short
+          - if has_sno
+            td.text-right = h.total_sno_hours
+          td.text-right = h.total_hours
+    tfoot
+      tr
+        th Totaal
+        th
+        - if has_sno
+          th.text-right = hours.sum(:total_sno_hours)
+        th.text-right = hours.sum(:total_hours)
 
-          tr.footer
-            th Totaal
-            th 
-            - if has_sno
-              th.text-right = hours.sum(:total_sno_hours)
-            th.text-right = hours.sum(:total_hours)
+  .footer
+    .footer-col
+      | KvK: 80910483
+      br
+      | Btw: NL8618.48007.B01
+    .footer-col
+      | IBAN: NL69 KNAB 0775 7095 06
+      br
+      | BIC: KNABNL2H

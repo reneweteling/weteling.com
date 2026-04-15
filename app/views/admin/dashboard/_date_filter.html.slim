@@ -1,4 +1,18 @@
 form.filter_form method="get"
+  #q_client_input.input.optional.filter_form_field.filter_select
+    label.label Client
+    select name="filter[client_id]" id="filter_client_id"
+      option value=""  All
+      - Client.order(:name).each do |client|
+        option value=client.id selected=(@filter.client_id.to_s == client.id.to_s ? 'selected' : nil) = client.name
+
+  #q_project_input.input.optional.filter_form_field.filter_select
+    label.label Project
+    select name="filter[project_id]" id="filter_project_id"
+      option value=""  All
+      - Project.includes(:client).order("clients.name, projects.name").each do |project|
+        option value=project.id selected=(@filter.project_id.to_s == project.id.to_s ? 'selected' : nil) = "#{project.client.name} - #{project.name}"
+
   #q_date_input.date_range.input.optional.stringish.filter_form_field.filter_date_range
     label.label Date
     input#q_date_gteq.datepicker maxlength="10" name="filter[start]" placeholder="From" size="12" type="text" value=@filter.start

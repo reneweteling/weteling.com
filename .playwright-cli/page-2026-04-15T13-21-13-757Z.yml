@@ -1,0 +1,585 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - heading "René Weteling" [level=1] [ref=e4]:
+      - img "René Weteling" [ref=e5]
+    - list [ref=e6]:
+      - listitem [ref=e7]:
+        - link "Dashboard" [ref=e8] [cursor=pointer]:
+          - /url: /admin/dashboard
+      - listitem [ref=e9]:
+        - link "Hours" [ref=e10] [cursor=pointer]:
+          - /url: /admin/hours
+      - listitem [ref=e11]:
+        - link "Clients" [ref=e12] [cursor=pointer]:
+          - /url: /admin/clients
+      - listitem [ref=e13]:
+        - link "Pages" [ref=e14] [cursor=pointer]:
+          - /url: /admin/pages
+      - listitem [ref=e15]:
+        - link "Projects" [ref=e16] [cursor=pointer]:
+          - /url: /admin/projects
+      - listitem [ref=e17]:
+        - link "Blogs" [ref=e18] [cursor=pointer]:
+          - /url: /admin/blogs
+      - listitem [ref=e19]:
+        - link "Rates" [ref=e20] [cursor=pointer]:
+          - /url: /admin/rates
+      - listitem [ref=e21]:
+        - link "Users" [ref=e22] [cursor=pointer]:
+          - /url: /admin/users
+      - listitem [ref=e23]:
+        - link "Mailinglijsten" [ref=e24] [cursor=pointer]:
+          - /url: /admin/subscribers
+    - list [ref=e25]:
+      - listitem [ref=e26]:
+        - link "Rene Weteling" [ref=e27] [cursor=pointer]:
+          - /url: /admin/users/1
+      - listitem [ref=e28]:
+        - link "Uitloggen" [ref=e29] [cursor=pointer]:
+          - /url: /admin/logout
+  - generic [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - link "Admin" [ref=e33] [cursor=pointer]:
+          - /url: /admin
+        - text: /
+      - heading "Blogs" [level=2] [ref=e34]
+    - link "Nieuwe Blog" [ref=e38] [cursor=pointer]:
+      - /url: /admin/blogs/new
+  - generic [ref=e39]:
+    - generic [ref=e42]:
+      - table [ref=e46]:
+        - rowgroup [ref=e47]:
+          - row "Id Naam Slug Date Content Image" [ref=e48]:
+            - columnheader "Id" [ref=e49]:
+              - link "Id" [ref=e50] [cursor=pointer]:
+                - /url: /admin/blogs?order=id_asc
+            - columnheader "Naam" [ref=e51]:
+              - link "Naam" [ref=e52] [cursor=pointer]:
+                - /url: /admin/blogs?order=name_desc
+            - columnheader "Slug" [ref=e53]:
+              - link "Slug" [ref=e54] [cursor=pointer]:
+                - /url: /admin/blogs?order=slug_desc
+            - columnheader "Date" [ref=e55]:
+              - link "Date" [ref=e56] [cursor=pointer]:
+                - /url: /admin/blogs?order=date_desc
+            - columnheader "Content" [ref=e57]:
+              - link "Content" [ref=e58] [cursor=pointer]:
+                - /url: /admin/blogs?order=content_desc
+            - columnheader "Image" [ref=e59]:
+              - link "Image" [ref=e60] [cursor=pointer]:
+                - /url: /admin/blogs?order=image_desc
+            - columnheader [ref=e61]
+        - rowgroup [ref=e62]:
+          - row "20 Just an awesome talk by Gary Bernhardt just-an-awesome-talk-by-gary-bernhardt do 08 dec 2016 15:34:54 UTC Just a brilliant talk from Gary Bernhardt, addressing some really soar point in our technical lifecycle. Check it out! <a href=\"https://www.destr... BekijkWijzigVerwijder" [ref=e63]:
+            - cell "20" [ref=e64]:
+              - link "20" [ref=e65] [cursor=pointer]:
+                - /url: /admin/blogs/20
+            - cell "Just an awesome talk by Gary Bernhardt" [ref=e66]
+            - cell "just-an-awesome-talk-by-gary-bernhardt" [ref=e67]
+            - cell "do 08 dec 2016 15:34:54 UTC" [ref=e68]
+            - cell "Just a brilliant talk from Gary Bernhardt, addressing some really soar point in our technical lifecycle. Check it out! <a href=\"https://www.destr..." [ref=e69]:
+              - paragraph [ref=e70]: Just a brilliant talk from Gary Bernhardt, addressing some really soar point in our technical lifecycle.
+              - paragraph [ref=e71]: Check it out!
+              - paragraph [ref=e72]:
+                - text: <a href="
+                - link "https://www.destr" [ref=e73] [cursor=pointer]:
+                  - /url: https://www.destr
+                - text: ...
+            - cell [ref=e74]:
+              - link [ref=e75] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/20/b5c50ed0.png
+                - img [ref=e76]
+            - cell "BekijkWijzigVerwijder" [ref=e77]:
+              - generic [ref=e78]:
+                - link "Bekijk" [ref=e79] [cursor=pointer]:
+                  - /url: /admin/blogs/20
+                - link "Wijzig" [ref=e80] [cursor=pointer]:
+                  - /url: /admin/blogs/20/edit
+                - link "Verwijder" [ref=e81] [cursor=pointer]:
+                  - /url: /admin/blogs/20
+          - row "19 Route port 3000 to 80, without running as root route-port-3000-to-80-without-running-as-root You don't have to run your Rails app as root to access it on port 80. Instead, run it normally (on port 3000) and forward port 80 packets via iptab... BekijkWijzigVerwijder" [ref=e82]:
+            - cell "19" [ref=e83]:
+              - link "19" [ref=e84] [cursor=pointer]:
+                - /url: /admin/blogs/19
+            - cell "Route port 3000 to 80, without running as root" [ref=e85]
+            - cell "route-port-3000-to-80-without-running-as-root" [ref=e86]
+            - cell [ref=e87]
+            - cell "You don't have to run your Rails app as root to access it on port 80. Instead, run it normally (on port 3000) and forward port 80 packets via iptab..." [ref=e88]:
+              - paragraph [ref=e89]: You don't have to run your Rails app as root to access it on port 80. Instead, run it normally (on port 3000) and forward port 80 packets via iptab...
+            - cell [ref=e90]:
+              - link [ref=e91] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/19/0016d0c2.gif
+                - img [ref=e92]
+            - cell "BekijkWijzigVerwijder" [ref=e93]:
+              - generic [ref=e94]:
+                - link "Bekijk" [ref=e95] [cursor=pointer]:
+                  - /url: /admin/blogs/19
+                - link "Wijzig" [ref=e96] [cursor=pointer]:
+                  - /url: /admin/blogs/19/edit
+                - link "Verwijder" [ref=e97] [cursor=pointer]:
+                  - /url: /admin/blogs/19
+          - row "18 Setting up a wildcard domain on OSX setting-up-a-wildcard-domain-on-osx No more host maddness, just *.dev to localhost :) its so nice thanks to ASCII Thoughts BekijkWijzigVerwijder" [ref=e98]:
+            - cell "18" [ref=e99]:
+              - link "18" [ref=e100] [cursor=pointer]:
+                - /url: /admin/blogs/18
+            - cell "Setting up a wildcard domain on OSX" [ref=e101]
+            - cell "setting-up-a-wildcard-domain-on-osx" [ref=e102]
+            - cell [ref=e103]
+            - cell "No more host maddness, just *.dev to localhost :) its so nice thanks to ASCII Thoughts" [ref=e104]:
+              - paragraph [ref=e105]:
+                - text: No more host maddness, just *.dev to localhost :) its so nice thanks to
+                - link "ASCII Thoughts" [ref=e106] [cursor=pointer]:
+                  - /url: http://asciithoughts.com/
+              - blockquote [ref=e107]:
+                - text: <h1 id=...
+                - paragraph
+            - cell [ref=e108]:
+              - link [ref=e109] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/18/e0b5f31a.png
+                - img [ref=e110]
+            - cell "BekijkWijzigVerwijder" [ref=e111]:
+              - generic [ref=e112]:
+                - link "Bekijk" [ref=e113] [cursor=pointer]:
+                  - /url: /admin/blogs/18
+                - link "Wijzig" [ref=e114] [cursor=pointer]:
+                  - /url: /admin/blogs/18/edit
+                - link "Verwijder" [ref=e115] [cursor=pointer]:
+                  - /url: /admin/blogs/18
+          - row "17 Yeaaaaahhaaaaaaa Heroku pipelines with Pull request dyno's yeaaaaahhaaaaaaa-heroku-pipelines-with-pull-request-dyno-s So, just to increase my love for Heroku, they have recently published a sysem called pipelines. This is a sort grouping of multiple dyno's with int... BekijkWijzigVerwijder" [ref=e116]:
+            - cell "17" [ref=e117]:
+              - link "17" [ref=e118] [cursor=pointer]:
+                - /url: /admin/blogs/17
+            - cell "Yeaaaaahhaaaaaaa Heroku pipelines with Pull request dyno's" [ref=e119]
+            - cell "yeaaaaahhaaaaaaa-heroku-pipelines-with-pull-request-dyno-s" [ref=e120]
+            - cell [ref=e121]
+            - cell "So, just to increase my love for Heroku, they have recently published a sysem called pipelines. This is a sort grouping of multiple dyno's with int..." [ref=e122]:
+              - paragraph [ref=e123]: So, just to increase my love for Heroku, they have recently published a sysem called pipelines. This is a sort grouping of multiple dyno's with int...
+            - cell [ref=e124]:
+              - link [ref=e125] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/17/b6cdeb60.png
+                - img [ref=e126]
+            - cell "BekijkWijzigVerwijder" [ref=e127]:
+              - generic [ref=e128]:
+                - link "Bekijk" [ref=e129] [cursor=pointer]:
+                  - /url: /admin/blogs/17
+                - link "Wijzig" [ref=e130] [cursor=pointer]:
+                  - /url: /admin/blogs/17/edit
+                - link "Verwijder" [ref=e131] [cursor=pointer]:
+                  - /url: /admin/blogs/17
+          - row "16 Basic terminal commands basic-terminal-commands Every programmer needs to do allot of stuff in the terminal, but where are all the user interfaces, where are the manuals. Well they dont exists in... BekijkWijzigVerwijder" [ref=e132]:
+            - cell "16" [ref=e133]:
+              - link "16" [ref=e134] [cursor=pointer]:
+                - /url: /admin/blogs/16
+            - cell "Basic terminal commands" [ref=e135]
+            - cell "basic-terminal-commands" [ref=e136]
+            - cell [ref=e137]
+            - cell "Every programmer needs to do allot of stuff in the terminal, but where are all the user interfaces, where are the manuals. Well they dont exists in..." [ref=e138]:
+              - paragraph [ref=e139]: Every programmer needs to do allot of stuff in the terminal, but where are all the user interfaces, where are the manuals. Well they dont exists in...
+            - cell [ref=e140]:
+              - link [ref=e141] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/16/bf8e1893.png
+                - img [ref=e142]
+            - cell "BekijkWijzigVerwijder" [ref=e143]:
+              - generic [ref=e144]:
+                - link "Bekijk" [ref=e145] [cursor=pointer]:
+                  - /url: /admin/blogs/16
+                - link "Wijzig" [ref=e146] [cursor=pointer]:
+                  - /url: /admin/blogs/16/edit
+                - link "Verwijder" [ref=e147] [cursor=pointer]:
+                  - /url: /admin/blogs/16
+          - row "15 The four hour workweek the-four-hour-workweek vr 11 dec 2015 09:10:56 UTC Its written by a prick, teaching you how to become a prick. But is being a prick such a bad thing? You get shit done, trim the fat, loose the distr... BekijkWijzigVerwijder" [ref=e148]:
+            - cell "15" [ref=e149]:
+              - link "15" [ref=e150] [cursor=pointer]:
+                - /url: /admin/blogs/15
+            - cell "The four hour workweek" [ref=e151]
+            - cell "the-four-hour-workweek" [ref=e152]
+            - cell "vr 11 dec 2015 09:10:56 UTC" [ref=e153]
+            - cell "Its written by a prick, teaching you how to become a prick. But is being a prick such a bad thing? You get shit done, trim the fat, loose the distr..." [ref=e154]:
+              - paragraph [ref=e155]: Its written by a prick, teaching you how to become a prick. But is being a prick such a bad thing? You get shit done, trim the fat, loose the distr...
+            - cell [ref=e156]:
+              - link [ref=e157] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/15/d29dd938.jpg
+                - img [ref=e158]
+            - cell "BekijkWijzigVerwijder" [ref=e159]:
+              - generic [ref=e160]:
+                - link "Bekijk" [ref=e161] [cursor=pointer]:
+                  - /url: /admin/blogs/15
+                - link "Wijzig" [ref=e162] [cursor=pointer]:
+                  - /url: /admin/blogs/15/edit
+                - link "Verwijder" [ref=e163] [cursor=pointer]:
+                  - /url: /admin/blogs/15
+          - row "14 The lean startup the-lean-startup vr 11 dec 2015 09:09:27 UTC Just such in insightful book. Its no rocket science and it makes a lot of sence. The stupid thing is you don't come to the same conclusions quick e... BekijkWijzigVerwijder" [ref=e164]:
+            - cell "14" [ref=e165]:
+              - link "14" [ref=e166] [cursor=pointer]:
+                - /url: /admin/blogs/14
+            - cell "The lean startup" [ref=e167]
+            - cell "the-lean-startup" [ref=e168]
+            - cell "vr 11 dec 2015 09:09:27 UTC" [ref=e169]
+            - cell "Just such in insightful book. Its no rocket science and it makes a lot of sence. The stupid thing is you don't come to the same conclusions quick e..." [ref=e170]:
+              - paragraph [ref=e171]: Just such in insightful book. Its no rocket science and it makes a lot of sence. The stupid thing is you don't come to the same conclusions quick e...
+            - cell [ref=e172]:
+              - link [ref=e173] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/14/bff2659b.jpg
+                - img [ref=e174]
+            - cell "BekijkWijzigVerwijder" [ref=e175]:
+              - generic [ref=e176]:
+                - link "Bekijk" [ref=e177] [cursor=pointer]:
+                  - /url: /admin/blogs/14
+                - link "Wijzig" [ref=e178] [cursor=pointer]:
+                  - /url: /admin/blogs/14/edit
+                - link "Verwijder" [ref=e179] [cursor=pointer]:
+                  - /url: /admin/blogs/14
+          - row "13 Jira self hosted jira-self-hosted So i was annoyed by default Agile tooling. Thins like \"Trello\" and \"Flow\" just dont cut it. I need more workflows, i used to work with jira 6.somet... BekijkWijzigVerwijder" [ref=e180]:
+            - cell "13" [ref=e181]:
+              - link "13" [ref=e182] [cursor=pointer]:
+                - /url: /admin/blogs/13
+            - cell "Jira self hosted" [ref=e183]
+            - cell "jira-self-hosted" [ref=e184]
+            - cell [ref=e185]
+            - cell "So i was annoyed by default Agile tooling. Thins like \"Trello\" and \"Flow\" just dont cut it. I need more workflows, i used to work with jira 6.somet..." [ref=e186]:
+              - paragraph [ref=e187]: So i was annoyed by default Agile tooling. Thins like "Trello" and "Flow" just dont cut it. I need more workflows, i used to work with jira 6.somet...
+            - cell [ref=e188]:
+              - link [ref=e189] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/13/d33a2f30.png
+                - img [ref=e190]
+            - cell "BekijkWijzigVerwijder" [ref=e191]:
+              - generic [ref=e192]:
+                - link "Bekijk" [ref=e193] [cursor=pointer]:
+                  - /url: /admin/blogs/13
+                - link "Wijzig" [ref=e194] [cursor=pointer]:
+                  - /url: /admin/blogs/13/edit
+                - link "Verwijder" [ref=e195] [cursor=pointer]:
+                  - /url: /admin/blogs/13
+          - row "12 Mina ( rails deployment ) mina-rails-deployment So the time has come that your fed up with the response times of Heroku, the slow deploy method etc. Although the deploy method rocks, the speed ha... BekijkWijzigVerwijder" [ref=e196]:
+            - cell "12" [ref=e197]:
+              - link "12" [ref=e198] [cursor=pointer]:
+                - /url: /admin/blogs/12
+            - cell "Mina ( rails deployment )" [ref=e199]
+            - cell "mina-rails-deployment" [ref=e200]
+            - cell [ref=e201]
+            - cell "So the time has come that your fed up with the response times of Heroku, the slow deploy method etc. Although the deploy method rocks, the speed ha..." [ref=e202]:
+              - paragraph [ref=e203]: So the time has come that your fed up with the response times of Heroku, the slow deploy method etc. Although the deploy method rocks, the speed ha...
+            - cell [ref=e204]:
+              - link [ref=e205] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/12/2f41449a.png
+                - img [ref=e206]
+            - cell "BekijkWijzigVerwijder" [ref=e207]:
+              - generic [ref=e208]:
+                - link "Bekijk" [ref=e209] [cursor=pointer]:
+                  - /url: /admin/blogs/12
+                - link "Wijzig" [ref=e210] [cursor=pointer]:
+                  - /url: /admin/blogs/12/edit
+                - link "Verwijder" [ref=e211] [cursor=pointer]:
+                  - /url: /admin/blogs/12
+          - row "11 Being in the \"zone\" being-in-the-zone zo 04 okt 2015 22:41:08 UTC Its so important to be in the \"zone\"! Programming is such a creative environment. There are so much variables in turning something shitty into some... BekijkWijzigVerwijder" [ref=e212]:
+            - cell "11" [ref=e213]:
+              - link "11" [ref=e214] [cursor=pointer]:
+                - /url: /admin/blogs/11
+            - cell "Being in the \"zone\"" [ref=e215]
+            - cell "being-in-the-zone" [ref=e216]
+            - cell "zo 04 okt 2015 22:41:08 UTC" [ref=e217]
+            - cell "Its so important to be in the \"zone\"! Programming is such a creative environment. There are so much variables in turning something shitty into some..." [ref=e218]:
+              - paragraph [ref=e219]: Its so important to be in the "zone"! Programming is such a creative environment. There are so much variables in turning something shitty into some...
+            - cell [ref=e220]:
+              - link [ref=e221] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/11/1a808924.jpg
+                - img [ref=e222]
+            - cell "BekijkWijzigVerwijder" [ref=e223]:
+              - generic [ref=e224]:
+                - link "Bekijk" [ref=e225] [cursor=pointer]:
+                  - /url: /admin/blogs/11
+                - link "Wijzig" [ref=e226] [cursor=pointer]:
+                  - /url: /admin/blogs/11/edit
+                - link "Verwijder" [ref=e227] [cursor=pointer]:
+                  - /url: /admin/blogs/11
+          - row "10 Single Table Inheritance ( STI ) single-table-inheritance-sti di 04 aug 2015 20:29:05 UTC Just some basic principles that every MVC using programmers should master. STI, Single table inheritance. I have been working on a large Laravel 4.... BekijkWijzigVerwijder" [ref=e228]:
+            - cell "10" [ref=e229]:
+              - link "10" [ref=e230] [cursor=pointer]:
+                - /url: /admin/blogs/10
+            - cell "Single Table Inheritance ( STI )" [ref=e231]
+            - cell "single-table-inheritance-sti" [ref=e232]
+            - cell "di 04 aug 2015 20:29:05 UTC" [ref=e233]
+            - cell "Just some basic principles that every MVC using programmers should master. STI, Single table inheritance. I have been working on a large Laravel 4...." [ref=e234]:
+              - paragraph [ref=e235]: Just some basic principles that every MVC using programmers should master. STI, Single table inheritance. I have been working on a large Laravel 4....
+            - cell [ref=e236]:
+              - link [ref=e237] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/10/266f3f89.png
+                - img [ref=e238]
+            - cell "BekijkWijzigVerwijder" [ref=e239]:
+              - generic [ref=e240]:
+                - link "Bekijk" [ref=e241] [cursor=pointer]:
+                  - /url: /admin/blogs/10
+                - link "Wijzig" [ref=e242] [cursor=pointer]:
+                  - /url: /admin/blogs/10/edit
+                - link "Verwijder" [ref=e243] [cursor=pointer]:
+                  - /url: /admin/blogs/10
+          - row "9 Change your carriername in the iOS simulator change-your-carriername-in-the-ios-simulator zo 03 mei 2015 08:17:18 UTC Just replace RENE with your preference! And yeah... its set to the english language, so if you need it in mongolian, change the en(glish) :) find... BekijkWijzigVerwijder" [ref=e244]:
+            - cell "9" [ref=e245]:
+              - link "9" [ref=e246] [cursor=pointer]:
+                - /url: /admin/blogs/9
+            - cell "Change your carriername in the iOS simulator" [ref=e247]
+            - cell "change-your-carriername-in-the-ios-simulator" [ref=e248]
+            - cell "zo 03 mei 2015 08:17:18 UTC" [ref=e249]
+            - cell "Just replace RENE with your preference! And yeah... its set to the english language, so if you need it in mongolian, change the en(glish) :) find..." [ref=e250]:
+              - paragraph [ref=e251]: Just replace RENE with your preference!
+              - paragraph [ref=e252]: And yeah... its set to the english language, so if you need it in mongolian, change the en(glish) :)
+              - paragraph [ref=e253]: find...
+            - cell [ref=e254]:
+              - link [ref=e255] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/9/5d51cb9d.jpg
+                - img [ref=e256]
+            - cell "BekijkWijzigVerwijder" [ref=e257]:
+              - generic [ref=e258]:
+                - link "Bekijk" [ref=e259] [cursor=pointer]:
+                  - /url: /admin/blogs/9
+                - link "Wijzig" [ref=e260] [cursor=pointer]:
+                  - /url: /admin/blogs/9/edit
+                - link "Verwijder" [ref=e261] [cursor=pointer]:
+                  - /url: /admin/blogs/9
+          - row "8 HipHop VM hiphop-vm vr 02 jan 2015 11:33:32 UTC So i was fed-up with the the performance of my shared hosting provider and decided to fix a VPS at Digitalocean. As you could have read I've starte... BekijkWijzigVerwijder" [ref=e262]:
+            - cell "8" [ref=e263]:
+              - link "8" [ref=e264] [cursor=pointer]:
+                - /url: /admin/blogs/8
+            - cell "HipHop VM" [ref=e265]
+            - cell "hiphop-vm" [ref=e266]
+            - cell "vr 02 jan 2015 11:33:32 UTC" [ref=e267]
+            - cell "So i was fed-up with the the performance of my shared hosting provider and decided to fix a VPS at Digitalocean. As you could have read I've starte..." [ref=e268]:
+              - paragraph [ref=e269]: So i was fed-up with the the performance of my shared hosting provider and decided to fix a VPS at Digitalocean. As you could have read I've starte...
+            - cell [ref=e270]:
+              - link [ref=e271] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/8/55c27590.png
+                - img [ref=e272]
+            - cell "BekijkWijzigVerwijder" [ref=e273]:
+              - generic [ref=e274]:
+                - link "Bekijk" [ref=e275] [cursor=pointer]:
+                  - /url: /admin/blogs/8
+                - link "Wijzig" [ref=e276] [cursor=pointer]:
+                  - /url: /admin/blogs/8/edit
+                - link "Verwijder" [ref=e277] [cursor=pointer]:
+                  - /url: /admin/blogs/8
+          - row "7 Ansible ansible vr 02 jan 2015 10:56:06 UTC So i wanted to play with Ansible for a while now. Ansible is a pretty neat way to configure servers in a idempotent way. You create a DSL called a ... BekijkWijzigVerwijder" [ref=e278]:
+            - cell "7" [ref=e279]:
+              - link "7" [ref=e280] [cursor=pointer]:
+                - /url: /admin/blogs/7
+            - cell "Ansible" [ref=e281]
+            - cell "ansible" [ref=e282]
+            - cell "vr 02 jan 2015 10:56:06 UTC" [ref=e283]
+            - cell "So i wanted to play with Ansible for a while now. Ansible is a pretty neat way to configure servers in a idempotent way. You create a DSL called a ..." [ref=e284]:
+              - paragraph [ref=e285]: So i wanted to play with Ansible for a while now. Ansible is a pretty neat way to configure servers in a idempotent way. You create a DSL called a ...
+            - cell [ref=e286]:
+              - link [ref=e287] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/7/368c1d70.png
+                - img [ref=e288]
+            - cell "BekijkWijzigVerwijder" [ref=e289]:
+              - generic [ref=e290]:
+                - link "Bekijk" [ref=e291] [cursor=pointer]:
+                  - /url: /admin/blogs/7
+                - link "Wijzig" [ref=e292] [cursor=pointer]:
+                  - /url: /admin/blogs/7/edit
+                - link "Verwijder" [ref=e293] [cursor=pointer]:
+                  - /url: /admin/blogs/7
+          - row "6 handbrake video conversion handbrake-video-conversion ma 01 jun 2015 17:01:42 UTC https://handbrake.fr/ BekijkWijzigVerwijder" [ref=e294]:
+            - cell "6" [ref=e295]:
+              - link "6" [ref=e296] [cursor=pointer]:
+                - /url: /admin/blogs/6
+            - cell "handbrake video conversion" [ref=e297]
+            - cell "handbrake-video-conversion" [ref=e298]
+            - cell "ma 01 jun 2015 17:01:42 UTC" [ref=e299]
+            - cell "https://handbrake.fr/" [ref=e300]:
+              - paragraph [ref=e301]:
+                - link "https://handbrake.fr/" [ref=e302] [cursor=pointer]:
+                  - /url: https://handbrake.fr/
+            - cell [ref=e303]:
+              - link [ref=e304] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/6/bfd7e46b.png
+                - img [ref=e305]
+            - cell "BekijkWijzigVerwijder" [ref=e306]:
+              - generic [ref=e307]:
+                - link "Bekijk" [ref=e308] [cursor=pointer]:
+                  - /url: /admin/blogs/6
+                - link "Wijzig" [ref=e309] [cursor=pointer]:
+                  - /url: /admin/blogs/6/edit
+                - link "Verwijder" [ref=e310] [cursor=pointer]:
+                  - /url: /admin/blogs/6
+          - row "5 Find out how middleman can help me find-out-how-middleman-can-help-me Middle man is a rapid prototype lib ( for as far as i know ) that seems to be super for rails projects. Need to tinker with this one to! http://mi... BekijkWijzigVerwijder" [ref=e311]:
+            - cell "5" [ref=e312]:
+              - link "5" [ref=e313] [cursor=pointer]:
+                - /url: /admin/blogs/5
+            - cell "Find out how middleman can help me" [ref=e314]
+            - cell "find-out-how-middleman-can-help-me" [ref=e315]
+            - cell [ref=e316]
+            - cell "Middle man is a rapid prototype lib ( for as far as i know ) that seems to be super for rails projects. Need to tinker with this one to! http://mi..." [ref=e317]:
+              - paragraph [ref=e318]: Middle man is a rapid prototype lib ( for as far as i know ) that seems to be super for rails projects. Need to tinker with this one to!
+              - paragraph [ref=e319]:
+                - link "http://mi" [ref=e320] [cursor=pointer]:
+                  - /url: http://mi
+                - text: ...
+            - cell [ref=e321]:
+              - link [ref=e322] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/5/64e3d36c.png
+                - img [ref=e323]
+            - cell "BekijkWijzigVerwijder" [ref=e324]:
+              - generic [ref=e325]:
+                - link "Bekijk" [ref=e326] [cursor=pointer]:
+                  - /url: /admin/blogs/5
+                - link "Wijzig" [ref=e327] [cursor=pointer]:
+                  - /url: /admin/blogs/5/edit
+                - link "Verwijder" [ref=e328] [cursor=pointer]:
+                  - /url: /admin/blogs/5
+          - 'row "4 Greensock greensock Still need to play with: https://greensock.com/ BekijkWijzigVerwijder" [ref=e329]':
+            - cell "4" [ref=e330]:
+              - link "4" [ref=e331] [cursor=pointer]:
+                - /url: /admin/blogs/4
+            - cell "Greensock" [ref=e332]
+            - cell "greensock" [ref=e333]
+            - cell [ref=e334]
+            - 'cell "Still need to play with: https://greensock.com/" [ref=e335]':
+              - paragraph [ref=e336]:
+                - text: "Still need to play with:"
+                - link "https://greensock.com/" [ref=e337] [cursor=pointer]:
+                  - /url: https://greensock.com/
+            - cell [ref=e338]:
+              - link [ref=e339] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/4/56ce0505.png
+                - img [ref=e340]
+            - cell "BekijkWijzigVerwijder" [ref=e341]:
+              - generic [ref=e342]:
+                - link "Bekijk" [ref=e343] [cursor=pointer]:
+                  - /url: /admin/blogs/4
+                - link "Wijzig" [ref=e344] [cursor=pointer]:
+                  - /url: /admin/blogs/4/edit
+                - link "Verwijder" [ref=e345] [cursor=pointer]:
+                  - /url: /admin/blogs/4
+          - row "3 Toughtbot toughtbot A web consultancy who know how to get things done, they have bundled all there knowledge into a playbook, a manual for new employees. Really insigh... BekijkWijzigVerwijder" [ref=e346]:
+            - cell "3" [ref=e347]:
+              - link "3" [ref=e348] [cursor=pointer]:
+                - /url: /admin/blogs/3
+            - cell "Toughtbot" [ref=e349]
+            - cell "toughtbot" [ref=e350]
+            - cell [ref=e351]
+            - cell "A web consultancy who know how to get things done, they have bundled all there knowledge into a playbook, a manual for new employees. Really insigh..." [ref=e352]:
+              - paragraph [ref=e353]: A web consultancy who know how to get things done, they have bundled all there knowledge into a playbook, a manual for new employees. Really insigh...
+            - cell [ref=e354]:
+              - link [ref=e355] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/3/ea1ab94e.png
+                - img [ref=e356]
+            - cell "BekijkWijzigVerwijder" [ref=e357]:
+              - generic [ref=e358]:
+                - link "Bekijk" [ref=e359] [cursor=pointer]:
+                  - /url: /admin/blogs/3
+                - link "Wijzig" [ref=e360] [cursor=pointer]:
+                  - /url: /admin/blogs/3/edit
+                - link "Verwijder" [ref=e361] [cursor=pointer]:
+                  - /url: /admin/blogs/3
+          - row "2 Rails is slow? rails-is-slow wo 12 nov 2014 21:40:52 UTC The myth that Rails is slow, this is maybe one of the biggest misassumptions that have steered me away from rails for over 4 years. Really hating t... BekijkWijzigVerwijder" [ref=e362]:
+            - cell "2" [ref=e363]:
+              - link "2" [ref=e364] [cursor=pointer]:
+                - /url: /admin/blogs/2
+            - cell "Rails is slow?" [ref=e365]
+            - cell "rails-is-slow" [ref=e366]
+            - cell "wo 12 nov 2014 21:40:52 UTC" [ref=e367]
+            - cell "The myth that Rails is slow, this is maybe one of the biggest misassumptions that have steered me away from rails for over 4 years. Really hating t..." [ref=e368]:
+              - paragraph [ref=e369]: The myth that Rails is slow, this is maybe one of the biggest misassumptions that have steered me away from rails for over 4 years. Really hating t...
+            - cell [ref=e370]:
+              - link [ref=e371] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/2/042d104d.png
+                - img [ref=e372]
+            - cell "BekijkWijzigVerwijder" [ref=e373]:
+              - generic [ref=e374]:
+                - link "Bekijk" [ref=e375] [cursor=pointer]:
+                  - /url: /admin/blogs/2
+                - link "Wijzig" [ref=e376] [cursor=pointer]:
+                  - /url: /admin/blogs/2/edit
+                - link "Verwijder" [ref=e377] [cursor=pointer]:
+                  - /url: /admin/blogs/2
+          - row "1 Gem - Foreigner ( foreign keys to migrations ) gem-foreigner-foreign-keys-to-migrations di 11 nov 2014 22:27:12 UTC Starting with Rails, ive noticed that the migrations dont create foreign keys in a InnoDB setting voor MySql. So i did some research. For some rea... BekijkWijzigVerwijder" [ref=e378]:
+            - cell "1" [ref=e379]:
+              - link "1" [ref=e380] [cursor=pointer]:
+                - /url: /admin/blogs/1
+            - cell "Gem - Foreigner ( foreign keys to migrations )" [ref=e381]
+            - cell "gem-foreigner-foreign-keys-to-migrations" [ref=e382]
+            - cell "di 11 nov 2014 22:27:12 UTC" [ref=e383]
+            - cell "Starting with Rails, ive noticed that the migrations dont create foreign keys in a InnoDB setting voor MySql. So i did some research. For some rea..." [ref=e384]:
+              - paragraph [ref=e385]: Starting with Rails, ive noticed that the migrations dont create foreign keys in a InnoDB setting voor MySql. So i did some research.
+              - paragraph [ref=e386]: For some rea...
+            - cell [ref=e387]:
+              - link [ref=e388] [cursor=pointer]:
+                - /url: https://s3-eu-west-1.amazonaws.com/weteling.com/uploads/blog/image/1/00efd289.jpg
+                - img [ref=e389]
+            - cell "BekijkWijzigVerwijder" [ref=e390]:
+              - generic [ref=e391]:
+                - link "Bekijk" [ref=e392] [cursor=pointer]:
+                  - /url: /admin/blogs/1
+                - link "Wijzig" [ref=e393] [cursor=pointer]:
+                  - /url: /admin/blogs/1/edit
+                - link "Verwijder" [ref=e394] [cursor=pointer]:
+                  - /url: /admin/blogs/1
+      - generic [ref=e395]:
+        - generic [ref=e396]: Geeft 20 Blogs weer
+        - generic [ref=e397]:
+          - text: Download
+          - link "CSV" [ref=e398] [cursor=pointer]:
+            - /url: /admin/blogs.csv
+          - link "XML" [ref=e399] [cursor=pointer]:
+            - /url: /admin/blogs.xml
+          - link "JSON" [ref=e400] [cursor=pointer]:
+            - /url: /admin/blogs.json
+    - generic [ref=e402]:
+      - heading "Filters" [level=3] [ref=e403]
+      - generic [ref=e405]:
+        - generic [ref=e406]:
+          - generic [ref=e407]: Tags
+          - combobox [ref=e408]
+          - combobox [ref=e411] [cursor=pointer]:
+            - textbox
+        - generic [ref=e412]:
+          - generic [ref=e413]: Naam
+          - combobox [ref=e414]
+          - combobox "Bevat" [ref=e417] [cursor=pointer]:
+            - textbox "Bevat" [ref=e418]
+          - textbox "Naam" [ref=e419]
+        - generic [ref=e420]:
+          - generic [ref=e421]: Slug
+          - combobox [ref=e422]
+          - combobox "Bevat" [ref=e425] [cursor=pointer]:
+            - textbox "Bevat" [ref=e426]
+          - textbox "Slug" [ref=e427]
+        - generic [ref=e428]:
+          - generic [ref=e429]: Date
+          - textbox "Van" [ref=e430]
+          - textbox "Tot" [ref=e431]
+        - generic [ref=e432]:
+          - generic [ref=e433]: Content
+          - combobox [ref=e434]
+          - combobox "Bevat" [ref=e437] [cursor=pointer]:
+            - textbox "Bevat" [ref=e438]
+          - textbox "Content" [ref=e439]
+        - generic [ref=e440]:
+          - generic [ref=e441]: Image
+          - combobox [ref=e442]
+          - combobox "Bevat" [ref=e445] [cursor=pointer]:
+            - textbox "Bevat" [ref=e446]
+          - textbox "Image" [ref=e447]
+        - generic [ref=e448]:
+          - generic [ref=e449]: Published
+          - combobox [ref=e450]
+          - combobox [ref=e453] [cursor=pointer]:
+            - textbox
+        - generic [ref=e454]:
+          - generic [ref=e455]: Created at
+          - textbox "Van" [ref=e456]
+          - textbox "Tot" [ref=e457]
+        - generic [ref=e458]:
+          - generic [ref=e459]: Updated at
+          - textbox "Van" [ref=e460]
+          - textbox "Tot" [ref=e461]
+        - generic [ref=e462]:
+          - button "Filter" [ref=e463] [cursor=pointer]
+          - link "Maak Filters Ongedaan" [ref=e464] [cursor=pointer]:
+            - /url: "#"
+  - paragraph [ref=e466]:
+    - text: Mogelijk gemaakt door
+    - link "Active Admin" [ref=e467] [cursor=pointer]:
+      - /url: https://activeadmin.info
+    - text: 3.5.1

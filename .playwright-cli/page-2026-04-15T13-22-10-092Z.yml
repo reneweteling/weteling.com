@@ -1,0 +1,123 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - heading "René Weteling" [level=1] [ref=e4]:
+      - img "René Weteling" [ref=e5]
+    - list [ref=e6]:
+      - listitem [ref=e7]:
+        - link "Dashboard" [ref=e8] [cursor=pointer]:
+          - /url: /admin/dashboard
+      - listitem [ref=e9]:
+        - link "Hours" [ref=e10] [cursor=pointer]:
+          - /url: /admin/hours
+      - listitem [ref=e11]:
+        - link "Clients" [ref=e12] [cursor=pointer]:
+          - /url: /admin/clients
+      - listitem [ref=e13]:
+        - link "Pages" [ref=e14] [cursor=pointer]:
+          - /url: /admin/pages
+      - listitem [ref=e15]:
+        - link "Projects" [ref=e16] [cursor=pointer]:
+          - /url: /admin/projects
+      - listitem [ref=e17]:
+        - link "Blogs" [ref=e18] [cursor=pointer]:
+          - /url: /admin/blogs
+      - listitem [ref=e19]:
+        - link "Rates" [ref=e20] [cursor=pointer]:
+          - /url: /admin/rates
+      - listitem [ref=e21]:
+        - link "Users" [ref=e22] [cursor=pointer]:
+          - /url: /admin/users
+      - listitem [ref=e23]:
+        - link "Subscribers" [ref=e24] [cursor=pointer]:
+          - /url: /admin/subscribers
+    - list [ref=e25]:
+      - listitem [ref=e26]:
+        - link "Rene Weteling" [ref=e27] [cursor=pointer]:
+          - /url: /admin/users/1
+      - listitem [ref=e28]:
+        - link "Logout" [ref=e29] [cursor=pointer]:
+          - /url: /admin/logout
+  - generic [ref=e31]:
+    - generic [ref=e32]:
+      - link "Admin" [ref=e33] [cursor=pointer]:
+        - /url: /admin
+      - text: /
+      - link "Clients" [ref=e34] [cursor=pointer]:
+        - /url: /admin/clients
+      - text: /
+      - link "Horyon innovaties B.V." [ref=e35] [cursor=pointer]:
+        - /url: /admin/clients/1
+      - text: /
+    - heading "Edit Client" [level=2] [ref=e36]
+  - generic [ref=e40]:
+    - group [ref=e41]:
+      - list [ref=e42]:
+        - listitem [ref=e43]:
+          - generic [ref=e44]: User*
+          - combobox [ref=e45]
+          - combobox "×Rene Weteling" [ref=e48] [cursor=pointer]:
+            - textbox "Rene Weteling" [ref=e49]:
+              - generic "Remove all items" [ref=e50]: ×
+        - listitem [ref=e51]:
+          - generic [ref=e52]: Default rate*
+          - combobox [ref=e53]
+          - combobox "×Oud tarief - 75.0" [ref=e56] [cursor=pointer]:
+            - textbox "Oud tarief - 75.0" [ref=e57]:
+              - generic "Remove all items" [ref=e58]: ×
+        - listitem [ref=e59]:
+          - generic [ref=e60]: Name*
+          - textbox "Name*" [ref=e61]: Horyon innovaties B.V.
+        - listitem [ref=e62]:
+          - generic [ref=e63]: First name
+          - textbox "First name" [ref=e64]: Jan
+        - listitem [ref=e65]:
+          - generic [ref=e66]: Last name
+          - textbox "Last name" [ref=e67]: Horyon
+        - listitem [ref=e68]:
+          - generic [ref=e69]: Department
+          - textbox "Department" [ref=e70]
+        - listitem [ref=e71]:
+          - generic [ref=e72]: Address
+          - textbox "Address" [ref=e73]: Steenoven 44
+        - listitem [ref=e74]:
+          - generic [ref=e75]: Postalcode
+          - textbox "Postalcode" [ref=e76]: 5626 DK
+        - listitem [ref=e77]:
+          - generic [ref=e78]: City
+          - textbox "City" [ref=e79]: Eindhoven
+        - listitem [ref=e80]:
+          - generic [ref=e81]: Country
+          - combobox [ref=e82]
+          - combobox "×Netherlands" [ref=e85] [cursor=pointer]:
+            - textbox "Netherlands" [ref=e86]:
+              - generic "Remove all items" [ref=e87]: ×
+        - listitem [ref=e88]:
+          - generic [ref=e89]: Email
+          - textbox "Email" [ref=e90]: jan@horyon-innovaties.nl
+        - listitem [ref=e91]:
+          - generic [ref=e92]: Iban
+          - textbox "Iban" [ref=e93]
+        - listitem [ref=e94]:
+          - generic [ref=e95]: Bic
+          - textbox "Bic" [ref=e96]
+        - listitem [ref=e97]:
+          - generic [ref=e98]: Iban name
+          - textbox "Iban name" [ref=e99]
+        - listitem [ref=e100]:
+          - generic [ref=e101]: Coc no
+          - textbox "Coc no" [ref=e102]
+        - listitem [ref=e103]:
+          - generic [ref=e104]: Tax no
+          - textbox "Tax no" [ref=e105]
+    - group [ref=e106]:
+      - list:
+        - listitem [ref=e107]:
+          - button "Update Client" [ref=e108] [cursor=pointer]
+        - listitem [ref=e109]:
+          - link "Cancel" [ref=e110] [cursor=pointer]:
+            - /url: /admin/clients
+  - paragraph [ref=e112]:
+    - text: Powered by
+    - link "Active Admin" [ref=e113] [cursor=pointer]:
+      - /url: https://activeadmin.info
+    - text: 3.5.1

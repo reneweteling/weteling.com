@@ -1,0 +1,320 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - heading "René Weteling" [level=1] [ref=e4]:
+      - img "René Weteling" [ref=e5]
+    - list [ref=e6]:
+      - listitem [ref=e7]:
+        - link "Dashboard" [ref=e8] [cursor=pointer]:
+          - /url: /admin/dashboard
+      - listitem [ref=e9]:
+        - link "Hours" [ref=e10] [cursor=pointer]:
+          - /url: /admin/hours
+      - listitem [ref=e11]:
+        - link "Clients" [ref=e12] [cursor=pointer]:
+          - /url: /admin/clients
+      - listitem [ref=e13]:
+        - link "Pages" [ref=e14] [cursor=pointer]:
+          - /url: /admin/pages
+      - listitem [ref=e15]:
+        - link "Projects" [ref=e16] [cursor=pointer]:
+          - /url: /admin/projects
+      - listitem [ref=e17]:
+        - link "Blogs" [ref=e18] [cursor=pointer]:
+          - /url: /admin/blogs
+      - listitem [ref=e19]:
+        - link "Rates" [ref=e20] [cursor=pointer]:
+          - /url: /admin/rates
+      - listitem [ref=e21]:
+        - link "Users" [ref=e22] [cursor=pointer]:
+          - /url: /admin/users
+      - listitem [ref=e23]:
+        - link "Mailinglijsten" [ref=e24] [cursor=pointer]:
+          - /url: /admin/subscribers
+    - list [ref=e25]:
+      - listitem [ref=e26]:
+        - link "Rene Weteling" [ref=e27] [cursor=pointer]:
+          - /url: /admin/users/1
+      - listitem [ref=e28]:
+        - link "Uitloggen" [ref=e29] [cursor=pointer]:
+          - /url: /admin/logout
+  - heading "Dashboard" [level=2] [ref=e32]
+  - generic [ref=e34]: Je bent succesvol ingelogd.
+  - generic [ref=e35]:
+    - generic [ref=e37]:
+      - generic [ref=e38]:
+        - heading "Week view" [level=3] [ref=e39]
+        - generic [ref=e42]:
+          - generic [ref=e43]:
+            - heading "13 – 19 apr 2026" [level=2] [ref=e45]
+            - generic [ref=e46]:
+              - button "Vandaag" [disabled] [ref=e47]
+              - generic [ref=e48]:
+                - button "" [ref=e49] [cursor=pointer]:
+                  - generic [ref=e50]: 
+                - button "" [ref=e51] [cursor=pointer]:
+                  - generic [ref=e52]: 
+          - generic "13 – 19 apr 2026" [ref=e53]:
+            - grid [ref=e55]:
+              - rowgroup [ref=e56]:
+                - row "13 april 2026 14 april 2026 15 april 2026 16 april 2026 17 april 2026 18 april 2026 19 april 2026" [ref=e61]:
+                  - columnheader "13 april 2026" [ref=e62]:
+                    - generic "13 april 2026" [ref=e64]: ma 13-4
+                  - columnheader "14 april 2026" [ref=e65]:
+                    - generic "14 april 2026" [ref=e67]: di 14-4
+                  - columnheader "15 april 2026" [ref=e68]:
+                    - generic "15 april 2026" [ref=e70]: wo 15-4
+                  - columnheader "16 april 2026" [ref=e71]:
+                    - generic "16 april 2026" [ref=e73]: do 16-4
+                  - columnheader "17 april 2026" [ref=e74]:
+                    - generic "17 april 2026" [ref=e76]: vr 17-4
+                  - columnheader "18 april 2026" [ref=e77]:
+                    - generic "18 april 2026" [ref=e79]: za 18-4
+                  - columnheader "19 april 2026" [ref=e80]:
+                    - generic "19 april 2026" [ref=e82]: zo 19-4
+              - rowgroup [ref=e83]:
+                - generic [ref=e86]:
+                  - table [ref=e88]:
+                    - rowgroup [ref=e91]:
+                      - row [ref=e92]:
+                        - cell [ref=e93]:
+                          - generic [ref=e95]: "09"
+                        - cell [ref=e96]
+                      - row [ref=e97]:
+                        - cell [ref=e98]:
+                          - generic [ref=e100]: "10"
+                        - cell [ref=e101]
+                      - row [ref=e102]:
+                        - cell [ref=e103]:
+                          - generic [ref=e105]: "11"
+                        - cell [ref=e106]
+                      - row [ref=e107]:
+                        - cell [ref=e108]:
+                          - generic [ref=e110]: "12"
+                        - cell [ref=e111]
+                      - row [ref=e112]:
+                        - cell [ref=e113]:
+                          - generic [ref=e115]: "13"
+                        - cell [ref=e116]
+                      - row [ref=e117]:
+                        - cell [ref=e118]:
+                          - generic [ref=e120]: "14"
+                        - cell [ref=e121]
+                      - row [ref=e122]:
+                        - cell [ref=e123]:
+                          - generic [ref=e125]: "15"
+                        - cell [ref=e126]
+                      - row [ref=e127]:
+                        - cell [ref=e128]:
+                          - generic [ref=e130]: "16"
+                        - cell [ref=e131]
+                      - row [ref=e132]:
+                        - cell [ref=e133]:
+                          - generic [ref=e135]: "17"
+                        - cell [ref=e136]
+                      - row [ref=e137]:
+                        - cell [ref=e138]:
+                          - generic [ref=e140]: "18"
+                        - cell [ref=e141]
+                      - row [ref=e142]:
+                        - cell [ref=e143]:
+                          - generic [ref=e145]: "19"
+                        - cell [ref=e146]
+                  - row [ref=e150]:
+                    - gridcell [ref=e153]
+                    - gridcell [ref=e156]
+                    - gridcell [ref=e159]
+                    - gridcell [ref=e162]
+                    - gridcell [ref=e165]
+                    - gridcell [ref=e168]
+                    - gridcell [ref=e171]
+      - heading "April 2026 € 3.260,00" [level=2] [ref=e174]:
+        - text: April 2026
+        - generic [ref=e175]: € 3.260,00
+      - table [ref=e176]:
+        - rowgroup [ref=e177]:
+          - row "Client Project Total / S&O hours Rate Total" [ref=e178]:
+            - columnheader "Client" [ref=e179]
+            - columnheader "Project" [ref=e180]
+            - columnheader "Total / S&O hours" [ref=e181]
+            - columnheader "Rate" [ref=e182]
+            - columnheader "Total" [ref=e183]
+            - columnheader [ref=e184]
+        - rowgroup [ref=e185]:
+          - row "Bravoure B.V. Lektor v1 (oude verzie) 8.0 / 0.0 Normaal tarief - 100.0 € 800,00 -" [ref=e186]:
+            - cell "Bravoure B.V." [ref=e187]
+            - cell "Lektor v1 (oude verzie)" [ref=e188]
+            - cell "8.0 / 0.0" [ref=e189]
+            - cell "Normaal tarief - 100.0" [ref=e190]
+            - cell "€ 800,00" [ref=e191]
+            - cell "-" [ref=e192]:
+              - link [ref=e193] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-04-30&project_id=40&start_date=2026-04-01&type=pdf
+                - generic [ref=e194]: 
+              - text: "-"
+              - link [ref=e195] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-04-30&project_id=40&start_date=2026-04-01&type=html
+                - generic [ref=e196]: 
+          - row "Bravoure B.V. Overige werkzaamheden 3.0 / 0.0 Normaal tarief - 100.0 € 300,00 -" [ref=e197]:
+            - cell "Bravoure B.V." [ref=e198]
+            - cell "Overige werkzaamheden" [ref=e199]
+            - cell "3.0 / 0.0" [ref=e200]
+            - cell "Normaal tarief - 100.0" [ref=e201]
+            - cell "€ 300,00" [ref=e202]
+            - cell "-" [ref=e203]:
+              - link [ref=e204] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-04-30&project_id=43&start_date=2026-04-01&type=pdf
+                - generic [ref=e205]: 
+              - text: "-"
+              - link [ref=e206] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-04-30&project_id=43&start_date=2026-04-01&type=html
+                - generic [ref=e207]: 
+          - row "Webapptool Solutions B.V. https://beschikbaarheidswijzer.nl/ 16.0 / 0.0 135 - webpp - 135.0 € 2.160,00 -" [ref=e208]:
+            - cell "Webapptool Solutions B.V." [ref=e209]
+            - cell "https://beschikbaarheidswijzer.nl/" [ref=e210]
+            - cell "16.0 / 0.0" [ref=e211]
+            - cell "135 - webpp - 135.0" [ref=e212]
+            - cell "€ 2.160,00" [ref=e213]
+            - cell "-" [ref=e214]:
+              - link [ref=e215] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-04-30&project_id=38&start_date=2026-04-01&type=pdf
+                - generic [ref=e216]: 
+              - text: "-"
+              - link [ref=e217] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-04-30&project_id=38&start_date=2026-04-01&type=html
+                - generic [ref=e218]: 
+      - heading "March 2026 € 21.547,50" [level=2] [ref=e219]:
+        - text: March 2026
+        - generic [ref=e220]: € 21.547,50
+      - table [ref=e221]:
+        - rowgroup [ref=e222]:
+          - row "Client Project Total / S&O hours Rate Total" [ref=e223]:
+            - columnheader "Client" [ref=e224]
+            - columnheader "Project" [ref=e225]
+            - columnheader "Total / S&O hours" [ref=e226]
+            - columnheader "Rate" [ref=e227]
+            - columnheader "Total" [ref=e228]
+            - columnheader [ref=e229]
+        - rowgroup [ref=e230]:
+          - row "Bravoure B.V. Lektor v1 (oude verzie) 1.5 / 0.0 Normaal tarief - 100.0 € 150,00 -" [ref=e231]:
+            - cell "Bravoure B.V." [ref=e232]
+            - cell "Lektor v1 (oude verzie)" [ref=e233]
+            - cell "1.5 / 0.0" [ref=e234]
+            - cell "Normaal tarief - 100.0" [ref=e235]
+            - cell "€ 150,00" [ref=e236]
+            - cell "-" [ref=e237]:
+              - link [ref=e238] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-03-31&project_id=40&start_date=2026-03-01&type=pdf
+                - generic [ref=e239]: 
+              - text: "-"
+              - link [ref=e240] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-03-31&project_id=40&start_date=2026-03-01&type=html
+                - generic [ref=e241]: 
+          - row "Bravoure B.V. Lektor v2 (Node) 148.5 / 0.0 Normaal tarief - 100.0 € 14.850,00 -" [ref=e242]:
+            - cell "Bravoure B.V." [ref=e243]
+            - cell "Lektor v2 (Node)" [ref=e244]
+            - cell "148.5 / 0.0" [ref=e245]
+            - cell "Normaal tarief - 100.0" [ref=e246]
+            - cell "€ 14.850,00" [ref=e247]
+            - cell "-" [ref=e248]:
+              - link [ref=e249] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-03-31&project_id=42&start_date=2026-03-01&type=pdf
+                - generic [ref=e250]: 
+              - text: "-"
+              - link [ref=e251] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-03-31&project_id=42&start_date=2026-03-01&type=html
+                - generic [ref=e252]: 
+          - row "Webapptool Solutions B.V. https://beschikbaarheidswijzer.nl/ 48.5 / 0.0 135 - webpp - 135.0 € 6.547,50 -" [ref=e253]:
+            - cell "Webapptool Solutions B.V." [ref=e254]
+            - cell "https://beschikbaarheidswijzer.nl/" [ref=e255]
+            - cell "48.5 / 0.0" [ref=e256]
+            - cell "135 - webpp - 135.0" [ref=e257]
+            - cell "€ 6.547,50" [ref=e258]
+            - cell "-" [ref=e259]:
+              - link [ref=e260] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-03-31&project_id=38&start_date=2026-03-01&type=pdf
+                - generic [ref=e261]: 
+              - text: "-"
+              - link [ref=e262] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-03-31&project_id=38&start_date=2026-03-01&type=html
+                - generic [ref=e263]: 
+      - heading "February 2026 € 16.552,50" [level=2] [ref=e264]:
+        - text: February 2026
+        - generic [ref=e265]: € 16.552,50
+      - table [ref=e266]:
+        - rowgroup [ref=e267]:
+          - row "Client Project Total / S&O hours Rate Total" [ref=e268]:
+            - columnheader "Client" [ref=e269]
+            - columnheader "Project" [ref=e270]
+            - columnheader "Total / S&O hours" [ref=e271]
+            - columnheader "Rate" [ref=e272]
+            - columnheader "Total" [ref=e273]
+            - columnheader [ref=e274]
+        - rowgroup [ref=e275]:
+          - row "Bravoure B.V. Lektor v1 (oude verzie) 48.0 / 0.0 Normaal tarief - 100.0 € 4.800,00 -" [ref=e276]:
+            - cell "Bravoure B.V." [ref=e277]
+            - cell "Lektor v1 (oude verzie)" [ref=e278]
+            - cell "48.0 / 0.0" [ref=e279]
+            - cell "Normaal tarief - 100.0" [ref=e280]
+            - cell "€ 4.800,00" [ref=e281]
+            - cell "-" [ref=e282]:
+              - link [ref=e283] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-02-28&project_id=40&start_date=2026-02-01&type=pdf
+                - generic [ref=e284]: 
+              - text: "-"
+              - link [ref=e285] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-02-28&project_id=40&start_date=2026-02-01&type=html
+                - generic [ref=e286]: 
+          - row "Bravoure B.V. Lektor v2 (Node) 102.0 / 0.0 Normaal tarief - 100.0 € 10.200,00 -" [ref=e287]:
+            - cell "Bravoure B.V." [ref=e288]
+            - cell "Lektor v2 (Node)" [ref=e289]
+            - cell "102.0 / 0.0" [ref=e290]
+            - cell "Normaal tarief - 100.0" [ref=e291]
+            - cell "€ 10.200,00" [ref=e292]
+            - cell "-" [ref=e293]:
+              - link [ref=e294] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-02-28&project_id=42&start_date=2026-02-01&type=pdf
+                - generic [ref=e295]: 
+              - text: "-"
+              - link [ref=e296] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-02-28&project_id=42&start_date=2026-02-01&type=html
+                - generic [ref=e297]: 
+          - row "Webapptool Solutions B.V. https://beschikbaarheidswijzer.nl/ 11.5 / 0.0 135 - webpp - 135.0 € 1.552,50 -" [ref=e298]:
+            - cell "Webapptool Solutions B.V." [ref=e299]
+            - cell "https://beschikbaarheidswijzer.nl/" [ref=e300]
+            - cell "11.5 / 0.0" [ref=e301]
+            - cell "135 - webpp - 135.0" [ref=e302]
+            - cell "€ 1.552,50" [ref=e303]
+            - cell "-" [ref=e304]:
+              - link [ref=e305] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-02-28&project_id=38&start_date=2026-02-01&type=pdf
+                - generic [ref=e306]: 
+              - text: "-"
+              - link [ref=e307] [cursor=pointer]:
+                - /url: /admin/dashboard/invoice?end_date=2026-02-28&project_id=38&start_date=2026-02-01&type=html
+                - generic [ref=e308]: 
+    - generic [ref=e310]:
+      - heading "Date Filter" [level=3] [ref=e311]
+      - generic [ref=e313]:
+        - generic [ref=e314]:
+          - generic [ref=e315]: Client
+          - combobox [ref=e316]
+          - combobox [ref=e319] [cursor=pointer]:
+            - textbox
+        - generic [ref=e320]:
+          - generic [ref=e321]: Project
+          - combobox [ref=e322]
+          - combobox [ref=e325] [cursor=pointer]:
+            - textbox
+        - generic [ref=e326]:
+          - generic [ref=e327]: Date
+          - textbox "From" [ref=e328]: 2026-02-01
+          - textbox "To" [ref=e329]: 2026-04-30
+        - generic [ref=e330]:
+          - button "Filter" [ref=e331] [cursor=pointer]
+          - link "Maak Filters Ongedaan" [ref=e332] [cursor=pointer]:
+            - /url: /admin/dashboard
+  - paragraph [ref=e334]:
+    - text: Mogelijk gemaakt door
+    - link "Active Admin" [ref=e335] [cursor=pointer]:
+      - /url: https://activeadmin.info
+    - text: 3.5.1

@@ -1,0 +1,25 @@
+- generic [ref=e3]:
+  - generic [ref=e5]: Je dient in te loggen of je in te schrijven.
+  - generic [ref=e7]:
+    - heading "René Weteling Login" [level=2] [ref=e8]
+    - generic [ref=e9]:
+      - group [ref=e10]:
+        - list [ref=e11]:
+          - listitem [ref=e12]:
+            - generic [ref=e13]: Email*
+            - textbox "Email*" [active] [ref=e14]
+          - listitem [ref=e15]:
+            - generic [ref=e16]: Password*
+            - textbox "Password*" [ref=e17]
+          - listitem [ref=e18]:
+            - generic [ref=e19]:
+              - checkbox "Remember me" [ref=e20]
+              - text: Remember me
+      - group [ref=e21]:
+        - list:
+          - listitem [ref=e22]:
+            - button "Login" [ref=e23] [cursor=pointer]
+    - link "Sign up" [ref=e24] [cursor=pointer]:
+      - /url: /admin/sign_up
+    - link "Forgot your password?" [ref=e25] [cursor=pointer]:
+      - /url: /admin/password/new

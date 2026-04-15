@@ -15,8 +15,8 @@ ActiveAdmin.register_page "Dashboard" do
 
     return render html: html if params[:type] == "html"
 
-    kit = PDFKit.new(html, page_size: "A4", orientation: "Portrait")
-    send_data kit.to_pdf, filename: "#{project}-#{start_date.to_s.parameterize}-#{end_date.to_s.parameterize}.pdf", type: "application/pdf"
+    pdf = Grover.new(html, format: "A4", display_url: request.base_url).to_pdf
+    send_data pdf, filename: "#{project}-#{start_date.to_s.parameterize}-#{end_date.to_s.parameterize}.pdf", type: "application/pdf"
   end
 
   page_action :cal_events, method: :get do
@@ -52,12 +52,14 @@ ActiveAdmin.register_page "Dashboard" do
     before_action :set_filter
 
     def set_filter
-      @filter = OpenStruct.new(start: (Date.today - 2.months).at_beginning_of_month, end: Date.today.at_end_of_month)
+      @filter = OpenStruct.new(start: (Date.today - 2.months).at_beginning_of_month, end: Date.today.at_end_of_month, client_id: nil, project_id: nil)
 
       if params[:filter].present?
-        p = params.require(:filter).permit(:start, :end)
+        p = params.require(:filter).permit(:start, :end, :client_id, :project_id)
         @filter.start = Date.parse(p[:start])
         @filter.end = Date.parse(p[:end])
+        @filter.client_id = p[:client_id].presence
+        @filter.project_id = p[:project_id].presence
       end
     end
   end
@@ -71,15 +73,19 @@ ActiveAdmin.register_page "Dashboard" do
       render partial: "calendar"
     end
 
-    @filter = OpenStruct.new(start: (Date.today - 2.months).at_beginning_of_month, end: Date.today.at_end_of_month)
+    @filter = OpenStruct.new(start: (Date.today - 2.months).at_beginning_of_month, end: Date.today.at_end_of_month, client_id: nil, project_id: nil)
 
     if params[:filter].present?
-      p = params.require(:filter).permit(:start, :end)
+      p = params.require(:filter).permit(:start, :end, :client_id, :project_id)
       @filter.start = Date.parse(p[:start])
       @filter.end = Date.parse(p[:end])
+      @filter.client_id = p[:client_id].presence
+      @filter.project_id = p[:project_id].presence
     end
 
     hours = Hour.where(date: @filter.start..@filter.end)
+    hours = hours.joins(project: :client).where(clients: { id: @filter.client_id }) if @filter.client_id
+    hours = hours.where(project_id: @filter.project_id) if @filter.project_id
 
     current = Time.now
     first = hours.minimum(:date)&.at_beginning_of_month
@@ -100,7 +106,10 @@ ActiveAdmin.register_page "Dashboard" do
         end
         tbody do
           i = 0
-          project_ids = Hour.where(date: current.at_beginning_of_month..current.at_end_of_month).select(:project_id).distinct.pluck(:project_id)
+          month_hours = Hour.where(date: current.at_beginning_of_month..current.at_end_of_month)
+          month_hours = month_hours.joins(project: :client).where(clients: { id: @filter.client_id }) if @filter.client_id
+          month_hours = month_hours.where(project_id: @filter.project_id) if @filter.project_id
+          project_ids = month_hours.select(:project_id).distinct.pluck(:project_id)
           Project.includes(:client).where(id: project_ids).accessible_by(current_ability).order("clients.name").order(:name).each do |p|
             tr class: (i.odd? ? "even" : "odd") do
               start_date = current.at_beginning_of_month >= @filter.start ? current.at_beginning_of_month : @filter.start

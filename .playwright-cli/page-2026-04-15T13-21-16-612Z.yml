@@ -1,0 +1,26 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - generic [ref=e5]: "0"
+    - spinbutton [ref=e7]: "120"
+    - generic [ref=e9]: 33 %
+  - progressbar [ref=e12]: 33%
+  - article [ref=e15]:
+    - paragraph [ref=e16]: Console
+  - article [ref=e20]:
+    - paragraph [ref=e21]: Controlls
+    - paragraph
+    - generic [ref=e22]:
+      - generic [ref=e23]: Position
+      - generic [ref=e24]: "2000"
+      - generic [ref=e25]: "1000"
+      - generic [ref=e26]: "4000"
+    - generic [ref=e27]:
+      - button "⬅️" [ref=e29] [cursor=pointer]
+      - button "➡️" [ref=e31] [cursor=pointer]
+      - button "Set min" [ref=e33] [cursor=pointer]:
+        - text: Set
+        - text: min
+      - button "Set max" [ref=e35] [cursor=pointer]:
+        - text: Set
+        - text: max
+    - paragraph

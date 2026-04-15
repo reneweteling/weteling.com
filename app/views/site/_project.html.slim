@@ -17,7 +17,12 @@
     .no-flex-row
       .no-flex-col-12.description
         - if defined?(as_cv) && as_cv === true
-          == markdown project.description_cv
+          - if project.description_about_the_company.present?
+            strong = t('site.cv.about_company')
+            == markdown project.description_about_the_company
+          - if project.description_my_role.present?
+            strong = t('site.cv.my_role')
+            == markdown project.description_my_role
         - else
           - if project.description_about_the_company.present?
             == markdown project.description_about_the_company

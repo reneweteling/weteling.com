@@ -1,0 +1,281 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - heading "René Weteling" [level=1] [ref=e4]:
+      - img "René Weteling" [ref=e5]
+    - list [ref=e6]:
+      - listitem [ref=e7]:
+        - link "Dashboard" [ref=e8] [cursor=pointer]:
+          - /url: /admin/dashboard
+      - listitem [ref=e9]:
+        - link "Hours" [ref=e10] [cursor=pointer]:
+          - /url: /admin/hours
+      - listitem [ref=e11]:
+        - link "Clients" [ref=e12] [cursor=pointer]:
+          - /url: /admin/clients
+      - listitem [ref=e13]:
+        - link "Pages" [ref=e14] [cursor=pointer]:
+          - /url: /admin/pages
+      - listitem [ref=e15]:
+        - link "Projects" [ref=e16] [cursor=pointer]:
+          - /url: /admin/projects
+      - listitem [ref=e17]:
+        - link "Blogs" [ref=e18] [cursor=pointer]:
+          - /url: /admin/blogs
+      - listitem [ref=e19]:
+        - link "Rates" [ref=e20] [cursor=pointer]:
+          - /url: /admin/rates
+      - listitem [ref=e21]:
+        - link "Users" [ref=e22] [cursor=pointer]:
+          - /url: /admin/users
+      - listitem [ref=e23]:
+        - link "Mailinglijsten" [ref=e24] [cursor=pointer]:
+          - /url: /admin/subscribers
+    - list [ref=e25]:
+      - listitem [ref=e26]:
+        - link "Rene Weteling" [ref=e27] [cursor=pointer]:
+          - /url: /admin/users/1
+      - listitem [ref=e28]:
+        - link "Uitloggen" [ref=e29] [cursor=pointer]:
+          - /url: /admin/logout
+  - generic [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - link "Admin" [ref=e33] [cursor=pointer]:
+          - /url: /admin
+        - text: /
+      - heading "Rates" [level=2] [ref=e34]
+    - link "Nieuwe Rate" [ref=e38] [cursor=pointer]:
+      - /url: /admin/rates/new
+  - generic [ref=e39]:
+    - generic [ref=e42]:
+      - table [ref=e46]:
+        - rowgroup [ref=e47]:
+          - row "Id Naam Description Rate" [ref=e48]:
+            - columnheader "Id" [ref=e49]:
+              - link "Id" [ref=e50] [cursor=pointer]:
+                - /url: /admin/rates?order=id_asc
+            - columnheader "Naam" [ref=e51]:
+              - link "Naam" [ref=e52] [cursor=pointer]:
+                - /url: /admin/rates?order=name_desc
+            - columnheader "Description" [ref=e53]:
+              - link "Description" [ref=e54] [cursor=pointer]:
+                - /url: /admin/rates?order=description_desc
+            - columnheader "Rate" [ref=e55]:
+              - link "Rate" [ref=e56] [cursor=pointer]:
+                - /url: /admin/rates?order=rate_desc
+            - columnheader [ref=e57]
+        - rowgroup [ref=e58]:
+          - row "12 CaaS 150.0 BekijkWijzigVerwijder" [ref=e59]:
+            - cell "12" [ref=e60]:
+              - link "12" [ref=e61] [cursor=pointer]:
+                - /url: /admin/rates/12
+            - cell "CaaS" [ref=e62]
+            - cell [ref=e63]
+            - cell "150.0" [ref=e64]
+            - cell "BekijkWijzigVerwijder" [ref=e65]:
+              - generic [ref=e66]:
+                - link "Bekijk" [ref=e67] [cursor=pointer]:
+                  - /url: /admin/rates/12
+                - link "Wijzig" [ref=e68] [cursor=pointer]:
+                  - /url: /admin/rates/12/edit
+                - link "Verwijder" [ref=e69] [cursor=pointer]:
+                  - /url: /admin/rates/12
+          - row "11 135 - webpp 135.0 BekijkWijzigVerwijder" [ref=e70]:
+            - cell "11" [ref=e71]:
+              - link "11" [ref=e72] [cursor=pointer]:
+                - /url: /admin/rates/11
+            - cell "135 - webpp" [ref=e73]
+            - cell [ref=e74]
+            - cell "135.0" [ref=e75]
+            - cell "BekijkWijzigVerwijder" [ref=e76]:
+              - generic [ref=e77]:
+                - link "Bekijk" [ref=e78] [cursor=pointer]:
+                  - /url: /admin/rates/11
+                - link "Wijzig" [ref=e79] [cursor=pointer]:
+                  - /url: /admin/rates/11/edit
+                - link "Verwijder" [ref=e80] [cursor=pointer]:
+                  - /url: /admin/rates/11
+          - row "10 CoachCloud 0.0 BekijkWijzigVerwijder" [ref=e81]:
+            - cell "10" [ref=e82]:
+              - link "10" [ref=e83] [cursor=pointer]:
+                - /url: /admin/rates/10
+            - cell "CoachCloud" [ref=e84]
+            - cell [ref=e85]
+            - cell "0.0" [ref=e86]
+            - cell "BekijkWijzigVerwijder" [ref=e87]:
+              - generic [ref=e88]:
+                - link "Bekijk" [ref=e89] [cursor=pointer]:
+                  - /url: /admin/rates/10
+                - link "Wijzig" [ref=e90] [cursor=pointer]:
+                  - /url: /admin/rates/10/edit
+                - link "Verwijder" [ref=e91] [cursor=pointer]:
+                  - /url: /admin/rates/10
+          - row "9 Omoda 120 120.0 BekijkWijzigVerwijder" [ref=e92]:
+            - cell "9" [ref=e93]:
+              - link "9" [ref=e94] [cursor=pointer]:
+                - /url: /admin/rates/9
+            - cell "Omoda 120" [ref=e95]
+            - cell [ref=e96]
+            - cell "120.0" [ref=e97]
+            - cell "BekijkWijzigVerwijder" [ref=e98]:
+              - generic [ref=e99]:
+                - link "Bekijk" [ref=e100] [cursor=pointer]:
+                  - /url: /admin/rates/9
+                - link "Wijzig" [ref=e101] [cursor=pointer]:
+                  - /url: /admin/rates/9/edit
+                - link "Verwijder" [ref=e102] [cursor=pointer]:
+                  - /url: /admin/rates/9
+          - row "8 Normaal tarief 100.0 BekijkWijzigVerwijder" [ref=e103]:
+            - cell "8" [ref=e104]:
+              - link "8" [ref=e105] [cursor=pointer]:
+                - /url: /admin/rates/8
+            - cell "Normaal tarief" [ref=e106]
+            - cell [ref=e107]
+            - cell "100.0" [ref=e108]
+            - cell "BekijkWijzigVerwijder" [ref=e109]:
+              - generic [ref=e110]:
+                - link "Bekijk" [ref=e111] [cursor=pointer]:
+                  - /url: /admin/rates/8
+                - link "Wijzig" [ref=e112] [cursor=pointer]:
+                  - /url: /admin/rates/8/edit
+                - link "Verwijder" [ref=e113] [cursor=pointer]:
+                  - /url: /admin/rates/8
+          - row "7 T-Mobile 97.5 BekijkWijzigVerwijder" [ref=e114]:
+            - cell "7" [ref=e115]:
+              - link "7" [ref=e116] [cursor=pointer]:
+                - /url: /admin/rates/7
+            - cell "T-Mobile" [ref=e117]
+            - cell [ref=e118]
+            - cell "97.5" [ref=e119]
+            - cell "BekijkWijzigVerwijder" [ref=e120]:
+              - generic [ref=e121]:
+                - link "Bekijk" [ref=e122] [cursor=pointer]:
+                  - /url: /admin/rates/7
+                - link "Wijzig" [ref=e123] [cursor=pointer]:
+                  - /url: /admin/rates/7/edit
+                - link "Verwijder" [ref=e124] [cursor=pointer]:
+                  - /url: /admin/rates/7
+          - row "6 Dept 82.5 BekijkWijzigVerwijder" [ref=e125]:
+            - cell "6" [ref=e126]:
+              - link "6" [ref=e127] [cursor=pointer]:
+                - /url: /admin/rates/6
+            - cell "Dept" [ref=e128]
+            - cell [ref=e129]
+            - cell "82.5" [ref=e130]
+            - cell "BekijkWijzigVerwijder" [ref=e131]:
+              - generic [ref=e132]:
+                - link "Bekijk" [ref=e133] [cursor=pointer]:
+                  - /url: /admin/rates/6
+                - link "Wijzig" [ref=e134] [cursor=pointer]:
+                  - /url: /admin/rates/6/edit
+                - link "Verwijder" [ref=e135] [cursor=pointer]:
+                  - /url: /admin/rates/6
+          - row "5 TommyTomato 85.0 BekijkWijzigVerwijder" [ref=e136]:
+            - cell "5" [ref=e137]:
+              - link "5" [ref=e138] [cursor=pointer]:
+                - /url: /admin/rates/5
+            - cell "TommyTomato" [ref=e139]
+            - cell [ref=e140]
+            - cell "85.0" [ref=e141]
+            - cell "BekijkWijzigVerwijder" [ref=e142]:
+              - generic [ref=e143]:
+                - link "Bekijk" [ref=e144] [cursor=pointer]:
+                  - /url: /admin/rates/5
+                - link "Wijzig" [ref=e145] [cursor=pointer]:
+                  - /url: /admin/rates/5/edit
+                - link "Verwijder" [ref=e146] [cursor=pointer]:
+                  - /url: /admin/rates/5
+          - row "4 Keenfolk 73.0 BekijkWijzigVerwijder" [ref=e147]:
+            - cell "4" [ref=e148]:
+              - link "4" [ref=e149] [cursor=pointer]:
+                - /url: /admin/rates/4
+            - cell "Keenfolk" [ref=e150]
+            - cell [ref=e151]
+            - cell "73.0" [ref=e152]
+            - cell "BekijkWijzigVerwijder" [ref=e153]:
+              - generic [ref=e154]:
+                - link "Bekijk" [ref=e155] [cursor=pointer]:
+                  - /url: /admin/rates/4
+                - link "Wijzig" [ref=e156] [cursor=pointer]:
+                  - /url: /admin/rates/4/edit
+                - link "Verwijder" [ref=e157] [cursor=pointer]:
+                  - /url: /admin/rates/4
+          - row "3 BluePuzzle reductie tarief 2,50 72.5 BekijkWijzigVerwijder" [ref=e158]:
+            - cell "3" [ref=e159]:
+              - link "3" [ref=e160] [cursor=pointer]:
+                - /url: /admin/rates/3
+            - cell "BluePuzzle" [ref=e161]
+            - cell "reductie tarief 2,50" [ref=e162]
+            - cell "72.5" [ref=e163]
+            - cell "BekijkWijzigVerwijder" [ref=e164]:
+              - generic [ref=e165]:
+                - link "Bekijk" [ref=e166] [cursor=pointer]:
+                  - /url: /admin/rates/3
+                - link "Wijzig" [ref=e167] [cursor=pointer]:
+                  - /url: /admin/rates/3/edit
+                - link "Verwijder" [ref=e168] [cursor=pointer]:
+                  - /url: /admin/rates/3
+          - row "2 Dagstaffel 62.5 BekijkWijzigVerwijder" [ref=e169]:
+            - cell "2" [ref=e170]:
+              - link "2" [ref=e171] [cursor=pointer]:
+                - /url: /admin/rates/2
+            - cell "Dagstaffel" [ref=e172]
+            - cell [ref=e173]
+            - cell "62.5" [ref=e174]
+            - cell "BekijkWijzigVerwijder" [ref=e175]:
+              - generic [ref=e176]:
+                - link "Bekijk" [ref=e177] [cursor=pointer]:
+                  - /url: /admin/rates/2
+                - link "Wijzig" [ref=e178] [cursor=pointer]:
+                  - /url: /admin/rates/2/edit
+                - link "Verwijder" [ref=e179] [cursor=pointer]:
+                  - /url: /admin/rates/2
+          - row "1 Oud tarief 75.0 BekijkWijzigVerwijder" [ref=e180]:
+            - cell "1" [ref=e181]:
+              - link "1" [ref=e182] [cursor=pointer]:
+                - /url: /admin/rates/1
+            - cell "Oud tarief" [ref=e183]
+            - cell [ref=e184]
+            - cell "75.0" [ref=e185]
+            - cell "BekijkWijzigVerwijder" [ref=e186]:
+              - generic [ref=e187]:
+                - link "Bekijk" [ref=e188] [cursor=pointer]:
+                  - /url: /admin/rates/1
+                - link "Wijzig" [ref=e189] [cursor=pointer]:
+                  - /url: /admin/rates/1/edit
+                - link "Verwijder" [ref=e190] [cursor=pointer]:
+                  - /url: /admin/rates/1
+      - generic [ref=e191]:
+        - generic [ref=e192]: Geeft 12 Rates weer
+        - generic [ref=e193]:
+          - text: Download
+          - link "CSV" [ref=e194] [cursor=pointer]:
+            - /url: /admin/rates.csv
+          - link "XML" [ref=e195] [cursor=pointer]:
+            - /url: /admin/rates.xml
+          - link "JSON" [ref=e196] [cursor=pointer]:
+            - /url: /admin/rates.json
+    - generic [ref=e198]:
+      - heading "Filters" [level=3] [ref=e199]
+      - generic [ref=e201]:
+        - generic [ref=e202]:
+          - generic [ref=e203]: Naam
+          - combobox [ref=e204]
+          - combobox "Bevat" [ref=e207] [cursor=pointer]:
+            - textbox "Bevat" [ref=e208]
+          - textbox "Naam" [ref=e209]
+        - generic [ref=e210]:
+          - generic [ref=e211]: Rate
+          - combobox [ref=e212]
+          - combobox "Bevat" [ref=e215] [cursor=pointer]:
+            - textbox "Gelijk" [ref=e216]
+          - textbox "Rate" [ref=e217]
+        - generic [ref=e218]:
+          - button "Filter" [ref=e219] [cursor=pointer]
+          - link "Maak Filters Ongedaan" [ref=e220] [cursor=pointer]:
+            - /url: "#"
+  - paragraph [ref=e222]:
+    - text: Mogelijk gemaakt door
+    - link "Active Admin" [ref=e223] [cursor=pointer]:
+      - /url: https://activeadmin.info
+    - text: 3.5.1

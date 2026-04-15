@@ -1,0 +1,310 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: "#home"
+        - img [ref=e6]
+      - generic [ref=e7]:
+        - link "Home" [ref=e8] [cursor=pointer]:
+          - /url: "#home"
+        - link "Diensten" [ref=e9] [cursor=pointer]:
+          - /url: "#services"
+        - link "Vaardigheden" [ref=e10] [cursor=pointer]:
+          - /url: "#skills"
+        - link "Recruitment" [ref=e11] [cursor=pointer]:
+          - /url: "#recruiters"
+        - link "Projecten" [ref=e12] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Over mij" [ref=e13] [cursor=pointer]:
+          - /url: "#about-me"
+        - link "Contact" [ref=e14] [cursor=pointer]:
+          - /url: "#contact"
+        - link "🇬🇧" [ref=e15] [cursor=pointer]:
+          - /url: "?locale=en"
+  - banner [ref=e16]:
+    - img [ref=e18]
+    - generic [ref=e20]:
+      - paragraph [ref=e21]: Hoi
+      - heading "Ik ben René" [level=1] [ref=e22]
+      - paragraph [ref=e23]: Allround Developer
+      - link "Zeg hallo 👋" [ref=e24] [cursor=pointer]:
+        - /url: "#contact"
+        - text: Zeg hallo
+        - generic [ref=e25]: 👋
+    - link [ref=e27] [cursor=pointer]:
+      - /url: "#services"
+      - img [ref=e28]
+  - generic [ref=e32]:
+    - generic [ref=e33]:
+      - heading "Diensten" [level=2] [ref=e34]
+      - paragraph [ref=e35]: Software bouwen is complex. Ik help je erdoorheen.
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - generic [ref=e38]: 👨‍🏫
+        - heading "CTO as a Service" [level=3] [ref=e39]
+        - paragraph [ref=e40]: Technisch leiderschap nodig zonder een fulltime CTO aan te nemen? Ik overbrug de kloof tussen bedrijfsdoelen en technologie — van architectuurkeuzes en vendor selectie tot technische strategie.
+      - generic [ref=e41]:
+        - generic [ref=e42]: 🦆
+        - heading "Sparringpartner" [level=3] [ref=e43]
+        - paragraph [ref=e44]: Soms heb je gewoon een senior engineer nodig om mee te sparren. Met een bakkie koffie bespreken we je architectuur, tech-keuzes en uitdagingen. Vrijblijvend.
+      - generic [ref=e45]:
+        - generic [ref=e46]: 🕵️‍♂️
+        - heading "IT Aankoopmakelaar" [level=3] [ref=e47]
+        - paragraph [ref=e48]: Een bedrijf inhuren om je product te bouwen, maar geen technische kennis in huis? Ik let op vendor lock-ins, verouderde technieken en te dure contracten — als een makelaar voor je IT-investeringen.
+      - generic [ref=e49]:
+        - generic [ref=e50]: 🤖
+        - heading "AI Integratie" [level=3] [ref=e51]
+        - paragraph [ref=e52]: Van AI-tools voor developers tot het integreren van LLM's in je product — ik help teams om AI effectief in te zetten. Developer productiviteit of klantgerichte features, ik pak het hands-on aan.
+  - generic [ref=e54]:
+    - generic [ref=e55]:
+      - heading "Vaardigheden" [level=2] [ref=e56]
+      - paragraph [ref=e57]:
+        - text: In de loop der jaren heb ik met
+        - strong [ref=e58]: veel
+        - text: facetten van het IT-landschap gewerkt. Mijn
+        - strong [ref=e59]: passie
+        - text: ligt bij webontwikkeling — korte iteraties, data-gedreven keuzes, en het gevoel wanneer mensen daadwerkelijk het product gebruiken dat je hebt gebouwd. Web en mobiel zijn daarvoor ideaal!
+    - generic [ref=e60]:
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - generic [ref=e63]: 👨‍💻
+          - heading "Back-End Ontwikkeling" [level=3] [ref=e64]
+        - paragraph [ref=e65]: Net zoals in het leven gebeuren de meeste interessante dingen achter de schermen. API's, integraties, back-ends, services, jobs, search, storage, noem maar op. Dit is waar ik me thuis voel.
+        - generic [ref=e66]:
+          - heading "Talen:" [level=4] [ref=e67]
+          - generic [ref=e68]:
+            - generic [ref=e69]: Elixir
+            - generic [ref=e70]: Ruby
+            - generic [ref=e71]: NodeJs
+            - generic [ref=e72]: TypeScript
+            - generic [ref=e73]: PHP
+            - generic [ref=e74]: Perl
+            - generic [ref=e75]: SQL
+            - generic [ref=e76]: GraphQL
+        - generic [ref=e77]:
+          - heading "Development tools:" [level=4] [ref=e78]
+          - generic [ref=e79]:
+            - generic [ref=e80]: VsCode
+            - generic [ref=e81]: GitHub
+            - generic [ref=e82]: GitLab
+            - generic [ref=e83]: BitBucket
+            - generic [ref=e84]: Jira
+            - generic [ref=e85]: SourceTree
+            - generic [ref=e86]: DBeaver
+        - generic [ref=e87]:
+          - heading "Frameworks:" [level=4] [ref=e88]
+          - generic [ref=e89]:
+            - generic [ref=e90]: Phoenix
+            - generic [ref=e91]: Rails
+            - generic [ref=e92]: Express
+            - generic [ref=e93]: Laravel
+            - generic [ref=e94]: VueJs
+            - generic [ref=e95]: Pinia
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - generic [ref=e98]: 💻
+          - heading "Front-End Ontwikkeling" [level=3] [ref=e99]
+        - paragraph [ref=e100]: Frontends bouwen is een vak apart. Het is niet alleen het visuele aspect, maar ook de interactie met de gebruiker, de snelheid van de applicatie, de toegankelijkheid en de SEO. Dit is waar ik me graag mee bezig houd.
+        - generic [ref=e101]:
+          - heading "Talen:" [level=4] [ref=e102]
+          - generic [ref=e103]:
+            - generic [ref=e104]: Html
+            - generic [ref=e105]: Css
+            - generic [ref=e106]: Sass
+            - generic [ref=e107]: Javascript
+            - generic [ref=e108]: Typescript
+            - generic [ref=e109]: Slim
+            - generic [ref=e110]: Haml
+        - generic [ref=e111]:
+          - heading "Development tools:" [level=4] [ref=e112]
+          - generic [ref=e113]:
+            - generic [ref=e114]: Vite
+            - generic [ref=e115]: Webpack
+            - generic [ref=e116]: Rollup
+            - generic [ref=e117]: Gulp
+            - generic [ref=e118]: Figma
+            - generic [ref=e119]: Zeplin
+        - generic [ref=e120]:
+          - heading "Frameworks:" [level=4] [ref=e121]
+          - generic [ref=e122]:
+            - generic [ref=e123]: VueJS
+            - generic [ref=e124]: React
+            - generic [ref=e125]: Tailwind
+            - generic [ref=e126]: Bootstrap
+      - generic [ref=e127]:
+        - generic [ref=e128]:
+          - generic [ref=e129]: ☁️
+          - heading "DevOps" [level=3] [ref=e130]
+        - paragraph [ref=e131]: Applicaties bouwen is één ding, ze draaiende houden is een vak apart. Automatiseren, schalen, monitoren, beveiligen — daar komt DevOps om de hoek kijken, en dat is precies wat ik graag opzet.
+        - generic [ref=e132]:
+          - heading "Services:" [level=4] [ref=e133]
+          - generic [ref=e134]:
+            - generic [ref=e135]: Github Actions
+            - generic [ref=e136]: CircleCi
+            - generic [ref=e137]: CodePipelines
+            - generic [ref=e138]: AWS
+            - generic [ref=e139]: Azure
+            - generic [ref=e140]: Google Cloud
+            - generic [ref=e141]: DockerHub
+            - generic [ref=e142]: Dokku
+            - generic [ref=e143]: Heroku
+            - generic [ref=e144]: Flynn
+            - generic [ref=e145]: Hetzner
+            - generic [ref=e146]: DigitalOcean
+            - generic [ref=e147]: Cloud66
+        - generic [ref=e148]:
+          - heading "Development tools:" [level=4] [ref=e149]
+          - generic [ref=e150]:
+            - generic [ref=e151]: Terraform
+            - generic [ref=e152]: Ansible
+            - generic [ref=e153]: Capistrano
+  - generic [ref=e156]:
+    - generic [ref=e157]:
+      - heading "Recruitment" [level=2] [ref=e158]
+      - generic [ref=e159]:
+        - strong [ref=e160]: Dit is de informatie waar je op hebt gewacht!
+        - text: "Mijn CV is hier beschikbaar:"
+      - generic [ref=e161]:
+        - link "PDF" [ref=e162] [cursor=pointer]:
+          - /url: /cv_pdf
+        - link "Bekijk" [ref=e163] [cursor=pointer]:
+          - /url: /cv
+      - paragraph [ref=e164]: "Wil je op de hoogte gehouden worden wanneer ik beschikbaar ben voor nieuwe projecten? Laat dan hier je contactgegevens achter:"
+    - generic [ref=e167]:
+      - textbox "Voornaam" [ref=e169]
+      - textbox "Achternaam" [ref=e171]
+      - textbox "E-mail" [ref=e173]
+      - button "Houd me op de hoogte!" [ref=e174] [cursor=pointer]
+  - generic [ref=e176]:
+    - generic [ref=e177]:
+      - heading "Projecten" [level=2] [ref=e178]
+      - paragraph [ref=e179]: Een selectie van projecten waar ik aan heb gewerkt in mijn carrière.
+    - generic [ref=e181]:
+      - generic [ref=e183]: "2026"
+      - link "Lektor B.V. Technical lead 01-02-2026 —Heden AWS - Fargate Docker NextJs Prisma +1" [ref=e185] [cursor=pointer]:
+        - /url: /projects/lektor-v2-node
+        - generic [ref=e187]:
+          - img [ref=e189]
+          - generic [ref=e190]:
+            - heading "Lektor B.V." [level=3] [ref=e191]
+            - paragraph [ref=e192]: Technical lead
+            - generic [ref=e193]: 01-02-2026 —Heden
+            - generic [ref=e194]:
+              - generic [ref=e195]: AWS - Fargate
+              - generic [ref=e196]: Docker
+              - generic [ref=e197]: NextJs
+              - generic [ref=e198]: Prisma
+              - generic [ref=e199]: "+1"
+      - link "Bravoure B.V. Interim Technical director 01-08-2025 —30-11-2025 AWS AWS - BeanStalk AWS - Fargate AWS - S3 +3" [ref=e201] [cursor=pointer]:
+        - /url: /projects/lektor-v1-oude-verzie
+        - generic [ref=e203]:
+          - img [ref=e205]
+          - generic [ref=e206]:
+            - heading "Bravoure B.V." [level=3] [ref=e207]
+            - paragraph [ref=e208]: Interim Technical director
+            - generic [ref=e209]: 01-08-2025 —30-11-2025
+            - generic [ref=e210]:
+              - generic [ref=e211]: AWS
+              - generic [ref=e212]: AWS - BeanStalk
+              - generic [ref=e213]: AWS - Fargate
+              - generic [ref=e214]: AWS - S3
+              - generic [ref=e215]: "+3"
+      - generic [ref=e217]: "2025"
+      - link "WAT.WORKS - Beschikbaarheidswijzer.nl Principal Developer 01-02-2025 —Heden Azure NextJs Prisma" [ref=e219] [cursor=pointer]:
+        - /url: /projects/https-beschikbaarheidswijzer-nl
+        - generic [ref=e221]:
+          - img [ref=e223]
+          - generic [ref=e224]:
+            - heading "WAT.WORKS - Beschikbaarheidswijzer.nl" [level=3] [ref=e225]
+            - paragraph [ref=e226]: Principal Developer
+            - generic [ref=e227]: 01-02-2025 —Heden
+            - generic [ref=e228]:
+              - generic [ref=e229]: Azure
+              - generic [ref=e230]: NextJs
+              - generic [ref=e231]: Prisma
+      - link "Truely Travel eSim Sr. Elixir developer 01-10-2025 —20-02-2026 AWS Docker Elixir Terraform" [ref=e233] [cursor=pointer]:
+        - /url: /projects/truely-platform-development
+        - generic [ref=e235]:
+          - img [ref=e237]
+          - generic [ref=e238]:
+            - heading "Truely Travel eSim" [level=3] [ref=e239]
+            - paragraph [ref=e240]: Sr. Elixir developer
+            - generic [ref=e241]: 01-10-2025 —20-02-2026
+            - generic [ref=e242]:
+              - generic [ref=e243]: AWS
+              - generic [ref=e244]: Docker
+              - generic [ref=e245]: Elixir
+              - generic [ref=e246]: Terraform
+      - generic [ref=e248]: "2024"
+      - link "TommyTomato Delivering healthy hot school lunches 12-04-2024 —17-08-2024 AWS Github Actions Python Ruby on Rails +1" [ref=e250] [cursor=pointer]:
+        - /url: /projects/tommytomato
+        - generic [ref=e252]:
+          - img [ref=e254]
+          - generic [ref=e255]:
+            - heading "TommyTomato" [level=3] [ref=e256]
+            - paragraph [ref=e257]: Delivering healthy hot school lunches
+            - generic [ref=e258]: 12-04-2024 —17-08-2024
+            - generic [ref=e259]:
+              - generic [ref=e260]: AWS
+              - generic [ref=e261]: Github Actions
+              - generic [ref=e262]: Python
+              - generic [ref=e263]: Ruby on Rails
+              - generic [ref=e264]: "+1"
+    - button "Toon alle projecten ↓" [ref=e266] [cursor=pointer]:
+      - generic [ref=e267]: Toon alle projecten
+      - generic [ref=e268]: ↓
+  - generic [ref=e270]:
+    - heading "Over mij" [level=2] [ref=e271]
+    - generic [ref=e272]:
+      - generic [ref=e273]:
+        - text: Ik ben een programmeur uit Capelle aan den IJssel, net onder de rok van Rotterdam. Al van jongs af aan was ik verliefd op computers.
+        - text: Mijn vader leerde me batch scripts in MS-DOS toen ik een jaar of 9 was, op een 286DX met de turbo altijd aan. We waren een van de eersten in de buurt met een inbelverbinding — daarna ISDN, DSL, kabel en uiteindelijk glasvezel. De mogelijkheden om die machines met elkaar te verbinden waren zo gaaf dat ik op mijn 14e al experimenteerde met VPN's, LAMP-stacks en FTP-servers.
+      - generic [ref=e274]:
+        - generic [ref=e275]: Een richting kiezen voor mijn studie was een van de makkelijkste keuzes uit mijn leven. Informatica aan de HRO in Rotterdam, parttime naast mijn werk bij een digitaal bureau. De code monkey was geboren!
+        - img [ref=e277]
+        - generic [ref=e278]: Privé ben ik een trotse vader van 3 kinderen. Verloofd met de liefde van mijn leven. Festivalliefhebber, borrelen met vrienden, varen door de grachten en natuurlijk op pad met de sleurhut.
+  - generic [ref=e280]:
+    - generic [ref=e281]:
+      - heading "Contact" [level=2] [ref=e282]
+      - paragraph [ref=e283]: Wil je een ❤️ briefje sturen? Gebruik de gegevens hieronder, of stuur een berichtje via het contactformulier.
+    - generic [ref=e284]:
+      - generic [ref=e285]:
+        - generic [ref=e286]:
+          - paragraph [ref=e287]: Felobo B.V.
+          - table [ref=e288]:
+            - rowgroup [ref=e289]:
+              - 'row "KvK: 80910483" [ref=e290]':
+                - rowheader "KvK:" [ref=e291]
+                - cell "80910483" [ref=e292]
+              - 'row "BTW: NL8618.48007.B01" [ref=e293]':
+                - rowheader "BTW:" [ref=e294]
+                - cell "NL8618.48007.B01" [ref=e295]
+              - 'row "IBAN: NL69 KNAB 0775 7095 06" [ref=e296]':
+                - rowheader "IBAN:" [ref=e297]
+                - cell "NL69 KNAB 0775 7095 06" [ref=e298]
+              - 'row "BIC: KNABNL2H" [ref=e299]':
+                - rowheader "BIC:" [ref=e300]
+                - cell "KNABNL2H" [ref=e301]
+        - generic [ref=e302]:
+          - paragraph [ref=e303]:
+            - link "+316 - 55 128 199" [ref=e304] [cursor=pointer]:
+              - /url: tel:0031655128199
+          - paragraph [ref=e305]:
+            - link "rene@weteling.com" [ref=e306] [cursor=pointer]:
+              - /url: mailto:rene@weteling.com?subject=Lets get in touch&body=Hi Rene,%0D%0A%0D%0AI saw your website and...
+          - paragraph [ref=e307]:
+            - link "Johannes Geradtsweg 47 1222 PM, Hilversum" [ref=e308] [cursor=pointer]:
+              - /url: https://goo.gl/maps/3JBzSbjgWDCmSjTE8
+              - text: Johannes Geradtsweg 47
+              - text: 1222 PM, Hilversum
+      - generic [ref=e311]:
+        - textbox "Naam" [ref=e313]
+        - textbox "E-mail" [ref=e315]
+        - textbox "Onderwerp" [ref=e317]
+        - textbox "Bericht" [ref=e319]
+        - button "Versturen!" [ref=e320] [cursor=pointer]
+  - contentinfo [ref=e321]:
+    - generic [ref=e322]:
+      - paragraph [ref=e323]: René Weteling, coding since 2006 - 2026
+      - paragraph [ref=e324]: Made with ❤️ in ❌❌❌
+      - paragraph [ref=e325]: EOF 🤓

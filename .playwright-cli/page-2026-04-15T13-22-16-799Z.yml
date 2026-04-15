@@ -1,0 +1,33 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img [ref=e6]
+      - link "← Back to projects" [ref=e7] [cursor=pointer]:
+        - /url: /#projects
+  - generic [ref=e10]:
+    - img [ref=e12]
+    - generic [ref=e13]:
+      - heading "Lektor B.V." [level=1] [ref=e14]
+      - paragraph [ref=e15]: Technical lead
+      - generic [ref=e16]: 01-02-2026 —Present
+  - generic [ref=e18]:
+    - generic [ref=e19]:
+      - heading "About the company" [level=2] [ref=e20]
+      - paragraph [ref=e22]: Leading the (re)build of Lektor.nl, taking the strongest elements of the current platform and re-architecting them into a future-proof, scalable system. The focus is on creating a flexible foundation that enables new product ambitions while remaining robust under growing demand.
+    - generic [ref=e23]:
+      - heading "My role" [level=2] [ref=e24]
+      - paragraph [ref=e26]: Responsible for technical direction, architecture decisions, and implementation using Next.js, Zenstack, Zod, and shadcn/ui — building a modern, maintainable SaaS platform designed for long-term evolution.
+    - generic [ref=e27]:
+      - heading "Technologies" [level=2] [ref=e28]
+      - generic [ref=e29]:
+        - generic [ref=e30]: AWS - Fargate
+        - generic [ref=e31]: Docker
+        - generic [ref=e32]: NextJs
+        - generic [ref=e33]: Prisma
+        - generic [ref=e34]: Terraform
+    - generic [ref=e35]:
+      - paragraph [ref=e36]: Interested in working together?
+      - link "Get in touch" [ref=e37] [cursor=pointer]:
+        - /url: /#contact

@@ -1,0 +1,572 @@
+- generic [ref=e2]:
+  - generic [ref=e3]:
+    - heading "René Weteling" [level=1] [ref=e4]:
+      - img "René Weteling" [ref=e5]
+    - list [ref=e6]:
+      - listitem [ref=e7]:
+        - link "Dashboard" [ref=e8] [cursor=pointer]:
+          - /url: /admin/dashboard
+      - listitem [ref=e9]:
+        - link "Hours" [ref=e10] [cursor=pointer]:
+          - /url: /admin/hours
+      - listitem [ref=e11]:
+        - link "Clients" [ref=e12] [cursor=pointer]:
+          - /url: /admin/clients
+      - listitem [ref=e13]:
+        - link "Pages" [ref=e14] [cursor=pointer]:
+          - /url: /admin/pages
+      - listitem [ref=e15]:
+        - link "Projects" [ref=e16] [cursor=pointer]:
+          - /url: /admin/projects
+      - listitem [ref=e17]:
+        - link "Blogs" [ref=e18] [cursor=pointer]:
+          - /url: /admin/blogs
+      - listitem [ref=e19]:
+        - link "Rates" [ref=e20] [cursor=pointer]:
+          - /url: /admin/rates
+      - listitem [ref=e21]:
+        - link "Users" [ref=e22] [cursor=pointer]:
+          - /url: /admin/users
+      - listitem [ref=e23]:
+        - link "Subscribers" [ref=e24] [cursor=pointer]:
+          - /url: /admin/subscribers
+    - list [ref=e25]:
+      - listitem [ref=e26]:
+        - link "Rene Weteling" [ref=e27] [cursor=pointer]:
+          - /url: /admin/users/1
+      - listitem [ref=e28]:
+        - link "Logout" [ref=e29] [cursor=pointer]:
+          - /url: /admin/logout
+  - generic [ref=e30]:
+    - generic [ref=e31]:
+      - generic [ref=e32]:
+        - link "Admin" [ref=e33] [cursor=pointer]:
+          - /url: /admin
+        - text: /
+      - heading "Subscribers" [level=2] [ref=e34]
+    - link "New Subscriber" [ref=e38] [cursor=pointer]:
+      - /url: /admin/subscribers/new
+  - generic [ref=e39]:
+    - generic [ref=e42]:
+      - table [ref=e46]:
+        - rowgroup [ref=e47]:
+          - row "Id First Name Last Name Email" [ref=e48]:
+            - columnheader "Id" [ref=e49]:
+              - link "Id" [ref=e50] [cursor=pointer]:
+                - /url: /admin/subscribers?order=id_asc
+            - columnheader "First Name" [ref=e51]:
+              - link "First Name" [ref=e52] [cursor=pointer]:
+                - /url: /admin/subscribers?order=first_name_desc
+            - columnheader "Last Name" [ref=e53]:
+              - link "Last Name" [ref=e54] [cursor=pointer]:
+                - /url: /admin/subscribers?order=last_name_desc
+            - columnheader "Email" [ref=e55]:
+              - link "Email" [ref=e56] [cursor=pointer]:
+                - /url: /admin/subscribers?order=email_desc
+            - columnheader [ref=e57]
+        - rowgroup [ref=e58]:
+          - row "711 fyxNpVNmgNwzyOpsnzxAJMCA lzpJLzEPGeDKoDMNgVblyrh e.q.o.hi.b.i.wa85@gmail.com ViewEditDelete" [ref=e59]:
+            - cell "711" [ref=e60]:
+              - link "711" [ref=e61] [cursor=pointer]:
+                - /url: /admin/subscribers/711
+            - cell "fyxNpVNmgNwzyOpsnzxAJMCA" [ref=e62]
+            - cell "lzpJLzEPGeDKoDMNgVblyrh" [ref=e63]
+            - cell "e.q.o.hi.b.i.wa85@gmail.com" [ref=e64]
+            - cell "ViewEditDelete" [ref=e65]:
+              - generic [ref=e66]:
+                - link "View" [ref=e67] [cursor=pointer]:
+                  - /url: /admin/subscribers/711
+                - link "Edit" [ref=e68] [cursor=pointer]:
+                  - /url: /admin/subscribers/711/edit
+                - link "Delete" [ref=e69] [cursor=pointer]:
+                  - /url: /admin/subscribers/711
+          - row "710 TXhFObisygDLoRXlOGBkY hWYwkJESbmExIUcQsZFzBf u.lo.x.uh.es.u.jib4.5@gmail.com ViewEditDelete" [ref=e70]:
+            - cell "710" [ref=e71]:
+              - link "710" [ref=e72] [cursor=pointer]:
+                - /url: /admin/subscribers/710
+            - cell "TXhFObisygDLoRXlOGBkY" [ref=e73]
+            - cell "hWYwkJESbmExIUcQsZFzBf" [ref=e74]
+            - cell "u.lo.x.uh.es.u.jib4.5@gmail.com" [ref=e75]
+            - cell "ViewEditDelete" [ref=e76]:
+              - generic [ref=e77]:
+                - link "View" [ref=e78] [cursor=pointer]:
+                  - /url: /admin/subscribers/710
+                - link "Edit" [ref=e79] [cursor=pointer]:
+                  - /url: /admin/subscribers/710/edit
+                - link "Delete" [ref=e80] [cursor=pointer]:
+                  - /url: /admin/subscribers/710
+          - row "709 jMbQntSIpneGrVGODIQCftN KBMfKUrExXyWFyGF n.aho.q.ak.un.3.2.4@gmail.com ViewEditDelete" [ref=e81]:
+            - cell "709" [ref=e82]:
+              - link "709" [ref=e83] [cursor=pointer]:
+                - /url: /admin/subscribers/709
+            - cell "jMbQntSIpneGrVGODIQCftN" [ref=e84]
+            - cell "KBMfKUrExXyWFyGF" [ref=e85]
+            - cell "n.aho.q.ak.un.3.2.4@gmail.com" [ref=e86]
+            - cell "ViewEditDelete" [ref=e87]:
+              - generic [ref=e88]:
+                - link "View" [ref=e89] [cursor=pointer]:
+                  - /url: /admin/subscribers/709
+                - link "Edit" [ref=e90] [cursor=pointer]:
+                  - /url: /admin/subscribers/709/edit
+                - link "Delete" [ref=e91] [cursor=pointer]:
+                  - /url: /admin/subscribers/709
+          - row "708 wZXqFSxNKILcioMK WkUACRAbdzvWeOIWnilCbR b.is.i.j.e.gequ.981@gmail.com ViewEditDelete" [ref=e92]:
+            - cell "708" [ref=e93]:
+              - link "708" [ref=e94] [cursor=pointer]:
+                - /url: /admin/subscribers/708
+            - cell "wZXqFSxNKILcioMK" [ref=e95]
+            - cell "WkUACRAbdzvWeOIWnilCbR" [ref=e96]
+            - cell "b.is.i.j.e.gequ.981@gmail.com" [ref=e97]
+            - cell "ViewEditDelete" [ref=e98]:
+              - generic [ref=e99]:
+                - link "View" [ref=e100] [cursor=pointer]:
+                  - /url: /admin/subscribers/708
+                - link "Edit" [ref=e101] [cursor=pointer]:
+                  - /url: /admin/subscribers/708/edit
+                - link "Delete" [ref=e102] [cursor=pointer]:
+                  - /url: /admin/subscribers/708
+          - row "707 BItQlEjcWDThkmDCMqKV KYHNhKjeLCZVwhhvOTMFF a.dn.e.iwatom2.0.0.5@gmail.com ViewEditDelete" [ref=e103]:
+            - cell "707" [ref=e104]:
+              - link "707" [ref=e105] [cursor=pointer]:
+                - /url: /admin/subscribers/707
+            - cell "BItQlEjcWDThkmDCMqKV" [ref=e106]
+            - cell "KYHNhKjeLCZVwhhvOTMFF" [ref=e107]
+            - cell "a.dn.e.iwatom2.0.0.5@gmail.com" [ref=e108]
+            - cell "ViewEditDelete" [ref=e109]:
+              - generic [ref=e110]:
+                - link "View" [ref=e111] [cursor=pointer]:
+                  - /url: /admin/subscribers/707
+                - link "Edit" [ref=e112] [cursor=pointer]:
+                  - /url: /admin/subscribers/707/edit
+                - link "Delete" [ref=e113] [cursor=pointer]:
+                  - /url: /admin/subscribers/707
+          - row "706 VcjQXyOtGKDjjGpPrHqfQYR okTJBZBvjMTnYYbo p.ivem.u.r.otit.i44@gmail.com ViewEditDelete" [ref=e114]:
+            - cell "706" [ref=e115]:
+              - link "706" [ref=e116] [cursor=pointer]:
+                - /url: /admin/subscribers/706
+            - cell "VcjQXyOtGKDjjGpPrHqfQYR" [ref=e117]
+            - cell "okTJBZBvjMTnYYbo" [ref=e118]
+            - cell "p.ivem.u.r.otit.i44@gmail.com" [ref=e119]
+            - cell "ViewEditDelete" [ref=e120]:
+              - generic [ref=e121]:
+                - link "View" [ref=e122] [cursor=pointer]:
+                  - /url: /admin/subscribers/706
+                - link "Edit" [ref=e123] [cursor=pointer]:
+                  - /url: /admin/subscribers/706/edit
+                - link "Delete" [ref=e124] [cursor=pointer]:
+                  - /url: /admin/subscribers/706
+          - row "705 qcKrsLeUxKozOXiHOwJPGN zjxAcowNcizhAWzXMAKIrd s.ez.uf.ufi.pu4.78@gmail.com ViewEditDelete" [ref=e125]:
+            - cell "705" [ref=e126]:
+              - link "705" [ref=e127] [cursor=pointer]:
+                - /url: /admin/subscribers/705
+            - cell "qcKrsLeUxKozOXiHOwJPGN" [ref=e128]
+            - cell "zjxAcowNcizhAWzXMAKIrd" [ref=e129]
+            - cell "s.ez.uf.ufi.pu4.78@gmail.com" [ref=e130]
+            - cell "ViewEditDelete" [ref=e131]:
+              - generic [ref=e132]:
+                - link "View" [ref=e133] [cursor=pointer]:
+                  - /url: /admin/subscribers/705
+                - link "Edit" [ref=e134] [cursor=pointer]:
+                  - /url: /admin/subscribers/705/edit
+                - link "Delete" [ref=e135] [cursor=pointer]:
+                  - /url: /admin/subscribers/705
+          - row "704 aHQDwGJthSVpcPAEZsHpvBQN admROUSzOMvGKvQV uwow.iw.ok.e.cu.6.7@gmail.com ViewEditDelete" [ref=e136]:
+            - cell "704" [ref=e137]:
+              - link "704" [ref=e138] [cursor=pointer]:
+                - /url: /admin/subscribers/704
+            - cell "aHQDwGJthSVpcPAEZsHpvBQN" [ref=e139]
+            - cell "admROUSzOMvGKvQV" [ref=e140]
+            - cell "uwow.iw.ok.e.cu.6.7@gmail.com" [ref=e141]
+            - cell "ViewEditDelete" [ref=e142]:
+              - generic [ref=e143]:
+                - link "View" [ref=e144] [cursor=pointer]:
+                  - /url: /admin/subscribers/704
+                - link "Edit" [ref=e145] [cursor=pointer]:
+                  - /url: /admin/subscribers/704/edit
+                - link "Delete" [ref=e146] [cursor=pointer]:
+                  - /url: /admin/subscribers/704
+          - row "703 zJBmccRvvVOHUZwaRzkxZg SxoxcCCsOViQSXtS nib.e.b.ap.e.b.a.41.9@gmail.com ViewEditDelete" [ref=e147]:
+            - cell "703" [ref=e148]:
+              - link "703" [ref=e149] [cursor=pointer]:
+                - /url: /admin/subscribers/703
+            - cell "zJBmccRvvVOHUZwaRzkxZg" [ref=e150]
+            - cell "SxoxcCCsOViQSXtS" [ref=e151]
+            - cell "nib.e.b.ap.e.b.a.41.9@gmail.com" [ref=e152]
+            - cell "ViewEditDelete" [ref=e153]:
+              - generic [ref=e154]:
+                - link "View" [ref=e155] [cursor=pointer]:
+                  - /url: /admin/subscribers/703
+                - link "Edit" [ref=e156] [cursor=pointer]:
+                  - /url: /admin/subscribers/703/edit
+                - link "Delete" [ref=e157] [cursor=pointer]:
+                  - /url: /admin/subscribers/703
+          - row "702 RyxoWfSdSZVkMYPSvsXanzBY dQXeSsZWATxxuVyuDvgOiRZ e.jo.xox.i.h.i.x.e0.61@gmail.com ViewEditDelete" [ref=e158]:
+            - cell "702" [ref=e159]:
+              - link "702" [ref=e160] [cursor=pointer]:
+                - /url: /admin/subscribers/702
+            - cell "RyxoWfSdSZVkMYPSvsXanzBY" [ref=e161]
+            - cell "dQXeSsZWATxxuVyuDvgOiRZ" [ref=e162]
+            - cell "e.jo.xox.i.h.i.x.e0.61@gmail.com" [ref=e163]
+            - cell "ViewEditDelete" [ref=e164]:
+              - generic [ref=e165]:
+                - link "View" [ref=e166] [cursor=pointer]:
+                  - /url: /admin/subscribers/702
+                - link "Edit" [ref=e167] [cursor=pointer]:
+                  - /url: /admin/subscribers/702/edit
+                - link "Delete" [ref=e168] [cursor=pointer]:
+                  - /url: /admin/subscribers/702
+          - row "701 uWeuTCzvMSDSZWybYKyDgrL NCxZfxLXGwWDEHlXnt u.bey.ifo.vi.299@gmail.com ViewEditDelete" [ref=e169]:
+            - cell "701" [ref=e170]:
+              - link "701" [ref=e171] [cursor=pointer]:
+                - /url: /admin/subscribers/701
+            - cell "uWeuTCzvMSDSZWybYKyDgrL" [ref=e172]
+            - cell "NCxZfxLXGwWDEHlXnt" [ref=e173]
+            - cell "u.bey.ifo.vi.299@gmail.com" [ref=e174]
+            - cell "ViewEditDelete" [ref=e175]:
+              - generic [ref=e176]:
+                - link "View" [ref=e177] [cursor=pointer]:
+                  - /url: /admin/subscribers/701
+                - link "Edit" [ref=e178] [cursor=pointer]:
+                  - /url: /admin/subscribers/701/edit
+                - link "Delete" [ref=e179] [cursor=pointer]:
+                  - /url: /admin/subscribers/701
+          - row "700 ubUFvwvOWdEysiNJjQamGKX eAVTaZQdYMyTWfsCKc kogapojewax04@gmail.com ViewEditDelete" [ref=e180]:
+            - cell "700" [ref=e181]:
+              - link "700" [ref=e182] [cursor=pointer]:
+                - /url: /admin/subscribers/700
+            - cell "ubUFvwvOWdEysiNJjQamGKX" [ref=e183]
+            - cell "eAVTaZQdYMyTWfsCKc" [ref=e184]
+            - cell "kogapojewax04@gmail.com" [ref=e185]
+            - cell "ViewEditDelete" [ref=e186]:
+              - generic [ref=e187]:
+                - link "View" [ref=e188] [cursor=pointer]:
+                  - /url: /admin/subscribers/700
+                - link "Edit" [ref=e189] [cursor=pointer]:
+                  - /url: /admin/subscribers/700/edit
+                - link "Delete" [ref=e190] [cursor=pointer]:
+                  - /url: /admin/subscribers/700
+          - row "699 vVytQGEeDGzOnSTwYejgPldx szrNaMXlROnbfZlATSc dikuxibiwe268@gmail.com ViewEditDelete" [ref=e191]:
+            - cell "699" [ref=e192]:
+              - link "699" [ref=e193] [cursor=pointer]:
+                - /url: /admin/subscribers/699
+            - cell "vVytQGEeDGzOnSTwYejgPldx" [ref=e194]
+            - cell "szrNaMXlROnbfZlATSc" [ref=e195]
+            - cell "dikuxibiwe268@gmail.com" [ref=e196]
+            - cell "ViewEditDelete" [ref=e197]:
+              - generic [ref=e198]:
+                - link "View" [ref=e199] [cursor=pointer]:
+                  - /url: /admin/subscribers/699
+                - link "Edit" [ref=e200] [cursor=pointer]:
+                  - /url: /admin/subscribers/699/edit
+                - link "Delete" [ref=e201] [cursor=pointer]:
+                  - /url: /admin/subscribers/699
+          - row "698 iYglTvlCKZeAotdms wpCtsiCjrHPjVSBnckaycIEw semodewopupu94@gmail.com ViewEditDelete" [ref=e202]:
+            - cell "698" [ref=e203]:
+              - link "698" [ref=e204] [cursor=pointer]:
+                - /url: /admin/subscribers/698
+            - cell "iYglTvlCKZeAotdms" [ref=e205]
+            - cell "wpCtsiCjrHPjVSBnckaycIEw" [ref=e206]
+            - cell "semodewopupu94@gmail.com" [ref=e207]
+            - cell "ViewEditDelete" [ref=e208]:
+              - generic [ref=e209]:
+                - link "View" [ref=e210] [cursor=pointer]:
+                  - /url: /admin/subscribers/698
+                - link "Edit" [ref=e211] [cursor=pointer]:
+                  - /url: /admin/subscribers/698/edit
+                - link "Delete" [ref=e212] [cursor=pointer]:
+                  - /url: /admin/subscribers/698
+          - row "697 qAQMPROVLIXJmmVnNYGfpbXN qVnEEuxyncomdDGnXuPLEQd ravene1986@gmail.com ViewEditDelete" [ref=e213]:
+            - cell "697" [ref=e214]:
+              - link "697" [ref=e215] [cursor=pointer]:
+                - /url: /admin/subscribers/697
+            - cell "qAQMPROVLIXJmmVnNYGfpbXN" [ref=e216]
+            - cell "qVnEEuxyncomdDGnXuPLEQd" [ref=e217]
+            - cell "ravene1986@gmail.com" [ref=e218]
+            - cell "ViewEditDelete" [ref=e219]:
+              - generic [ref=e220]:
+                - link "View" [ref=e221] [cursor=pointer]:
+                  - /url: /admin/subscribers/697
+                - link "Edit" [ref=e222] [cursor=pointer]:
+                  - /url: /admin/subscribers/697/edit
+                - link "Delete" [ref=e223] [cursor=pointer]:
+                  - /url: /admin/subscribers/697
+          - row "696 LtOosWDGEtelYKAxcDw RsfDNIkkmAROYTTvgCJ opebeba270@gmail.com ViewEditDelete" [ref=e224]:
+            - cell "696" [ref=e225]:
+              - link "696" [ref=e226] [cursor=pointer]:
+                - /url: /admin/subscribers/696
+            - cell "LtOosWDGEtelYKAxcDw" [ref=e227]
+            - cell "RsfDNIkkmAROYTTvgCJ" [ref=e228]
+            - cell "opebeba270@gmail.com" [ref=e229]
+            - cell "ViewEditDelete" [ref=e230]:
+              - generic [ref=e231]:
+                - link "View" [ref=e232] [cursor=pointer]:
+                  - /url: /admin/subscribers/696
+                - link "Edit" [ref=e233] [cursor=pointer]:
+                  - /url: /admin/subscribers/696/edit
+                - link "Delete" [ref=e234] [cursor=pointer]:
+                  - /url: /admin/subscribers/696
+          - row "695 JnQRpZnqEsTLFKxZcRwNu INfFSNDUGObJEEqQVYZQc uluzafocewu632@gmail.com ViewEditDelete" [ref=e235]:
+            - cell "695" [ref=e236]:
+              - link "695" [ref=e237] [cursor=pointer]:
+                - /url: /admin/subscribers/695
+            - cell "JnQRpZnqEsTLFKxZcRwNu" [ref=e238]
+            - cell "INfFSNDUGObJEEqQVYZQc" [ref=e239]
+            - cell "uluzafocewu632@gmail.com" [ref=e240]
+            - cell "ViewEditDelete" [ref=e241]:
+              - generic [ref=e242]:
+                - link "View" [ref=e243] [cursor=pointer]:
+                  - /url: /admin/subscribers/695
+                - link "Edit" [ref=e244] [cursor=pointer]:
+                  - /url: /admin/subscribers/695/edit
+                - link "Delete" [ref=e245] [cursor=pointer]:
+                  - /url: /admin/subscribers/695
+          - row "694 tknZGDWsgEnhctOzJlinr OidSVeAbBCeQkrpGonjhya karennewby55@gmail.com ViewEditDelete" [ref=e246]:
+            - cell "694" [ref=e247]:
+              - link "694" [ref=e248] [cursor=pointer]:
+                - /url: /admin/subscribers/694
+            - cell "tknZGDWsgEnhctOzJlinr" [ref=e249]
+            - cell "OidSVeAbBCeQkrpGonjhya" [ref=e250]
+            - cell "karennewby55@gmail.com" [ref=e251]
+            - cell "ViewEditDelete" [ref=e252]:
+              - generic [ref=e253]:
+                - link "View" [ref=e254] [cursor=pointer]:
+                  - /url: /admin/subscribers/694
+                - link "Edit" [ref=e255] [cursor=pointer]:
+                  - /url: /admin/subscribers/694/edit
+                - link "Delete" [ref=e256] [cursor=pointer]:
+                  - /url: /admin/subscribers/694
+          - row "693 HCiRhqFowFMvzAkjWrrYVRtm NMgcALZOLXdULSeWyQgtuXio baguina@yahoo.com ViewEditDelete" [ref=e257]:
+            - cell "693" [ref=e258]:
+              - link "693" [ref=e259] [cursor=pointer]:
+                - /url: /admin/subscribers/693
+            - cell "HCiRhqFowFMvzAkjWrrYVRtm" [ref=e260]
+            - cell "NMgcALZOLXdULSeWyQgtuXio" [ref=e261]
+            - cell "baguina@yahoo.com" [ref=e262]
+            - cell "ViewEditDelete" [ref=e263]:
+              - generic [ref=e264]:
+                - link "View" [ref=e265] [cursor=pointer]:
+                  - /url: /admin/subscribers/693
+                - link "Edit" [ref=e266] [cursor=pointer]:
+                  - /url: /admin/subscribers/693/edit
+                - link "Delete" [ref=e267] [cursor=pointer]:
+                  - /url: /admin/subscribers/693
+          - row "692 rDOOVayYreHhoqZgS aGVoKIcFPbUTZpId yorktownautobody@yahoo.com ViewEditDelete" [ref=e268]:
+            - cell "692" [ref=e269]:
+              - link "692" [ref=e270] [cursor=pointer]:
+                - /url: /admin/subscribers/692
+            - cell "rDOOVayYreHhoqZgS" [ref=e271]
+            - cell "aGVoKIcFPbUTZpId" [ref=e272]
+            - cell "yorktownautobody@yahoo.com" [ref=e273]
+            - cell "ViewEditDelete" [ref=e274]:
+              - generic [ref=e275]:
+                - link "View" [ref=e276] [cursor=pointer]:
+                  - /url: /admin/subscribers/692
+                - link "Edit" [ref=e277] [cursor=pointer]:
+                  - /url: /admin/subscribers/692/edit
+                - link "Delete" [ref=e278] [cursor=pointer]:
+                  - /url: /admin/subscribers/692
+          - row "691 uieaFrcPlQtfqPEr xvzJIzJASMMSUWYNy nineposi007@gmail.com ViewEditDelete" [ref=e279]:
+            - cell "691" [ref=e280]:
+              - link "691" [ref=e281] [cursor=pointer]:
+                - /url: /admin/subscribers/691
+            - cell "uieaFrcPlQtfqPEr" [ref=e282]
+            - cell "xvzJIzJASMMSUWYNy" [ref=e283]
+            - cell "nineposi007@gmail.com" [ref=e284]
+            - cell "ViewEditDelete" [ref=e285]:
+              - generic [ref=e286]:
+                - link "View" [ref=e287] [cursor=pointer]:
+                  - /url: /admin/subscribers/691
+                - link "Edit" [ref=e288] [cursor=pointer]:
+                  - /url: /admin/subscribers/691/edit
+                - link "Delete" [ref=e289] [cursor=pointer]:
+                  - /url: /admin/subscribers/691
+          - row "690 HaFzYofLKVMXGmdvfZgKO IDLyBIlwDIeYmdGdosYV ryan@rjpeterman.com ViewEditDelete" [ref=e290]:
+            - cell "690" [ref=e291]:
+              - link "690" [ref=e292] [cursor=pointer]:
+                - /url: /admin/subscribers/690
+            - cell "HaFzYofLKVMXGmdvfZgKO" [ref=e293]
+            - cell "IDLyBIlwDIeYmdGdosYV" [ref=e294]
+            - cell "ryan@rjpeterman.com" [ref=e295]
+            - cell "ViewEditDelete" [ref=e296]:
+              - generic [ref=e297]:
+                - link "View" [ref=e298] [cursor=pointer]:
+                  - /url: /admin/subscribers/690
+                - link "Edit" [ref=e299] [cursor=pointer]:
+                  - /url: /admin/subscribers/690/edit
+                - link "Delete" [ref=e300] [cursor=pointer]:
+                  - /url: /admin/subscribers/690
+          - row "689 KOpNATzcIajFaZFBBwVuhaLv ElHmOKvTTrEeqmfDxB mccabe6466@yahoo.com ViewEditDelete" [ref=e301]:
+            - cell "689" [ref=e302]:
+              - link "689" [ref=e303] [cursor=pointer]:
+                - /url: /admin/subscribers/689
+            - cell "KOpNATzcIajFaZFBBwVuhaLv" [ref=e304]
+            - cell "ElHmOKvTTrEeqmfDxB" [ref=e305]
+            - cell "mccabe6466@yahoo.com" [ref=e306]
+            - cell "ViewEditDelete" [ref=e307]:
+              - generic [ref=e308]:
+                - link "View" [ref=e309] [cursor=pointer]:
+                  - /url: /admin/subscribers/689
+                - link "Edit" [ref=e310] [cursor=pointer]:
+                  - /url: /admin/subscribers/689/edit
+                - link "Delete" [ref=e311] [cursor=pointer]:
+                  - /url: /admin/subscribers/689
+          - row "688 FndxPoDPckfQJcrAVKnVKXk ZXZsDgnIQFSSnShVNSVQr nmalnik@gmail.com ViewEditDelete" [ref=e312]:
+            - cell "688" [ref=e313]:
+              - link "688" [ref=e314] [cursor=pointer]:
+                - /url: /admin/subscribers/688
+            - cell "FndxPoDPckfQJcrAVKnVKXk" [ref=e315]
+            - cell "ZXZsDgnIQFSSnShVNSVQr" [ref=e316]
+            - cell "nmalnik@gmail.com" [ref=e317]
+            - cell "ViewEditDelete" [ref=e318]:
+              - generic [ref=e319]:
+                - link "View" [ref=e320] [cursor=pointer]:
+                  - /url: /admin/subscribers/688
+                - link "Edit" [ref=e321] [cursor=pointer]:
+                  - /url: /admin/subscribers/688/edit
+                - link "Delete" [ref=e322] [cursor=pointer]:
+                  - /url: /admin/subscribers/688
+          - row "687 jIerCeiiCsBTqASDvxrZwcC wwMPeUxxHCuMqiyCAb techman2266@gmail.com ViewEditDelete" [ref=e323]:
+            - cell "687" [ref=e324]:
+              - link "687" [ref=e325] [cursor=pointer]:
+                - /url: /admin/subscribers/687
+            - cell "jIerCeiiCsBTqASDvxrZwcC" [ref=e326]
+            - cell "wwMPeUxxHCuMqiyCAb" [ref=e327]
+            - cell "techman2266@gmail.com" [ref=e328]
+            - cell "ViewEditDelete" [ref=e329]:
+              - generic [ref=e330]:
+                - link "View" [ref=e331] [cursor=pointer]:
+                  - /url: /admin/subscribers/687
+                - link "Edit" [ref=e332] [cursor=pointer]:
+                  - /url: /admin/subscribers/687/edit
+                - link "Delete" [ref=e333] [cursor=pointer]:
+                  - /url: /admin/subscribers/687
+          - row "686 hpFMkcHsKUdBgRFguDJ ZZCcGCKADaQMTjItwIu r.boyens@cox.net ViewEditDelete" [ref=e334]:
+            - cell "686" [ref=e335]:
+              - link "686" [ref=e336] [cursor=pointer]:
+                - /url: /admin/subscribers/686
+            - cell "hpFMkcHsKUdBgRFguDJ" [ref=e337]
+            - cell "ZZCcGCKADaQMTjItwIu" [ref=e338]
+            - cell "r.boyens@cox.net" [ref=e339]
+            - cell "ViewEditDelete" [ref=e340]:
+              - generic [ref=e341]:
+                - link "View" [ref=e342] [cursor=pointer]:
+                  - /url: /admin/subscribers/686
+                - link "Edit" [ref=e343] [cursor=pointer]:
+                  - /url: /admin/subscribers/686/edit
+                - link "Delete" [ref=e344] [cursor=pointer]:
+                  - /url: /admin/subscribers/686
+          - row "685 ZkwjAVWaIrmoPZEeuRtscPVq ZwVsQTrcNmPqZYmPzmk danielle.halperin@gmail.com ViewEditDelete" [ref=e345]:
+            - cell "685" [ref=e346]:
+              - link "685" [ref=e347] [cursor=pointer]:
+                - /url: /admin/subscribers/685
+            - cell "ZkwjAVWaIrmoPZEeuRtscPVq" [ref=e348]
+            - cell "ZwVsQTrcNmPqZYmPzmk" [ref=e349]
+            - cell "danielle.halperin@gmail.com" [ref=e350]
+            - cell "ViewEditDelete" [ref=e351]:
+              - generic [ref=e352]:
+                - link "View" [ref=e353] [cursor=pointer]:
+                  - /url: /admin/subscribers/685
+                - link "Edit" [ref=e354] [cursor=pointer]:
+                  - /url: /admin/subscribers/685/edit
+                - link "Delete" [ref=e355] [cursor=pointer]:
+                  - /url: /admin/subscribers/685
+          - row "684 qRFhOBoahkZafZSp bLPUrEgMuuEPgTZc kevinsterner@brandpoet.com ViewEditDelete" [ref=e356]:
+            - cell "684" [ref=e357]:
+              - link "684" [ref=e358] [cursor=pointer]:
+                - /url: /admin/subscribers/684
+            - cell "qRFhOBoahkZafZSp" [ref=e359]
+            - cell "bLPUrEgMuuEPgTZc" [ref=e360]
+            - cell "kevinsterner@brandpoet.com" [ref=e361]
+            - cell "ViewEditDelete" [ref=e362]:
+              - generic [ref=e363]:
+                - link "View" [ref=e364] [cursor=pointer]:
+                  - /url: /admin/subscribers/684
+                - link "Edit" [ref=e365] [cursor=pointer]:
+                  - /url: /admin/subscribers/684/edit
+                - link "Delete" [ref=e366] [cursor=pointer]:
+                  - /url: /admin/subscribers/684
+          - row "683 nvOUYGWpdqCkOFvjfuuyXV UQpAYUNUxuZDyYPvFd jtribble@fambrands.com ViewEditDelete" [ref=e367]:
+            - cell "683" [ref=e368]:
+              - link "683" [ref=e369] [cursor=pointer]:
+                - /url: /admin/subscribers/683
+            - cell "nvOUYGWpdqCkOFvjfuuyXV" [ref=e370]
+            - cell "UQpAYUNUxuZDyYPvFd" [ref=e371]
+            - cell "jtribble@fambrands.com" [ref=e372]
+            - cell "ViewEditDelete" [ref=e373]:
+              - generic [ref=e374]:
+                - link "View" [ref=e375] [cursor=pointer]:
+                  - /url: /admin/subscribers/683
+                - link "Edit" [ref=e376] [cursor=pointer]:
+                  - /url: /admin/subscribers/683/edit
+                - link "Delete" [ref=e377] [cursor=pointer]:
+                  - /url: /admin/subscribers/683
+          - row "682 CHzySEPrvFmUZwRWTT zZnNWsJMaupdmZyWyQfvTT lethiamann@yahoo.com ViewEditDelete" [ref=e378]:
+            - cell "682" [ref=e379]:
+              - link "682" [ref=e380] [cursor=pointer]:
+                - /url: /admin/subscribers/682
+            - cell "CHzySEPrvFmUZwRWTT" [ref=e381]
+            - cell "zZnNWsJMaupdmZyWyQfvTT" [ref=e382]
+            - cell "lethiamann@yahoo.com" [ref=e383]
+            - cell "ViewEditDelete" [ref=e384]:
+              - generic [ref=e385]:
+                - link "View" [ref=e386] [cursor=pointer]:
+                  - /url: /admin/subscribers/682
+                - link "Edit" [ref=e387] [cursor=pointer]:
+                  - /url: /admin/subscribers/682/edit
+                - link "Delete" [ref=e388] [cursor=pointer]:
+                  - /url: /admin/subscribers/682
+      - generic [ref=e389]:
+        - navigation [ref=e390]:
+          - generic [ref=e391]: "1"
+          - link "2" [ref=e393] [cursor=pointer]:
+            - /url: /admin/subscribers?order=id_desc&page=2
+          - link "3" [ref=e395] [cursor=pointer]:
+            - /url: /admin/subscribers?order=id_desc&page=3
+          - link "4" [ref=e397] [cursor=pointer]:
+            - /url: /admin/subscribers?order=id_desc&page=4
+          - link "5" [ref=e399] [cursor=pointer]:
+            - /url: /admin/subscribers?order=id_desc&page=5
+          - text: …
+          - link "Next ›" [ref=e401] [cursor=pointer]:
+            - /url: /admin/subscribers?order=id_desc&page=2
+          - link "Last »" [ref=e403] [cursor=pointer]:
+            - /url: /admin/subscribers?order=id_desc&page=19
+        - generic [ref=e404]: Displaying Subscribers 1 - 30 of 567 in total
+        - generic [ref=e405]:
+          - text: "Download:"
+          - link "CSV" [ref=e406] [cursor=pointer]:
+            - /url: /admin/subscribers.csv
+          - link "XML" [ref=e407] [cursor=pointer]:
+            - /url: /admin/subscribers.xml
+          - link "JSON" [ref=e408] [cursor=pointer]:
+            - /url: /admin/subscribers.json
+    - generic [ref=e410]:
+      - heading "Filters" [level=3] [ref=e411]
+      - generic [ref=e413]:
+        - generic [ref=e414]:
+          - generic [ref=e415]: First name
+          - combobox [ref=e416]
+          - combobox "Contains" [ref=e419] [cursor=pointer]:
+            - textbox "Contains" [ref=e420]
+          - textbox "First name" [ref=e421]
+        - generic [ref=e422]:
+          - generic [ref=e423]: Last name
+          - combobox [ref=e424]
+          - combobox "Contains" [ref=e427] [cursor=pointer]:
+            - textbox "Contains" [ref=e428]
+          - textbox "Last name" [ref=e429]
+        - generic [ref=e430]:
+          - generic [ref=e431]: Email
+          - combobox [ref=e432]
+          - combobox "Contains" [ref=e435] [cursor=pointer]:
+            - textbox "Contains" [ref=e436]
+          - textbox "Email" [ref=e437]
+        - generic [ref=e438]:
+          - button "Filter" [ref=e439] [cursor=pointer]
+          - link "Clear Filters" [ref=e440] [cursor=pointer]:
+            - /url: "#"
+  - paragraph [ref=e442]:
+    - text: Powered by
+    - link "Active Admin" [ref=e443] [cursor=pointer]:
+      - /url: https://activeadmin.info
+    - text: 3.5.1
