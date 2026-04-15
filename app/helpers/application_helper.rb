@@ -7,7 +7,12 @@ module ApplicationHelper
   private
 
   def md_renderer
-    @_md_renderer ||= Redcarpet::Markdown.new(Redcarpet::Render::HTML, {})
+    @_md_renderer ||= Redcarpet::Markdown.new(
+      Redcarpet::Render::HTML,
+      fenced_code_blocks: true,
+      strikethrough: true,
+      autolink: true,
+    )
   end
 
 end

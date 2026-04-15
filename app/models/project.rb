@@ -9,6 +9,7 @@ class Project < ApplicationRecord
   acts_as_list :position
 
   validates_presence_of :client, :name
+  validates_uniqueness_of :slug
 
   before_validation :generate_slug
 

@@ -39,6 +39,12 @@
     "semantic-release": "^15.13.24",
     "webpack-dev-server": "^3"
   },
+  "resolutions": {
+    "markdown-it": "13.0.2"
+  },
+  "overrides": {
+    "markdown-it": "13.0.2"
+  },
   "dependencies": {
     "@fullcalendar/core": "^5",
     "@fullcalendar/timegrid": "^5.4.0",
@@ -54,6 +60,7 @@
     "aos": "2",
     "autoprefixer": "10",
     "autosize": "^4.0.2",
+    "markdown-it": "^13.0.2",
     "postcss": "8",
     "postcss-loader": "4",
     "puppeteer": "^24.40.0",

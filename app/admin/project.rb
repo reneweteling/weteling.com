@@ -44,6 +44,26 @@ ActiveAdmin.register Project do
     actions
   end
 
+  show do
+    attributes_table do
+      row :client
+      row :name
+      row :slug
+      row :site_active
+      row :cv_active
+      row :hours_active
+      row :position
+      row :title
+      row :subtitle
+      row :techniques
+      row :start_date
+      row :end_date
+      row(:description_about_the_company) { |p| markdown(p.description_about_the_company).html_safe }
+      row(:description_my_role) { |p| markdown(p.description_my_role).html_safe }
+      preview_row :image
+    end
+  end
+
   form do |f|
     inputs 'Details' do
       input :client

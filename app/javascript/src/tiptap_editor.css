@@ -1,13 +1,15 @@
-/* Override AA's side-by-side label/input layout for editor fields */
+form.formtastic .inputs li.md {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 form.formtastic .inputs li.md label.label {
-  float: none;
-  width: 100%;
-  display: block;
-  padding-bottom: 4px;
+  width: 20%;
+  flex-shrink: 0;
 }
 
 form.formtastic .inputs li.md .editor {
-  width: 100%;
+  width: calc(80% - 22px);
   border: 1px solid #c9d0d6;
   border-radius: 3px;
   background: #fff;
@@ -69,10 +71,11 @@ form.formtastic .inputs li.md .editor {
 .tiptap-content {
   padding: 10px 12px;
   min-height: 250px;
-  max-height: 600px;
+  max-height: 500px;
   overflow-y: auto;
 }
 
+/* Editor content styles */
 .tiptap-content .tiptap {
   outline: none;
   min-height: 230px;
@@ -158,3 +161,4 @@ form.formtastic .inputs li.md .editor {
   border-top: 1px solid #c9d0d6;
   margin: 0.8em 0;
 }
+

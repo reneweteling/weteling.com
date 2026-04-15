@@ -97,6 +97,7 @@ function initTiptap() {
 
     const editorEl = document.createElement('div')
     editorEl.className = 'tiptap-content'
+
     wrapper.appendChild(editorEl)
     textarea.style.display = 'none'
 
