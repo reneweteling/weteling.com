@@ -16,4 +16,10 @@
         = image_tag project.image.medium.url, class: 'img-fluid'
     .no-flex-row
       .no-flex-col-12.description
-        == markdown (defined?(as_cv) && as_cv === true ? project.description_cv : project.description)
+        - if defined?(as_cv) && as_cv === true
+          == markdown project.description_cv
+        - else
+          - if project.description_about_the_company.present?
+            == markdown project.description_about_the_company
+          - if project.description_my_role.present?
+            == markdown project.description_my_role

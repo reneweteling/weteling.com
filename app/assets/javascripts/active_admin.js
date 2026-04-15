@@ -1,31 +1,22 @@
 //= require active_admin/base
 //= require activeadmin_addons/all
 //= require activeadmin-sortable
-//= require editor.md/editormd
-//= require editor.md/languages/en
 
 
 $(() => {
-  var $el;
-  $('.md .editor').each((_, $el) => {
-    editormd($el.id, {
-      width: "100%",
-      height: "1000px",
-      path: '/vendor-assets/editor.md/lib/'
-    });
+  // edit hour page: automatically set the default rate when project changes
+  $("#hour_project_id").on('change', function() {
+    var mapping = $(this).data('rate');
+    if (mapping) {
+      $("#hour_rate_id").val(mapping[$(this).val()]).trigger('change');
+    }
   });
-  // edit hour page automaticly set the default rate
-  $("#hour_project_id").on('change', () => {
-    var mapping;
-    mapping = $(this).data('rate');
-    $("#hour_rate_id").val(mapping[$(this).val()]).trigger('change');
-  });
-  $el = $('body');
-  $('input, select', $el).on('change', () => {
-    $('[data-conditional]').each(() => {
-      var field, field_value, operator, value;
-      [field, operator, value] = $(this).data('conditional').split(' ');
-      field_value = $(`[name='${field}']`, $el).val();
+
+  var $el = $('body');
+  $('input, select', $el).on('change', function() {
+    $('[data-conditional]').each(function() {
+      var [field, operator, value] = $(this).data('conditional').split(' ');
+      var field_value = $(`[name='${field}']`, $el).val();
       $(this).toggle(eval(`'${field_value}' ${operator} ${value}`));
     });
   }).trigger('change');

@@ -41,6 +41,6 @@ class Project < ApplicationRecord
   private
 
   def generate_slug
-    self.slug ||= title&.parameterize
+    self.slug = (title.presence || name)&.parameterize if slug.blank?
   end
 end

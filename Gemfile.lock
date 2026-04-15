@@ -1,9 +1,4 @@
 GEM
-  remote: https://rails-assets.org/
-  specs:
-    rails-assets-editor.md (1.5.0)
-
-GEM
   remote: https://rubygems.org/
   specs:
     actioncable (8.0.1)
@@ -546,7 +541,6 @@ DEPENDENCIES
   puma
   rack-cors
   rails
-  rails-assets-editor.md!
   rails_validations
   recaptcha
   redcarpet

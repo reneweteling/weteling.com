@@ -48,6 +48,7 @@ ActiveAdmin.register Project do
     inputs 'Details' do
       input :client
       input :name
+      input :slug
       input :site_active
       input :cv_active
       input :hours_active
@@ -63,10 +64,6 @@ ActiveAdmin.register Project do
       input :description_about_the_company, as: :md
       input :description_my_role, as: :md
       input :image, as: :aafile
-    end
-
-    inputs 'Legacy' do
-      input :description, as: :md
     end
 
     actions
