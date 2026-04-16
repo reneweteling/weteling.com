@@ -17,6 +17,7 @@ function createToolbar(editor, wrapper) {
       { label: 'S', command: () => editor.chain().focus().toggleStrike().run(), active: 'strike', className: 'strikethrough' },
     ],
     [
+      { label: 'H1', command: () => editor.chain().focus().toggleHeading({ level: 1 }).run(), active: () => editor.isActive('heading', { level: 1 }) },
       { label: 'H2', command: () => editor.chain().focus().toggleHeading({ level: 2 }).run(), active: () => editor.isActive('heading', { level: 2 }) },
       { label: 'H3', command: () => editor.chain().focus().toggleHeading({ level: 3 }).run(), active: () => editor.isActive('heading', { level: 3 }) },
     ],
@@ -50,6 +51,9 @@ function createToolbar(editor, wrapper) {
     [
       { label: 'Undo', command: () => editor.chain().focus().undo().run() },
       { label: 'Redo', command: () => editor.chain().focus().redo().run() },
+    ],
+    [
+      { label: 'MD', command: () => toggleMarkdownSource(editor, wrapper), className: 'md-toggle' },
     ],
   ]
 
@@ -85,6 +89,33 @@ function createToolbar(editor, wrapper) {
   })
 
   wrapper.insertBefore(toolbar, wrapper.firstChild)
+}
+
+function toggleMarkdownSource(editor, wrapper) {
+  const editorEl = wrapper.querySelector('.tiptap-content')
+  let sourceEl = wrapper.querySelector('.tiptap-source')
+  const mdBtn = wrapper.querySelector('.md-toggle')
+
+  if (sourceEl) {
+    // Switch back to WYSIWYG
+    editor.commands.setContent(sourceEl.value)
+    sourceEl.remove()
+    editorEl.style.display = ''
+    if (mdBtn) mdBtn.classList.remove('is-active')
+  } else {
+    // Switch to markdown source
+    sourceEl = document.createElement('textarea')
+    sourceEl.className = 'tiptap-source'
+    sourceEl.value = editor.storage.markdown.getMarkdown()
+    sourceEl.addEventListener('input', () => {
+      const textarea = wrapper.querySelector('textarea:not(.tiptap-source)')
+      if (textarea) textarea.value = sourceEl.value
+    })
+    editorEl.style.display = 'none'
+    editorEl.parentNode.insertBefore(sourceEl, editorEl.nextSibling)
+    if (mdBtn) mdBtn.classList.add('is-active')
+    sourceEl.focus()
+  }
 }
 
 function initTiptap() {

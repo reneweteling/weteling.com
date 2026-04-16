@@ -12,6 +12,7 @@ module ApplicationHelper
       fenced_code_blocks: true,
       strikethrough: true,
       autolink: true,
+      tables: true,
     )
   end
 

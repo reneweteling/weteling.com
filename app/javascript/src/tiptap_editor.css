@@ -162,3 +162,32 @@ form.formtastic .inputs li.md .editor {
   margin: 0.8em 0;
 }
 
+.tiptap-content .tiptap h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+  margin-top: 0.8em;
+}
+
+.tiptap-source {
+  width: 100%;
+  min-height: 250px;
+  max-height: 500px;
+  padding: 10px 12px;
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #e4e4e7;
+  background: #1e1e1e;
+  border: none;
+  border-radius: 0 0 3px 3px;
+  resize: vertical;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.tiptap-toolbar-btn.md-toggle {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 10px;
+  letter-spacing: -0.5px;
+}
+
