@@ -15,6 +15,7 @@ docker compose up
 
 ## Debugging tools
 
+
 ```bash
 # have docker compose up running.
 
