@@ -3,6 +3,17 @@ class ApplicationController < ActionController::Base
   before_action :www_redirect
   before_action :set_browser
 
+  rescue_from ActionController::BadRequest do
+    head :bad_request
+  end
+
+  rescue_from ActiveRecord::RecordNotFound do
+    respond_to do |format|
+      format.html { render file: Rails.public_path.join('404.html'), status: :not_found, layout: false }
+      format.any  { head :not_found }
+    end
+  end
+
   def health_check
     render text: "true"
   end
