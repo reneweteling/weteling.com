@@ -53,6 +53,20 @@ ActiveAdmin.register Project do
       row :cv_active
       row :hours_active
       row :position
+      row :budget do |p|
+        if p.budget?
+          parts = [number_to_currency(p.budget)]
+          parts << "(#{p.budget_hours.round(2)} uur @ #{number_to_currency(p.default_rate_amount)})" if p.budget_hours
+          parts.join(' ')
+        end
+      end
+      row :budget_status do |p|
+        if p.budget?
+          spent = p.spent_amount
+          remaining = p.remaining_amount
+          "Besteed: #{number_to_currency(spent)} — Resterend: #{number_to_currency(remaining)}"
+        end
+      end
       row :title
       row :subtitle
       row :techniques
@@ -73,6 +87,7 @@ ActiveAdmin.register Project do
       input :cv_active
       input :hours_active
       input :position
+      input :budget, hint: 'Budget in euro\'s (optioneel). Wordt omgerekend naar uren via het default tarief van de client.'
     end
 
     inputs 'Site' do

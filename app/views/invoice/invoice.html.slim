@@ -185,6 +185,34 @@ sass:
         = l start_date
         |  — #{l end_date}
 
+  - if project.budget?
+    - spent_to_date = project.spent_amount(up_to: end_date)
+    - remaining = project.budget - spent_to_date
+    - rate_amount = project.default_rate_amount
+    - remaining_hours = rate_amount && rate_amount.positive? ? (remaining / rate_amount).round(1) : nil
+    - budget_hours = project.budget_hours&.round(1)
+    .budget-block style="background:#f9fafb;border:1px solid #e5e7eb;border-radius:8px;padding:16px 20px;margin-bottom:24px;"
+      .label style="font-size:11px;text-transform:uppercase;letter-spacing:0.05em;color:#9ca3af;font-weight:600;margin-bottom:8px;" Projectbudget
+      table style="width:100%;font-size:13px;color:#374151;"
+        tr
+          td Totaal budget
+          td.text-right style="text-align:right;"
+            = number_to_currency(project.budget)
+            - if budget_hours
+              |  (#{budget_hours} uur)
+        tr
+          td Besteed t/m #{l end_date, format: :short}
+          td.text-right style="text-align:right;"
+            = number_to_currency(spent_to_date)
+        tr
+          td
+            strong Resterend
+          td.text-right style="text-align:right;"
+            strong style=(remaining.negative? ? 'color:#b91c1c;' : '')
+              = number_to_currency(remaining)
+              - if remaining_hours
+                |  (#{remaining_hours} uur)
+
   table.hours-table
     thead
       tr

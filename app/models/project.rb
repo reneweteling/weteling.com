@@ -39,6 +39,36 @@ class Project < ApplicationRecord
     "#{client} - #{name}"
   end
 
+  def budget?
+    budget.present? && budget.positive?
+  end
+
+  def default_rate_amount
+    client&.default_rate&.rate
+  end
+
+  def budget_hours
+    return nil unless budget? && default_rate_amount&.positive?
+    budget / default_rate_amount
+  end
+
+  def spent_amount(up_to: nil)
+    scope = hours.includes(:rate)
+    scope = scope.where(date: ..up_to) if up_to
+    scope.sum { |h| h.total_hours * h.rate.rate }
+  end
+
+  def remaining_amount(up_to: nil)
+    return nil unless budget?
+    budget - spent_amount(up_to: up_to)
+  end
+
+  def remaining_hours(up_to: nil)
+    remaining = remaining_amount(up_to: up_to)
+    return nil unless remaining && default_rate_amount&.positive?
+    remaining / default_rate_amount
+  end
+
   private
 
   def generate_slug

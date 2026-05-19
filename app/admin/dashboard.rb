@@ -98,7 +98,9 @@ ActiveAdmin.register_page "Dashboard" do
           tr do
             th "Client"
             th "Project"
-            th "Total / S&O hours"
+            th do
+              raw content_tag(:div, '<span>Hours</span><span>Budget</span>'.html_safe, style: 'display:flex;justify-content:space-between;align-items:center;gap:12px;')
+            end
             th "Rate"
             th "Total"
             th ""
@@ -121,7 +123,25 @@ ActiveAdmin.register_page "Dashboard" do
               td p.client
               # td "#{start_date.to_date} - #{end_date.to_date}"
               td p.name
-              td "#{hours.sum(:total_hours)} / #{hours.sum(:total_sno_hours)}"
+              td do
+                month_hours_total = hours.sum(:total_hours)
+                month_sno_total = hours.sum(:total_sno_hours)
+                left_parts = [month_hours_total.to_s]
+                left_parts << content_tag(:span, "#{month_sno_total} S&O", style: 'color:#6b7280;margin-left:8px;') if month_sno_total.to_f.positive?
+                right = ''
+                if p.budget? && p.budget_hours&.positive?
+                  spent_to_date = p.spent_amount(up_to: end_date)
+                  used_hours = p.default_rate_amount&.positive? ? (spent_to_date / p.default_rate_amount) : nil
+                  budget_hours = p.budget_hours
+                  if used_hours
+                    pct = (used_hours / budget_hours * 100).round
+                    over = used_hours > budget_hours
+                    style = over ? 'color:#b91c1c;font-weight:600;' : 'color:#6b7280;'
+                    right = content_tag(:span, "(#{pct}% - #{used_hours.round(1)}/#{budget_hours.round(1)})", style: style)
+                  end
+                end
+                raw content_tag(:div, raw(left_parts.join(' ')) + raw(right), style: 'display:flex;justify-content:space-between;align-items:center;gap:12px;')
+              end
               td hours.map(&:rate).uniq.to_sentence
               td number_to_currency(project_total)
               td link_to(
