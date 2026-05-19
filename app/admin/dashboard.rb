@@ -137,7 +137,7 @@ ActiveAdmin.register_page "Dashboard" do
                     pct = (used_hours / budget_hours * 100).round
                     over = used_hours > budget_hours
                     style = over ? 'color:#b91c1c;font-weight:600;' : 'color:#6b7280;'
-                    right = content_tag(:span, "(#{pct}% - #{used_hours.round(1)}/#{budget_hours.round(1)})", style: style)
+                    right = content_tag(:span, "#{pct}% - #{used_hours.round(1)}/#{budget_hours.round(1)}", style: style)
                   end
                 end
                 raw content_tag(:div, raw(left_parts.join(' ')) + raw(right), style: 'display:flex;justify-content:space-between;align-items:center;gap:12px;')
