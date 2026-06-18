@@ -1,5 +1,6 @@
 #contact-content
   = simple_form_for(@contact_form, url: contact_path, remote: true, html: { id: 'contact-form' }) do |f|
+    = invisible_captcha
     = f.input :name, label: false, placeholder: t('site.contact.placeholders.name')
     = f.input :email, label: false, placeholder: t('site.contact.placeholders.email')
     = f.input :subject, label: false, placeholder: t('site.contact.placeholders.subject')

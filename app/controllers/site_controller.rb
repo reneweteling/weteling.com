@@ -1,6 +1,7 @@
 class SiteController < ApplicationController
   rescue_from ActionController::InvalidAuthenticityToken, with: :redirect_to_referer_or_path
   before_action :set_locale
+  invisible_captcha only: [:contact], on_spam: :discard_spam_contact, on_timestamp_spam: :discard_spam_contact
 
   LOCALES = ['en', 'nl']
 
@@ -29,30 +30,13 @@ class SiteController < ApplicationController
   def contact
     @contact_form = ContactForm.new(params.require(:contact_form).permit(:name, :email, :subject, :message))
 
-    Rails.logger.info "reCAPTCHA token present: #{params['g-recaptcha-response'].present?}"
-
-    # Skip reCAPTCHA in development if no token is present
-    recaptcha_valid = if Rails.env.development? && params['g-recaptcha-response'].blank?
-      Rails.logger.info "Skipping reCAPTCHA validation in development"
-      true
-    else
-      verify_recaptcha(model: @contact_form, action: 'contact', minimum_score: 0.5)
-    end
-
-    Rails.logger.info "reCAPTCHA valid: #{recaptcha_valid}"
-    Rails.logger.info "Form valid: #{@contact_form.valid?}"
-
-    if recaptcha_valid && @contact_form.valid?
-      Rails.logger.info "Sending emails..."
+    if @contact_form.valid?
       ContactMailer.contact_mail(@contact_form).deliver_now
       ContactMailer.confirm_mail(@contact_form).deliver_now
       @contact_form = ContactForm.new
       @sent = true
-      Rails.logger.info "Emails sent successfully"
     else
       @sent = false
-      Rails.logger.warn "Contact form submission failed. Errors: #{@contact_form.errors.full_messages}"
-      @contact_form.errors.add(:base, "reCAPTCHA verification failed. Please try again.") unless @contact_form.errors.any?
     end
   end
 
@@ -69,6 +53,14 @@ class SiteController < ApplicationController
   end
 
   private
+
+  # Honeypot or timestamp tripped: pretend it worked so the bot gets no signal,
+  # but send nothing.
+  def discard_spam_contact
+    @contact_form = ContactForm.new
+    @sent = true
+    render :contact
+  end
 
   def set_locale
     # locale set from param

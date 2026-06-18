@@ -68,8 +68,8 @@ gem "bootstrap", "~> 4.5"
 # validations
 gem "rails_validations"
 
-# reCAPTCHA
-gem "recaptcha"
+# Spam protection (honeypot + timestamp)
+gem "invisible_captcha"
 
 
 group :development, :test do

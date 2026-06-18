@@ -15,50 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   autosize(document.querySelectorAll("textarea"));
 
-  // reCAPTCHA v3 for contact form
-  const contactForm = document.getElementById("contact-form");
-  if (contactForm && typeof grecaptcha !== "undefined") {
-    let isSubmitting = false;
-
-    contactForm.addEventListener("ajax:before", function (event) {
-      if (isSubmitting) {
-        return true;
-      }
-
-      event.preventDefault();
-      const form = this;
-
-      grecaptcha.ready(function () {
-        grecaptcha
-          .execute(document.querySelector("[data-sitekey]")?.dataset.sitekey, {
-            action: "contact",
-          })
-          .then(function (token) {
-            let recaptchaInput = form.querySelector(
-              'input[name="g-recaptcha-response"]'
-            );
-            if (!recaptchaInput) {
-              recaptchaInput = document.createElement("input");
-              recaptchaInput.setAttribute("type", "hidden");
-              recaptchaInput.setAttribute("name", "g-recaptcha-response");
-              form.appendChild(recaptchaInput);
-            }
-            recaptchaInput.value = token;
-
-            isSubmitting = true;
-            Rails.fire(form, "submit");
-            isSubmitting = false;
-          })
-          .catch(function (error) {
-            console.error("reCAPTCHA error:", error);
-            alert("reCAPTCHA verification failed. Please try again.");
-          });
-      });
-
-      return false;
-    });
-  }
-
   // Mobile nav toggle
   const burger = document.getElementById("nav-burger");
   const menu = document.getElementById("nav-menu");
