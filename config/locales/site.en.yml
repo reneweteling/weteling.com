@@ -33,7 +33,7 @@ en:
         title: "Home"
         hi: Hi
         im_rene: "I'm René"
-        allround_developer: "Allround Developer"
+        allround_developer: "Allround Agentic Developer"
         say_hello: "Say Hello"
 
       services:
@@ -45,9 +45,9 @@ en:
         duck:
           h3: "Sparring Partner"
           service-description: "Sometimes you need a senior engineer to bounce ideas off. Over a cup of coffee, we'll go through your architecture, tech choices, and challenges. No strings attached."
-        broker:
-          h3: "IT Purchase Broker"
-          service-description: "Hiring a company to build your product but lacking technical knowledge? I watch out for vendor lock-ins, outdated techniques, and overpriced contracts — like a broker for your IT investments."
+        agentic:
+          h3: "Agentic Engineer"
+          service-description: "A complete MVP in record time. I run agentic teams of AI agents that build, test, and review in parallel, steered by my engineering experience. You ship in days what normally takes weeks, without trading away quality."
         ai:
           h3: "AI Integration"
           service-description: "From code-assisting AI tools to integrating LLMs into your product — I help teams adopt AI effectively. Whether it's developer productivity or customer-facing AI features, I've been doing it hands-on."
@@ -92,11 +92,11 @@ en:
           tags:
             - title: "Languages:"
               items:
-                - "Html"
-                - "Css"
+                - "HTML"
+                - "CSS"
                 - "Sass"
-                - "Javascript"
-                - "Typescript"
+                - "JavaScript"
+                - "TypeScript"
                 - "Slim"
                 - "Haml"
             - title: "Development tools:"
@@ -109,8 +109,10 @@ en:
                 - "Zeplin"
             - title: "Frameworks:"
               items:
-                - "VueJS"
                 - "React"
+                - "Next.js"
+                - "Turbo"
+                - "VueJS"
                 - "Tailwind"
                 - "Bootstrap"
 

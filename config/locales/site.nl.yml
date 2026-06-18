@@ -33,7 +33,7 @@ nl:
         title: "Home"
         hi: "Hoi"
         im_rene: "Ik ben René"
-        allround_developer: "Allround Developer"
+        allround_developer: "Allround Agentic Developer"
         say_hello: "Zeg hallo"
 
       services:
@@ -45,9 +45,9 @@ nl:
         duck:
           h3: "Sparringpartner"
           service-description: "Soms heb je gewoon een senior engineer nodig om mee te sparren. Met een bakkie koffie bespreken we je architectuur, tech-keuzes en uitdagingen. Vrijblijvend."
-        broker:
-          h3: "IT Aankoopmakelaar"
-          service-description: "Een bedrijf inhuren om je product te bouwen, maar geen technische kennis in huis? Ik let op vendor lock-ins, verouderde technieken en te dure contracten — als een makelaar voor je IT-investeringen."
+        agentic:
+          h3: "Agentic Engineer"
+          service-description: "Een compleet MVP in recordtijd. Ik werk met agentic teams van AI-agents die parallel bouwen, testen en reviewen, aangestuurd door mijn engineering-ervaring. Zo zet je in dagen neer waar normaal weken voor staan, zonder in te leveren op kwaliteit."
         ai:
           h3: "AI Integratie"
           service-description: "Van AI-tools voor developers tot het integreren van LLM's in je product — ik help teams om AI effectief in te zetten. Developer productiviteit of klantgerichte features, ik pak het hands-on aan."
@@ -92,11 +92,11 @@ nl:
           tags:
             - title: "Talen:"
               items:
-                - "Html"
-                - "Css"
+                - "HTML"
+                - "CSS"
                 - "Sass"
-                - "Javascript"
-                - "Typescript"
+                - "JavaScript"
+                - "TypeScript"
                 - "Slim"
                 - "Haml"
             - title: "Development tools:"
@@ -109,8 +109,10 @@ nl:
                 - "Zeplin"
             - title: "Frameworks:"
               items:
-                - "VueJS"
                 - "React"
+                - "Next.js"
+                - "Turbo"
+                - "VueJS"
                 - "Tailwind"
                 - "Bootstrap"
 
