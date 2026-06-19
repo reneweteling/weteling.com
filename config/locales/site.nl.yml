@@ -173,9 +173,10 @@ nl:
         subtitle: "Wil je een ❤️ briefje sturen? Gebruik de gegevens hieronder, of stuur een berichtje via het contactformulier."
 
     project:
-      back: "Terug naar projecten"
-      about_company: "Over het bedrijf"
-      my_role: "Mijn rol"
-      techniques: "Technieken"
-      get_in_touch: "Interesse in samenwerking?"
-      cta: "Neem contact op"
+      back: "Back to projects"
+      about_company: "About the company"
+      my_role: "My role"
+      techniques: "Technologies"
+      get_in_touch: "Interested in working together?"
+      cta: "Get in touch"
+      present: "Present"
