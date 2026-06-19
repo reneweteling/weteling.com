@@ -34,11 +34,19 @@ nl:
         hi: "Hoi"
         im_rene: "Ik ben René"
         allround_developer: "Allround Agentic Developer"
+        tagline: "Van idee tot productie.<br>Een one-man army als het moet, teamspeler als het kan."
         say_hello: "Zeg hallo"
+        stats:
+          experience: "jaar ervaring"
+          projects: "projecten opgeleverd"
+          one_contact: "aanspreekpunt"
 
       services:
         title: "Diensten"
-        subtitle: "Software bouwen is complex. Ik help je erdoorheen."
+        subtitle: "Eén aanspreekpunt voor je hele project. Van de eerste architectuurschets tot een draaiende app in productie."
+        delivery:
+          h3: "Van idee tot productie"
+          service-description: "Jij hebt een idee en een design, ik lever de rest. Architectuur, back-end, front-end, infra en deployment, allemaal uit één hand. Solo voor het hele project, of als senior versterking die zijn kennis in je bestaande team brengt."
         caas:
           h3: "CTO as a Service"
           service-description: "Technisch leiderschap nodig zonder een fulltime CTO aan te nemen? Ik overbrug de kloof tussen bedrijfsdoelen en technologie — van architectuurkeuzes en vendor selectie tot technische strategie."
@@ -54,7 +62,7 @@ nl:
 
       skills:
         title: "Vaardigheden"
-        subtitle: "In de loop der jaren heb ik met <strong>veel</strong> facetten van het IT-landschap gewerkt. Mijn <strong>passie</strong> ligt bij webontwikkeling — korte iteraties, data-gedreven keuzes, en het gevoel wanneer mensen daadwerkelijk het product gebruiken dat je hebt gebouwd. Web en mobiel zijn daarvoor ideaal!"
+        subtitle: "In de loop der jaren heb ik met <strong>veel</strong> facetten van het IT-landschap gewerkt. Mijn <strong>passie</strong> ligt bij webontwikkeling — korte iteraties, data-gedreven keuzes, en het gevoel wanneer mensen daadwerkelijk het product gebruiken dat je hebt gebouwd. Web en mobiel zijn daarvoor ideaal! Back-end, front-end én infra uit één hand, zo lever ik een project van begin tot eind op."
         be:
           title: "Back-End Ontwikkeling"
           description: "Net zoals in het leven gebeuren de meeste interessante dingen achter de schermen. API's, integraties, back-ends, services, jobs, search, storage, noem maar op. Dit is waar ik me thuis voel."
