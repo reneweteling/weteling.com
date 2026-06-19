@@ -1,5 +1,5 @@
 class ContactMailer < ApplicationMailer
-  default from: 'server@weteling.com'
+  default from: 'rene@weteling.com'
   
   def confirm_mail(contact_form)
     @contact_form = contact_form
