@@ -43,17 +43,37 @@ nav.fixed.top-0.w-full.z-50.transition-all.duration-300.bg-transparent
 / Hero Section (dark)
 header#home.relative.min-h-screen.bg-gray-950.text-white.flex.items-center.overflow-hidden
   / Background image
-  .absolute.inset-0.z-0
+  #hero-photo.absolute.inset-0.z-0 style="will-change: transform;"
     = image_tag('apple.jpg', class: "w-full h-full object-cover object-center opacity-60", loading: :eager)
-  .absolute.inset-0.hero-gradient.z-10
+  / Overlay: darken left for copy legibility, plus a bottom-up scrim that resolves to solid gray-950 at the very bottom for a crisp seam. Inline gradient so it renders without a Tailwind rebuild.
+  .absolute.inset-0.z-10 style="background-image: linear-gradient(to right, rgba(3,7,18,0.92) 0%, rgba(3,7,18,0.72) 38%, rgba(3,7,18,0.30) 70%, rgba(3,7,18,0.15) 100%), linear-gradient(to top, rgba(3,7,18,1) 0%, rgba(3,7,18,0.85) 8%, rgba(3,7,18,0) 45%);"
+  / Aurora: brand-blue glow that follows the cursor + two autonomous drifting blobs. Shares z-10 with the dark overlay but paints after it (so it sits above the overlay), and stays below the z-20 text. Low alpha so copy stays legible.
+  #hero-aurora.absolute.inset-0.z-10.overflow-hidden style="pointer-events:none;"
+    #aurora-cursor.absolute.inset-0 style="background: radial-gradient(560px circle at 55% 35%, rgba(37,99,235,0.16), transparent 70%); will-change: background;"
+    .aurora-blob.animate-aurora-drift.absolute.rounded-full style="width:26rem; height:26rem; top:-8rem; left:8%; background: radial-gradient(closest-side, rgba(37,99,235,0.16), transparent); filter: blur(40px);"
+    .aurora-blob.animate-aurora-drift.absolute.rounded-full style="width:30rem; height:30rem; bottom:-10rem; right:4%; background: radial-gradient(closest-side, rgba(56,189,248,0.13), transparent); filter: blur(40px); animation-delay:-9s;"
 
-  .relative.z-20.max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8.py-32
-    p.text-lg.text-blue-400.font-light.mb-2 data-aos="fade-up" = t('.hero.hi')
-    h1.text-5xl.md:text-7xl.font-bold.mb-4 data-aos="fade-up" data-aos-delay="100" = t('.hero.im_rene')
-    p.text-2xl.md:text-3xl.text-gray-300.font-light.mb-8 data-aos="fade-up" data-aos-delay="200" = t('.hero.allround_developer')
-    a.inline-flex.items-center.gap-2.bg-blue-600.hover:bg-blue-700.text-white.px-8.py-3.rounded-full.font-semibold.transition-colors.duration-200 href="#contact" data-aos="fade-up" data-aos-delay="300"
-      = t('.hero.say_hello')
-      span 👋
+  .relative.z-20.max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8.py-32.w-full
+    .max-w-2xl
+      p.text-sm.font-semibold.uppercase.tracking-wide.text-blue-400.mb-3 data-aos="fade-up" = t('.hero.hi')
+      h1.text-5xl.md:text-7xl.font-bold.mb-4 data-aos="fade-up" data-aos-delay="100" style="text-shadow: 0 2px 24px rgba(0,0,0,0.45);" = t('.hero.im_rene')
+      p.text-2xl.md:text-3xl.text-gray-300.font-light.mb-4 data-aos="fade-up" data-aos-delay="200" style="color: #e5e7eb;" = t('.hero.allround_developer')
+      p.text-base.md:text-lg.text-gray-300.font-light.leading-relaxed.mb-8.max-w-2xl data-aos="fade-up" data-aos-delay="250" == t('.hero.tagline')
+      a.inline-flex.items-center.gap-2.bg-blue-600.hover:bg-blue-700.text-white.px-8.py-3.rounded-full.font-semibold.shadow-lg.transition-colors.duration-200 href="#contact" data-aos="fade-up" data-aos-delay="300"
+        = t('.hero.say_hello')
+        span 👋
+
+      / Stats band: one polished, translucent card. Inline styles cover the glass/divider treatment that the purged Tailwind build lacks.
+      .mt-8.flex.flex-wrap.rounded-2xl style="background-color: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);" data-aos="fade-up" data-aos-delay="400"
+        .px-5.py-4 style="flex: 1 1 0; min-width: 7rem;"
+          .text-3xl.md:text-4xl.font-bold.text-blue-400 20+
+          .text-sm.text-gray-300.mt-1 = t('.hero.stats.experience')
+        .px-5.py-4 style="flex: 1 1 0; min-width: 7rem; border-left: 1px solid rgba(255,255,255,0.12);"
+          .text-3xl.md:text-4xl.font-bold.text-blue-400 40+
+          .text-sm.text-gray-300.mt-1 = t('.hero.stats.projects')
+        .px-5.py-4 style="flex: 1 1 0; min-width: 7rem; border-left: 1px solid rgba(255,255,255,0.12);"
+          .text-3xl.md:text-4xl.font-bold.text-blue-400 1
+          .text-sm.text-gray-300.mt-1 = t('.hero.stats.one_contact')
 
   / Scroll indicator
   .absolute.bottom-8.left-1/2.transform.-translate-x-1/2.z-20
@@ -61,8 +81,8 @@ header#home.relative.min-h-screen.bg-gray-950.text-white.flex.items-center.overf
       svg.w-8.h-8 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"
         path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"
 
-/ Gradient transition
-.h-24.bg-gradient-to-b.from-gray-950.to-white
+/ Hero to services transition: crisp short fade from solid dark to white. Inline gradient for a deliberate, non-hazy seam.
+.h-16 style="background-image: linear-gradient(to bottom, #030712 0%, #030712 18%, #ffffff 100%);"
 
 / Services Section
 section.py-20.bg-white
@@ -72,26 +92,41 @@ section.py-20.bg-white
       h2.text-3xl.md:text-4xl.font-bold.mb-4 = t('.services.title')
       p.text-lg.text-gray-600.max-w-2xl.mx-auto = t('.services.subtitle')
 
+    .mb-12 data-aos="fade-up"
+      .svc-card.bg-gray-900.text-white.rounded-2xl.p-8.md:p-10 data-tilt="3"
+        .svc-spot.svc-spot-light
+        .text-4xl.mb-4 🛠️
+        h3.text-2xl.font-bold.mb-3 = t('.services.delivery.h3')
+        p.text-lg.text-gray-300.leading-relaxed.max-w-3xl = t('.services.delivery.service-description')
+
     .grid.grid-cols-1.md:grid-cols-2.lg:grid-cols-4.gap-8
-      .bg-gray-50.rounded-2xl.p-8.hover:shadow-lg.transition-shadow.duration-300 data-aos="fade-up" data-aos-delay="0"
-        .text-4xl.mb-4 👨‍🏫
-        h3.text-xl.font-bold.mb-3 = t('.services.caas.h3')
-        p.text-gray-600.leading-relaxed = t('.services.caas.service-description')
+      .svc-grid-item data-aos="fade-up" data-aos-delay="0"
+        .svc-card.bg-gray-50.rounded-2xl.p-8
+          .svc-spot
+          .text-4xl.mb-4 👨‍🏫
+          h3.text-xl.font-bold.mb-3 = t('.services.caas.h3')
+          p.text-gray-600.leading-relaxed = t('.services.caas.service-description')
 
-      .bg-gray-50.rounded-2xl.p-8.hover:shadow-lg.transition-shadow.duration-300 data-aos="fade-up" data-aos-delay="100"
-        .text-4xl.mb-4 🦆
-        h3.text-xl.font-bold.mb-3 = t('.services.duck.h3')
-        p.text-gray-600.leading-relaxed = t('.services.duck.service-description')
+      .svc-grid-item data-aos="fade-up" data-aos-delay="100"
+        .svc-card.bg-gray-50.rounded-2xl.p-8
+          .svc-spot
+          .text-4xl.mb-4 🦆
+          h3.text-xl.font-bold.mb-3 = t('.services.duck.h3')
+          p.text-gray-600.leading-relaxed = t('.services.duck.service-description')
 
-      .bg-gray-50.rounded-2xl.p-8.hover:shadow-lg.transition-shadow.duration-300 data-aos="fade-up" data-aos-delay="200"
-        .text-4xl.mb-4 🚀
-        h3.text-xl.font-bold.mb-3 = t('.services.agentic.h3')
-        p.text-gray-600.leading-relaxed = t('.services.agentic.service-description')
+      .svc-grid-item data-aos="fade-up" data-aos-delay="200"
+        .svc-card.bg-gray-50.rounded-2xl.p-8
+          .svc-spot
+          .text-4xl.mb-4 🚀
+          h3.text-xl.font-bold.mb-3 = t('.services.agentic.h3')
+          p.text-gray-600.leading-relaxed = t('.services.agentic.service-description')
 
-      .bg-gray-50.rounded-2xl.p-8.hover:shadow-lg.transition-shadow.duration-300.ring-2.ring-blue-100 data-aos="fade-up" data-aos-delay="300"
-        .text-4xl.mb-4 🤖
-        h3.text-xl.font-bold.mb-3 = t('.services.ai.h3')
-        p.text-gray-600.leading-relaxed = t('.services.ai.service-description')
+      .svc-grid-item data-aos="fade-up" data-aos-delay="300"
+        .svc-card.bg-gray-50.rounded-2xl.p-8.ring-2.ring-blue-100
+          .svc-spot
+          .text-4xl.mb-4 🤖
+          h3.text-xl.font-bold.mb-3 = t('.services.ai.h3')
+          p.text-gray-600.leading-relaxed = t('.services.ai.service-description')
 
 / Skills Section
 section.py-20.bg-gray-50
@@ -103,43 +138,49 @@ section.py-20.bg-gray-50
 
     .grid.grid-cols-1.md:grid-cols-3.gap-8
       / Back-end
-      .bg-white.rounded-2xl.shadow-sm.p-8.hover:shadow-md.transition-shadow.duration-300 data-aos="fade-up"
-        .text-center.mb-6
-          .text-4xl.mb-3 👨‍💻
-          h3.text-xl.font-bold = t('.skills.be.title')
-        p.text-gray-600.mb-6 = t('.skills.be.description')
-        - t('.skills.be.tags').each do |section|
-          .mb-4
-            h4.text-sm.font-semibold.text-gray-500.uppercase.tracking-wide.mb-2 = section[:title]
-            .flex.flex-wrap.gap-2
-              - section[:items].each do |tag|
-                span.inline-block.bg-gray-100.text-gray-700.text-sm.px-3.py-1.rounded-full = tag
+      .svc-grid-item data-aos="fade-up"
+        .svc-card.bg-white.rounded-2xl.shadow-sm.p-8
+          .svc-spot
+          .text-center.mb-6
+            .text-4xl.mb-3 👨‍💻
+            h3.text-xl.font-bold = t('.skills.be.title')
+          p.text-gray-600.mb-6 = t('.skills.be.description')
+          - t('.skills.be.tags').each do |section|
+            .mb-4
+              h4.text-sm.font-semibold.text-gray-500.uppercase.tracking-wide.mb-2 = section[:title]
+              .flex.flex-wrap.gap-2
+                - section[:items].each do |tag|
+                  span.inline-block.bg-gray-100.text-gray-700.text-sm.px-3.py-1.rounded-full = tag
 
       / Front-end
-      .bg-white.rounded-2xl.shadow-sm.p-8.hover:shadow-md.transition-shadow.duration-300 data-aos="fade-up" data-aos-delay="100"
-        .text-center.mb-6
-          .text-4xl.mb-3 💻
-          h3.text-xl.font-bold = t('.skills.fe.title')
-        p.text-gray-600.mb-6 = t('.skills.fe.description')
-        - t('.skills.fe.tags').each do |section|
-          .mb-4
-            h4.text-sm.font-semibold.text-gray-500.uppercase.tracking-wide.mb-2 = section[:title]
-            .flex.flex-wrap.gap-2
-              - section[:items].each do |tag|
-                span.inline-block.bg-gray-100.text-gray-700.text-sm.px-3.py-1.rounded-full = tag
+      .svc-grid-item data-aos="fade-up" data-aos-delay="100"
+        .svc-card.bg-white.rounded-2xl.shadow-sm.p-8
+          .svc-spot
+          .text-center.mb-6
+            .text-4xl.mb-3 💻
+            h3.text-xl.font-bold = t('.skills.fe.title')
+          p.text-gray-600.mb-6 = t('.skills.fe.description')
+          - t('.skills.fe.tags').each do |section|
+            .mb-4
+              h4.text-sm.font-semibold.text-gray-500.uppercase.tracking-wide.mb-2 = section[:title]
+              .flex.flex-wrap.gap-2
+                - section[:items].each do |tag|
+                  span.inline-block.bg-gray-100.text-gray-700.text-sm.px-3.py-1.rounded-full = tag
 
       / DevOps
-      .bg-white.rounded-2xl.shadow-sm.p-8.hover:shadow-md.transition-shadow.duration-300 data-aos="fade-up" data-aos-delay="200"
-        .text-center.mb-6
-          .text-4xl.mb-3 ☁️
-          h3.text-xl.font-bold = t('.skills.devops.title')
-        p.text-gray-600.mb-6 = t('.skills.devops.description')
-        - t('.skills.devops.tags').each do |section|
-          .mb-4
-            h4.text-sm.font-semibold.text-gray-500.uppercase.tracking-wide.mb-2 = section[:title]
-            .flex.flex-wrap.gap-2
-              - section[:items].each do |tag|
-                span.inline-block.bg-gray-100.text-gray-700.text-sm.px-3.py-1.rounded-full = tag
+      .svc-grid-item data-aos="fade-up" data-aos-delay="200"
+        .svc-card.bg-white.rounded-2xl.shadow-sm.p-8
+          .svc-spot
+          .text-center.mb-6
+            .text-4xl.mb-3 ☁️
+            h3.text-xl.font-bold = t('.skills.devops.title')
+          p.text-gray-600.mb-6 = t('.skills.devops.description')
+          - t('.skills.devops.tags').each do |section|
+            .mb-4
+              h4.text-sm.font-semibold.text-gray-500.uppercase.tracking-wide.mb-2 = section[:title]
+              .flex.flex-wrap.gap-2
+                - section[:items].each do |tag|
+                  span.inline-block.bg-gray-100.text-gray-700.text-sm.px-3.py-1.rounded-full = tag
 
 / Recruiters Section
 section.py-20.bg-white
@@ -191,7 +232,8 @@ section.py-20.bg-gray-50
           .timeline-card-left data-aos="fade-up" class=(visible_index >= 5 ? "timeline-hidden hidden" : "")
             - if lp
               = link_to project_path(lp), class: "block group" do
-                .bg-white.rounded-xl.shadow-sm.p-5.hover:shadow-md.transition-all.duration-300.group-hover:scale-[1.02]
+                .svc-card.bg-white.rounded-xl.shadow-sm.p-5 data-tilt="4"
+                  .svc-spot
                   .flex.items-start.gap-3
                     - if lp.image.present?
                       .flex-shrink-0
@@ -216,7 +258,8 @@ section.py-20.bg-gray-50
           .timeline-card-right.md:mt-12 data-aos="fade-up" data-aos-delay="100" class=((visible_index + 1) >= 5 ? "timeline-hidden hidden" : "")
             - if rp
               = link_to project_path(rp), class: "block group" do
-                .bg-white.rounded-xl.shadow-sm.p-5.hover:shadow-md.transition-all.duration-300.group-hover:scale-[1.02]
+                .svc-card.bg-white.rounded-xl.shadow-sm.p-5 data-tilt="4"
+                  .svc-spot
                   .flex.items-start.gap-3
                     - if rp.image.present?
                       .flex-shrink-0
@@ -308,3 +351,114 @@ footer.bg-gray-950.text-gray-400.py-12
       =<  Time.zone.now.year
     p.text-sm Made with ❤️ in ❌❌❌
     p.text-xs.mt-2.text-gray-600 EOF 🤓
+
+/ Hero aurora + service card hover (inline so they work without a Tailwind/webpacker rebuild)
+css:
+  @keyframes aurora-drift {
+    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+    33%      { transform: translate3d(4%, -6%, 0) scale(1.08); }
+    66%      { transform: translate3d(-5%, 4%, 0) scale(0.95); }
+  }
+  .animate-aurora-drift { animation: aurora-drift 18s ease-in-out infinite; }
+
+  /* Wrapper carries the AOS scroll-reveal so it never fights the card's own
+     hover transform/transition (AOS sets its own duration/delay on its target). */
+  .svc-grid-item { display: flex; }
+  .svc-grid-item > .svc-card { flex: 1 1 auto; }
+
+  /* Service card: smooth lift + subtle tilt toward the cursor + elevated shadow */
+  .svc-card {
+    position: relative;
+    overflow: hidden;
+    transform: perspective(1000px);
+    transform-style: preserve-3d;
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    will-change: transform;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  }
+  .svc-card:hover {
+    transform: perspective(1000px) translateY(-6px);
+    box-shadow: 0 22px 48px -12px rgba(2, 6, 23, 0.30);
+  }
+
+  /* Cursor-tracking spotlight inside each card */
+  .svc-spot {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 300ms ease;
+    pointer-events: none;
+    background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(37, 99, 235, 0.10), transparent 70%);
+  }
+  .svc-spot-light {
+    background: radial-gradient(280px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.10), transparent 70%);
+  }
+  .svc-card:hover .svc-spot { opacity: 1; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .svc-card { transition: none; }
+    .svc-card:hover { transform: none; }
+    .svc-spot { display: none; }
+    .animate-aurora-drift { animation: none; }
+    #hero-aurora { display: none; }
+  }
+
+javascript:
+  (function () {
+    var mq = window.matchMedia;
+    var reduce = mq && mq('(prefers-reduced-motion: reduce)').matches;
+    var fine = mq && mq('(hover: hover) and (pointer: fine)').matches;
+
+    /* Card spotlight: update --mx/--my per card (one delegated handler). Cheap enough to keep on touch too, but skip if reduced motion. */
+    if (!reduce) {
+      var cards = document.querySelectorAll('.svc-card');
+      for (var i = 0; i < cards.length; i++) {
+        (function (card) {
+          var maxTilt = parseFloat(card.getAttribute('data-tilt')) || 6; // degrees, per-card override
+          card.addEventListener('pointermove', function (e) {
+            var r = card.getBoundingClientRect();
+            var lx = e.clientX - r.left;
+            var ly = e.clientY - r.top;
+            card.style.setProperty('--mx', lx + 'px');
+            card.style.setProperty('--my', ly + 'px');
+            if (fine) {
+              var px = lx / r.width - 0.5;   // -0.5 .. 0.5
+              var py = ly / r.height - 0.5;
+              var rotX = (-py * 2 * maxTilt).toFixed(2); // tilt toward cursor
+              var rotY = (px * 2 * maxTilt).toFixed(2);
+              card.style.transform = 'perspective(1000px) rotateX(' + rotX + 'deg) rotateY(' + rotY + 'deg) translateY(-6px)';
+            }
+          });
+          card.addEventListener('pointerleave', function () {
+            card.style.transform = '';
+          });
+        })(cards[i]);
+      }
+    }
+
+    /* Hero cursor glow: lerp toward target to emulate the reference spring (stiffness 45, damping 18). */
+    if (reduce || !fine) return;
+    var hero = document.getElementById('home');
+    var cursor = document.getElementById('aurora-cursor');
+    if (!hero || !cursor) return;
+
+    var tx = 55, ty = 35, cx = 55, cy = 35;   // percentages
+    var raf = null;
+    function onMove(e) {
+      var r = hero.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / r.width) * 100;
+      ty = ((e.clientY - r.top) / r.height) * 100;
+      if (!raf) raf = requestAnimationFrame(tick);
+    }
+    function tick() {
+      cx += (tx - cx) * 0.08;
+      cy += (ty - cy) * 0.08;
+      cursor.style.background = 'radial-gradient(560px circle at ' + cx.toFixed(2) + '% ' + cy.toFixed(2) + '%, rgba(37,99,235,0.16), transparent 70%)';
+      if (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05) {
+        raf = requestAnimationFrame(tick);
+      } else {
+        raf = null;
+      }
+    }
+    hero.addEventListener('mousemove', onMove);
+  })();
