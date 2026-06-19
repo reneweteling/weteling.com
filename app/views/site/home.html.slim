@@ -45,8 +45,6 @@ header#home.relative.min-h-screen.bg-gray-950.text-white.flex.items-center.overf
   / Background image
   #hero-photo.absolute.inset-0.z-0 style="will-change: transform;"
     = image_tag('apple.jpg', class: "w-full h-full object-cover object-center", loading: :eager, style: "opacity: 0.85;")
-  / Matrix-style code rain: sits above the photo (z-0) but below the dark overlay + aurora (z-10) and the z-20 text. Low opacity, brand cyan/blue, so it stays subtle and copy stays legible.
-  canvas#hero-rain.absolute.inset-0.z-0 style="pointer-events:none; opacity:0.4;"
   / Overlay: lighter scrim, darker only on the left for copy legibility so the photo reads through on the right. A short bottom band resolves to solid gray-950 only at the very edge, for a crisp dark seam against the white section below.
   .absolute.inset-0.z-10 style="background-image: linear-gradient(to right, rgba(3,7,18,0.82) 0%, rgba(3,7,18,0.56) 40%, rgba(3,7,18,0.18) 72%, rgba(3,7,18,0.06) 100%), linear-gradient(to top, rgba(3,7,18,1) 0%, rgba(3,7,18,0.5) 9%, rgba(3,7,18,0) 30%);"
   / Aurora: brand-blue glow that follows the cursor + two autonomous drifting blobs. Shares z-10 with the dark overlay but paints after it (so it sits above the overlay), and stays below the z-20 text. Low alpha so copy stays legible.
@@ -460,108 +458,4 @@ javascript:
       }
     }
     hero.addEventListener('mousemove', onMove);
-  })();
-
-  /* Matrix-style code rain in the hero. Self-contained so it runs independently of
-     the cursor-glow gating above. Skipped under prefers-reduced-motion; paused when
-     the hero scrolls out of view (IntersectionObserver); throttled to ~24fps. */
-  (function () {
-    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    var canvas = document.getElementById('hero-rain');
-    var hero = document.getElementById('home');
-    if (!canvas || !hero || !canvas.getContext) return;
-    var ctx = canvas.getContext('2d');
-
-    var GLYPHS = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ{}[]<>/;=$+*!&|'.split('');
-    var FONT = 15;            // glyph size in css px
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var cols = 0, drops = [], speeds = [];
-    var cssW = 0, cssH = 0;
-
-    function rand(a, b) { return a + Math.random() * (b - a); }
-
-    function resize() {
-      var r = hero.getBoundingClientRect();
-      cssW = r.width; cssH = r.height;
-      canvas.width = Math.floor(cssW * dpr);
-      canvas.height = Math.floor(cssH * dpr);
-      canvas.style.width = cssW + 'px';
-      canvas.style.height = cssH + 'px';
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      ctx.font = FONT + 'px "Courier New", ui-monospace, monospace';
-      ctx.textBaseline = 'top';
-      cols = Math.ceil(cssW / FONT);
-      drops = new Array(cols);
-      speeds = new Array(cols);
-      for (var i = 0; i < cols; i++) {
-        drops[i] = Math.floor(rand(-40, 0));   // start above the top, staggered
-        speeds[i] = rand(0.4, 1.0);            // rows advanced per frame
-      }
-    }
-
-    function frame() {
-      // translucent black wash for the fading trail
-      ctx.fillStyle = 'rgba(3, 7, 18, 0.10)';
-      ctx.fillRect(0, 0, cssW, cssH);
-
-      for (var i = 0; i < cols; i++) {
-        var x = i * FONT;
-        var y = drops[i] * FONT;
-        if (y > 0) {
-          var g = GLYPHS[(Math.random() * GLYPHS.length) | 0];
-          // leading glyph brighter cyan, trail in brand blue
-          ctx.fillStyle = 'rgba(186, 230, 253, 0.85)';   // sky-200 head
-          ctx.fillText(g, x, y);
-          ctx.fillStyle = 'rgba(56, 189, 248, 0.55)';    // sky-400 just behind
-          ctx.fillText(GLYPHS[(Math.random() * GLYPHS.length) | 0], x, y - FONT);
-        }
-        drops[i] += speeds[i];
-        // recycle the column once it falls past the bottom (randomised so it doesn't sync)
-        if (y > cssH && Math.random() > 0.975) {
-          drops[i] = Math.floor(rand(-30, -2));
-          speeds[i] = rand(0.4, 1.0);
-        }
-      }
-    }
-
-    var running = false, last = 0, raf = null;
-    var INTERVAL = 1000 / 24;   // ~24fps throttle
-    function loop(now) {
-      if (!running) { raf = null; return; }
-      raf = requestAnimationFrame(loop);
-      if (now - last < INTERVAL) return;
-      last = now;
-      frame();
-    }
-    function start() {
-      if (running) return;
-      running = true;
-      last = 0;
-      raf = requestAnimationFrame(loop);
-    }
-    function stop() {
-      running = false;
-      if (raf) { cancelAnimationFrame(raf); raf = null; }
-    }
-
-    resize();
-    var rt = null;
-    window.addEventListener('resize', function () {
-      clearTimeout(rt);
-      rt = setTimeout(resize, 150);
-    });
-
-    // Pause when the hero is off-screen to save CPU.
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (entries) {
-        if (entries[0].isIntersecting) start(); else stop();
-      }, { threshold: 0 });
-      io.observe(hero);
-    } else {
-      start();
-    }
-    // Also pause when the tab is hidden.
-    document.addEventListener('visibilitychange', function () {
-      if (document.hidden) stop(); else if (hero.getBoundingClientRect().bottom > 0) start();
-    });
   })();
