@@ -1,4 +1,4 @@
-h3 Mail from: @contact_form.name
+h3 Mail from: #{@contact_form.name}
 
 p 
   strong Subject &nbsp;
@@ -9,6 +9,6 @@ p
   = @contact_form.email
 
 p 
-  string Message
+  strong Message
 
 p = simple_format @contact_form.message
