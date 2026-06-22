@@ -30,6 +30,8 @@ class SiteController < ApplicationController
   def contact
     @contact_form = ContactForm.new(params.require(:contact_form).permit(:name, :email, :subject, :message))
 
+    return discard_spam_contact if @contact_form.spam?
+
     if @contact_form.valid?
       ContactMailer.contact_mail(@contact_form).deliver_now
       ContactMailer.confirm_mail(@contact_form).deliver_now
