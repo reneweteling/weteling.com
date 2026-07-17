@@ -8,7 +8,11 @@ Rails.application.routes.draw do
   # end
   #
   constraints subdomain: 'url462' do
-    get '*path', to: 'sendgrid#email_proxy'
+    get '/robots.txt', to: 'sendgrid#robots', format: false
+    get '/ls/*path', to: 'sendgrid#email_proxy'
+    get '/wf/*path', to: 'sendgrid#email_proxy'
+    match '*path', to: 'sendgrid#not_found', via: :all
+    root to: 'sendgrid#not_found', as: :sendgrid_root
   end
 
   namespace :api do
@@ -20,6 +24,8 @@ Rails.application.routes.draw do
       resources :cmc, only: [:index]
     end
   end
+
+  get '/robots.txt', to: 'site#robots', format: false
 
   get "_ah/health", to: "application#health_check"
 

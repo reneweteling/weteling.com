@@ -14,6 +14,18 @@ class SendgridController < ApplicationController
       http.request req
     end
 
-    redirect_to res[:location], allow_other_host: true
+    location = res['location']
+    return head :not_found if location.blank?
+
+    redirect_to location, allow_other_host: true
+  end
+
+  # The subdomain only exists to proxy SendGrid tracking links, so keep bots out.
+  def robots
+    render plain: "User-agent: *\nDisallow: /\n", content_type: 'text/plain'
+  end
+
+  def not_found
+    head :not_found
   end
 end

@@ -54,6 +54,10 @@ class SiteController < ApplicationController
   def bbq
   end
 
+  def robots
+    render plain: "User-agent: *\nAllow: /\n", content_type: 'text/plain'
+  end
+
   private
 
   # Honeypot or timestamp tripped: pretend it worked so the bot gets no signal,
