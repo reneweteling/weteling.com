@@ -11,11 +11,6 @@ form.formtastic .inputs .select2-container
 
 
 
-#calendar 
-  height: 300px;
-  > div.fc-view-harness.fc-view-harness-active > div > table
-    position: absolute !important
-  
 .upload-preview
   height: 150px
 
@@ -39,13 +34,126 @@ form.formtastic .inputs .select2-container
     .panel
       background: white
       box-shadow: inset 0px -2px 6px #ddd
-      .calendar-wrapper
-        #calendar
-          // h2
-          //   font-size: 2em
-          //   color: rgb(94, 100, 105)
-          table
-            margin-top: 0
-            margin-bottom: 0
-            th
-              text-align: center
+
+// Dashboard week view: hours stacked from 0 per day, rendered server side
+.week-view
+  padding: 4px 2px 8px
+
+  .week-view-toolbar
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-wrap: wrap
+    gap: 12px
+    margin-bottom: 16px
+    h3
+      margin: 0
+      font-size: 1.6em
+      font-weight: normal
+      color: #5e6469
+    .week-view-range
+      margin-left: 12px
+      font-size: 0.7em
+      color: #8a949e
+    .week-view-total
+      margin-left: 12px
+      font-size: 0.6em
+      padding: 2px 10px
+      border-radius: 999px
+      background: #eef2f7
+      color: #5e6469
+
+  .week-view-nav
+    display: flex
+    align-items: center
+    gap: 6px
+    form
+      margin: 0 0 0 6px
+    .button.disabled
+      opacity: 0.5
+      pointer-events: none
+    #week-view-date
+      width: 7.5em
+      padding: 5px 8px
+
+  .week-view-grid
+    display: grid
+    grid-template-columns: 32px repeat(7, minmax(0, 1fr))
+    border: 1px solid #e4e7ea
+    border-radius: 4px
+
+  .week-view-head
+    height: 58px
+    padding-top: 8px
+    text-align: center
+    border-bottom: 1px solid #e4e7ea
+    box-sizing: border-box
+
+  .week-view-body
+    position: relative
+    height: calc(var(--hour-px) * var(--max-hours))
+    background-image: repeating-linear-gradient(to bottom, #eef0f2 0, #eef0f2 1px, transparent 1px, transparent var(--hour-px))
+
+  .week-view-axis
+    .week-view-body
+      background: none
+    span
+      position: absolute
+      right: 6px
+      transform: translateY(-50%)
+      font-size: 11px
+      color: #8a949e
+      &:first-child
+        transform: none
+
+  .week-view-day
+    border-left: 1px solid #e4e7ea
+    &.is-weekend
+      background: #fafbfc
+    &.is-today
+      background: #f3f7ff
+      .week-view-dayname, .week-view-date
+        color: #2563eb
+
+  .week-view-dayname
+    font-weight: bold
+    color: #5e6469
+  .week-view-date
+    font-size: 12px
+    color: #8a949e
+  .week-view-daytotal
+    min-height: 1.4em
+    font-size: 12px
+    font-weight: bold
+    color: #2563eb
+
+  .week-view-block
+    position: absolute
+    left: 3px
+    right: 3px
+    margin-top: 1px
+    padding: 3px 6px
+    box-sizing: border-box
+    overflow: hidden
+    border-radius: 3px
+    color: white
+    font-size: 11px
+    line-height: 1.35
+    text-decoration: none
+    &:hover
+      filter: brightness(1.1)
+      z-index: 1
+    &.is-short
+      display: flex
+      gap: 6px
+      white-space: nowrap
+      text-overflow: ellipsis
+      padding-top: 1px
+      padding-bottom: 0
+  .week-view-block-hours
+    display: block
+    font-weight: bold
+  .week-view-block-title
+    display: block
+    overflow: hidden
+    text-overflow: ellipsis

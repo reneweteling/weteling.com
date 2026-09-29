@@ -55,8 +55,6 @@ gem "cancancan"
 gem "grover"
 
 # Calender
-gem "fullcalendar-rails"
-gem "momentjs-rails"
 
 # Forms
 gem "simple_form"

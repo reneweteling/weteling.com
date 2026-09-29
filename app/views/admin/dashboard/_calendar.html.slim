@@ -1,4 +1,63 @@
-= javascript_pack_tag 'admin' 
-= stylesheet_pack_tag 'admin' 
-.calendar-wrapper
-  #calendar
+ruby:
+  selected = (Date.parse(params[:week].to_s) rescue Date.current)
+  monday = selected.beginning_of_week
+  days = (monday..monday + 6.days).to_a
+  hours_by_day = Hour.where(date: days.first..days.last).includes(project: :client).order(:created_at, :id).group_by(&:date)
+  day_totals = days.to_h { |d| [d, (hours_by_day[d] || []).sum(&:total_hours).to_f] }
+  # Scale runs from 0 to at least a normal working day, and always past the longest day.
+  max_hours = [8, day_totals.values.max.ceil].max
+  hour_px = 32
+  palette = %w(#2563eb #059669 #d97706 #7c3aed #db2777 #0891b2 #65a30d #dc2626)
+  color_for = ->(project) { palette[project.id % palette.size] }
+  week_url = ->(date) { admin_dashboard_path(request.query_parameters.merge(week: date.to_s)) }
+  fmt_hours = ->(h) { (h % 1).zero? ? h.to_i.to_s : h.round(2).to_s.sub('.', ',') }
+
+.week-view
+  .week-view-toolbar
+    h3
+      | Week #{monday.cweek}
+      span.week-view-range #{monday.iso8601} t/m #{days.last.iso8601}
+      span.week-view-total #{fmt_hours.(day_totals.values.sum)} uur
+    .week-view-nav
+      = link_to 'Vandaag', week_url.(Date.current), class: "button#{' disabled' if days.include?(Date.current)}"
+      = link_to '‹', week_url.(monday - 7.days), class: 'button', title: 'Vorige week'
+      = link_to '›', week_url.(monday + 7.days), class: 'button', title: 'Volgende week'
+      form action=admin_dashboard_path method="get"
+        - request.query_parameters.except('week').each do |key, value|
+          - if value.is_a?(Hash)
+            - value.each do |k, v|
+              input type="hidden" name="#{key}[#{k}]" value=v
+          - else
+            input type="hidden" name=key value=value
+        input#week-view-date.datepicker type="text" name="week" value=selected.iso8601 size="10" maxlength="10" autocomplete="off"
+
+  .week-view-grid style="--hour-px: #{hour_px}px; --max-hours: #{max_hours};"
+    .week-view-axis
+      .week-view-head
+      .week-view-body
+        - (0..max_hours).each do |h|
+          span style="top: #{h * hour_px}px" = h
+
+    - days.each do |day|
+      .week-view-day class=('is-today' if day == Date.current) class=('is-weekend' if day.saturday? || day.sunday?)
+        .week-view-head
+          .week-view-dayname = %w(MA DI WO DO VR ZA ZO)[day.cwday - 1]
+          .week-view-date = day.iso8601
+          .week-view-daytotal = day_totals[day].positive? ? "#{fmt_hours.(day_totals[day])} uur" : nil
+        .week-view-body
+          - offset = 0.0
+          - (hours_by_day[day] || []).each do |hour|
+            - h = hour.total_hours.to_f
+            - next unless h.positive?
+            a.week-view-block href=edit_admin_hour_path(hour) title="#{hour.project} · #{fmt_hours.(h)} uur\n#{hour.description}" style="top: #{offset * hour_px}px; height: #{h * hour_px - 2}px; background: #{color_for.(hour.project)};" class=('is-short' if h < 1)
+              span.week-view-block-hours #{fmt_hours.(h)}u
+              span.week-view-block-title = hour.project
+            - offset += h
+
+javascript:
+  // The ActiveAdmin datepicker fires a jQuery change on select. Only navigate
+  // when the value is a full date that differs from the one rendered, so a
+  // change fired on load can never cause a reload loop.
+  $(document).on('change', '#week-view-date', function () {
+    if (/^\d{4}-\d{2}-\d{2}$/.test(this.value) && this.value !== this.defaultValue) this.form.submit();
+  });
