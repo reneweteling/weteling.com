@@ -7,6 +7,7 @@ class SiteController < ApplicationController
 
   def home
     @projects = Project.for_site.includes(:tags)
+    @apps = App.for_site
     @contact_form = ContactForm.new
     @subscriber = Subscriber.new
   end

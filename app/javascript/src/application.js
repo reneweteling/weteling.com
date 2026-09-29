@@ -2,6 +2,7 @@ import Rails from "@rails/ujs";
 import autosize from "autosize";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import "./hero3d";
 
 Rails.start();
 

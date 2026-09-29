@@ -33,11 +33,12 @@ en:
         title: "Home"
         hi: Hi
         im_rene: "I'm René"
-        allround_developer: "Allround Agentic Developer"
-        tagline: "From idea to production.<br>A one-man army when needed, a team player when needed."
-        say_hello: "Say Hello"
+        allround_developer: "Agentic Developer"
+        tagline: "I orchestrate AI agents that design, code, test & ship.<br>One human. A fleet of agents. Production in days."
+        say_hello: "Start a Project"
+        view_work: "View Work"
         stats:
-          experience: "years of experience"
+          experience: "years shipping software"
           projects: "projects delivered"
           one_contact: "point of contact"
 
@@ -168,9 +169,16 @@ en:
         intro1: "I'm a coder born in Capelle aan den IJssel, just outside of Rotterdam (NL). At a very young age, I fell in love with computers. <br/> <br />My dad was also pretty interested in computers and taught me batch scripts in MS-DOS when I was about 9 years old, on a 286DX with the turbo always on. We were one of the first in the neighborhood with a dial-up connection, followed by ISDN with trunk mode, followed by DSL, Cable, and finally Fiber. The possibilities of connecting these machines to each other were so intriguing that I started experimenting with VPNs, LAMP stacks, and FTP servers at the age of 14."
         intro2: "Time to choose a direction for my future education, one of the simplest choices of my life, so I enrolled in Computer Sciences at the HRO in Rotterdam. The education was a breeze, and I did it part-time while working at a digital agency. The code monkey was born!"
         intro3: "On a personal note, I'm a proud father of 3 kids. Engaged to my beautiful wife-to-be. Festival lover, hanging out with friends, boating in the canals, and of course vacation. Work hard, play hard!"
+      apps:
+        title: "My own apps"
+        subtitle: "Next to client work I build products of my own. Some to earn money with, some just because I could."
+        visit: "Visit %{name}"
+
       contact:
         title: "Contact"
         subtitle: "Want to send me a ❤️ letter? You can use the details below, or just send me an email using the contact form."
+        click_to_copy: "Click to copy"
+        copied: "Copied ✓"
 
     project:
       back: "Back to projects"

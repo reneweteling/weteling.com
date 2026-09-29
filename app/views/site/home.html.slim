@@ -12,6 +12,7 @@ nav.fixed.top-0.w-full.z-50.transition-all.duration-300.bg-transparent
         a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#skills" = t('.skills.title')
         a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#recruiters" = t('.recruiters.title')
         a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#projects" = t('.projects.title')
+        a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#apps" = t('.apps.title')
         a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#about-me" = t('.about_me.title')
         a.nav-link.text-sm.font-medium.text-white.hover:text-blue-300.transition-colors href="#contact" = t('.contact.title')
         - if I18n.locale.to_s == 'nl'
@@ -33,6 +34,7 @@ nav.fixed.top-0.w-full.z-50.transition-all.duration-300.bg-transparent
       a.text-gray-700.hover:text-blue-600.py-2 href="#skills" = t('.skills.title')
       a.text-gray-700.hover:text-blue-600.py-2 href="#recruiters" = t('.recruiters.title')
       a.text-gray-700.hover:text-blue-600.py-2 href="#projects" = t('.projects.title')
+      a.text-gray-700.hover:text-blue-600.py-2 href="#apps" = t('.apps.title')
       a.text-gray-700.hover:text-blue-600.py-2 href="#about-me" = t('.about_me.title')
       a.text-gray-700.hover:text-blue-600.py-2 href="#contact" = t('.contact.title')
       - if I18n.locale.to_s == 'nl'
@@ -42,37 +44,41 @@ nav.fixed.top-0.w-full.z-50.transition-all.duration-300.bg-transparent
 
 / Hero Section (dark)
 header#home.relative.min-h-screen.bg-gray-950.text-white.flex.items-center.overflow-hidden
-  / Background image
-  #hero-photo.absolute.inset-0.z-0 style="will-change: transform;"
-    = image_tag('apple.jpg', class: "w-full h-full object-cover object-center", loading: :eager, style: "opacity: 0.85;")
-  / Overlay: lighter scrim, darker only on the left for copy legibility so the photo reads through on the right. A short bottom band resolves to solid gray-950 only at the very edge, for a crisp dark seam against the white section below.
-  .absolute.inset-0.z-10 style="background-image: linear-gradient(to right, rgba(3,7,18,0.82) 0%, rgba(3,7,18,0.56) 40%, rgba(3,7,18,0.18) 72%, rgba(3,7,18,0.06) 100%), linear-gradient(to top, rgba(3,7,18,1) 0%, rgba(3,7,18,0.5) 9%, rgba(3,7,18,0) 30%);"
-  / Aurora: brand-blue glow that follows the cursor + two autonomous drifting blobs. Shares z-10 with the dark overlay but paints after it (so it sits above the overlay), and stays below the z-20 text. Low alpha so copy stays legible.
-  #hero-aurora.absolute.inset-0.z-10.overflow-hidden style="pointer-events:none;"
-    #aurora-cursor.absolute.inset-0 style="background: radial-gradient(560px circle at 55% 35%, rgba(37,99,235,0.16), transparent 70%); will-change: background;"
-    .aurora-blob.animate-aurora-drift.absolute.rounded-full style="width:26rem; height:26rem; top:-8rem; left:8%; background: radial-gradient(closest-side, rgba(37,99,235,0.16), transparent); filter: blur(40px);"
-    .aurora-blob.animate-aurora-drift.absolute.rounded-full style="width:30rem; height:30rem; bottom:-10rem; right:4%; background: radial-gradient(closest-side, rgba(56,189,248,0.13), transparent); filter: blur(40px); animation-delay:-9s;"
+  / Mac photo underneath the transparent 3D canvas: anchored to the bottom edge, masked so it fades out to the dark background towards the top
+  .absolute.inset-0.z-0 aria-hidden="true"
+    = image_tag('apple.jpg', loading: :eager, alt: "", style: "position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.4; object-position: center bottom; -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 35%, #000 70%); mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.35) 35%, #000 70%);")
+  / Three.js 3D Canvas - Agentic Developer visualization
+  #hero-canvas.absolute.inset-0.z-0 style="will-change: transform;"
+  / Overlay gradient for text legibility
+  .absolute.inset-0.z-10 style="background-image: linear-gradient(to right, rgba(3,7,18,0.85) 0%, rgba(3,7,18,0.6) 35%, rgba(3,7,18,0.25) 65%, rgba(3,7,18,0.08) 100%), linear-gradient(to top, rgba(3,7,18,1) 0%, rgba(3,7,18,0.6) 8%, rgba(3,7,18,0) 28%);"
 
   .relative.z-20.max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8.py-32.w-full
     .max-w-2xl
       p.text-sm.font-semibold.uppercase.tracking-wide.text-blue-400.mb-3 data-aos="fade-up" = t('.hero.hi')
       h1.text-5xl.md:text-7xl.font-bold.mb-4 data-aos="fade-up" data-aos-delay="100" style="text-shadow: 0 2px 24px rgba(0,0,0,0.45);" = t('.hero.im_rene')
-      p.text-2xl.md:text-3xl.text-gray-300.font-light.mb-4 data-aos="fade-up" data-aos-delay="200" style="color: #e5e7eb;" = t('.hero.allround_developer')
+      p.text-2xl.md:text-3xl.text-blue-300.font-medium.mb-6 data-aos="fade-up" data-aos-delay="200" = t('.hero.allround_developer')
       p.text-base.md:text-lg.text-gray-300.font-light.leading-relaxed.mb-8.max-w-2xl data-aos="fade-up" data-aos-delay="250" == t('.hero.tagline')
-      a.inline-flex.items-center.gap-2.bg-blue-600.hover:bg-blue-700.text-white.px-8.py-3.rounded-full.font-semibold.shadow-lg.transition-colors.duration-200 href="#contact" data-aos="fade-up" data-aos-delay="300"
-        = t('.hero.say_hello')
-        span 👋
 
-      / Stats band: one polished, translucent card. Inline styles cover the glass/divider treatment that the purged Tailwind build lacks.
+      / Primary CTA
+      .flex.flex-wrap.gap-4.mb-12 data-aos="fade-up" data-aos-delay="300"
+        a.inline-flex.items-center.gap-2.bg-blue-600.hover:bg-blue-700.text-white.px-8.py-3.rounded-full.font-semibold.shadow-lg.transition-colors.duration-200 href="#contact"
+          = t('.hero.say_hello')
+          span 👋
+        a.inline-flex.items-center.gap-2.border.border-white/20.hover:border-white/40.text-white/90.hover:text-white.px-8.py-3.rounded-full.font-medium.transition-all.duration-200 href="#projects"
+          = t('.hero.view_work')
+          svg.w-5.h-5 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"
+            path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"
+
+      / Stats band with animated counters
       .mt-8.flex.flex-wrap.rounded-2xl style="background-color: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);" data-aos="fade-up" data-aos-delay="400"
         .px-5.py-4 style="flex: 1 1 0; min-width: 7rem;"
-          .text-3xl.md:text-4xl.font-bold.text-blue-400 20+
+          .text-3xl.md:text-4xl.font-bold.text-blue-400 data-count="20" class="stat-counter" 0
           .text-sm.text-gray-300.mt-1 = t('.hero.stats.experience')
         .px-5.py-4 style="flex: 1 1 0; min-width: 7rem; border-left: 1px solid rgba(255,255,255,0.12);"
-          .text-3xl.md:text-4xl.font-bold.text-blue-400 40+
+          .text-3xl.md:text-4xl.font-bold.text-blue-400 data-count="40" class="stat-counter" 0
           .text-sm.text-gray-300.mt-1 = t('.hero.stats.projects')
         .px-5.py-4 style="flex: 1 1 0; min-width: 7rem; border-left: 1px solid rgba(255,255,255,0.12);"
-          .text-3xl.md:text-4xl.font-bold.text-blue-400 1
+          .text-3xl.md:text-4xl.font-bold.text-blue-400 data-count="1" class="stat-counter" 0
           .text-sm.text-gray-300.mt-1 = t('.hero.stats.one_contact')
 
   / Scroll indicator
@@ -284,6 +290,34 @@ section.py-20.bg-gray-50
           span = t('.projects.show_more')
           span ↓
 
+/ Apps Section (dark): my own products. Layout lives in the css block below so it works without a Tailwind rebuild.
+- if @apps.any?
+  section.py-20.bg-gray-950.text-white
+    a.anchor#apps
+    .max-w-6xl.mx-auto.px-4.sm:px-6.lg:px-8
+      .text-center.mb-16 data-aos="fade-up"
+        h2.text-3xl.md:text-4xl.font-bold.mb-4 = t('.apps.title')
+        p.text-lg.text-gray-400 = t('.apps.subtitle')
+
+      .apps-grid
+        - @apps.each_with_index do |app, i|
+          .apps-grid-item data-aos="fade-up" data-aos-delay=(i * 80)
+            a.app-card href=app.url target="_blank" rel="noopener"
+              .app-shot
+                - if app.image.present?
+                  = image_tag app.image.large.url.presence || app.image.url, alt: app.name, loading: :lazy
+              .app-body
+                .app-meta
+                  h3.app-name = app.name
+                  - if app.platform.present?
+                    span.app-platform = app.platform
+                - if app.tagline.present?
+                  p.app-tagline = app.tagline
+                .app-desc == markdown(app.description.to_s)
+                span.app-link
+                  = t('.apps.visit', name: app.name)
+                  span aria-hidden="true" →
+
 / About Me Section
 section.py-20.bg-white
   a.anchor#about-me
@@ -315,16 +349,20 @@ section.py-20.bg-gray-50
           table.bv.text-gray-600
             tr
               th.font-medium.text-gray-700.pr-4 KvK:
-              td 80910483
+              td
+                button.copy-value type="button" title=t('.contact.click_to_copy') data-copied=t('.contact.copied') 80910483
             tr
               th.font-medium.text-gray-700.pr-4 BTW:
-              td NL8618.48007.B01
+              td
+                button.copy-value type="button" title=t('.contact.click_to_copy') data-copied=t('.contact.copied') NL8618.48007.B01
             tr
               th.font-medium.text-gray-700.pr-4 IBAN:
-              td NL69 KNAB 0775 7095 06
+              td
+                button.copy-value type="button" title=t('.contact.click_to_copy') data-copied=t('.contact.copied') NL69 KNAB 0775 7095 06
             tr
               th.font-medium.text-gray-700.pr-4 BIC:
-              td KNABNL2H
+              td
+                button.copy-value type="button" title=t('.contact.click_to_copy') data-copied=t('.contact.copied') KNABNL2H
 
         .space-y-3
           p
@@ -349,15 +387,8 @@ footer.bg-gray-950.text-gray-400.py-12
     p.text-sm Made with ❤️ in ❌❌❌
     p.text-xs.mt-2.text-gray-600 EOF 🤓
 
-/ Hero aurora + service card hover (inline so they work without a Tailwind/webpacker rebuild)
+/ Service card hover + stat counters (inline so they work without a Tailwind/webpacker rebuild)
 css:
-  @keyframes aurora-drift {
-    0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-    33%      { transform: translate3d(4%, -6%, 0) scale(1.08); }
-    66%      { transform: translate3d(-5%, 4%, 0) scale(0.95); }
-  }
-  .animate-aurora-drift { animation: aurora-drift 18s ease-in-out infinite; }
-
   /* Wrapper carries the AOS scroll-reveal so it never fights the card's own
      hover transform/transition (AOS sets its own duration/delay on its target). */
   .svc-grid-item { display: flex; }
@@ -392,16 +423,73 @@ css:
   }
   .svc-card:hover .svc-spot { opacity: 1; }
 
+  /* Stat counter animation */
+  .stat-counter {
+    transition: none;
+  }
+
+  /* Apps grid: first app spans the full width, the rest sit two by two. */
+  .apps-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
+  .apps-grid-item { display: flex; }
+  @media (min-width: 768px) {
+    .apps-grid { grid-template-columns: 1fr 1fr; }
+    .apps-grid-item:first-child { grid-column: span 2; }
+    .apps-grid-item:first-child .app-card { flex-direction: row; }
+    .apps-grid-item:first-child .app-shot { flex: 0 0 55%; aspect-ratio: auto; min-height: 20rem; }
+    .apps-grid-item:first-child .app-body { justify-content: center; padding: 2.5rem; }
+  }
+  .app-card {
+    display: flex; flex-direction: column; width: 100%; overflow: hidden;
+    border-radius: 1rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+    color: inherit; text-decoration: none;
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 220ms, background-color 220ms;
+  }
+  .app-card:hover { transform: translateY(-4px); border-color: rgba(96,165,250,0.5); background: rgba(255,255,255,0.07); }
+  .app-shot { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: #111827; }
+  .app-shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: transform 400ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+  .app-card:hover .app-shot img { transform: scale(1.03); }
+  .app-body { display: flex; flex-direction: column; flex: 1; padding: 1.75rem; }
+  .app-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+  .app-name { font-size: 1.5rem; font-weight: 700; line-height: 1.2; }
+  .app-platform { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #93c5fd; border: 1px solid rgba(147,197,253,0.35); border-radius: 9999px; padding: 0.125rem 0.625rem; }
+  .app-tagline { color: #93c5fd; font-size: 1.125rem; margin-bottom: 0.75rem; }
+  .app-desc { color: #d1d5db; line-height: 1.65; margin-bottom: 1.25rem; }
+  .app-desc p + p { margin-top: 0.75rem; }
+  .app-link { margin-top: auto; display: inline-flex; gap: 0.4rem; align-items: center; font-weight: 600; color: #fff; }
+  .app-card:hover .app-link span { transform: translateX(3px); }
+  .app-link span { transition: transform 200ms; }
+
+  .copy-value { cursor: copy; text-align: left; border-bottom: 1px dashed transparent; transition: color 150ms, border-color 150ms; }
+  .copy-value:hover { color: #2563eb; border-bottom-color: currentColor; }
+  .copy-value.is-copied { color: #16a34a; border-bottom-color: transparent; }
+
   @media (prefers-reduced-motion: reduce) {
+    .app-card, .app-shot img { transition: none; }
+    .app-card:hover, .app-card:hover .app-shot img { transform: none; }
     .svc-card { transition: none; }
     .svc-card:hover { transform: none; }
     .svc-spot { display: none; }
-    .animate-aurora-drift { animation: none; }
-    #hero-aurora { display: none; }
   }
 
 javascript:
   (function () {
+    /* Company details: click copies the value without spaces or dots, so it pastes straight into a bank or tax form. */
+    document.querySelectorAll('.copy-value').forEach(function (btn) {
+      var original = btn.textContent;
+      btn.addEventListener('click', function () {
+        if (!navigator.clipboard) return;
+        navigator.clipboard.writeText(original.replace(/[\s.]/g, '')).then(function () {
+          btn.textContent = btn.getAttribute('data-copied');
+          btn.classList.add('is-copied');
+          clearTimeout(btn._copyTimer);
+          btn._copyTimer = setTimeout(function () {
+            btn.textContent = original;
+            btn.classList.remove('is-copied');
+          }, 1200);
+        });
+      });
+    });
+
     var mq = window.matchMedia;
     var reduce = mq && mq('(prefers-reduced-motion: reduce)').matches;
     var fine = mq && mq('(hover: hover) and (pointer: fine)').matches;
@@ -433,29 +521,43 @@ javascript:
       }
     }
 
-    /* Hero cursor glow: lerp toward target to emulate the reference spring (stiffness 45, damping 18). */
-    if (reduce || !fine) return;
-    var hero = document.getElementById('home');
-    var cursor = document.getElementById('aurora-cursor');
-    if (!hero || !cursor) return;
+    /* Stat counter animation - trigger when stats section enters viewport */
+    var statCounters = document.querySelectorAll('.stat-counter');
+    if (statCounters.length && !reduce) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !entry.target.dataset.animated) {
+            entry.target.dataset.animated = 'true';
+            animateCounter(entry.target);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
 
-    var tx = 55, ty = 35, cx = 55, cy = 35;   // percentages
-    var raf = null;
-    function onMove(e) {
-      var r = hero.getBoundingClientRect();
-      tx = ((e.clientX - r.left) / r.width) * 100;
-      ty = ((e.clientY - r.top) / r.height) * 100;
-      if (!raf) raf = requestAnimationFrame(tick);
+      statCounters.forEach(function (counter) {
+        observer.observe(counter);
+      });
     }
-    function tick() {
-      cx += (tx - cx) * 0.08;
-      cy += (ty - cy) * 0.08;
-      cursor.style.background = 'radial-gradient(560px circle at ' + cx.toFixed(2) + '% ' + cy.toFixed(2) + '%, rgba(37,99,235,0.16), transparent 70%)';
-      if (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05) {
-        raf = requestAnimationFrame(tick);
-      } else {
-        raf = null;
+
+    function animateCounter(el) {
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var duration = 1800; // ms
+      var start = 0;
+      var startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        var progress = Math.min((timestamp - startTime) / duration, 1);
+        // Ease out cubic
+        var eased = 1 - Math.pow(1 - progress, 3);
+        var current = Math.floor(eased * target);
+        el.textContent = current + (target >= 10 ? '+' : '');
+        if (progress < 1) {
+          requestAnimationFrame(step);
+        } else {
+          el.textContent = target + (target >= 10 ? '+' : '');
+        }
       }
+      requestAnimationFrame(step);
     }
-    hero.addEventListener('mousemove', onMove);
   })();

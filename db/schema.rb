@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_05_19_070543) do
+ActiveRecord::Schema[8.1].define(version: 2026_09_29_120100) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -26,6 +26,21 @@ ActiveRecord::Schema[8.1].define(version: 2026_05_19_070543) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
+
+  create_table "apps", force: :cascade do |t|
+    t.boolean "active", default: true, null: false
+    t.datetime "created_at", null: false
+    t.text "description_en"
+    t.text "description_nl"
+    t.string "image"
+    t.string "name", null: false
+    t.string "platform"
+    t.integer "position", default: 0, null: false
+    t.string "tagline_en"
+    t.string "tagline_nl"
+    t.datetime "updated_at", null: false
+    t.string "url", null: false
   end
 
   create_table "blogs", force: :cascade do |t|

@@ -33,11 +33,12 @@ nl:
         title: "Home"
         hi: "Hoi"
         im_rene: "Ik ben René"
-        allround_developer: "Allround Agentic Developer"
-        tagline: "Van idee tot productie.<br>Een one-man army als het moet, teamspeler als het kan."
-        say_hello: "Zeg hallo"
+        allround_developer: "Agentic Developer"
+        tagline: "Ik orchestreer AI agents die ontwerpen, coderen, testen & deployen.<br>Eén mens. Een vloot agents. Productie in dagen."
+        say_hello: "Start een Project"
+        view_work: "Bekijk Werk"
         stats:
-          experience: "jaar ervaring"
+          experience: "jaar software geleverd"
           projects: "projecten opgeleverd"
           one_contact: "aanspreekpunt"
 
@@ -168,9 +169,16 @@ nl:
         intro1: "Ik ben een programmeur uit Capelle aan den IJssel, net onder de rok van Rotterdam. Al van jongs af aan was ik verliefd op computers. <br/> <br />Mijn vader leerde me batch scripts in MS-DOS toen ik een jaar of 9 was, op een 286DX met de turbo altijd aan. We waren een van de eersten in de buurt met een inbelverbinding — daarna ISDN, DSL, kabel en uiteindelijk glasvezel. De mogelijkheden om die machines met elkaar te verbinden waren zo gaaf dat ik op mijn 14e al experimenteerde met VPN's, LAMP-stacks en FTP-servers."
         intro2: "Een richting kiezen voor mijn studie was een van de makkelijkste keuzes uit mijn leven. Informatica aan de HRO in Rotterdam, parttime naast mijn werk bij een digitaal bureau. De code monkey was geboren!"
         intro3: "Privé ben ik een trotse vader van 3 kinderen. Verloofd met de liefde van mijn leven. Festivalliefhebber, borrelen met vrienden, varen door de grachten en natuurlijk op pad met de sleurhut."
+      apps:
+        title: "Eigen apps"
+        subtitle: "Naast klantwerk bouw ik ook mijn eigen producten. Sommige om geld mee te verdienen, sommige gewoon omdat het kon."
+        visit: "Bekijk %{name}"
+
       contact:
         title: "Contact"
         subtitle: "Wil je een ❤️ briefje sturen? Gebruik de gegevens hieronder, of stuur een berichtje via het contactformulier."
+        click_to_copy: "Klik om te kopiëren"
+        copied: "Gekopieerd ✓"
 
     project:
       back: "Back to projects"
