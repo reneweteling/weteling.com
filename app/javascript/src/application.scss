@@ -89,6 +89,21 @@ html {
   filter: brightness(0) invert(1) !important;
 }
 
+// Mobile burger bars. White on the dark hero, dark once the nav turns white on scroll.
+.nav-burger-bar {
+  display: block;
+  width: 1.5rem;
+  height: 2px;
+  background-color: #1f2937;
+  transition: background-color 0.3s;
+}
+.nav-burger-bar + .nav-burger-bar {
+  margin-top: 6px;
+}
+.nav-burger-bar-white {
+  background-color: #fff;
+}
+
 // Hide reCAPTCHA badge
 .grecaptcha-badge {
   visibility: hidden !important;

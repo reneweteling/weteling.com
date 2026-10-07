@@ -21,10 +21,10 @@ nav.fixed.top-0.w-full.z-50.transition-all.duration-300.bg-transparent
           a.nav-link.text-sm.text-white href="?locale=nl" = t('.locale.nl')
 
       / Mobile burger
-      button#nav-burger.md:hidden.flex.flex-col.justify-center.items-center.w-10.h-10.gap-1.5
-        span.block.w-6.h-0.5.bg-gray-800.transition-all
-        span.block.w-6.h-0.5.bg-gray-800.transition-all
-        span.block.w-6.h-0.5.bg-gray-800.transition-all
+      button#nav-burger.md:hidden.flex.flex-col.justify-center.items-center.w-10.h-10 aria-label="Menu"
+        span.nav-burger-bar.nav-burger-bar-white
+        span.nav-burger-bar.nav-burger-bar-white
+        span.nav-burger-bar.nav-burger-bar-white
 
   / Mobile menu
   #nav-menu.hidden.md:hidden.bg-white.shadow-lg.border-t

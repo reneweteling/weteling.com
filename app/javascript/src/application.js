@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (nav) {
     const navLinks = nav.querySelectorAll(".nav-link");
     const navLogo = nav.querySelector(".nav-logo");
+    const burgerBars = nav.querySelectorAll(".nav-burger-bar");
     const updateNav = () => {
       if (window.scrollY > 80) {
         nav.classList.add("bg-white/90", "backdrop-blur-md", "shadow-sm");
@@ -111,6 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (navLogo) {
           navLogo.classList.remove("nav-logo-white");
         }
+        burgerBars.forEach((bar) => bar.classList.remove("nav-burger-bar-white"));
       } else {
         nav.classList.remove("bg-white/90", "backdrop-blur-md", "shadow-sm");
         nav.classList.add("bg-transparent");
@@ -121,6 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (navLogo) {
           navLogo.classList.add("nav-logo-white");
         }
+        burgerBars.forEach((bar) => bar.classList.add("nav-burger-bar-white"));
       }
     };
     window.addEventListener("scroll", updateNav);
