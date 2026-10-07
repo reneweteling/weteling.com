@@ -2,8 +2,8 @@ doctype html
 html lang=I18n.locale
   head
     ruby:
-      page_title = content_for?(:title) ? content_for(:title) : "René Weteling | Tech Lead | Fullstack development | Ruby | Elixir | Typescript"
-      page_description = content_for?(:description) ? content_for(:description) : "Freelance Tech Lead, Fractional CTO & Full-Stack Developer based in the Netherlands."
+      page_title = content_for?(:title) ? content_for(:title) : "René Weteling | Agentic Developer"
+      page_description = content_for?(:description) ? content_for(:description) : "I orchestrate AI agents that design, code, test & ship. One human. A fleet of agents. Production in days."
     title = page_title
     meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
     meta name="description" content=page_description
@@ -15,6 +15,9 @@ html lang=I18n.locale
     meta property="og:type" content="website"
     meta property="og:url" content="https://www.weteling.com"
     meta property="og:image" content=image_url('preview.png')
+    meta property="og:image:width" content="1200"
+    meta property="og:image:height" content="630"
+    meta name="twitter:card" content="summary_large_image"
     link rel="manifest" href="/site.webmanifest"
     link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"
     meta name="msapplication-TileColor" content="#030712"
