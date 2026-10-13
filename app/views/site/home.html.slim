@@ -428,15 +428,11 @@ css:
     transition: none;
   }
 
-  /* Apps grid: first app spans the full width, the rest sit two by two. */
+  /* Apps grid: two by two from tablet width up. */
   .apps-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; }
   .apps-grid-item { display: flex; }
   @media (min-width: 768px) {
     .apps-grid { grid-template-columns: 1fr 1fr; }
-    .apps-grid-item:first-child { grid-column: span 2; }
-    .apps-grid-item:first-child .app-card { flex-direction: row; }
-    .apps-grid-item:first-child .app-shot { flex: 0 0 55%; aspect-ratio: auto; min-height: 20rem; }
-    .apps-grid-item:first-child .app-body { justify-content: center; padding: 2.5rem; }
   }
   .app-card {
     display: flex; flex-direction: column; width: 100%; overflow: hidden;
