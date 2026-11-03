@@ -43,7 +43,7 @@ $(() => {
   $("#hour_project_id").on('change', function() {
     var mapping = $(this).data('rate');
     if (mapping) {
-      $("#hour_rate_id").val(mapping[$(this).val()]).trigger('change');
+      $("#hour_rate").val(mapping[$(this).val()]).trigger('change');
     }
   });
 

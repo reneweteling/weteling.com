@@ -39,6 +39,9 @@ ActiveAdmin.register Project do
     column :site_active
     column :cv_active
     column :hours_active
+    column :default_rate do |p|
+      number_to_currency(p.default_rate) if p.default_rate
+    end
     column :start_date
     column :end_date
     actions
@@ -52,11 +55,14 @@ ActiveAdmin.register Project do
       row :site_active
       row :cv_active
       row :hours_active
+      row :default_rate do |p|
+        number_to_currency(p.default_rate) if p.default_rate
+      end
       row :position
       row :budget do |p|
         if p.budget?
           parts = [number_to_currency(p.budget)]
-          parts << "(#{p.budget_hours.round(2)} uur @ #{number_to_currency(p.default_rate_amount)})" if p.budget_hours
+          parts << "(#{p.budget_hours.round(2)} uur @ #{number_to_currency(p.default_rate)})" if p.budget_hours
           parts.join(' ')
         end
       end
@@ -86,8 +92,9 @@ ActiveAdmin.register Project do
       input :site_active
       input :cv_active
       input :hours_active
+      input :default_rate, hint: 'Uurtarief in euro\'s. Wordt standaard ingevuld bij nieuwe uren.'
       input :position
-      input :budget, hint: 'Budget in euro\'s (optioneel). Wordt omgerekend naar uren via het default tarief van de client.'
+      input :budget, hint: 'Budget in euro\'s (optioneel). Wordt omgerekend naar uren via het default tarief van het project.'
     end
 
     inputs 'Site' do

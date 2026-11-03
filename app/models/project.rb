@@ -43,19 +43,15 @@ class Project < ApplicationRecord
     budget.present? && budget.positive?
   end
 
-  def default_rate_amount
-    client&.default_rate&.rate
-  end
-
   def budget_hours
-    return nil unless budget? && default_rate_amount&.positive?
-    budget / default_rate_amount
+    return nil unless budget? && default_rate&.positive?
+    budget / default_rate
   end
 
   def spent_amount(up_to: nil)
-    scope = hours.includes(:rate)
+    scope = hours
     scope = scope.where(date: ..up_to) if up_to
-    scope.sum { |h| h.total_hours * h.rate.rate }
+    scope.sum('total_hours * rate')
   end
 
   def remaining_amount(up_to: nil)
@@ -65,8 +61,8 @@ class Project < ApplicationRecord
 
   def remaining_hours(up_to: nil)
     remaining = remaining_amount(up_to: up_to)
-    return nil unless remaining && default_rate_amount&.positive?
-    remaining / default_rate_amount
+    return nil unless remaining && default_rate&.positive?
+    remaining / default_rate
   end
 
   private

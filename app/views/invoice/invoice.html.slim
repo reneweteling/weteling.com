@@ -191,7 +191,7 @@ sass:
   - if project.budget?
     - spent_to_date = project.spent_amount(up_to: end_date)
     - remaining = project.budget - spent_to_date
-    - rate_amount = project.default_rate_amount
+    - rate_amount = project.default_rate
     - has_rate = rate_amount && rate_amount.positive?
     - remaining_hours = has_rate ? (remaining / rate_amount).round(1) : nil
     - spent_hours = has_rate ? (spent_to_date / rate_amount).round(1) : nil

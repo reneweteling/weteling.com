@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_10_13_130000) do
+ActiveRecord::Schema[8.1].define(version: 2026_11_03_120000) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -80,7 +80,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_13_130000) do
     t.string "coc_no"
     t.string "country"
     t.datetime "created_at", precision: nil, null: false
-    t.bigint "default_rate_id"
     t.string "department"
     t.string "email"
     t.string "first_name"
@@ -92,7 +91,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_13_130000) do
     t.string "tax_no"
     t.datetime "updated_at", precision: nil, null: false
     t.integer "user_id", null: false
-    t.index ["default_rate_id"], name: "index_clients_on_default_rate_id"
     t.index ["user_id"], name: "index_clients_on_user_id"
   end
 
@@ -110,12 +108,11 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_13_130000) do
     t.date "date", null: false
     t.text "description", null: false
     t.integer "project_id", null: false
-    t.integer "rate_id", null: false
+    t.decimal "rate", precision: 8, scale: 2, null: false
     t.decimal "total_hours", precision: 4, scale: 2, default: "0.0", null: false
     t.decimal "total_sno_hours", precision: 4, scale: 2, default: "0.0", null: false
     t.datetime "updated_at", precision: nil, null: false
     t.index ["project_id"], name: "index_hours_on_project_id"
-    t.index ["rate_id"], name: "index_hours_on_rate_id"
   end
 
   create_table "pages", force: :cascade do |t|
@@ -133,6 +130,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_13_130000) do
     t.integer "client_id", null: false
     t.datetime "created_at", precision: nil, null: false
     t.boolean "cv_active", default: false, null: false
+    t.decimal "default_rate", precision: 8, scale: 2
     t.text "description_about_the_company"
     t.text "description_cv", default: "", null: false
     t.text "description_my_role"
@@ -164,16 +162,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_13_130000) do
     t.bigint "user_id", null: false
     t.index ["project_id"], name: "index_projects_users_on_project_id"
     t.index ["user_id"], name: "index_projects_users_on_user_id"
-  end
-
-  create_table "rates", id: :serial, force: :cascade do |t|
-    t.datetime "created_at", precision: nil, null: false
-    t.text "description"
-    t.string "name", null: false
-    t.decimal "rate", precision: 5, scale: 2
-    t.datetime "updated_at", precision: nil, null: false
-    t.integer "user_id", null: false
-    t.index ["user_id"], name: "index_rates_on_user_id"
   end
 
   create_table "subscribers", force: :cascade do |t|
@@ -225,8 +213,6 @@ ActiveRecord::Schema[8.1].define(version: 2026_10_13_130000) do
   add_foreign_key "blogs_tags", "tags"
   add_foreign_key "clients", "users"
   add_foreign_key "hours", "projects"
-  add_foreign_key "hours", "rates"
   add_foreign_key "projects", "clients"
-  add_foreign_key "rates", "users"
   add_foreign_key "tags", "tags"
 end

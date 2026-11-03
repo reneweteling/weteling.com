@@ -8,14 +8,15 @@ ActiveAdmin.register Hour do
 
   controller do
     def scoped_collection
-      super.includes :rate, :client, project: [:client]
+      super.includes :client, project: [:client]
     end
 
     def build_new_resource
       record = super
       record.date ||= Date.today
-      record.project ||= Hour.last.project
-      record.rate ||= Hour.last.rate
+      last = Hour.last
+      record.project ||= last&.project
+      record.rate ||= record.project&.default_rate || last&.rate
       record
     end
   end
@@ -36,7 +37,7 @@ ActiveAdmin.register Hour do
     selectable_column
     id_column
     column :project
-    column :rate
+    column(:rate) { |h| content_tag(:span, number_to_currency(h.rate), style: "white-space:nowrap;") }
     column :date
     column :total_hours
     column :total_sno_hours
@@ -49,7 +50,7 @@ ActiveAdmin.register Hour do
   show do
     attributes_table do
       row :project
-      row :rate
+      row(:rate) { |h| number_to_currency(h.rate) }
       row :date
       row :total_hours
       row :total_sno_hours
@@ -77,11 +78,11 @@ ActiveAdmin.register Hour do
     inputs "Details" do
       input :project, input_html: {
                   'data-rate': projects.map do |p|
-                    [p.id, p.client.default_rate.id]
+                    [p.id, p.default_rate]
                   end.to_h.to_json,
                   'data-budget': budget_data.to_json,
                 }, collection: projects
-      input :rate
+      input :rate, hint: 'Uurtarief voor dit uur. Wordt ingevuld met het default tarief van het project.'
       input :date
       input :repeat_date, as: :datepicker
       input :total_hours

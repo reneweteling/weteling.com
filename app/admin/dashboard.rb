@@ -87,8 +87,8 @@ ActiveAdmin.register_page "Dashboard" do
             tr class: (i.odd? ? "even" : "odd") do
               start_date = current.at_beginning_of_month >= @filter.start ? current.at_beginning_of_month : @filter.start
               end_date = current.at_end_of_month <= @filter.end ? current.at_end_of_month : @filter.end
-              hours = p.hours.includes(:rate).where(date: start_date..end_date)
-              project_total = hours.map { |h| h.total_hours * h.rate.rate }.inject(:+)
+              hours = p.hours.where(date: start_date..end_date)
+              project_total = hours.sum('total_hours * rate')
               month_total += project_total
 
               td p.client
@@ -102,7 +102,7 @@ ActiveAdmin.register_page "Dashboard" do
                 right = ''
                 if p.budget? && p.budget_hours&.positive?
                   spent_to_date = p.spent_amount(up_to: end_date)
-                  used_hours = p.default_rate_amount&.positive? ? (spent_to_date / p.default_rate_amount) : nil
+                  used_hours = p.default_rate&.positive? ? (spent_to_date / p.default_rate) : nil
                   budget_hours = p.budget_hours
                   if used_hours
                     pct = (used_hours / budget_hours * 100).round
@@ -113,7 +113,7 @@ ActiveAdmin.register_page "Dashboard" do
                 end
                 raw content_tag(:div, raw(left_parts.join(' ')) + raw(right), style: 'display:flex;justify-content:space-between;align-items:center;gap:12px;')
               end
-              td hours.map(&:rate).uniq.to_sentence
+              td hours.distinct.pluck(:rate).sort.map { |r| number_to_currency(r) }.to_sentence
               td number_to_currency(project_total)
               td link_to(
                    icon("fas", "file-pdf"),

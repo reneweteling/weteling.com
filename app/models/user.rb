@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable
 
   has_many :clients, dependent: :restrict_with_error
-  has_many :rates, dependent: :restrict_with_error
   has_many :projects, through: :clients
   has_many :hours, through: :projects
   has_and_belongs_to_many :projects

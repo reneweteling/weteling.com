@@ -2,11 +2,11 @@
 
 class Hour < ApplicationRecord
   belongs_to :project
-  belongs_to :rate
   has_one :client, through: :project
   has_one :user, through: :client
 
   validates :project, :rate, :date, :total_hours, :description, presence: true
+  validates :rate, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
   scope :orderd, -> { order(:date) }
 
