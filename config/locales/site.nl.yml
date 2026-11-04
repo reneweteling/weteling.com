@@ -31,10 +31,10 @@ nl:
 
       hero:
         title: "Home"
-        hi: "Hoi"
-        im_rene: "Ik ben René"
-        allround_developer: "Agentic Developer"
-        tagline: "Ik orchestreer AI agents die ontwerpen, coderen, testen & deployen.<br>Eén mens. Een vloot agents. Productie in dagen."
+        kicker: "Hoi, ik ben René"
+        headline: "Eén developer.<br>Een vloot agents."
+        lead: "Ik orchestreer AI agents die ontwerpen, coderen, testen en shippen, en ik bewaak met mijn engineering-ervaring dat ze het goed doen. <a href=\"#apps\" class=\"hero-link\">TidyDrive</a> ging in één dag van schets naar een getekende, genotariseerde release."
+        pitch: "Die snelheid ook voor jouw product? Van idee naar productie, CTO as a service, of een tweede paar senior ogen."
         say_hello: "Start een Project"
         view_work: "Bekijk Werk"
         stats:
@@ -63,10 +63,11 @@ nl:
 
       skills:
         title: "Vaardigheden"
-        subtitle: "In de loop der jaren heb ik met <strong>veel</strong> facetten van het IT-landschap gewerkt. Mijn <strong>passie</strong> ligt bij webontwikkeling — korte iteraties, data-gedreven keuzes, en het gevoel wanneer mensen daadwerkelijk het product gebruiken dat je hebt gebouwd. Web en mobiel zijn daarvoor ideaal! Back-end, front-end én infra uit één hand, zo lever ik een project van begin tot eind op."
+        headline: "Eerst alles met de hand."
+        subtitle: "Vroeger deden we alles nog zelf. Twintig jaar back-ends, front-ends en servers: elke query, elke deploy, elke storing om 3 uur 's nachts. Dat is mijn fundament, en daarom kan ik agents de juiste kant op laten rennen. Ik weet hoe goed eruitziet, dus ik zie het meteen als ze afdwalen."
         be:
           title: "Back-End Ontwikkeling"
-          description: "Net zoals in het leven gebeuren de meeste interessante dingen achter de schermen. API's, integraties, back-ends, services, jobs, search, storage, noem maar op. Dit is waar ik me thuis voel."
+          description: "Voordat agents code schreven, bouwde ik de API's, integraties, jobs en zoekfuncties zelf. Daardoor weet ik welke architectuur standhoudt en welke shortcut je later opbreekt, en daar stuur ik de agents op."
           tags:
             - title: "Talen:"
               items:
@@ -97,7 +98,7 @@ nl:
                 - "Pinia"
         fe:
           title: "Front-End Ontwikkeling"
-          description: "Frontends bouwen is een vak apart. Het is niet alleen het visuele aspect, maar ook de interactie met de gebruiker, de snelheid van de applicatie, de toegankelijkheid en de SEO. Dit is waar ik me graag mee bezig houd."
+          description: "Ik heb interfaces met de hand gebouwd in elk framework van de afgelopen vijftien jaar. Nu schrijven agents de componenten, en zorg ik dat ze functioneel, consistent en snel zijn."
           tags:
             - title: "Talen:"
               items:
@@ -127,7 +128,7 @@ nl:
 
         devops:
           title: DevOps
-          description: "Applicaties bouwen is één ding, ze draaiende houden is een vak apart. Automatiseren, schalen, monitoren, beveiligen — daar komt DevOps om de hoek kijken, en dat is precies wat ik graag opzet."
+          description: "Servers, databases, pipelines en af en toe een storing: ik heb ze allemaal opgezet en draaiende gehouden. Dus wat de agents bouwen, draait ook echt in productie, en blijft draaien."
           tags:
             - title: "Services:"
               items:

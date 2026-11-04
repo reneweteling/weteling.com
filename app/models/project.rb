@@ -21,7 +21,8 @@ class Project < ApplicationRecord
 
   scope :orderd,    -> { order(position: :asc) }
   scope :for_hours, -> { where(hours_active: true) }
-  scope :for_site,  -> { where(site_active: true).orderd }
+  # Newest first, so the timeline follows the years.
+  scope :for_site,  -> { where(site_active: true).order(start_date: :desc, position: :asc) }
   scope :for_cv,    -> { where(cv_active: true).orderd }
 
   def techniques

@@ -31,10 +31,10 @@ en:
 
       hero:
         title: "Home"
-        hi: Hi
-        im_rene: "I'm René"
-        allround_developer: "Agentic Developer"
-        tagline: "I orchestrate AI agents that design, code, test & ship.<br>One human. A fleet of agents. Production in days."
+        kicker: "Hi, I'm René"
+        headline: "One developer.<br>A fleet of agents."
+        lead: "I orchestrate AI agents that design, code, test and ship, and I bring the engineering judgement that keeps them honest. <a href=\"#apps\" class=\"hero-link\">TidyDrive</a> went from a sketch to a signed, notarized release in a single day."
+        pitch: "Want that speed on your own product? Idea to production, CTO as a service, or a second pair of senior eyes."
         say_hello: "Start a Project"
         view_work: "View Work"
         stats:
@@ -63,10 +63,11 @@ en:
 
       skills:
         title: "Skills"
-        subtitle: "Throughout the years, I've worked with <strong>multiple</strong> facets of the IT landscape. My <strong>passion</strong> is in web development, because of the short iteration cycles to optimize the product and the ability to make data-driven decisions. I love it when people use the product that I've helped to develop, so web and mobile are ideal! Back-end, front-end and infra from one hand, that's how I deliver a project end to end."
+        headline: "Built by hand, first."
+        subtitle: "Back in the day we did everything ourselves. Twenty years of back-ends, front-ends and servers: every query, every deploy, every outage at 3 AM. That is my foundation, and it's why I can send agents running in the right direction. I know what good looks like, so I see it the moment they drift."
         be:
           title: Back-End Development
-          description: "Like in life, most of the interesting stuff happens behind the scenes, and this is especially true in development. APIs, integrations, back-ends, services, jobs, searching, storage — you name it. This is where I'm at home."
+          description: "Before agents wrote code, I built the APIs, integrations, jobs and search myself. So I know which architecture holds up and which shortcut comes back to bite you, and that is what I steer the agents on."
           tags:
             - title: "Languages:"
               items:
@@ -97,7 +98,7 @@ en:
                 - "Pinia"
         fe:
           title: Front-End Development
-          description: "Back-ends need to interact with something consumer-facing, so front-end development is also a large part of an app. Creating pixel-perfect interfaces is not really my cup of tea. What I like to do is create functional interfaces using some sort of framework for ease, speed, and consistency."
+          description: "I built interfaces by hand in every framework of the last fifteen years. Now agents write the components, and I make sure they are functional, consistent and fast."
           tags:
             - title: "Languages:"
               items:
@@ -127,7 +128,7 @@ en:
 
         devops:
           title: DevOps
-          description: "Back-ends with front-ends need to run somewhere and store some data, access some database rows, maybe have an optimized search layer, with a CI/CD pipeline to automate it all. This is something I really enjoy setting up."
+          description: "Servers, databases, pipelines and the occasional outage: I set them all up and kept them running. So what the agents build actually runs in production, and stays up."
           tags:
             - title: "Services:"
               items:

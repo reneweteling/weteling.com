@@ -18,12 +18,7 @@ section.pt-28.pb-16.bg-gradient-to-b.from-gray-50.to-white
         h1.text-3xl.md:text-4xl.font-bold.text-gray-900.mb-2 = @project.title
         p.text-xl.text-gray-500.mb-3 = @project.subtitle
         .text-sm.text-gray-400
-          = l @project.start_date
-          |  —
-          - if @project.end_date.present?
-            = l @project.end_date
-          - else
-            = t('site.project.present')
+          = project_period(@project)
 
 / Content
 section.pb-20
