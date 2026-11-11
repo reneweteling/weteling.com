@@ -1,12 +1,19 @@
 ruby:
   content = I18n.locale.to_s == 'nl' ? Page.cv.first.content_nl : Page.cv.first.content_en
 
+- photo = capture do
+  figure.cv-photo
+    = image_tag('rene.jpg', alt: 'René Weteling', width: 512, height: 512)
+
 - projects = capture do
   .projects.not-prose
     = render partial: 'project', collection: Project.for_cv, locals: { as_cv: true }
 
 .cv.prose.prose-lg.max-w-none.prose-li:my-0.prose-ul:my-1.prose-ol:my-1.prose-p:my-2.prose-h2:mt-8.prose-h2:mb-3.prose-h3:mt-6.prose-h3:mb-2.prose-h4:mt-3.prose-h4:mb-1
-  == markdown content.gsub('[[projects]]', projects)
+  .cv-logo
+    = image_tag('logo.svg', alt: 'René Weteling')
+  / The photo goes in front of the first list (the personal info), so the markdown itself stays untouched.
+  == markdown(content.gsub('[[projects]]', projects)).sub('<ul>', "#{photo}<ul>")
 
 
 sass:
@@ -20,6 +27,50 @@ sass:
       text-decoration-color: #93c5fd
       &:hover
         color: #1d4ed8
+
+    position: relative
+
+    // Logo sits top right, on the same line as the h1
+    .cv-logo
+      position: absolute
+      top: 0
+      right: 0
+      img
+        display: block
+        margin: 0
+        height: 3rem
+        width: auto
+
+    h1
+      margin-top: 0
+      margin-bottom: 0.5rem
+      padding-right: 6rem
+
+    // Portrait with an offset frame, same idea as the homepage hero
+    .cv-photo
+      float: right
+      width: 180px
+      margin: 0.5rem 0.75rem 1rem 2rem
+      position: relative
+      &::before
+        content: ""
+        position: absolute
+        inset: -0.5rem 0.5rem 0.5rem -0.5rem
+        border: 2px solid #3b82f6
+        border-radius: 1rem
+      img
+        position: relative
+        display: block
+        width: 100%
+        height: auto
+        aspect-ratio: 1
+        object-fit: cover
+        margin: 0
+        border-radius: 0.75rem
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25)
+
+    h2, h3
+      clear: both
 
     .personal-info + ul
       list-style: none
@@ -83,6 +134,18 @@ sass:
             object-fit: contain
 
     @media (max-width: 640px)
+      .cv-logo img
+        height: 2.25rem
+
+      h1
+        padding-right: 4.5rem
+
+      .cv-photo
+        float: none
+        width: 55%
+        max-width: 200px
+        margin: 1.5rem auto 1.5rem 0.5rem
+
       .personal-info + ul
         li
           > strong
